@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scroll</title>
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+  <!-- styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- header -->
+  <header id="home">
+    <!-- navbar -->
+    <nav id="nav">
+      <div class="nav-center">
+        <!-- nav header -->
+        <div class="nav-header">
+          <img src="./logo.svg" alt="logo" class="logo">
+          <button class="nav-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <!-- links -->
+        <div class="links-container">
+          <ul class="links">
+            <li>
+              <a href="#home" class="scroll-link">home</a>
+            </li>
+            <li>
+              <a href="#projects" class="scroll-link">Projects</a>
+            </li>
+            <li>
+              <a href="#skills-tools" class="scroll-link">Skills&Tools</a>
+            </li>
+            <li>
+              <a href="#contact-me" class="scroll-link">Contact Me</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- banner -->
+    <div class="banner">
+      <div class="container">
+        <h1>I am Zhalgas <br> Miyatbekov</h1>
+        <p>Web developer</p>
+        <a href="#projects" class="scroll-link btn btn-white">projects</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- projects -->
+  <section id="projects" class="section">
+    <div class="title">
+      <h2>My <span>projects</span></h2>
+
+      <div class="project-cards">
+        <div class="project">
+          <img src="img/Google.png" alt="">
+          <h3 class="project-title">Google mockup</h3>
+          <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia maxime esse incidunt ullam molestiae autem atque deleniti hic perferendis iure tempore nihil, odit exercitationem et accusamus cum. Molestiae, ducimus rerum!</p>
+          <a href="" class="btn">Live</a>
+          <a href="" class="btn">Code</a>
+        </div>
+        <div class="project">
+          <img src="img/FinalFantasy_XIII-2_Logo.png" alt="">
+          <h3 class="project-title">Project1</h3>
+          <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia maxime esse incidunt ullam molestiae autem atque deleniti hic perferendis iure tempore nihil, odit exercitationem et accusamus cum. Molestiae, ducimus rerum!</p>
+          <a href="" class="btn">Live</a>
+          <a href="" class="btn">Code</a>
+        </div>
+        <div class="project">
+          <img src="img/FF15.png" alt="">
+          <h3 class="project-title">Project2</h3>
+          <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia maxime esse incidunt ullam molestiae autem atque deleniti hic perferendis iure tempore nihil, odit exercitationem et accusamus cum. Molestiae, ducimus rerum!</p>
+          <a href="" class="btn">Live</a>
+          <a href="" class="btn">Code</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- skills & tools -->
+  <section id="skills-tools" class="section">
+    <div class="title">
+      <h2>Skills <span>&Tools</span></h2>
+    </div>
+    <div class="slider-container">
+      <div class="slide">
+        <div class="img-container">
+          <img src="img/Front-End.svg" class="slide-img" alt=""/>
+        </div>
+        <div class="info">
+          <h1>Fornt-End</h1>
+          <p>I have decent experince in <br>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae pariatur alias dignissimos, quasi voluptatum laborum magnam nobis in modi possimus facere maxime rem minus eos explicabo fugit commodi nisi dolorum.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="img-container">
+          <img src="img/MERN-logo.png" class="slide-img" alt=""/>
+        </div>
+        <div class="info">
+          <h1>Back-End</h1>
+          <p>I have decent experince in <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae pariatur alias dignissimos, quasi voluptatum laborum magnam nobis in modi possimus facere maxime rem minus eos explicabo fugit commodi nisi dolorum.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="img-container">
+          <img src="img/bootstrap-5-1.svg" class="slide-img" alt=""/>
+        </div>
+        <div class="info">
+          <h1>Tools</h1>
+          <p>I have decent experince in <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae pariatur alias dignissimos, quasi voluptatum laborum magnam nobis in modi possimus facere maxime rem minus eos explicabo fugit commodi nisi dolorum.</p>
+        </div>
+      </div>
+    </div>
+    <div class="btn-container">
+      <button type="button" class="prevBtn">
+        prev
+      </button>
+      <button type="button" class="nextBtn">
+        next
+      </button>
+    </div>
+  </section>
+  <!-- contact me -->
+  <section id="contact-me" class="section">
+    <div class="title">
+      <h2>Contact <span>me</span></h2>
+    </div>
+    <div class="section-center">
+      <article class="about">
+        <!-- btn container -->
+        <div class="btn-container">
+          <button class="tab-btn" data-id="about-me">About Me</button>
+          <button class="tab-btn active" data-id="mail">Mail</button>
+          <button class="tab-btn" data-id="location">Location</button>
+        </div>
+        <div class="about-content">
+          <!-- single item -->
+          <div class="content" id="about-me">
+            <h4>About me</h4>
+            <p>
+              Resume/Cover letter Text <br>
+              mb some Image as well
+            </p>
+            <br>
+            <p><span>Tel number: +7 706 414 23 99</span></p>
+          </div>
+          <!-- end of single item -->
+          <!-- single item -->
+          <div class="content active" id="mail">
+            <!-- <h4>vision</h4> -->
+            <div class="mail-form">
+              <form action="">
+                <input type="text" placeholder="FirstName"> <br>
+                <input type=" text" placeholder="LastName"> <br>
+                <input type="email" placeholder="Your Mail">
+                <textarea name="" id="" cols="30" rows="10" placeholder="Your Message..."></textarea> <br>
+                <button class="btn btn-form" type="submit" style="text-transform: capitalize;">Send</button>
+              </form>
+            </div>
+          </div>
+          <!-- end of single item -->
+          <!-- single item -->
+          <div class="content" id="location">
+            <h4>Location</h4>
+            <p>
+              Kazakhstan Mangistau Aktau c.
+            </p>
+            <div id="map">Map API</div>
+          </div>
+          <!-- end of single item -->
+        </div>
+      </article>
+    </div>
+  </section>
+  <!-- footer -->
+  <footer class="section">
+    <p>
+      copyright &copy; backgroads travel tours company <span id="date"></span>.all rights reserved
+    </p>
+  </footer>
+  <!-- back to top button -->
+  <a href="#home" class="scroll-link top-link">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+  <!-- javascript -->
+  <script src="app.js"></script>
+</body>
+
+</html>
