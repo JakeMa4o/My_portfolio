@@ -48,50 +48,65 @@
       <div class="container">
         <h1>I am Zhalgas <br> Miyatbekov</h1>
         <p>Web developer</p>
-        <a href="#projects" class="scroll-link btn btn-white">projects</a>
+        <ul class="social-medias">
+          <li>
+            <a href="" target="_blank"><i style="font-size: 2.5rem; color: #fff" class="fab fa-linkedin"></i></a>
+          </li>
+          <li>
+            <a href="https://github.com/JakeMa4o" target="_blank"><i style="font-size: 2.5rem; color: #fff" class="fab fa-github"></i></a>
+          </li>
+        </ul>
+        <a href="#projects" style="margin-top: 2rem;" class="scroll-link btn btn-white">projects</a>
       </div>
     </div>
   </header>
 
   <!-- projects -->
   <section id="projects" class="section">
-    <div class="title">
-      <h2>My <span>projects</span></h2>
-
+    <div class="section-center">
+      <div class="title">
+        <h2>My <span>projects</span></h2>
+      </div>
       <div class="project-cards">
+        <div class="project">
+          <img src="img/Protfolio.png" alt="">
+          <div class="project-info">
+            <h3 class="project-title">Porfolio</h3>
+            <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia maxime esse
+              incidunt ullam molestiae autem atque deleniti hic perferendis iure tempore nihil, odit exercitationem et
+              accusamus cum. Molestiae, ducimus rerum!</p>
+            <div class="buttons-container">
+              <a href="" target="_blank" class="btn"><i class="fas fa-desktop"></i>Live</a>
+              <a href="" target="_blank" class="btn"><i class="fab fa-github"></i>Code</a>
+            </div>
+          </div>
+        </div>
         <div class="project">
           <img src="img/Google.png" alt="">
           <div class="project-info">
             <h3 class="project-title">Google mockup</h3>
             <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia maxime esse
-              incidunt ullam molestiae autem atque deleniti hic perferendis iure tempore nihil, odit exercitationem et
-              accusamus cum. Molestiae, ducimus rerum!</p>
-            <a href="" class="btn"><i class="fas fa-desktop"></i>Live</a>
-            <a href="" class="btn"><i class="fab fa-github"></i>Code</a>
+              incidunt
+              ullam molestiae autem atque deleniti hic perferendis iure tempore nihil, odit exercitationem et accusamus
+              cum. Molestiae, ducimus rerum!</p>
+            <div class="buttons-container">
+              <a href="https://secret-coast-44359.herokuapp.com/" target="_blank" class="btn"><i class="fas fa-desktop"></i>Live</a>
+              <a href="https://github.com/JakeMa4o/Google-clone" target="_blank" class="btn"><i class="fab fa-github"></i>Code</a>
+            </div>
           </div>
         </div>
         <div class="project">
-          <img src="img/FinalFantasy_XIII-2_Logo.png" alt="">
+          <img src="img/Food-delivery.png" alt="">
           <div class="project-info">
-            <h3 class="project-title">Project1</h3>
+            <h3 class="project-title">Food delivery</h3>
             <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia maxime esse
               incidunt
               ullam molestiae autem atque deleniti hic perferendis iure tempore nihil, odit exercitationem et accusamus
               cum. Molestiae, ducimus rerum!</p>
-            <a href="" class="btn"><i class="fas fa-desktop"></i>Live</a>
-            <a href="" class="btn"><i class="fab fa-github"></i>Code</a>
-          </div>
-        </div>
-        <div class="project">
-          <img src="img/FF15.png" alt="">
-          <div class="project-info">
-            <h3 class="project-title">Project2</h3>
-            <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia maxime esse
-              incidunt
-              ullam molestiae autem atque deleniti hic perferendis iure tempore nihil, odit exercitationem et accusamus
-              cum. Molestiae, ducimus rerum!</p>
-            <a href="" class="btn"><i class="fas fa-desktop"></i>Live</a>
-            <a href="" class="btn"><i class="fab fa-github"></i>Code</a>
+            <div class="buttons-container">
+              <a href="" target="_blank" class="btn"><i class="fas fa-desktop"></i>Live</a>
+              <a href="" target="_blank" class="btn"><i class="fab fa-github"></i>Code</a>
+            </div>
           </div>
         </div>
       </div>
@@ -103,9 +118,9 @@
       <h2>Skills <span>&Tools</span></h2>
 
       <div class="section-center">
-        <h3>My tech stack</h3>
+        <h3 class="tech-title">My tech stack</h3>
         <div class="tech-stack">
-          <h3>Front-end</h3>
+
           <div class="front-end">
             <div class="item">
               <img src="img/svg/html5-icon.svg" alt="">
@@ -113,8 +128,7 @@
             </div>
             <div class="item">
               <img src="img/svg/css3.svg" alt="">
-              <img src="img/svg/bootstrap.svg" alt="">
-              css/bootsrap
+              css
             </div>
             <div class="item">
               <img src="img/svg/javascript.svg" alt="">
@@ -125,7 +139,7 @@
               react
             </div>
           </div>
-          <h3>Back-end</h3>
+
           <div class="back-end">
             <div class="item">
               <img src="img/svg/nodejs.svg" alt="">
@@ -142,7 +156,7 @@
           </div>
         </div>
 
-        <h3>Tools I use</h3>
+        <h3 class="tools-title">Tools I use</h3>
         <div class="tools">
           <div class="item">
             <img src="img/svg/visual-studio-team-services.svg" alt="">
@@ -158,8 +172,6 @@
           </div>
         </div>
       </div>
-
-
 
     </div>
   </section>
@@ -180,10 +192,15 @@
           <!-- single item -->
           <div class="content" id="about-me">
             <h4>About me</h4>
-            <img class="my-image" style="max-width: 400px; height: 500px;" src="img/Machio_Naruzo_(anime).png" alt="">
-            <p><span style="font-size: 2rem;">Hi!</span> <br>
-            My name is Zhalgas Miyatebkov.I am 21 years old IT passionate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias tempora saepe natus, magni neque accusantium. Doloribus, error quis praesentium odit perspiciatis tenetur sequi autem iste neque totam vel voluptas numquam!</p>
-            <p><span>Tel number: +7 706 414 23 99</span></p>
+            <div class="about-info">
+              <img class="my-image" style="max-width: 500px; height: 500px;" src="img/Machio_Naruzo_(anime).png" alt="">
+              <p><span style="font-size: 2rem;">Hi!</span> <br>
+                My name is Zhalgas Miyatebkov.I am 21 years old IT passionate. Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Molestias tempora saepe natus, magni neque accusantium. Doloribus, error quis
+                praesentium odit perspiciatis tenetur sequi autem iste neque totam vel voluptas numquam! <br>
+                <span>Tel number: +7 706 414 23 99</span>
+              </p>
+            </div>
           </div>
           <!-- end of single item -->
           <!-- single item -->
@@ -207,6 +224,8 @@
               Kazakhstan Mangistau Aktau c.
             </p>
             <div id="map-api"></div>
+            <!-- You could put a static image and make it link for those who wanna drag and move the map around -->
+            <!-- <a href="" target="_blank"><img src="" alt=""></a> -->
           </div>
           <!-- end of single item -->
         </div>
@@ -216,16 +235,26 @@
   <!-- footer -->
   <footer class="section">
     <p>
-      copyright &copy; Zhalgas Miyatbekov <span id="date"></span>.
+      &copy; Zhalgas Miyatbekov <span id="date"></span>.
     </p>
+    <ul class="social-medias">
+      <li>
+        <a href="" target="_blank"><i style="font-size: 2.5rem; color: #fff" class="fab fa-linkedin"></i></a>
+      </li>
+      <li>
+        <a href="https://github.com/JakeMa4o" target="_blank"><i style="font-size: 2.5rem; color: #fff" class="fab fa-github"></i></a>
+      </li>
+    </ul>
   </footer>
   <!-- back to top button -->
   <a href="#home" class="scroll-link top-link">
     <i class="fas fa-arrow-up"></i>
   </a>
   <!-- Google Maps -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg057wIuLJLKRhivpTkUURwHzJJRT-KNA&callback=initMap" async></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg057wIuLJLKRhivpTkUURwHzJJRT-KNA&callback=initMap"
+    async></script>
   <!-- javascript -->
-  <script src="app.js"></script>
-</body >
-</html >
+  <script src="script.js"></script>
+</body>
+
+</html>

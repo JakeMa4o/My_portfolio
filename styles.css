@@ -84,7 +84,7 @@ a {
   text-decoration: none;
 }
 img:not(.logo) {
-  width: 100%;
+  max-width: 100%;
 }
 img {
   display: block;
@@ -178,6 +178,7 @@ p {
   width: 90vw;
   margin: 0 auto;
   max-width: 70%;
+  font-size: 1.3rem;
 }
 @media screen and (min-width: 992px) {
   .section-center {
@@ -307,24 +308,33 @@ header {
   min-height: 100vh;
   background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.7)), url(img/hero-bcg.jpeg) center/cover no-repeat;
 }
+
+.social-medias {
+  display: flex;
+  justify-content: space-around;
+  width: 10rem;
+  margin: auto;
+  margin-top: 2rem;
+}
+
 .banner {
   min-height: 100vh;
   display: grid;
   place-items: center;
   text-align: center;
 }
-.container h1 {
+.banner .container h1 {
   color: var(--clr-white);
   text-transform: uppercase;
 }
-.container p {
+.banner .container p {
   color: var(--clr-white);
   max-width: 25rem;
   margin: 0 auto;
   margin-bottom: 1.25rem;
 }
 @media screen and (min-width: 768px) {
-  .container p {
+  .banner .container p {
     max-width: 40rem;
   }
 }
@@ -354,7 +364,11 @@ header {
 }
 footer {
   background: var(--clr-grey-1);
-  padding: 5rem 1rem;
+  padding: 2rem 1rem;
+}
+
+footer.section{
+  padding-bottom: 2rem;
 }
 footer p {
   color: var(--clr-white);
@@ -414,7 +428,14 @@ Projects
   border: 1px solid #000;
   margin: 2rem;
   border-radius: 1rem;
+  background-color: #F9F3DF;
 }
+
+.buttons-container {
+  display: flex;
+  justify-content: space-around;
+}
+
 .project-info {
   padding: 1rem;
 }
@@ -422,6 +443,12 @@ Projects
 @media screen and (max-width: 800px) {
   .project-cards {
     flex-wrap: wrap;
+  }
+  .buttons-container {
+    flex-direction: column;
+  }
+  .buttons-container a {
+    margin: .5rem 0;
   }
 }
 
@@ -432,36 +459,42 @@ Skills & Tools
 ===============
 */
 #skills-tools img{
-  width: 200px;
-  height: 200px;
+  width: 50px;
+  height: 50px;
+  margin: auto;
 }
 
 .tech-stack {
-  border: 1px solid #000;
+  display: flex;
 }
-.front-end {
+.front-end, .back-end, .tools{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  flex: 1;
 }
+
 .item {
   margin: 1rem;
   border: 1px solid #000;
   border-radius: 10px;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
   color: var(--clr-secondary);
   background-color: var(--clr-primary-10);
-}
-.back-end {
-  display: flex;
-  flex-wrap: wrap;
-}
-.tools {
-  border: 1px solid #000;
+  width: 8rem;
+  height: 8rem;
+  padding: 1rem;
+} 
+
+.tech-title {
+  text-align: center;
 }
 
-
+.tools-title {
+  text-align: center;
+}
 
 
 
@@ -523,12 +556,19 @@ Contact Me
   min-height: 60vh;
 }
 
+.my-image {
+  margin: auto;
+}
 
+.about-info {
+  display: flex;
+}
 
-
-
-/* custom */
-
+@media screen and (max-width: 768px) {
+  .about-info {
+    flex-wrap: wrap;
+  }
+}
 
 #map-api {
   height: 30rem;
