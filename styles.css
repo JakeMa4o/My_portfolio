@@ -175,7 +175,7 @@ p {
 }
 
 .section-center {
-  width: 90vw;
+  /* width: 90vw; */
   margin: 0 auto;
   max-width: 70%;
   font-size: 1.3rem;
@@ -418,38 +418,25 @@ Projects
 ===============
 */
 
-
 .project-cards {
-  display: flex;
+  /* display: flex; */
+  /* padding: 1rem; */
 }
 
 .project {
-  padding: 2rem;
   border: 1px solid #000;
-  margin: 2rem;
-  border-radius: 1rem;
-  background-color: #F9F3DF;
+  /* max-width: 70%; */
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
 }
 
 .buttons-container {
+  /* border: 1px solid #000; */
+  width: 80%;
+  margin: auto;
   display: flex;
   justify-content: space-around;
-}
-
-.project-info {
-  padding: 1rem;
-}
-
-@media screen and (max-width: 800px) {
-  .project-cards {
-    flex-wrap: wrap;
-  }
-  .buttons-container {
-    flex-direction: column;
-  }
-  .buttons-container a {
-    margin: .5rem 0;
-  }
 }
 
 
