@@ -4,7 +4,7 @@ Fonts
 ===============
 */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap");
 
 /*
 =============== 
@@ -72,7 +72,7 @@ html {
 }
 body {
   font-family: var(--ff-secondary);
-  background: var(--clr-grey-10);
+  background: var(--clr-white);
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
@@ -177,7 +177,7 @@ p {
 .section-center {
   /* width: 90vw; */
   margin: 0 auto;
-  max-width: 70%;
+  /* max-width: 70%; */
   font-size: 1.3rem;
 }
 @media screen and (min-width: 992px) {
@@ -239,7 +239,7 @@ nav {
 .logo {
   height: 50px;
   font-size: 2rem;
-  font-family: 'Black Ops One', cursive;
+  font-family: "Black Ops One", cursive;
 }
 .links-container {
   height: 0;
@@ -306,7 +306,8 @@ nav {
 /* hero */
 header {
   min-height: 100vh;
-  background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.7)), url(img/hero-bcg.jpeg) center/cover no-repeat;
+  background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.7)),
+    url(img/hero-bcg.jpeg) center/cover no-repeat;
 }
 
 .social-medias {
@@ -356,18 +357,17 @@ header {
 #projects,
 #skills-tools,
 #contact-me {
-  padding-top: 5rem;
-  min-height: 100vh;
+  padding-top: 2rem;
 }
 #skills-tools {
-  background: var(--clr-white);
+  background: var(--clr-grey-10);
 }
 footer {
   background: var(--clr-grey-1);
   padding: 2rem 1rem;
 }
 
-footer.section{
+footer.section {
   padding-bottom: 2rem;
 }
 footer p {
@@ -418,34 +418,114 @@ Projects
 ===============
 */
 
-.project-cards {
-  /* display: flex; */
-  /* padding: 1rem; */
-}
-
 .project {
   border: 1px solid #000;
   /* max-width: 70%; */
   padding: 1rem;
-  margin: 1rem;
+  margin: 3rem 3rem;
   border-radius: 10px;
+  background: linear-gradient(45deg, rgb(214, 255, 245), rgb(255, 251, 251) , rgb(149, 245, 240));
+}
+
+.project img {
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  margin-bottom: 1rem;
 }
 
 .buttons-container {
-  /* border: 1px solid #000; */
-  width: 80%;
-  margin: auto;
+  margin: 2rem auto 1.3rem;
   display: flex;
   justify-content: space-around;
 }
 
+@media screen and (min-width: 375px) {
+  .buttons-container {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .project-cards {
+    width: 90%;
+    margin: auto;
+  }
+
+  .project {
+    width: 70%;
+    padding: 2rem;
+    margin: 5rem auto;
+  }
+
+  .buttons-container {
+    width: 60%;
+  }
+
+  .section-center {
+    width: 90%;
+  }
+
+  .contact-container {
+    width: 90%;
+    margin: auto;
+  }
+  .contact-container input{
+    min-height: 3rem;
+    font-size: 1.3rem;
+  }
+  .contact-container textarea {
+    font-size: 1.3rem;
+    min-height: 10rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .project-cards {
+    display: flex;
+    width: 100%;
+  }
+
+  .project {
+    max-width: 30%;
+    padding: 2rem;
+  }
+
+  .buttons-container {
+    width: 100%;
+  }
+
+  .section-center {
+    width: 0%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .project-cards {
+    display: flex;
+    /* flex-wrap: wrap; */
+  }
+
+  .project {
+    width: 50%;
+    margin: 0 2rem;
+    padding: 2rem;
+  }
+
+  .buttons-container {
+    width: 70%;
+  }
+
+  .section-center {
+    width: 80%;
+  }
+}
 
 /*
 =============== 
 Skills & Tools
 ===============
 */
-#skills-tools img{
+#skills-tools img {
   width: 50px;
   height: 50px;
   margin: auto;
@@ -454,7 +534,9 @@ Skills & Tools
 .tech-stack {
   display: flex;
 }
-.front-end, .back-end, .tools{
+.front-end,
+.back-end,
+.tools {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -473,7 +555,7 @@ Skills & Tools
   width: 8rem;
   height: 8rem;
   padding: 1rem;
-} 
+}
 
 .tech-title {
   text-align: center;
@@ -483,21 +565,18 @@ Skills & Tools
   text-align: center;
 }
 
-
-
 /*
 =============== 
 Contact Me
 ===============
 */
 
-
-
 .about {
   background: var(--clr-white);
   border-radius: var(--radius);
   display: grid;
   grid-template-rows: auto 1fr;
+  max-height: 90%;
 }
 .btn-container {
   border-top-left-radius: var(--radius);
@@ -540,7 +619,6 @@ Contact Me
 }
 .content.active {
   display: block;
-  min-height: 60vh;
 }
 
 .my-image {
