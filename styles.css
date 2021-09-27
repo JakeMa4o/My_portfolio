@@ -412,7 +412,6 @@ footer p {
   }
 }
 
-
 /*
 =============== 
 Projects
@@ -421,12 +420,10 @@ Projects
 
 .project {
   border: 1px solid #000;
-  /* max-width: 70%; */
   padding: 1rem;
   margin: 3rem 3rem;
   border-radius: 10px;
-  background: linear-gradient(45deg, rgb(214, 255, 245), rgb(255, 251, 251) , rgb(149, 245, 240));
-  font-size: 1.2rem;
+  background: linear-gradient(45deg, rgb(214, 255, 245), rgb(255, 251, 251), rgb(149, 245, 240));
 }
 
 .project img {
@@ -435,10 +432,9 @@ Projects
   margin-bottom: 1rem;
 }
 
-.project span{
-  color:#49a6e9;
+.project span {
+  color: #49a6e9;
   font-weight: bolder;
-  font-size: 1.4rem;
 }
 
 .buttons-container {
@@ -477,7 +473,7 @@ Projects
     width: 90%;
     margin: auto;
   }
-  .contact-container input{
+  .contact-container input {
     min-height: 3rem;
     font-size: 1.3rem;
   }
@@ -496,6 +492,12 @@ Projects
   .project {
     max-width: 30%;
     padding: 2rem;
+    font-size: 1.2rem;
+  }
+
+  .project span {
+    font-weight: bolder;
+    font-size: 1.4rem;
   }
 
   .buttons-container {
@@ -681,7 +683,6 @@ textarea:focus {
   text-align: center;
   color: #fff;
 }
-
 
 .btn-form:hover {
   background: var(--clr-primary-10);
