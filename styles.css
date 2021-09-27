@@ -412,6 +412,7 @@ footer p {
   }
 }
 
+
 /*
 =============== 
 Projects
@@ -666,6 +667,14 @@ textarea:focus {
 .mail-form input {
   height: 2rem;
 }
+
+.form-result {
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  color: #fff;
+}
+
 
 .btn-form:hover {
   background: var(--clr-primary-10);

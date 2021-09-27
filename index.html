@@ -206,12 +206,14 @@
           <!-- single item -->
           <div class="content active" id="mail">
             <div class="mail-form">
-              <form id="contactform" action="https://formsubmit.io/send/2000_aktau@mail.ru" method="POST">
+              <form id="contact-form">
+                <input type="hidden" name="contact_number">
                 <input type="text" placeholder="FirstName" name="firstName"> <br>
                 <input type=" text" placeholder="LastName" name="lastName"> <br>
                 <input type="email" placeholder="Your Mail" name="email">
                 <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message..."></textarea> <br>
-
+                <p class="form-result"></p>
+                
                 <button class="btn btn-form" type="submit" style="text-transform: capitalize;">Send</button>
               </form>
             </div>
@@ -250,6 +252,8 @@
   <a href="#home" class="scroll-link top-link">
     <i class="fas fa-arrow-up"></i>
   </a>
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <!-- Google Maps -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg057wIuLJLKRhivpTkUURwHzJJRT-KNA&callback=initMap"
     async></script>

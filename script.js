@@ -7,6 +7,8 @@
 const date = document.getElementById('date');
 date.innerHTML = new Date().getFullYear();
 
+
+
 // ********** close links ************
 const navToggle = document.querySelector('.nav-toggle');
 const linksContainer = document.querySelector('.links-container');
@@ -23,6 +25,8 @@ navToggle.addEventListener('click', function(){
     linksContainer.style.height = 0;
   }
 })
+
+
 
 const navbar = document.getElementById('nav');
 const topLink = document.querySelector('.top-link');
@@ -42,6 +46,9 @@ window.addEventListener('scroll', function(){
     topLink.classList.remove('show-link');
   }
 })
+
+
+
 // ********** smooth scroll ************
 // select links
 const scrollLinks = document.querySelectorAll('.scroll-link');
@@ -75,9 +82,8 @@ scrollLinks.forEach(function(link){
 })
 
 
-// Tabs
 
-
+// ********** Tabs ************
 const about = document.querySelector(".about");
 const btns = document.querySelectorAll(".tab-btn");
 const articles = document.querySelectorAll(".content");
@@ -100,8 +106,8 @@ about.addEventListener("click", function (e) {
 
 
 
-// MAP-API
 
+// ********** Map API ************
 let map;
 
 function initMap() {
@@ -117,3 +123,44 @@ function initMap() {
     title: "Hello World!",
   });
 }
+
+
+
+// ********** Mail Form ************
+const inputs = document.querySelectorAll("input:not(input[type=hidden])");
+const textArea = document.querySelector("textarea");
+const formResult = document.querySelector(".form-result");
+
+
+(function () {
+  emailjs.init("user_Y9JvB1xXlcYgAhrtbT7Wj");
+})();
+
+
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    // generate a five digit number for the contact_number variable
+    this.contact_number.value = Math.random() * 100000 | 0;
+    // these IDs from the previous steps
+    emailjs.sendForm('service_blmc1ih', 'my_template', this)
+        .then(function() {
+          inputs.forEach(input => { input.value = ""; })
+          textArea.value = "";
+          formResult.style.display = "block";
+          formResult.style.backgroundColor = "hsla(182, 63%, 54%)";
+          formResult.innerHTML = "Thank You!";
+          setTimeout(()=>{
+            formResult.style.display = "none";
+          }, 3000)
+            // console.log('SUCCESS!');
+        }, function(error) {
+            console.log('FAILED...', error);
+            formResult.style.display = "block";
+            formResult.style.backgroundColor = "red";
+          formResult.innerHTML = "FAILED!";
+          setTimeout(()=>{
+            formResult.style.display = "none";
+          }, 3000)
+        });
+});
+
