@@ -426,12 +426,19 @@ Projects
   margin: 3rem 3rem;
   border-radius: 10px;
   background: linear-gradient(45deg, rgb(214, 255, 245), rgb(255, 251, 251) , rgb(149, 245, 240));
+  font-size: 1.2rem;
 }
 
 .project img {
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
   margin-bottom: 1rem;
+}
+
+.project span{
+  color:#49a6e9;
+  font-weight: bolder;
+  font-size: 1.4rem;
 }
 
 .buttons-container {
