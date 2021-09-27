@@ -421,7 +421,7 @@ Projects
 .project {
   border: 1px solid #000;
   padding: 1rem;
-  margin: 3rem 3rem;
+  margin: 3rem 1rem;
   border-radius: 10px;
   background: linear-gradient(45deg, rgb(214, 255, 245), rgb(255, 251, 251), rgb(149, 245, 240));
 }
@@ -436,6 +436,7 @@ Projects
   color: #49a6e9;
   font-weight: bolder;
 }
+
 
 .buttons-container {
   margin: 2rem auto 1.3rem;
@@ -484,6 +485,10 @@ Projects
 }
 
 @media screen and (min-width: 1024px) {
+  .banner p {
+    font-size: 2rem;
+  }
+
   .project-cards {
     display: flex;
     width: 100%;
@@ -506,6 +511,11 @@ Projects
 
   .section-center {
     width: 0%;
+  }
+  
+  .about-info {
+    padding: 1rem;
+    font-size: 1.6rem;
   }
 }
 
