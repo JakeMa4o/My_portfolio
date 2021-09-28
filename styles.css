@@ -661,6 +661,8 @@ Contact Me
 }
 
 #map-api {
+  -webkit-border-radius: 12px; 
+  -moz-border-radius: 12px; 
   border-radius: 10px;
   height: 30rem;
   width: 100%;
