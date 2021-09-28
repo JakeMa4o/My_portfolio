@@ -1,4 +1,4 @@
- // Element.getBoundingClientRect() method returns the size of an element and its position relative to the viewport.
+// Element.getBoundingClientRect() method returns the size of an element and its position relative to the viewport.
 // pageYOffset is a read - only window property that returns the number of pixels the document has been scrolled vertically.
 // slice extracts a section of a string without modifying original string
 //offsetTop - A Number, representing the top position of the element, in pixels
@@ -14,12 +14,12 @@ const navToggle = document.querySelector('.nav-toggle');
 const linksContainer = document.querySelector('.links-container');
 const links = document.querySelector('.links');
 
-navToggle.addEventListener('click', function(){
+navToggle.addEventListener('click', function () {
   // linksContainer.classList.toggle('show-links');
   const linksHeight = links.getBoundingClientRect().height;
   const containerHeight = linksContainer.getBoundingClientRect().height;
-  
-  if (containerHeight === 0){
+
+  if (containerHeight === 0) {
     linksContainer.style.height = `${linksHeight}px`;
   } else {
     linksContainer.style.height = 0;
@@ -31,16 +31,16 @@ navToggle.addEventListener('click', function(){
 const navbar = document.getElementById('nav');
 const topLink = document.querySelector('.top-link');
 // ********** fixed navbar ************
-window.addEventListener('scroll', function(){
+window.addEventListener('scroll', function () {
   const scrollHeight = window.pageYOffset;
-  const navHeight  = navbar.getBoundingClientRect().height;
-  if(scrollHeight > navHeight){
+  const navHeight = navbar.getBoundingClientRect().height;
+  if (scrollHeight > navHeight) {
     navbar.classList.add('fixed-nav');
   } else {
     navbar.classList.remove('fixed-nav');
   }
 
-  if(scrollHeight > 500) {
+  if (scrollHeight > 500) {
     topLink.classList.add('show-link');
   } else {
     topLink.classList.remove('show-link');
@@ -52,8 +52,8 @@ window.addEventListener('scroll', function(){
 // ********** smooth scroll ************
 // select links
 const scrollLinks = document.querySelectorAll('.scroll-link');
-scrollLinks.forEach(function(link){
-  link.addEventListener('click', function(e){
+scrollLinks.forEach(function (link) {
+  link.addEventListener('click', function (e) {
     // prevent default
     e.preventDefault();
     // navigate to specific spot
@@ -65,16 +65,16 @@ scrollLinks.forEach(function(link){
     const fixedNav = navbar.classList.contains("fixed-nav");
     let position = element.offsetTop - navHeight;
 
-    if (!fixedNav){
+    if (!fixedNav) {
       position = position - navHeight;
     }
-    if (navHeight > 82){
+    if (navHeight > 82) {
       position = position + containerHeight;
     }
-    
+
 
     window.scrollTo({
-      left: 0, 
+      left: 0,
       top: position,
     });
     linksContainer.style.height = 0;
@@ -130,6 +130,7 @@ function initMap() {
 const inputs = document.querySelectorAll("input:not(input[type=hidden])");
 const textArea = document.querySelector("textarea");
 const formResult = document.querySelector(".form-result");
+const showEmail = document.querySelector(".show-email");
 
 
 (function () {
@@ -137,30 +138,34 @@ const formResult = document.querySelector(".form-result");
 })();
 
 
-  document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    // generate a five digit number for the contact_number variable
-    this.contact_number.value = Math.random() * 100000 | 0;
-    // these IDs from the previous steps
-    emailjs.sendForm('service_blmc1ih', 'my_template', this)
-        .then(function() {
-          inputs.forEach(input => { input.value = ""; })
-          textArea.value = "";
-          formResult.style.display = "block";
-          formResult.style.backgroundColor = "hsla(182, 63%, 54%)";
-          formResult.innerHTML = "Thank You!";
-          setTimeout(()=>{
-            formResult.style.display = "none";
-          }, 3000)
-            // console.log('SUCCESS!');
-        }, function(error) {
-            console.log('FAILED...', error);
-            formResult.style.display = "block";
-            formResult.style.backgroundColor = "red";
-          formResult.innerHTML = "FAILED!";
-          setTimeout(()=>{
-            formResult.style.display = "none";
-          }, 3000)
-        });
+document.getElementById('contact-form').addEventListener('submit', function (event) {
+  event.preventDefault();
+  // generate a five digit number for the contact_number variable
+  this.contact_number.value = Math.random() * 100000 | 0;
+  // these IDs from the previous steps
+  emailjs.sendForm('service_blmc1ih', 'my_template', this)
+    .then(function () {
+      inputs.forEach(input => { input.value = ""; })
+      textArea.value = "";
+      formResult.style.display = "block";
+      formResult.style.backgroundColor = "hsla(182, 63%, 54%)";
+      formResult.innerHTML = "Thank You!";
+      setTimeout(() => {
+        formResult.style.display = "none";
+      }, 3000)
+      // console.log('SUCCESS!');
+    }, function (error) {
+      console.log('FAILED...', error);
+      formResult.style.display = "block";
+      formResult.style.backgroundColor = "red";
+      formResult.innerHTML = "Oops! Something went wrong";
+      setTimeout(() => {
+        formResult.style.display = "none";
+      }, 3000)
+      showEmail.innerHTML = "Please email: 2000_aktau@mail.ru!";
+      setTimeout(()=> {
+        showEmail.style.display = "none";
+      }, 10000)
+    });
 });
 
