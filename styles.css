@@ -661,9 +661,9 @@ Contact Me
 }
 
 #map-api {
+  border-radius: 10px;
   height: 30rem;
   width: 100%;
-  border: 1px solid #000;
   display: grid;
   place-items: center;
 }
