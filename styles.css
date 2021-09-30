@@ -318,6 +318,18 @@ header {
   margin-top: 2rem;
 }
 
+.fab {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.social-medias li:hover .fa-linkedin{
+  color: rgba(31, 126, 235, 0.698);
+}
+.social-medias li:hover .fa-github{
+  color: black;
+}
+
 .banner {
   min-height: 100vh;
   display: grid;
@@ -646,12 +658,19 @@ Contact Me
   display: block;
 }
 
-.my-image {
-  margin: auto;
+.my-img {
+  display: grid;
+  place-items: center;
+}
+
+.my-img img {
+  border-radius: 10px;
+  width: 100rem;
 }
 
 .about-info {
   display: flex;
+  gap: 1rem;
 }
 
 @media screen and (max-width: 768px) {
