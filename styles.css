@@ -569,7 +569,7 @@ Skills & Tools
 }
 
 .tech-stack {
-  display: flex;
+  margin-bottom: 3rem;
 }
 .front-end,
 .back-end,
