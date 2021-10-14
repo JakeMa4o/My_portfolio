@@ -668,6 +668,19 @@ Contact Me
   width: 100rem;
 }
 
+/* 464px */
+
+@media screen and (min-width: 596px) {
+  .my-img img {
+    min-width: 20rem;
+  }
+}
+@media screen and (min-width: 464px) {
+  .my-img img {
+    max-width: 70%;
+  }
+}
+
 .about-info {
   display: flex;
   gap: 1rem;
