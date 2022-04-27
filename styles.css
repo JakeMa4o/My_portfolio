@@ -236,6 +236,10 @@ nav {
 .nav-toggle:hover {
   color: var(--clr-secondary);
 }
+.nav-header a {
+  color:black;
+}
+
 .logo {
   height: 50px;
   font-size: 2rem;
