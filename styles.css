@@ -563,8 +563,8 @@ Skills & Tools
 ===============
 */
 #skills-tools img {
-  width: 50px;
-  height: 50px;
+  max-width: 100px;
+  max-height: 100px;
   margin: auto;
 }
 
@@ -582,16 +582,16 @@ Skills & Tools
 
 .item {
   margin: 1rem;
-  border: 1px solid #000;
   border-radius: 10px;
   text-align: center;
   font-size: 1.2rem;
   text-transform: uppercase;
   color: var(--clr-secondary);
-  background-color: var(--clr-primary-10);
   width: 8rem;
   height: 8rem;
   padding: 1rem;
+  display: grid;
+  place-items: center;
 }
 
 .tech-title {
