@@ -81,31 +81,6 @@ scrollLinks.forEach(function (link) {
 })
 
 
-
-// ********** Tabs ************
-const about = document.querySelector(".about");
-const btns = document.querySelectorAll(".tab-btn");
-const articles = document.querySelectorAll(".content");
-about.addEventListener("click", function (e) {
-  const id = e.target.dataset.id;
-  if (id) {
-    // remove selected from other buttons
-    btns.forEach(function (btn) {
-      btn.classList.remove("active");
-    });
-    e.target.classList.add("active");
-    // hide other articles
-    articles.forEach(function (article) {
-      article.classList.remove("active");
-    });
-    const element = document.getElementById(id);
-    element.classList.add("active");
-  }
-});
-
-
-
-
 // ********** Map API ************
 let map;
 
@@ -139,20 +114,41 @@ const showEmail = document.querySelector(".show-email");
 
 document.getElementById('contact-form').addEventListener('submit', function (event) {
   event.preventDefault();
+  inputs.forEach(input => {
+    if (input.value === "") {
+      console.log("Empty inputs")
+    } else {
+      console.log(input.value)
+    }
+  })
   // generate a five digit number for the contact_number variable
   this.contact_number.value = Math.random() * 100000 | 0;
   // these IDs from the previous steps
   emailjs.sendForm('service_blmc1ih', 'my_template', this)
     .then(function () {
-      inputs.forEach(input => { input.value = ""; })
-      textArea.value = "";
-      formResult.style.display = "block";
-      formResult.style.backgroundColor = "hsla(182, 63%, 54%)";
-      formResult.innerHTML = "Thank You!";
-      setTimeout(() => {
-        formResult.style.display = "none";
-      }, 3000)
-      // console.log('SUCCESS!');
+      inputs.forEach(input => {
+        if (input.value === "") {
+          formResult.style.display = "block";
+          formResult.style.backgroundColor = "yellow";
+          formResult.style.color = "black";
+          formResult.style.padding = "1rem";
+          formResult.innerHTML = "Please fill out the missing fields";
+          setTimeout(() => {
+            formResult.style.display = "none";
+          }, 3000)
+          return
+        }
+        input.value = "";
+        textArea.value = "";
+        formResult.style.display = "block";
+        formResult.style.backgroundColor = "hsla(182, 63%, 54%)";
+        formResult.style.padding = "1rem";
+        formResult.innerHTML = "Thank You!";
+        setTimeout(() => {
+          formResult.style.display = "none";
+        }, 3000)
+        // console.log('SUCCESS!');
+      })
     }, function (error) {
       console.log('FAILED...', error);
       formResult.style.display = "block";
@@ -162,7 +158,7 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
         formResult.style.display = "none";
       }, 3000)
       showEmail.innerHTML = "Please email: 2000_aktau@mail.ru!";
-      setTimeout(()=> {
+      setTimeout(() => {
         showEmail.style.display = "none";
       }, 10000)
     });
