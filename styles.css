@@ -1,13 +1,5 @@
 /*
 =============== 
-Fonts
-===============
-*/
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap");
-
-/*
-=============== 
 Variables
 ===============
 */
@@ -133,6 +125,8 @@ p {
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: var(--radius);
+  width: 50%;
+  margin: auto;
 }
 .btn:hover {
   color: var(--clr-white);
@@ -190,6 +184,10 @@ nav {
 }
 .fixed-nav .links a:hover {
   color: var(--clr-secondary);
+}
+.links-container {
+  margin-left: auto;
+  margin-right: 10rem;
 }
 /* .fixed-nav .links-container {
   height: auto !important;
@@ -299,6 +297,12 @@ header {
 .title span {
   color: var(--clr-secondary);
 }
+.title a {
+  color: var(--clr-secondary);
+}
+.arrow-down i{
+  transform: rotate(180deg);
+}
 #about {
   background: var(--clr-grey-10);
   padding: 5rem 0 20rem;
@@ -339,6 +343,18 @@ footer p {
 .show-link {
   visibility: visible;
   z-index: 100;
+}
+
+#language {
+  border: none;
+  padding: .5rem;
+  background-color: transparent;
+  font-size: 1rem;
+}
+
+#language option {
+  padding: 1rem;
+  font-size: 1rem;
 }
 
 @keyframes bounce {
@@ -530,6 +546,7 @@ Contact Me
 .mail-form {
   padding-bottom: 3rem;
   position: relative;
+  flex: 1;
 }
 
 #map-api {
@@ -595,6 +612,7 @@ textarea:focus {
 .btn-form {
   padding: 1rem 2rem;
   border-color: var(--clr-secondary);
+  width: 100%;
 }
 
 .btn-form:hover {
@@ -690,7 +708,7 @@ textarea:focus {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
   }
   .nav-header {
     padding: 0;
