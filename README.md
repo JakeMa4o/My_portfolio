@@ -1,8 +1,8 @@
 My portfolio - Check List
 
-<!-- 1) Update the text in about me section -->
+CHECK ---- 1) Update the text in about me section === (change style flexbox and image better smaller cause its too big in smartphone also compressed, mb pdf resume donwload button) ---- CHECK
 
-2) Simplify the mail form delete the surname field
+CHECK ---- 2) Add loading animation i guess its done with canvas (maybe, change style flexbox) ---- CHECK
 
 <!-- 3) Add new projects to the list -->
 
@@ -14,7 +14,7 @@ My portfolio - Check List
 
 <!-- 7) Update the foto get new and better one -->
 
-8) Add eng/rus language switch option. your shit aint perfect so add geolocation so it could help users to pick better one
+CHECK ---- 8) Eng/rus language switch option add geolocation so it could help users to pick fitting language ---- CHECK
 
 <!-- 9) Write a good as documentation for all your projects -->
 
@@ -29,3 +29,6 @@ Upload on Twitter
 Upload on LinkedIn 
 
 Learn React frameworks Redux Materilazed UI etc
+
+
+Today: Send the correct back info to CVUT

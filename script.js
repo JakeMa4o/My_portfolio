@@ -2,6 +2,26 @@
 // pageYOffset is a read - only window property that returns the number of pixels the document has been scrolled vertically.
 //offsetTop - A Number, representing the top position of the element, in pixels
 
+
+// ********** Map API ************
+
+
+function initMap() {
+  let map;
+  const myLatLng = { lat: 43.6588, lng: 51.1975 };
+  map = new google.maps.Map(document.getElementById("map-api"), {
+    center: myLatLng,
+    zoom: 13,
+  });
+
+  new google.maps.Marker({
+    position: myLatLng,
+    map,
+    title: "Hello World!",
+  });
+}
+
+
 // Switch the lang 
 const engText = document.querySelectorAll("[lang=eng]");
 const rusText = document.querySelectorAll("[lang=rus]");
@@ -117,25 +137,6 @@ scrollLinks.forEach(function (link) {
     linksContainer.style.height = 0;
   });
 })
-
-
-// ********** Map API ************
-
-
-function initMap() {
-  let map;
-  const myLatLng = { lat: 43.6588, lng: 51.1975 };
-  map = new google.maps.Map(document.getElementById("map-api"), {
-    center: myLatLng,
-    zoom: 13,
-  });
-
-  new google.maps.Marker({
-    position: myLatLng,
-    map,
-    title: "Hello World!",
-  });
-}
 
 
 
