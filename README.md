@@ -2,9 +2,9 @@ My portfolio - Check List
 
 
 !!!!!!!(NOW)
- I) Resize/Cramp Images
+ <!-- I) Resize/Compress Images -->
+ II) Asynchorinous map api call (check out only first time load so people will not keep calling to an api when they refresh)
  III) Add animation for loading form as well as maybe loading the website in order to not show not rendered well stuff
- II) Asynchorinous map api call
 (NOW)!!!!!!
 
 
@@ -12,7 +12,7 @@ My portfolio - Check List
 
 CHECKING ---- 1) Update the text in about me section === (change style flexbox and image better smaller cause its too big in smartphone also compressed, mb pdf resume donwload button) ---- CHECKING
 
-CHECKING ---- 2) Add loading animation i guess its done with canvas (maybe, change style flexbox) ---- CHECKING
+<!-- CHECKED ---- 2) Add loading animation i guess its done with canvas (maybe, change style flexbox) ---- CHECKED -->
 
 <!-- 3) Add new projects to the list -->
 
@@ -43,4 +43,4 @@ Learn React frameworks Redux Materilazed UI etc
 For the fututre if there are a lot of emails coming from mailchimp maybe you could buy the subscription but if not then make it catch error or async in case of that show the email address with error text from the server side "Please email me on this mail"
 
 
-<!-- CHECK ---- Today: Send the correct back info to CVUT ---- CHECK -->
+<!-- CHECKED ---- Today: Send the correct back info to CVUT ---- CHECKED -->

@@ -546,6 +546,10 @@ Contact Me
   width: 80%;
 }
 
+#contact-form {
+  position: relative;
+}
+
 /* #contact-me .title {
   text-align-last: left;
 } */
@@ -593,7 +597,7 @@ textarea:focus {
 
 .form-messages {
   position: absolute;
-  top: 7rem;
+  top: -5rem;
   width: 100%;
 }
 
@@ -626,6 +630,83 @@ textarea:focus {
   background-color: var(--clr-secondary);
   color: #fff;
   box-shadow: 2px 0px 0px 7px rgb(192, 250, 251);
+}
+.btn-form:focus {
+  background-color: var(--clr-secondary);
+  color: #fff;
+  box-shadow: 2px 0px 0px 7px rgb(192, 250, 251);
+}
+
+/* LOADER.... */
+
+.loader-wrapper {
+  background-color: hsla(182, 63%, 54%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.loader {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border: 4px solid #Fff;
+  animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  
+  25% {
+    transform: rotate(180deg);
+  }
+  
+  50% {
+    transform: rotate(180deg);
+  }
+  
+  75% {
+    transform: rotate(360deg);
+  }
+  
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+  
+  25% {
+    height: 0%;
+  }
+  
+  50% {
+    height: 100%;
+  }
+  
+  75% {
+    height: 100%;
+  }
+  
+  100% {
+    height: 0%;
+  }
 }
 
 

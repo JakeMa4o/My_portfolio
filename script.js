@@ -52,14 +52,6 @@ select.addEventListener("change", (event) => {
 })
 
 
-// console.log(value);
-
-
-// const lang = document.querySelector("option[value=english]");
-// console.log(lang);
-
-
-
 // ********** set date ************
 const date = document.getElementById('date');
 date.innerHTML = new Date().getFullYear();
@@ -145,6 +137,8 @@ const inputs = document.querySelectorAll("input:not(input[type=hidden])");
 const textArea = document.querySelector("textarea");
 const formResult = document.querySelector(".form-result");
 const showEmail = document.querySelector(".show-email");
+// loader
+const loader = document.querySelector(".loader-wrapper");
 
 
 (function () {
@@ -154,15 +148,11 @@ const showEmail = document.querySelector(".show-email");
 
 document.getElementById('contact-form').addEventListener('submit', function (event) {
   event.preventDefault();
-  inputs.forEach(input => {
-    if (input.value === "") {
-      console.log("Empty inputs")
-    } else {
-      console.log(input.value)
-    }
-  })
   // generate a five digit number for the contact_number variable
   this.contact_number.value = Math.random() * 100000 | 0;
+  // Here goes the loader
+  loader.style.display = "grid";
+  loader.style.placeItems = "center";
   // these IDs from the previous steps
   emailjs.sendForm('service_blmc1ih', 'my_template', this)
     .then(function () {
@@ -177,6 +167,7 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
           formResult.style.display = "none";
         }, 3000)
         // console.log('SUCCESS!');
+        loader.style.display = "none";
       })
     }, function (error) {
       console.log('FAILED...', error);

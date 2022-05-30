@@ -323,15 +323,15 @@
     <section id="contact-me" class="section">
       <div class="contact-container">
         <div class="mail-form">
+          <div class="title" lang="eng">
+            <h2>Work with <span>me</span></h2>
+            <p>I’m always open to discussing product design work or partnership opportunities.</p>
+          </div>
+          <div class="title" lang="rus">
+            <h2>Работай <span>со мной</span></h2>
+            <p>Я всегда открыт для обсуждения работы по дизайну продукта или возможностей партнерства.</p>
+          </div>
           <form id="contact-form">
-            <div class="title" lang="eng">
-              <h2>Work with <span>me</span></h2>
-              <p>I’m always open to discussing product design work or partnership opportunities.</p>
-            </div>
-            <div class="title" lang="rus">
-              <h2>Работай <span>со мной</span></h2>
-              <p>Я всегда открыт для обсуждения работы по дизайну продукта или возможностей партнерства.</p>
-            </div>
             <div class="form-messages">
               <p class="form-result"></p>
               <p class="show-email"></p>
@@ -346,6 +346,10 @@
             <!-- <textarea name="message" id="" cols="30" rows="10" placeholder="Ваше сообщение..." required lang="rus"></textarea> -->
             <button class="btn btn-form" type="submit" style="text-transform: capitalize;">Send message!</button>
             <!-- <button class="btn btn-form" type="submit" style="text-transform: capitalize;" lang="rus">Отправить!</button> -->
+            <!-- Loading square -->
+            <div class="loader-wrapper">
+              <span class="loader"><span class="loader-inner"></span></span>
+            </div>
           </form>
         </div>
 
@@ -357,25 +361,25 @@
         <!-- <a href="" target="_blank"><img src="" alt=""></a> -->
       </div>
     </section>
-    <!-- footer -->
-    <footer class="section">
-      <p>
-        &copy; Zhalgas Miyatbekov <span id="date"></span>.
-      </p>
-      <ul class="social-medias">
-        <li>
-          <a href="https://www.linkedin.com/in/zhalgas-miyatbekov/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </li>
-        <li>
-          <a href="https://github.com/JakeMa4o" target="_blank"><i class="fab fa-github"></i></a>
-        </li>
-      </ul>
-    </footer>
-    <!-- back to top button -->
-    <a href="#home" class="scroll-link top-link">
-      <i class="fas fa-arrow-up"></i>
-    </a>
   </main>
+  <!-- footer -->
+  <footer class="section">
+    <p>
+      &copy; Zhalgas Miyatbekov <span id="date"></span>.
+    </p>
+    <ul class="social-medias">
+      <li>
+        <a href="https://www.linkedin.com/in/zhalgas-miyatbekov/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </li>
+      <li>
+        <a href="https://github.com/JakeMa4o" target="_blank"><i class="fab fa-github"></i></a>
+      </li>
+    </ul>
+  </footer>
+  <!-- back to top button -->
+  <a href="#home" class="scroll-link top-link">
+    <i class="fas fa-arrow-up"></i>
+  </a>
   <!-- EmailJS -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <!-- Google Maps -->
