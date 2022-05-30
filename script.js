@@ -167,17 +167,6 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
   emailjs.sendForm('service_blmc1ih', 'my_template', this)
     .then(function () {
       inputs.forEach(input => {
-        if (input.value === "") {
-          formResult.style.display = "block";
-          formResult.style.backgroundColor = "yellow";
-          formResult.style.color = "black";
-          formResult.style.padding = "1rem";
-          formResult.innerHTML = "Please fill out the missing fields";
-          setTimeout(() => {
-            formResult.style.display = "none";
-          }, 3000)
-          return
-        }
         input.value = "";
         textArea.value = "";
         formResult.style.display = "block";
