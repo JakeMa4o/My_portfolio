@@ -27,12 +27,20 @@
       <div class="nav-center">
         <!-- nav header -->
         <div class="nav-header">
-          <a href="#home">
+          <a class="logo-link" href="#home">
             <div class="logo">JM</div>
           </a>
-          <button class="nav-toggle">
-            <i class="fas fa-bars"></i>
-          </button>
+          <div class="nav-tools">
+            <!-- Language sellection -->
+            <select id="language">
+              <option value="eng" selected>English</option>
+              <option value="rus">Русский</option>
+            </select>
+            <!-- Hamburger -->
+            <button class="nav-toggle">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
         </div>
         <!-- links -->
         <div class="links-container">
@@ -63,14 +71,6 @@
             </li>
           </ul>
         </div>
-
-        <!-- Language sellection -->
-        <select id="language">
-          <option value="eng" selected>English</option>
-          <option value="rus">Русский</option>
-        </select>
-        <!-- Language sellection -->
-
       </div>
     </nav>
     <!-- banner -->

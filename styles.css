@@ -197,6 +197,11 @@ nav {
   align-items: center;
   justify-content: space-between;
 }
+.nav-tools {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+}
 .nav-toggle {
   font-size: 1.5rem;
   color: var(--clr-grey-1);
@@ -798,8 +803,12 @@ textarea:focus {
     align-items: center;
     /* justify-content: space-between; */
   }
+  .nav-tools {
+    flex-direction: row-reverse;
+  }
   .nav-header {
     padding: 0;
+    flex: 1;
   }
   .contact-container {
     padding: 2rem;
