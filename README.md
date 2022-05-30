@@ -1,11 +1,11 @@
 My portfolio - Check List
 
 
-!!!!!!!(NOW)
+CHECK ----
  <!-- I) Resize/Compress Images -->
- II) Asynchorinous map api call (check out only first time load so people will not keep calling to an api when they refresh)
+ <!-- NOT SURE ABOUT THIS ONE ---- Asynchorinous map api call (check out only first time load so people will not keep calling to an api when they refresh) ---- NOT SURE ABOUT THIS ONE -->
  III) Add animation for loading form as well as maybe loading the website in order to not show not rendered well stuff
-(NOW)!!!!!!
+---- CHECK
 
 
 
@@ -24,11 +24,11 @@ CHECKING ---- 1) Update the text in about me section === (change style flexbox a
 
 <!-- 7) Update the foto get new and better one -->
 
-CHECKING ---- 8) Eng/rus language switch option add geolocation so it could help users to pick fitting language ---- CHECKING
+<!-- NOT SURE ABOUT THIS ONE ---- Eng/rus language switch option add geolocation so it could help users to pick fitting language ---- NOT SURE ABOUT THIS ONE -->
 
-<!-- 9) Write a good as documentation for all your projects -->
+<!-- 8) Write a good as documentation for all your projects -->
 
-<!-- 10) Last but not least update the resume and put it into the website so anyone could download it -->
+<!-- 9) Last but not least update the resume and put it into the website so anyone could download it -->
 
 extra:
 
