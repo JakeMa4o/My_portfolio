@@ -634,13 +634,12 @@ textarea:focus {
 .btn-form:hover {
   background-color: var(--clr-secondary);
   color: #fff;
-  box-shadow: 2px 0px 0px 7px rgb(192, 250, 251);
 }
-/* .btn-form:focus {
+.btn-form:focus {
   background-color: var(--clr-secondary);
   color: #fff;
   box-shadow: 2px 0px 0px 7px rgb(192, 250, 251);
-} */
+}
 
 /* LOADER.... */
 

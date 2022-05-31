@@ -1,7 +1,5 @@
 My portfolio - Check List
 
-
-
 0) Language make it similar to https://www.loungelizard.com/ with icons and fs=ont style same as navbar
 
 ON THE PROCESS ---- 1) Update the text in about me section === (change style flexbox and image better smaller cause its too big in smartphone also compressed, mb pdf resume donwload button) ---- ON THE PROCESS
@@ -31,5 +29,3 @@ Upload on Twitter
 Upload on LinkedIn 
 
 Learn React frameworks Redux Materilazed UI etc
-
-<!-- CHECKED ---- Today: Send the correct back info to CVUT ---- CHECKED -->
