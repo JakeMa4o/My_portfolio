@@ -18,7 +18,7 @@ ON THE PROCESS ---- 3) Add new projects to the list, work on them ---- ON THE PR
 
 <!-- 9) Last but not least update the resume and put it into the website so anyone could download it -->
 
-10) Host other projects add to the portfolio
+10) Minify/squize the javascript so it will function faster and weights less
 
 extra:
 
