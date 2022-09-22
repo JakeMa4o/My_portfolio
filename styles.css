@@ -476,6 +476,7 @@ Projects
   position: relative;
   border-radius: 10px;
   flex: 0 1 100%;
+  max-height: 25rem;
 }
 
 .project-info {
