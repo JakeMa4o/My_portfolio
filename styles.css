@@ -352,18 +352,6 @@ footer p {
   z-index: 100;
 }
 
-#language {
-  border: none;
-  padding: .5rem;
-  background-color: transparent;
-  font-size: 1rem;
-}
-
-#language option {
-  padding: 1rem;
-  font-size: 1rem;
-}
-
 @keyframes bounce {
   0% {
     transform: scale(1);

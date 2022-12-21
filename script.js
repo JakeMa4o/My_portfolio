@@ -22,36 +22,6 @@ function initMap() {
 }
 
 
-// Switch the lang 
-const engText = document.querySelectorAll("[lang=eng]");
-const rusText = document.querySelectorAll("[lang=rus]");
-const select = document.querySelector("#language");
-
-rusText.forEach(element => {
-  element.style.display = "none";
-})
-
-select.addEventListener("change", (event) => {
-  const value = event.target.value;
-  if (value === "eng") {
-    engText.forEach(element => {
-      element.style.display = "block";
-    })
-    rusText.forEach(element => {
-      element.style.display = "none";
-    })
-  } else {
-    rusText.forEach(element => {
-      element.style.display = "block";
-    })
-    engText.forEach(element => {
-      element.style.display = "none";
-    })
-  }
-  
-})
-
-
 // ********** set date ************
 const date = document.getElementById('date');
 date.innerHTML = new Date().getFullYear();
