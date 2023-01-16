@@ -1,5 +1,10 @@
 My portfolio - Check List
 
+Add animation on hero may even change the image but this one is good enough just take the clouds and some stuff and move them animate like its real or smth make it more live;y
+
+
+
+
 0) Language make it similar to https://www.loungelizard.com/ with icons and fs=ont style same as navbar
 
 ON THE PROCESS ---- 1) Update the text in about me section === (change style flexbox and image better smaller cause its too big in smartphone also compressed, mb pdf resume donwload button) ---- ON THE PROCESS
