@@ -224,7 +224,6 @@ nav {
   height: 50px;
   font-size: 2rem;
   font-family: "Black Ops One", cursive;
-  color: #fff;
 }
 .links-container {
   height: 0;
@@ -314,7 +313,7 @@ header {
 }
 #about {
   background: var(--clr-grey-10);
-  padding: 5rem 0 20rem;
+  padding: 5rem 0;
   width: 100%;
 }
 footer {
@@ -374,26 +373,23 @@ About
 ========  
 */
 
+#about {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .about-info {
   margin: auto;
-  width: 60%;
   text-align: center;
-  /* display: flex; */
 }
 
 .my-img {
   display: grid;
   place-items: center;
-  height: 100%; 
-  /* flex: 1; */
-}
-
-.my-text {
-  padding: 1rem;
+  height: 100%;
+  max-width: 60%;
   margin: auto;
-  font-size: 1.1rem;
-  /* height: 100%; */
-  /* flex: 1; */
 }
 
 .my-img img {
@@ -401,48 +397,31 @@ About
   min-width: 13rem;
 }
 
-/*
-=============== 
-Tech Stack
-===============
-*/
+.my-text {
+  margin: auto;
+  font-size: 1.1rem;
+}
 
 .tech-stack {
-  width: 70%;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.tech-icon {
   margin: auto;
-  position: relative;
-  top: -15rem;
-  background-color: var(--clr-white);
-  border-radius: 10px;
-  text-align: center;
-}
-
-.tech-stack h4 {
-  padding-top: 3rem;
-  color: var(--clr-secondary);
-  font-weight: 400;
-}
-.tech-stack h3 {
-  padding: 2rem 0 1.5rem;
-}
-
-.front-end, .back-end {
-  box-shadow: 0px 5px 4px #E6ECF8;
-  /* padding: 2rem 4rem; */
-  margin-top: 1rem;
-}
-
-.item {
+  padding: 1rem;
+  height: 5rem;
+  width: 5rem;
   display: flex;
-  width: 60%;
-  margin: 1rem auto;
   align-items: center;
+  justify-content: center;
+  border: 1px solid #000;
+  border-radius: 50%;
 }
 
-.item img {
-  margin-left: auto;
-  width: 55px;
-  height: 55px;
+.tech-icon img {
+  max-height: 100% !important;
 }
 
 
@@ -579,12 +558,7 @@ textarea {
 .mail-form input:focus,
 textarea:focus {
   outline: none;
-  height: 150%;
-  margin: 1rem;
-  position: relative;
-  right: 1rem;
-  /* background-color: var(--clr-secondary); */
-  background-color: rgb(110, 213, 216);
+  /* background-color: rgb(110, 213, 216); */
   font-weight: 600;
 }
 
@@ -626,11 +600,6 @@ textarea:focus {
 .btn-form:hover {
   background-color: var(--clr-secondary);
   color: #fff;
-}
-.btn-form:focus {
-  background-color: var(--clr-secondary);
-  color: #fff;
-  box-shadow: 2px 0px 0px 7px rgb(192, 250, 251);
 }
 
 /* LOADER.... */
@@ -745,9 +714,6 @@ textarea:focus {
 }
 
 @media screen and (min-width: 770px) {
-  .tech-stack {
-    display: flex;
-  }
   .item {
     width: 100%;
   }
@@ -780,6 +746,9 @@ textarea:focus {
   }
   .banner p {
     max-width: 40rem;
+  }
+  .logo {
+    color: #fff;
   }
 }
 
@@ -880,9 +849,44 @@ textarea:focus {
   }
 }
 
+
+@media screen and (min-width: 1080px) {
+  #about {
+    flex-direction: row;
+  }
+
+  #about > div {
+    flex-grow: 1; 
+  }
+
+  .about-info {
+    max-width: 50%;
+  }
+
+  .my-text {
+    margin: auto;
+    max-width: 50%;
+    font-size: 2rem;
+  }
+
+  .my-text > span {
+    font-size: 3rem !important;
+  }
+
+  .tech-icon {
+    width: 7rem;
+    height: 7rem;
+  }
+}
+
+
 @media screen and (min-width: 1300px) {
-  .tech-stack {
-    max-width: 40%;
+  .project-info {
+    font-size: 1.6rem;
+  }
+
+  .project-info span {
+    font-size: 2rem;
   }
 
   .project {

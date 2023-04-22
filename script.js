@@ -144,13 +144,12 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
       formResult.style.display = "block";
       formResult.style.backgroundColor = "red";
       formResult.innerHTML = "Oops! Something went wrong";
+      showEmail.innerHTML = "Please email: zhalgasmiyatbekov@gmail.com!";
       setTimeout(() => {
         formResult.style.display = "none";
+        // showEmail.style.display = "none";
       }, 3000)
-      showEmail.innerHTML = "Please email: 2000_aktau@mail.ru!";
-      setTimeout(() => {
-        showEmail.style.display = "none";
-      }, 10000)
+      loader.style.display = "none";
     });
 });
 
