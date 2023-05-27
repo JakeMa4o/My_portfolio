@@ -956,10 +956,6 @@ footer p {
   .banner p {
     max-width: 40rem;
   }
-
-  .logo {
-    /* color: #fff; */
-  }
 }
 
 @media screen and (min-width: 800px) {
@@ -1106,6 +1102,10 @@ footer p {
 
 
 @media screen and (min-width: 1300px) {
+  .mobile-card-reminder {
+    opacity: 0;
+  }
+
   .project-info {
     font-size: 1.6rem;
   }
