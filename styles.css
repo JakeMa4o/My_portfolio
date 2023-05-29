@@ -355,7 +355,7 @@ header {
   min-height: 100vh;
   display: grid;
   place-items: center;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .hero {
@@ -363,18 +363,21 @@ header {
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  /* padding: 2rem 0; */
   gap: 2rem;
   align-items: center;
 }
 
 .hero-img {
   width: 15rem;
-  height: 50rem;
+  height: 40rem;
   margin: auto;
   /* border-radius: 40%; */
   overflow: hidden;
   transition: all ease-in;
+}
+
+.hero-img img {
+  object-fit: contain;
 }
 
 .hero h1 {
@@ -433,8 +436,6 @@ About
 
 .tech-stack {
   display: flex;
-  max-width: 100%;
-  justify-content: space-between;
   flex-wrap: wrap;
 }
 
@@ -571,85 +572,94 @@ Projects
 */
 
 #projects {
-  padding: 5rem 0 10rem;
   margin-top: -8rem;
   border-bottom: 1px solid #e6ecf8;
   margin: auto;
   background: var(--clr-grey-10);
-}
-
-.project-cards {
-  display: flex;
-  flex-wrap: wrap;
+  width: 100%;
 }
 
 .project {
-  position: relative;
-  /* border-radius: 10px; */
-  /* flex: 0 1 100%; */
-  height: 25rem;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  padding-bottom: 10rem;
+  width: 70%;
+  margin: auto;
 }
 
+.project-img {
+  max-width: 45rem;
+}
+
+.project-img img {
+  border-radius: 10px;
+}
+
+
 .project-info {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(54, 54, 54, 0.7);
-  /* color: #FFFFFF; */
-  transition: .5s;
-  display: grid;
-  place-items: center;
-  text-align: center;
   font-size: .7rem;
 }
 
 .project-title {
-  text-align: center;
-  color: var(--clr-secondary);
+  font-size: 3rem;
+  padding: 0 0 2rem;
 }
+
+.project-tools {}
 
 .description {
-  color: #FFFFFF;
+  /* color: #FFFFFF; */
 }
 
-.project:hover .project-info {
-  left: 0;
+.project-tools>span {
+  display: inline-block;
+  border: 1px solid #000;
+  background-color: #000;
+  color: #fff;
+  margin-right: .2rem;
+  font-size: 1.2rem;
+  padding: .3rem .5rem;
 }
 
-.project img {
-  width: 100%;
-  height: 100%;
-}
-
-.project span {
-  color: var(--clr-secondary);
+.project .description span {
+  /* color: var(--clr-secondary); */
   font-weight: bolder;
 }
 
 .buttons-container {
   display: flex;
-  justify-content: space-around;
-  width: 70%;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 3rem 0;
 }
 
-.btn-project {
+.button {
+  border: 2px solid #000;
+  padding: .9rem 0;
+}
+
+.button:hover .project-link {
+  bottom: 0;
+  right: 0;
+}
+
+.project-link {
+  position: relative;
+  bottom: .7rem;
+  right: .7rem;
+  padding: 1rem;
+  background-color: var(--clr-secondary);
   color: #fff;
-  border: 1px solid hsla(182, 63%, 54%);
-  padding: .3rem .5rem;
-  border-radius: 10px;
-  transition: .5s;
+  transition: all .2s
 }
 
-.btn-project i {
+.project-link i {
   margin-right: .5rem;
 }
 
-.btn-project:hover {
-  background-color: var(--clr-secondary);
-}
+
 
 
 /*
@@ -875,13 +885,10 @@ footer p {
 /* ============== */
 /* @media queries */
 /* ============== */
-@media screen and (min-width: 383px) {
-  .buttons-container {
-    padding: 0 1rem;
-  }
 
-  .project-info {
-    font-size: .9rem;
+@media screen and (min-width: 394px) {
+  .buttons-container {
+    flex-direction: row;
   }
 }
 
@@ -903,7 +910,16 @@ footer p {
   }
 }
 
+@media screen and (min-width: 576px) {
+
+  .project {
+    height: auto !important;
+  }
+
+}
+
 @media screen and (min-width: 767px) {
+
   .contact-container input {
     min-height: 3rem;
     font-size: 1.3rem;
@@ -918,10 +934,6 @@ footer p {
 @media screen and (min-width: 770px) {
   .item {
     width: 100%;
-  }
-
-  .project {
-    flex-basis: 50%;
   }
 }
 
@@ -959,6 +971,7 @@ footer p {
 }
 
 @media screen and (min-width: 800px) {
+
   nav {
     background: transparent;
   }
@@ -1038,6 +1051,7 @@ footer p {
   .hero-img {
     width: 20rem;
   }
+
 }
 
 @media screen and (min-width: 992px) {
@@ -1051,7 +1065,7 @@ footer p {
     font-size: 2rem;
   }
 
-  .project span {
+  .project .description span {
     font-weight: bolder;
     font-size: 1.4rem;
   }
@@ -1098,10 +1112,16 @@ footer p {
     width: 7rem;
     height: 7rem;
   }
+
 }
 
 
 @media screen and (min-width: 1300px) {
+
+  #projects {
+    padding: 5rem 12rem 10rem;
+  }
+
   .mobile-card-reminder {
     opacity: 0;
   }
@@ -1110,7 +1130,7 @@ footer p {
     font-size: 1.6rem;
   }
 
-  .project-info span {
+  .project-info .description span {
     font-size: 2rem;
   }
 
@@ -1125,15 +1145,17 @@ footer p {
     width: 30rem;
   }
 
-  .buttons-container {
-    width: 70%;
-  }
-
   .project-info {
     padding: 0 2rem;
   }
 
   .item {
     width: 60%;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .project {
+    flex-direction: row;
   }
 }
