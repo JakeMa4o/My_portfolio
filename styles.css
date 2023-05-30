@@ -227,7 +227,7 @@ nav {
 }
 
 .fixed-nav .logo {
-  color: var(--clr-grey-1);
+  color: var(--clr-black);
 }
 
 .fixed-nav .links a:hover {
@@ -403,7 +403,7 @@ About
   /* gap: 1rem; */
   /* background: var(--clr-grey-10); */
   background-color: #f9f9f9;
-  padding: 5rem 12rem;
+  padding: 5rem 0;
   width: 100%;
   position: relative;
 }
@@ -585,7 +585,7 @@ Projects
   padding-bottom: 10rem;
   width: 70%;
   margin: auto;
-  /* gap: 5rem; */
+  gap: 5rem;
 }
 
 .project-img {
@@ -619,7 +619,6 @@ Projects
 
 .project-info {
   font-size: .7rem;
-  /* max-width: 50%; */
   flex: 1;
   position: relative;
   transform: translateX(-30rem);
@@ -1192,6 +1191,10 @@ footer p {
 
 @media screen and (min-width: 1600px) {
 
+  #about {
+    padding: 5rem 12rem;
+  }
+
   .hero-img {
     width: 30rem;
   }
@@ -1208,5 +1211,15 @@ footer p {
 @media screen and (min-width: 1800px) {
   .project {
     flex-direction: row;
+    width: 100%;
   }
 }
+
+@media screen and (min-width: 1894px) {
+  .project {
+    width: 70%;
+    flex-direction: row;
+  }
+}
+
+
