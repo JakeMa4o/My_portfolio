@@ -587,11 +587,11 @@ Projects
   padding-bottom: 10rem;
   width: 70%;
   margin: auto;
+  /* gap: 5rem; */
 }
 
 .project-img {
   width: 100%;
-  border: 1px solid #000;
   height: 21.3rem;
   /* max-width: 40rem; */
   flex: 1;
