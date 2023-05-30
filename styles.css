@@ -236,7 +236,6 @@ nav {
 
 .links-container {
   margin-left: auto;
-  margin-right: 10rem;
 }
 
 /* .fixed-nav .links-container {
@@ -275,11 +274,10 @@ nav {
   height: 50px;
   font-size: 2rem;
   font-family: "Black Ops One", cursive;
-  color: var(--clr-grey-5);
 }
 
 .logo:hover {
-  color: var(--clr-black);
+  color: var(--clr-secondary);
 }
 
 .links-container {
@@ -294,7 +292,7 @@ nav {
 
 .links a {
   background: var(--clr-white);
-  color: var(--clr-grey-5);
+  color: var(--clr-black  );
   font-size: 1.1rem;
   text-transform: capitalize;
   letter-spacing: var(--spacing);
@@ -305,7 +303,6 @@ nav {
 }
 
 .links a:hover {
-  /* color: var(--clr-grey-1); */
   color: var(--clr-grey-1);
 }
 
@@ -406,7 +403,7 @@ About
   /* gap: 1rem; */
   /* background: var(--clr-grey-10); */
   background-color: #f9f9f9;
-  padding: 5rem 0;
+  padding: 5rem 12rem;
   width: 100%;
   position: relative;
 }
@@ -577,6 +574,7 @@ Projects
   margin: auto;
   background: var(--clr-grey-10);
   width: 100%;
+  overflow: hidden;
 }
 
 .project {
@@ -598,7 +596,10 @@ Projects
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden
+  overflow: hidden;
+  position: relative;
+  transform: translateX(30rem);
+  opacity: 0;
 }
 
 .project-img img {
@@ -609,11 +610,26 @@ Projects
   min-height: 100%
 }
 
+.project-img.fade-in {
+  transform: translateX(0px);
+  opacity: 1;
+  transition: all .7s ease-in;
+}
+
 
 .project-info {
   font-size: .7rem;
   /* max-width: 50%; */
   flex: 1;
+  position: relative;
+  transform: translateX(-30rem);
+  opacity: 0;
+}
+
+.project-info.fade-in {
+  transform: translateX(0px);
+  opacity: 1;
+  transition: all .7s ease-in;
 }
 
 .project-title {
@@ -998,11 +1014,11 @@ footer p {
   }
 
   .nav-center {
-    max-width: 1600px;
+    max-width: 61%;
     margin: 0 auto;
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
+    justify-content: space-around;
   }
 
   .nav-tools {
@@ -1010,7 +1026,7 @@ footer p {
   }
 
   .nav-header {
-    padding: 0;
+    padding: 0 0 0 1rem;
     flex: 1;
   }
 
@@ -1035,7 +1051,6 @@ footer p {
 
   .links a {
     background: transparent;
-    /* color: var(--clr-white); */
     font-size: 1.5rem;
     text-transform: capitalize;
     letter-spacing: var(--spacing);
@@ -1044,14 +1059,29 @@ footer p {
     margin: 0 1rem;
     font-weight: bold;
     padding: 0;
+    position: relative;
+  }
+
+  .links a::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background-color: var(--clr-secondary);
+    position: absolute;
+    top: 2.1rem;
+    left: 0;
+    transition: all .5s;
   }
 
   .logo {
     font-size: 2.3rem;
   }
 
-  .links a:hover {
-    color: var(--clr-black);
+  .links a:hover::after{
+    width: 100%;
+  }
+  .links a:hover{
+    color: var(--clr-secondary);
   }
 }
 

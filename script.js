@@ -3,9 +3,46 @@
 //offsetTop - A Number, representing the top position of the element, in pixels
 
 
+// ********** Fade In ************
+
+window.addEventListener("scroll", function () {
+
+  // console.log(windowHeight);
+  const projectInfos = document.querySelectorAll(".project-info");
+
+  const projectImgs = document.querySelectorAll(".project-img");
+
+  console.log(projectImgs);
+
+  const windowHeight = window.innerHeight;
+  const fadeInPoint = 150;
+
+  for (let i = 0; i < projectInfos.length; i++) {
+    
+    const itemTopInfo = projectInfos[i].getBoundingClientRect().top;
+
+    if (itemTopInfo < windowHeight - fadeInPoint) {
+      projectInfos[i].classList.add("fade-in");
+    } else {
+      projectInfos[i].classList.remove("fade-in");
+    }
+  }
+  for (let j = 0; j < projectImgs.length; j++) {
+  
+    const itemTopImg = projectImgs[j].getBoundingClientRect().top;
+    
+    if (itemTopImg < windowHeight - fadeInPoint) {
+      projectImgs[j].classList.add("fade-in");
+    } else {
+      projectImgs[j].classList.remove("fade-in");
+    }
+  }
+
+})
+
+
+
 // ********** Map API ************
-
-
 function initMap() {
   let map;
   const myLatLng = { lat: 43.6588, lng: 51.1975 };
@@ -22,19 +59,21 @@ function initMap() {
 }
 
 
-// ********** set date ************
+// ********** Set Date ************
 const date = document.getElementById('date');
 date.innerHTML = new Date().getFullYear();
 
 
 
-// ********** close links ************
+// ********** Close Links ************
 const navToggle = document.querySelector('.nav-toggle');
 const linksContainer = document.querySelector('.links-container');
 const links = document.querySelector('.links');
 
 navToggle.addEventListener('click', function () {
   // linksContainer.classList.toggle('show-links');
+
+  // For navigation
   const linksHeight = links.getBoundingClientRect().height;
   const containerHeight = linksContainer.getBoundingClientRect().height;
 
@@ -43,6 +82,7 @@ navToggle.addEventListener('click', function () {
   } else {
     linksContainer.style.height = 0;
   }
+
 })
 
 
