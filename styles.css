@@ -590,16 +590,30 @@ Projects
 }
 
 .project-img {
-  max-width: 45rem;
+  width: 100%;
+  border: 1px solid #000;
+  height: 21.3rem;
+  /* max-width: 40rem; */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden
 }
 
 .project-img img {
   border-radius: 10px;
+  max-height: 100%; 
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%
 }
 
 
 .project-info {
   font-size: .7rem;
+  /* max-width: 50%; */
+  flex: 1;
 }
 
 .project-title {
@@ -630,7 +644,6 @@ Projects
 
 .buttons-container {
   display: flex;
-  flex-direction: column;
   gap: 3rem;
   padding: 3rem 0;
 }
@@ -886,19 +899,27 @@ footer p {
 /* @media queries */
 /* ============== */
 
-@media screen and (min-width: 394px) {
-  .buttons-container {
-    flex-direction: row;
+@media screen and (min-width: 320px) {
+  .project-info {
+    padding: 0 1rem 4rem;
+  }
+}
+
+@media screen and (max-width: 342px) {
+  .project {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .project {
+    width: 90%;
   }
 }
 
 @media screen and (min-width: 464px) {
   .my-img img {
     max-width: 70%;
-  }
-
-  .project-info {
-    padding: 0 1rem;
   }
 }
 
