@@ -204,6 +204,58 @@ main {
 Scroll
 ===============
 */
+
+
+/* Test */
+
+/* header {
+  position: relative;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0 !important;
+  font-family: 'Dancing Script', cursive !important;
+  box-shadow: none !important;
+}
+
+
+.nav-header {
+  padding: 0 !important;
+}
+
+.nav-center {
+  flex-direction: column;
+  height: 100vh;
+}
+
+.links-container {
+  flex: 1;
+  margin: 0 !important;
+  padding-bottom: 30rem !important;
+}
+
+.links-container .links{
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.fixed-nav {
+  width: auto !important;
+  background-color: transparent !important;
+}
+
+.fixed-nav .logo-link {
+  display: none !important;
+} */
+
+
+/* Test */
+
 /* navbar */
 nav {
   background: var(--clr-white);
@@ -292,7 +344,7 @@ nav {
 
 .links a {
   background: var(--clr-white);
-  color: var(--clr-black  );
+  color: var(--clr-black);
   font-size: 1.1rem;
   text-transform: capitalize;
   letter-spacing: var(--spacing);
@@ -324,29 +376,7 @@ header {
   background: var(--clr-grey-10);
 }
 
-.social-medias {
-  display: flex;
-  justify-content: space-around;
-  width: 10rem;
-  margin: auto;
-  margin-top: 2rem;
-}
 
-.social-medias .fab {
-  font-size: 2.5rem;
-  /* color: var(--clr-grey-5); */
-  /* Make a color animation so they переливаются из серого по диагонали в цвет ховера типо намекая кликни на меня деген сиякты */
-  color: black;
-}
-
-.social-medias li:hover .fa-linkedin {
-  color: rgba(31, 126, 235, 0.698);
-}
-
-.social-medias li:hover .fa-github {
-  /* color: black; */
-  color: var(--clr-grey-5);
-}
 
 .banner {
   min-height: 100vh;
@@ -362,33 +392,109 @@ header {
   flex-direction: column;
   gap: 2rem;
   align-items: center;
+  text-align: center;
 }
 
-.hero-img {
+/* .hero-img {
   width: 15rem;
   height: 40rem;
   margin: auto;
-  /* border-radius: 40%; */
   overflow: hidden;
   transition: all ease-in;
-}
+} */
 
-.hero-img img {
+/* .hero-img img {
   object-fit: contain;
-}
+} */
 
 .hero h1 {
-  /* color: var(--clr-white); */
-  /* text-transform: uppercase; */
-  font-size: 2.8rem;
+  font-size: 4rem;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
 }
 
+.hero h2 {
+  font-size: 2rem;
+}
+
+
 .hero p {
-  /* color: var(--clr-white); */
   font-size: 1.3rem;
   margin: 0 auto;
   line-height: 1.5;
   margin-bottom: 1.25rem;
+}
+
+.cta {
+  padding: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  font-family: 'Dancing Script', cursive;
+  background-color: transparent;
+  border: none;
+  animation: hireMe 5s infinite linear;
+}
+
+
+@keyframes hireMe {
+  0% {
+    color: hsl(125, 67%, 44%)
+  }
+
+  12.5% {
+    color: hsl(125, 67%, 44%)
+  }
+  25% {
+    color: hsl(205, 72%, 37%)
+  }
+
+  37.5% {
+    color: hsl(205, 72%, 37%)
+  }
+  50% {
+    color: hsl(360, 71%, 66%)
+  }
+
+  75% {
+    color: hsl(360, 71%, 66%)
+  }
+
+  100% {
+    color: hsl(125, 67%, 44%)
+  }
+}
+
+.cv-button {
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.social-medias {
+  display: flex;
+  justify-content: space-around;
+  width: 10rem;
+  margin: 1rem auto;
+  /* border: 1px solid #000; */
+}
+
+.social-medias .fab,
+.fa-solid {
+  font-size: 1.5rem;
+  /* color: var(--clr-grey-5); */
+  /* Make a color animation so they переливаются из серого по диагонали в цвет ховера типо намекая кликни на меня деген сиякты */
+  color: black;
+}
+
+.social-medias li:hover .fa-linkedin {
+  color: rgba(31, 126, 235, 0.698);
+}
+
+.social-medias li:hover .fa-github {
+  color: var(--clr-grey-5);
+}
+
+.social-medias li:hover .fa-envelope {
+  color: rgba(64, 207, 212, 0.68);
 }
 
 
@@ -569,6 +675,7 @@ Projects
 */
 
 #projects {
+  padding: 5rem 0 0;
   margin-top: -8rem;
   border-bottom: 1px solid #e6ecf8;
   margin: auto;
@@ -582,7 +689,7 @@ Projects
   flex-direction: column;
   justify-content: space-evenly;
   border-radius: 10px;
-  padding-bottom: 10rem;
+  padding-bottom: 5rem;
   width: 70%;
   margin: auto;
   gap: 5rem;
@@ -604,7 +711,7 @@ Projects
 
 .project-img img {
   border-radius: 10px;
-  max-height: 100%; 
+  max-height: 100%;
   flex-shrink: 0;
   min-width: 100%;
   min-height: 100%
@@ -625,6 +732,11 @@ Projects
   opacity: 0;
 }
 
+.project-info-swap {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .project-info.fade-in {
   transform: translateX(0px);
   opacity: 1;
@@ -636,25 +748,25 @@ Projects
   padding: 0 0 2rem;
 }
 
-.project-tools {}
+.project-tools {
+  padding: .5rem 0 .9rem;
+}
 
 .description {
   /* color: #FFFFFF; */
 }
 
-.project-tools>span {
-  display: inline-block;
-  border: 1px solid #000;
-  background-color: #000;
-  color: #fff;
-  margin-right: .2rem;
-  font-size: 1.2rem;
-  padding: .3rem .5rem;
+.project-tools .tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .2rem;
 }
 
-.project .description span {
-  /* color: var(--clr-secondary); */
-  font-weight: bolder;
+.tools-list > li {
+  background-color: #000;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: .3rem .5rem;
 }
 
 .buttons-container {
@@ -915,9 +1027,40 @@ footer p {
 /* ============== */
 
 @media screen and (min-width: 320px) {
+
   .project-info {
     padding: 0 1rem;
   }
+
+  .project-info {
+    font-size: .7rem;
+  }
+
+  /* test */
+
+  .project {
+    gap: 1.3rem;
+  }
+
+  .buttons-container {
+    padding: 2rem 0;
+  }
+  
+  .project-title {
+    font-size: 2rem;
+    padding: 0;
+  }
+  
+  .project-tools .tools-list > li {
+    margin-right: .2rem;
+    font-size: .7rem;
+    padding: .3rem .5rem;
+  }
+
+  .description {
+    font-size: 1.2rem;
+  }
+
 }
 
 @media screen and (max-width: 342px) {
@@ -946,10 +1089,38 @@ footer p {
   }
 }
 
+@media screen and (min-width: 570px) {
+  .hero .cta {
+    font-size: 3.2rem;
+  }
+
+  .social-medias .fab,
+  .fa-solid {
+    font-size: 2rem;
+  }
+
+}
+
 @media screen and (min-width: 576px) {
 
   .project {
     height: auto !important;
+  }
+
+  .project-title {
+    font-size: 2.7rem;
+  }
+  
+  .project-tools .tools-list > li {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 1.5rem;
+  }
+
+  .buttons-container .button {
+    font-size: 1rem;
   }
 
 }
@@ -974,6 +1145,28 @@ footer p {
 }
 
 @media screen and (min-width: 800px) {
+
+  .hero h1 {
+    font-size: 5rem;
+  }
+
+  .hero h2 {
+    font-size: 3rem;
+  }
+
+  .hero .cta {
+    font-size: 3.7rem;
+  }
+
+  .social-medias {
+    width: 11rem;
+  }
+
+  .social-medias .fab,
+  .fa-solid {
+    font-size: 2.5rem;
+  }
+
   h1 {
     font-size: 4rem;
   }
@@ -1013,7 +1206,6 @@ footer p {
   }
 
   .nav-center {
-    max-width: 61%;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -1076,15 +1268,25 @@ footer p {
     font-size: 2.3rem;
   }
 
-  .links a:hover::after{
+  .links a:hover::after {
     width: 100%;
   }
-  .links a:hover{
+
+  .links a:hover {
     color: var(--clr-secondary);
+  }
+
+  .project-tools {
+    padding: 0.8rem 0 1.2rem;
   }
 }
 
 @media screen and (min-width: 900px) {
+
+  .nav-center {
+    max-width: 80%;
+  }
+
   .contact-container {
     display: flex;
     gap: 3rem;
@@ -1102,6 +1304,24 @@ footer p {
     width: 20rem;
   }
 
+  .project-title {
+    font-size: 3rem;
+  }
+  
+  .project-tools .tools-list > li {
+    font-size: 1.3rem;
+  }
+
+  .description {
+    font-size: 1.8rem;
+  }
+
+  .buttons-container .button {
+    font-size: 1.35rem;
+  }
+
+
+
 }
 
 @media screen and (min-width: 992px) {
@@ -1113,11 +1333,6 @@ footer p {
 @media screen and (min-width: 1024px) {
   .banner p {
     font-size: 2rem;
-  }
-
-  .project .description span {
-    font-weight: bolder;
-    font-size: 1.4rem;
   }
 
   .buttons-container {
@@ -1168,20 +1383,33 @@ footer p {
 
 @media screen and (min-width: 1300px) {
 
-  #projects {
-    padding: 5rem 12rem 10rem;
+  .hero h1 {
+    font-size: 6rem;
   }
 
-  .mobile-card-reminder {
-    opacity: 0;
+  .hero h2 {
+    font-size: 4rem;
+  }
+
+  .hero .cta {
+    font-size: 4rem;
+  }
+
+  .social-medias .fab,
+  .fa-solid {
+    font-size: 2.8rem;
+  }
+
+  .nav-center {
+    max-width: 61%;
+  }
+
+  #projects {
+    padding: 5rem 12rem 0;
   }
 
   .project-info {
     font-size: 1.6rem;
-  }
-
-  .project-info .description span {
-    font-size: 2rem;
   }
 
   .project {
@@ -1190,6 +1418,27 @@ footer p {
 }
 
 @media screen and (min-width: 1600px) {
+  .hero h1 {
+    font-size: 7rem;
+  }
+
+  .hero h2 {
+    font-size: 4.3rem;
+  }
+
+  .hero .cta {
+    font-size: 4.5rem;
+  }
+
+  .social-medias .fab,
+  .fa-solid {
+    font-size: 3rem;
+  }
+
+  .social-medias {
+    width: 14rem;
+  }
+
 
   #about {
     padding: 5rem 12rem;
@@ -1209,9 +1458,37 @@ footer p {
 }
 
 @media screen and (min-width: 1800px) {
+  .hero h1 {
+    font-size: 8rem;
+  }
+
+  .hero h2 {
+    font-size: 5rem;
+  }
+
   .project {
     flex-direction: row;
     width: 100%;
+  }
+
+  .project-tools {
+    padding: 1.3rem 0 1.9rem;
+  }
+
+  .project-title {
+    font-size: 4rem;
+  }
+  
+  .project-tools .tools-list > li {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 2rem;
+  }
+
+  .buttons-container .button {
+    font-size: 1.7rem;
   }
 }
 
@@ -1221,5 +1498,3 @@ footer p {
     flex-direction: row;
   }
 }
-
-
