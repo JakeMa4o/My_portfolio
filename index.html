@@ -32,7 +32,7 @@
         <!-- nav header -->
         <div class="nav-header">
           <a class="logo-link" href="#home">
-            <div class="logo">JM</div>
+            <div class="logo">ZM</div>
           </a>
           <div class="nav-tools">
             <!-- Hamburger -->
@@ -97,7 +97,7 @@
           <img src="img/Protfolio-min.png" width="300px" height="auto" alt="me">
         </div>
         <p class="my-text">
-          <span style="font-size: 1.5rem; color: hsla(182, 63%, 54%);">The best web developer based in Aktau,
+          <span>The best web developer based in Aktau,
             Kazakhstan!</span>
           <br>
           As a full-stack web developer, I like the simple yet graceful design
@@ -128,7 +128,6 @@
                 <li>Html</li>
                 <li>Css</li>
                 <li>Javascript</li>
-                <li>React</li>
               </ul>
             </div>
             <div class="project-info-swap">
@@ -156,10 +155,10 @@
             <h3 class="project-title">Google mockup</h3>
             <div class="project-tools">
               <ul class="tools-list">
-                <li>Html</li>
+                <li>NodeJs</li>
                 <li>Css</li>
-                <li>Javascript</li>
-                <li>React</li>
+                <li>Express</li>
+                <li>Ejs</li>
               </ul>
             </div>
             <div class="project-info-swap">
@@ -182,13 +181,14 @@
         </div>
         <div class="project">
           <div class="project-info">
-            <h3 class="project-title">e-Commerce</h3>
+            <h3 class="project-title">Jake's Food</h3>
             <div class="project-tools">
               <ul class="tools-list">
-                <li>Html</li>
+                <li>NodeJs</li>
                 <li>Css</li>
-                <li>Javascript</li>
-                <li>React</li>
+                <li>Express</li>
+                <li>MongoDB</li>
+                <li>Ejs</li>
               </ul>
             </div>
             <div class="project-info-swap">
@@ -215,9 +215,7 @@
             <h3 class="project-title">e-Commerce</h3>
             <div class="project-tools">
               <ul class="tools-list">
-                <li>Html</li>
                 <li>Css</li>
-                <li>Javascript</li>
                 <li>React</li>
               </ul>
             </div>
@@ -248,10 +246,10 @@
             <h3 class="project-title">DrumKit</h3>
             <div class="project-tools">
               <ul class="tools-list">
-                <li>Html</li>
                 <li>Css</li>
-                <li>Javascript</li>
-                <li>React</li>
+                <li>NodeJs</li>
+                <li>Express</li>
+                <li>Ejs</li>
               </ul>
             </div>
             <div class="project-info-swap">
@@ -268,7 +266,7 @@
               <p class="description">
                 Little musical playground for drummers - Drumkit is a web application built on Express.
                 Specific keys on keybord binded to a sound of various drum toms.
-              </p>  
+              </p>
             </div>
           </div>
           <div class="project-img">
@@ -280,10 +278,9 @@
             <h3 class="project-title">Tenzies - the game</h3>
             <div class="project-tools">
               <ul class="tools-list">
-                <li>Html</li>
                 <li>Css</li>
-                <li>Javascript</li>
                 <li>React</li>
+                <li>NanoId</li>
               </ul>
             </div>
             <div class="project-info-swap">
@@ -300,7 +297,8 @@
               <p class="description" lang="eng">
                 React Js dice mini game. Used nanoid npm for unique id for each dice. Game checks for every
                 dice
-                id that user clicked and returns new array of dice changing every other dices expect the one that has been
+                id that user clicked and returns new array of dice changing every other dices expect the one that has
+                been
                 freezed.
               </p>
             </div>
@@ -334,7 +332,12 @@
             <!-- <input type="email" placeholder="Почта" name="email" required lang="rus"> -->
             <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message..." required></textarea>
             <!-- <textarea name="message" id="" cols="30" rows="10" placeholder="Ваше сообщение..." required lang="rus"></textarea> -->
-            <button class="btn btn-form" type="submit" style="text-transform: capitalize;">Send message!</button>
+            <div class="form-button">
+              <button class="btn btn-form" type="submit" style="text-transform: capitalize;"><i class="fa-regular fa-envelope"></i>Send message!</button>
+              <!-- <i class="fa-solid fa-envelope"></i> -->
+              <!-- <i class="fa-regular fa-envelope"></i> -->
+            </div>
+            
             <!-- <button class="btn btn-form" type="submit" style="text-transform: capitalize;" lang="rus">Отправить!</button> -->
             <!-- Loading square -->
             <div class="loader-wrapper">
@@ -353,18 +356,24 @@
     </section>
   </main>
   <!-- footer -->
-  <footer class="section">
-    <p>
-      &copy; Zhalgas Miyatbekov <span id="date"></span>.
-    </p>
-    <ul class="social-medias">
-      <li>
-        <a href="https://www.linkedin.com/in/zhalgas-miyatbekov/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      </li>
-      <li>
-        <a href="https://github.com/JakeMa4o" target="_blank"><i class="fab fa-github"></i></a>
-      </li>
-    </ul>
+  <footer id="footer">
+    <div class="footer">
+      <p>
+        &copy; Zhalgas Miyatbekov <span id="date"></span>.
+      </p>
+      <!-- <p>Get in touch</p> -->
+      <ul class="footer-medias">
+        <li>
+          <a href="https://www.linkedin.com/in/zhalgas-miyatbekov/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </li>
+        <li>
+          <a href="https://github.com/JakeMa4o" target="_blank"><i class="fab fa-github"></i></a>
+        </li>
+        <li>
+          <a href="mailto:zhalgasmiyatbekov@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+        </li>
+      </ul>
+    </div>
   </footer>
   <!-- back to top button -->
   <a href="#home" class="scroll-link top-link">

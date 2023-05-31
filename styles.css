@@ -184,7 +184,8 @@ p {
 }
 
 .title span {
-  color: var(--clr-secondary);
+  /* color: var(--clr-secondary); */
+  color: var(--clr-primary-5);
 }
 
 .title a {
@@ -283,7 +284,7 @@ nav {
 }
 
 .fixed-nav .links a:hover {
-  color: var(--clr-secondary);
+  color: var(--clr-primary-5);
 }
 
 .links-container {
@@ -326,10 +327,11 @@ nav {
   height: 50px;
   font-size: 2rem;
   font-family: "Black Ops One", cursive;
+  /* font-family: 'Dancing Script', cursive; */
 }
 
 .logo:hover {
-  color: var(--clr-secondary);
+  color: var(--clr-primary-5);
 }
 
 .links-container {
@@ -474,11 +476,10 @@ header {
   justify-content: space-around;
   width: 10rem;
   margin: 1rem auto;
-  /* border: 1px solid #000; */
 }
 
 .social-medias .fab,
-.fa-solid {
+.social-medias .fa-solid {
   font-size: 1.5rem;
   /* color: var(--clr-grey-5); */
   /* Make a color animation so they переливаются из серого по диагонали в цвет ховера типо намекая кликни на меня деген сиякты */
@@ -535,6 +536,11 @@ About
 .my-text {
   margin: auto;
   font-size: 1.1rem;
+}
+
+.my-text span {
+  font-size: 1.5rem; 
+  color: var(--clr-primary-5);
 }
 
 .tech-stack {
@@ -790,7 +796,8 @@ Projects
   bottom: .7rem;
   right: .7rem;
   padding: 1rem;
-  background-color: var(--clr-secondary);
+  /* background-color: var(--clr-secondary); */
+  background: var(--clr-primary-5);
   color: #fff;
   transition: all .2s
 }
@@ -823,6 +830,22 @@ Contact Me
   flex: 1;
 }
 
+#contact-me .title {
+  padding-bottom: 0 !important;
+}
+
+#contact-me .title h2 {
+  border-right: 1px solid black;
+  margin-bottom: 0;
+}
+
+.mail-form .title > p{
+  padding-top: 1rem;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  padding-bottom: 5rem;
+}
+
 #map-api {
   -webkit-border-radius: 12px;
   -moz-border-radius: 12px;
@@ -838,15 +861,25 @@ textarea {
   width: 100%;
   margin-bottom: 1rem;
   padding: 1rem;
-  border-radius: 1rem;
-  border: 2px solid var(--clr-secondary);
+  border: none;
+}
+
+.mail-form input{
+  border-left: 1px solid black;
+}
+
+.mail-form textarea {
+  border-left: 1px solid black;
+  /* transition: all 2s; */
 }
 
 .mail-form input:focus,
 textarea:focus {
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
   outline: none;
-  /* background-color: rgb(110, 213, 216); */
-  font-weight: 600;
+  font-weight: 600; 
 }
 
 .mail-form input {
@@ -867,7 +900,7 @@ textarea:focus {
 
 .show-email {
   text-align: center;
-  color: var(--clr-secondary);
+  color: var(--clr-primary-5);
   font-size: 1.5rem;
 }
 
@@ -878,21 +911,46 @@ textarea:focus {
   color: #fff;
 }
 
+.form-button{
+  border: 1px solid black;
+}
+
 .btn-form {
-  padding: 1rem 2rem;
-  border-color: var(--clr-secondary);
+  padding: 1rem 2rem; 
+  border: none;
+  background-color: var(--clr-primary-5);
+  border-radius: 0;
+  color: #fff;
   width: 100%;
+  font-size: 1.1rem;
+  position: relative;
+  bottom: 0.7rem;
+  right: 0.7rem;
+  transition: all .2s;
+}
+
+.form-button .btn:hover {
+  color: var(--clr-white);
+  background: var(--clr-primary-5);
+}
+
+.form-button i {
+  font-size: 1.5rem;
+  margin-right: 1rem;
 }
 
 .btn-form:hover {
-  background-color: var(--clr-secondary);
-  color: #fff;
+  bottom: 0;
+  right: 0;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
 }
+  
 
 /* LOADER.... */
 
 .loader-wrapper {
-  background-color: hsla(182, 63%, 54%);
+  background-color: var(--clr-primary-5);
   position: absolute;
   top: 0;
   left: 0;
@@ -967,21 +1025,39 @@ Footer
 =======
 */
 
-footer {
-  background: var(--clr-grey-1);
+#footer {
+  /* background: rgb(18, 30, 39); */
+  background: rgb(23, 50, 69);
   padding: 2rem 1rem;
   width: 100%;
+  font-size: 1.3rem;
 }
 
-footer.section {
-  padding-bottom: 0;
+.footer {
+  width: 70%;
+  margin: auto;
 }
+
+.footer-medias {
+  font-size: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.footer-medias .fab, .footer-medias .fa-solid {
+  color: var(--clr-white);
+}
+
+
 
 footer p {
   color: var(--clr-white);
   text-align: center;
   text-transform: capitalize;
-  letter-spacing: var(--spacing);
+  /* letter-spacing: var(--spacing); */
+  font-family: 'Dancing Script', cursive;
+
   margin-bottom: 0;
 }
 
@@ -990,7 +1066,9 @@ footer p {
   position: fixed;
   bottom: 3rem;
   right: 3rem;
-  background: var(--clr-secondary);
+  /* background: var(--clr-secondary); */
+  /* background: hsla(182, 63%, 54%); */
+  background: var(--clr-primary-5);
   width: 2rem;
   height: 2rem;
   display: grid;
@@ -1069,6 +1147,11 @@ footer p {
   }
 }
 
+@media screen and (min-width: 428px) {
+  .footer {
+    font-size: 1.6rem;
+  }
+}
 @media screen and (max-width: 440px) {
   .project {
     width: 90%;
@@ -1095,7 +1178,7 @@ footer p {
   }
 
   .social-medias .fab,
-  .fa-solid {
+  .social-medias .fa-solid {
     font-size: 2rem;
   }
 
@@ -1163,7 +1246,7 @@ footer p {
   }
 
   .social-medias .fab,
-  .fa-solid {
+  .social-medias .fa-solid {
     font-size: 2.5rem;
   }
 
@@ -1257,7 +1340,7 @@ footer p {
     content: "";
     width: 0;
     height: 3px;
-    background-color: var(--clr-secondary);
+    background-color: var(--clr-primary-5);
     position: absolute;
     top: 2.1rem;
     left: 0;
@@ -1273,7 +1356,7 @@ footer p {
   }
 
   .links a:hover {
-    color: var(--clr-secondary);
+    color: var(--clr-primary-5);
   }
 
   .project-tools {
@@ -1319,8 +1402,6 @@ footer p {
   .buttons-container .button {
     font-size: 1.35rem;
   }
-
-
 
 }
 
@@ -1396,7 +1477,7 @@ footer p {
   }
 
   .social-medias .fab,
-  .fa-solid {
+  .social-medias .fa-solid {
     font-size: 2.8rem;
   }
 
@@ -1415,6 +1496,10 @@ footer p {
   .project {
     flex-basis: 33.3333%;
   }
+
+  .mail-form {
+    max-width: 30%;
+  }
 }
 
 @media screen and (min-width: 1600px) {
@@ -1431,7 +1516,7 @@ footer p {
   }
 
   .social-medias .fab,
-  .fa-solid {
+  .social-medias .fa-solid {
     font-size: 3rem;
   }
 
