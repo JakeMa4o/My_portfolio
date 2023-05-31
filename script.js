@@ -16,6 +16,8 @@ window.addEventListener("scroll", function () {
   const windowHeight = window.innerHeight;
   const fadeInPoint = 150;
 
+  // Project section
+
   for (let i = 0; i < projectInfos.length; i++) {
 
     const itemTopInfo = projectInfos[i].getBoundingClientRect().top;
@@ -36,6 +38,8 @@ window.addEventListener("scroll", function () {
       projectImgs[j].classList.remove("fade-in");
     }
   }
+
+  // Contact section
 
   const mailFormTop = mailForm.getBoundingClientRect().top;
 
