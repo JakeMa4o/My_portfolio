@@ -5,20 +5,19 @@
 
 // ********** Fade In ************
 
+const projectInfos = document.querySelectorAll(".project-info");
+const projectImgs = document.querySelectorAll(".project-img");
+const mailForm = document.querySelector(".mail-form");
+const googleMap = document.querySelector("#map-api");
+
+
 window.addEventListener("scroll", function () {
-
-  // console.log(windowHeight);
-  const projectInfos = document.querySelectorAll(".project-info");
-
-  const projectImgs = document.querySelectorAll(".project-img");
-
-  console.log(projectImgs);
 
   const windowHeight = window.innerHeight;
   const fadeInPoint = 150;
 
   for (let i = 0; i < projectInfos.length; i++) {
-    
+
     const itemTopInfo = projectInfos[i].getBoundingClientRect().top;
 
     if (itemTopInfo < windowHeight - fadeInPoint) {
@@ -28,14 +27,30 @@ window.addEventListener("scroll", function () {
     }
   }
   for (let j = 0; j < projectImgs.length; j++) {
-  
+
     const itemTopImg = projectImgs[j].getBoundingClientRect().top;
-    
+
     if (itemTopImg < windowHeight - fadeInPoint) {
       projectImgs[j].classList.add("fade-in");
     } else {
       projectImgs[j].classList.remove("fade-in");
     }
+  }
+
+  const mailFormTop = mailForm.getBoundingClientRect().top;
+
+  const googleMapTop = googleMap.getBoundingClientRect().top;
+
+  if (mailFormTop < windowHeight - fadeInPoint) {
+    mailForm.classList.add("fade-in");
+  } else {
+    mailForm.classList.remove("fade-in");
+  }
+
+  if (googleMapTop < windowHeight - fadeInPoint) {
+    googleMap.classList.add("fade-in");
+  } else {
+    googleMap.classList.remove("fade-in");
   }
 
 })
@@ -72,7 +87,7 @@ const links = document.querySelector('.links');
 
 navToggle.addEventListener('click', function () {
   // linksContainer.classList.toggle('show-links');
-  
+
   const linksHeight = links.getBoundingClientRect().height;
   const containerHeight = linksContainer.getBoundingClientRect().height;
 
