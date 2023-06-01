@@ -107,10 +107,14 @@ navToggle.addEventListener('click', function () {
 
 const navbar = document.getElementById('nav');
 const topLink = document.querySelector('.top-link');
+let lastScroll = 0;
 // ********** fixed navbar ************
 window.addEventListener('scroll', function () {
   const scrollHeight = window.pageYOffset;
+
   const navHeight = navbar.getBoundingClientRect().height;
+
+
   if (scrollHeight > navHeight) {
     navbar.classList.add('fixed-nav');
   } else {
@@ -122,6 +126,7 @@ window.addEventListener('scroll', function () {
   } else {
     topLink.classList.remove('show-link');
   }
+
 })
 
 
@@ -148,7 +153,6 @@ scrollLinks.forEach(function (link) {
     if (navHeight > 82) {
       position = position + containerHeight;
     }
-
 
     window.scrollTo({
       left: 0,

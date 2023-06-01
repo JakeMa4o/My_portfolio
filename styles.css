@@ -305,7 +305,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
+}e
 
 .nav-tools {
   display: flex;
@@ -323,7 +323,7 @@ nav {
 }
 
 .nav-toggle:hover {
-  color: var(--clr-secondary);
+  color: var(--clr-primary-5);
 }
 
 .nav-header a {
@@ -424,6 +424,7 @@ header {
 
 .hero h2 {
   font-size: 2rem;
+  font-family: 'Lato', sans-serif;
 }
 
 
@@ -519,6 +520,7 @@ About
   padding: 5rem 0;
   width: 100%;
   position: relative;
+  height: 100vh;
 }
 
 .about-info {
@@ -554,9 +556,12 @@ About
   padding: 1rem;
 }
 
-.my-text span {
-  font-size: 1.5rem;
+.my-text h2 {
+  /* font-size: 1.5rem; */
+  font-size: 4rem;
+  font-family: 'Dancing Script', cursive;
   color: var(--clr-primary-5);
+  padding: 1rem;
 }
 
 .tech-stack {
@@ -814,7 +819,7 @@ Projects
 
 .button {
   border: 2px solid #000;
-  padding: .9rem 0;
+  padding: .8rem 0;
 }
 
 .button:hover .project-link {
@@ -827,10 +832,29 @@ Projects
   bottom: .7rem;
   right: .7rem;
   padding: 1rem;
-  /* background-color: var(--clr-secondary); */
-  background: var(--clr-primary-5);
-  color: #fff;
+  /* background: var(--clr-primary-5); */
+  /* color: #fff; */
+  color: var(--clr-grey-10);
   transition: all .2s
+}
+
+.project:nth-child(1) .project-link {
+  background: #ff7d19;
+}
+.project:nth-child(2) .project-link {
+  background: var(--clr-secondary);
+}
+.project:nth-child(3) .project-link {
+  background: #f77614;
+}
+.project:nth-child(4) .project-link {
+  background: #283149;
+}
+.project:nth-child(5) .project-link {
+  background: #4285F4;
+}
+.project:nth-child(6) .project-link {
+  background: #0b2434;
 }
 
 .project-link i {
@@ -875,14 +899,14 @@ Contact Me
 }
 
 #contact-me .title h2 {
-  border-right: 1px solid black;
+  border-right: 2px solid black;
   margin-bottom: 0;
 }
 
 .mail-form .title>p {
   padding-top: 1rem;
-  border-top: 1px solid black;
-  border-left: 1px solid black;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
   padding-bottom: 5rem;
 }
 
@@ -908,25 +932,29 @@ Contact Me
 .mail-form input,
 textarea {
   width: 100%;
-  margin-bottom: 1rem;
-  padding: 1rem;
+  padding: 2rem 1rem;
   border: none;
+  margin-bottom: 0;
 }
 
 .mail-form input {
-  border-left: 1px solid black;
+  border-left: 2px solid black;
 }
 
 .mail-form textarea {
-  border-left: 1px solid black;
+  border-left: 2px solid black;
   /* transition: all 2s; */
 }
 
-.mail-form input:focus,
+.mail-form input:focus {
+  /* border-right: 2px solid black; */
+  /* border-top: 2px solid black; */
+  border-bottom: 2px solid black;
+  outline: none;
+  font-weight: 600;
+}
+
 textarea:focus {
-  border-right: 1px solid black;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
   outline: none;
   font-weight: 600;
 }
@@ -961,7 +989,7 @@ textarea:focus {
 }
 
 .form-button {
-  border: 1px solid black;
+  border: 2px solid black;
 }
 
 .btn-form {
@@ -1386,7 +1414,7 @@ footer p {
 
   .links a {
     background: transparent;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     text-transform: capitalize;
     letter-spacing: var(--spacing);
     display: block;
@@ -1395,6 +1423,9 @@ footer p {
     font-weight: bold;
     padding: 0;
     position: relative;
+    /* font-family: 'Dancing Script', cursive;
+    font-size: 2rem; */
+    font-family: 'Lato', sans-serif;
   }
 
   .links a::after {
