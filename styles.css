@@ -849,7 +849,6 @@ Contact Me
 #contact-me {
   padding-top: 6rem;
   width: 80%;
-  overflow: hidden;
 }
 
 #contact-form {
@@ -1154,6 +1153,16 @@ footer p {
 /* ============== */
 /* @media queries */
 /* ============== */
+
+@media screen and (max-width: 318px) {
+  .buttons-container {
+    flex-direction: column;
+  }
+  .buttons-container .button{
+    max-width: 50%;
+  }
+}
+
 
 @media screen and (min-width: 320px) {
 
