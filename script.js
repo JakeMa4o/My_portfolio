@@ -9,12 +9,36 @@ const projectInfos = document.querySelectorAll(".project-info");
 const projectImgs = document.querySelectorAll(".project-img");
 const mailForm = document.querySelector(".mail-form");
 const googleMap = document.querySelector("#map-api");
+const aboutText = document.querySelector(".my-text");
+const aboutTextTitle = document.querySelector(".my-text h2");
+const aboutTextParag = document.querySelector(".my-text p");
+const techStack = document.querySelector(".tech-stack");
+
 
 
 window.addEventListener("scroll", function () {
 
   const windowHeight = window.innerHeight;
   const fadeInPoint = 150;
+
+  // About section
+
+  for (let a = 0; a < projectInfos.length; a++) {
+    const aboutTextTop = aboutText.getBoundingClientRect().top;
+    
+    if (aboutTextTop < windowHeight - fadeInPoint) {
+      aboutTextTitle.classList.add("fade-in");
+      aboutTextParag.classList.add("fade-in");
+      techStack.classList.add("fade-in");
+    } 
+    // else {
+    //   aboutTextTitle.classList.remove("fade-in");
+    //   aboutTextParag.classList.remove("fade-in");
+    //   techStack.classList.remove("fade-in");
+    // }
+
+  }
+
 
   // Project section
 
