@@ -13,19 +13,20 @@ const aboutText = document.querySelector(".my-text");
 const aboutTextTitle = document.querySelector(".my-text h2");
 const aboutTextParag = document.querySelector(".my-text p");
 const techStack = document.querySelector(".tech-stack");
+const projects = document.querySelector("#projects");
 
 
 
-window.addEventListener("scroll", function () {
+const windowHeight = window.innerHeight;
+const fadeInPoint = 150;
 
-  const windowHeight = window.innerHeight;
-  const fadeInPoint = 150;
 
-  // About section
+window.addEventListener("scroll", function() {
+   // About section
 
-  for (let a = 0; a < projectInfos.length; a++) {
-    const aboutTextTop = aboutText.getBoundingClientRect().top;
-    
+   const aboutTextTop = aboutText.getBoundingClientRect().top;
+   
+   for (let a = 0; a < projectInfos.length; a++) { 
     if (aboutTextTop < windowHeight - fadeInPoint) {
       aboutTextTitle.classList.add("fade-in");
       aboutTextParag.classList.add("fade-in");
@@ -36,11 +37,30 @@ window.addEventListener("scroll", function () {
     //   aboutTextParag.classList.remove("fade-in");
     //   techStack.classList.remove("fade-in");
     // }
-
   }
 
+  
+  // Contact section
 
-  // Project section
+  const mailFormTop = mailForm.getBoundingClientRect().top;
+  const googleMapTop = googleMap.getBoundingClientRect().top;
+
+  if (mailFormTop < windowHeight - fadeInPoint) {
+    mailForm.classList.add("fade-in");
+  } else {
+    mailForm.classList.remove("fade-in");
+  }
+
+  if (googleMapTop < windowHeight - fadeInPoint) {
+    googleMap.classList.add("fade-in");
+  } else {
+    googleMap.classList.remove("fade-in");
+  }
+})
+
+
+
+window.addEventListener("scroll", function () {
 
   for (let i = 0; i < projectInfos.length; i++) {
 
@@ -61,24 +81,6 @@ window.addEventListener("scroll", function () {
     } else {
       projectImgs[j].classList.remove("fade-in");
     }
-  }
-
-  // Contact section
-
-  const mailFormTop = mailForm.getBoundingClientRect().top;
-
-  const googleMapTop = googleMap.getBoundingClientRect().top;
-
-  if (mailFormTop < windowHeight - fadeInPoint) {
-    mailForm.classList.add("fade-in");
-  } else {
-    mailForm.classList.remove("fade-in");
-  }
-
-  if (googleMapTop < windowHeight - fadeInPoint) {
-    googleMap.classList.add("fade-in");
-  } else {
-    googleMap.classList.remove("fade-in");
   }
 
 })
