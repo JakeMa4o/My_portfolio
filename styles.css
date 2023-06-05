@@ -305,7 +305,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}e
+}
 
 .nav-tools {
   display: flex;
@@ -639,7 +639,7 @@ About
 
 @keyframes techLanding {
   0% {
-    bottom: 10rem;
+    bottom: 6rem;
   }
 
   100% {
@@ -661,7 +661,7 @@ About
 /* icons BOUNCES*/
 
 .tech-icon i {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 
@@ -691,8 +691,7 @@ About
 .tech-icon span {
   opacity: 0;
   position: absolute;
-  top: 7rem;
-  /* animation: textShowUp 1s 1 forwards; */
+  top: 5rem;
 }
 
 .tech-stack.fade-in .tech-icon:nth-child(1) span {
@@ -771,13 +770,6 @@ Projects
   overflow: hidden;
 }
 
-/* test */
-
-/* #projects {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
-} */
 
 .project {
   display: flex;
@@ -790,9 +782,6 @@ Projects
   margin: auto;
   gap: 5rem;
   min-height: 100vh;
-
-  /* test */
-  /* scroll-snap-align: start; */
 }
 
 .project-img {
@@ -1360,6 +1349,7 @@ footer p {
 
 }
 
+
 @media screen and (min-width: 767px) {
 
   .contact-container input {
@@ -1376,6 +1366,14 @@ footer p {
 @media screen and (min-width: 770px) {
   .item {
     width: 100%;
+  }
+
+  .tech-icon i {
+    font-size: 4rem;
+  }
+  
+  .tech-icon span {
+    top: 7rem;
   }
 }
 
