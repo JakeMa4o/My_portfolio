@@ -3,8 +3,20 @@
 //offsetTop - A Number, representing the top position of the element, in pixels
 
 
-// ********** Fade In ************
+const item = document.querySelectorAll(".svg-container svg path");
 
+
+// for (let i = 0; i < item.length; i++) {
+//   item[41].style.strokeDasharray = "614.0083618164062"
+//   item[41].style.strokeDashoffset = "614.0083618164062"
+
+//   console.log(item[41].style);
+// // }
+
+
+
+
+// ********** Fade In ************ 
 const projectInfos = document.querySelectorAll(".project-info");
 const projectImgs = document.querySelectorAll(".project-img");
 const mailForm = document.querySelector(".mail-form");
@@ -15,33 +27,44 @@ const aboutTextParag = document.querySelector(".my-text p");
 const techStack = document.querySelector(".tech-stack");
 const projects = document.querySelector("#projects");
 
-
-
 const windowHeight = window.innerHeight;
 const fadeInPoint = 150;
 
+window.addEventListener("scroll", function () {
+  // About section
+  const aboutTextTop = aboutText.getBoundingClientRect().top;
 
-window.addEventListener("scroll", function() {
-   // About section
-
-   const aboutTextTop = aboutText.getBoundingClientRect().top;
-   
-   for (let a = 0; a < projectInfos.length; a++) { 
+  for (let a = 0; a < projectInfos.length; a++) {
     if (aboutTextTop < windowHeight - fadeInPoint) {
       aboutTextTitle.classList.add("fade-in");
       aboutTextParag.classList.add("fade-in");
       techStack.classList.add("fade-in");
-    } 
-    // else {
-    //   aboutTextTitle.classList.remove("fade-in");
-    //   aboutTextParag.classList.remove("fade-in");
-    //   techStack.classList.remove("fade-in");
-    // }
+    }
   }
 
-  
-  // Contact section
+  // Project section
+  for (let i = 0; i < projectInfos.length; i++) {
+    const itemTopInfo = projectInfos[i].getBoundingClientRect().top;
 
+    if (itemTopInfo < windowHeight - fadeInPoint) {
+      projectInfos[i].classList.add("fade-in");
+    } else {
+      projectInfos[i].classList.remove("fade-in");
+    }
+  }
+
+  for (let j = 0; j < projectImgs.length; j++) {
+    const itemTopImg = projectImgs[j].getBoundingClientRect().top;
+
+    if (itemTopImg < windowHeight - fadeInPoint) {
+      projectImgs[j].classList.add("fade-in");
+    } else {
+      projectImgs[j].classList.remove("fade-in");
+    }
+  }
+
+
+  // Contact section
   const mailFormTop = mailForm.getBoundingClientRect().top;
   const googleMapTop = googleMap.getBoundingClientRect().top;
 
@@ -56,33 +79,6 @@ window.addEventListener("scroll", function() {
   } else {
     googleMap.classList.remove("fade-in");
   }
-})
-
-
-
-window.addEventListener("scroll", function () {
-
-  for (let i = 0; i < projectInfos.length; i++) {
-
-    const itemTopInfo = projectInfos[i].getBoundingClientRect().top;
-
-    if (itemTopInfo < windowHeight - fadeInPoint) {
-      projectInfos[i].classList.add("fade-in");
-    } else {
-      projectInfos[i].classList.remove("fade-in");
-    }
-  }
-  for (let j = 0; j < projectImgs.length; j++) {
-
-    const itemTopImg = projectImgs[j].getBoundingClientRect().top;
-
-    if (itemTopImg < windowHeight - fadeInPoint) {
-      projectImgs[j].classList.add("fade-in");
-    } else {
-      projectImgs[j].classList.remove("fade-in");
-    }
-  }
-
 })
 
 
@@ -104,89 +100,6 @@ function initMap() {
 }
 
 
-// ********** Set Date ************
-const date = document.getElementById('date');
-date.innerHTML = new Date().getFullYear();
-
-
-
-// ********** Close Links ************
-const navToggle = document.querySelector('.nav-toggle');
-const linksContainer = document.querySelector('.links-container');
-const links = document.querySelector('.links');
-
-navToggle.addEventListener('click', function () {
-  // linksContainer.classList.toggle('show-links');
-
-  const linksHeight = links.getBoundingClientRect().height;
-  const containerHeight = linksContainer.getBoundingClientRect().height;
-
-  if (containerHeight === 0) {
-    linksContainer.style.height = `${linksHeight}px`;
-  } else {
-    linksContainer.style.height = 0;
-  }
-
-})
-
-
-
-const navbar = document.getElementById('nav');
-const topLink = document.querySelector('.top-link');
-let lastScroll = 0;
-// ********** fixed navbar ************
-window.addEventListener('scroll', function () {
-  const scrollHeight = window.pageYOffset;
-
-  const navHeight = navbar.getBoundingClientRect().height;
-
-
-  if (scrollHeight > navHeight) {
-    navbar.classList.add('fixed-nav');
-  } else {
-    navbar.classList.remove('fixed-nav');
-  }
-
-  if (scrollHeight > 500) {
-    topLink.classList.add('show-link');
-  } else {
-    topLink.classList.remove('show-link');
-  }
-
-})
-
-
-
-// ********** smooth scroll ************
-// select links
-const scrollLinks = document.querySelectorAll('.scroll-link');
-scrollLinks.forEach(function (link) {
-  link.addEventListener('click', function (e) {
-    // prevent default
-    e.preventDefault();
-    // navigate to specific spot
-    const id = e.currentTarget.getAttribute('href').slice(1);
-    const element = document.getElementById(id);
-    // calculate the heights
-    const navHeight = navbar.getBoundingClientRect().height;
-    const containerHeight = linksContainer.getBoundingClientRect().height;
-    const fixedNav = navbar.classList.contains("fixed-nav");
-    let position = element.offsetTop - navHeight;
-
-    if (!fixedNav) {
-      position = position - navHeight;
-    }
-    if (navHeight > 82) {
-      position = position + containerHeight;
-    }
-
-    window.scrollTo({
-      left: 0,
-      top: position,
-    });
-    linksContainer.style.height = 0;
-  });
-})
 
 
 
@@ -240,4 +153,11 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
       loader.style.display = "none";
     });
 });
+
+
+
+
+// ********** Set Date ************
+const date = document.getElementById('date');
+date.innerHTML = new Date().getFullYear();
 
