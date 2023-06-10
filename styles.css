@@ -298,6 +298,7 @@ Hero
   width: 10rem;
   opacity: 0;
   animation: appearSocial 2s 1.7s forwards;
+  z-index: 3;
 }
 
 @keyframes appearSocial {
