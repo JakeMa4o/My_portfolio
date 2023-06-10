@@ -350,7 +350,7 @@ Hero
 .water-drop {
   width: 1px;
   height: 1px;
-  border: 5px solid rgb(23, 50, 69);
+  /* border: 5px solid rgb(23, 50, 69); */
   margin: auto;
   position: absolute;
   inset: 0;
@@ -1135,6 +1135,10 @@ footer p {
     }
   }
 
+  .water-drop {
+    border: 2px solid rgb(23, 50, 69);
+  }
+
   @keyframes drop {
     10% {
       opacity: 1;
@@ -1350,6 +1354,10 @@ footer p {
       opacity: 1;
     }
   }
+
+  .water-drop {
+    border: 5px solid rgb(23, 50, 69);
+  } 
 
   @keyframes drop {
     10% {
@@ -1802,7 +1810,7 @@ footer p {
   .social-medias {
     left: 80rem;
   }
-  
+
   @keyframes appearSocial {
     to {
       left: 95rem;
