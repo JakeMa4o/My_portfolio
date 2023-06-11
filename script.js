@@ -3,17 +3,6 @@
 //offsetTop - A Number, representing the top position of the element, in pixels
 
 
-const item = document.querySelectorAll(".svg-container svg path");
-
-
-// for (let i = 0; i < item.length; i++) {
-//   item[41].style.strokeDasharray = "614.0083618164062"
-//   item[41].style.strokeDashoffset = "614.0083618164062"
-
-//   console.log(item[41].style);
-// // }
-
-
 
 
 // ********** Fade In ************ 
@@ -28,7 +17,7 @@ const techStack = document.querySelector(".tech-stack");
 const projects = document.querySelector("#projects");
 
 const windowHeight = window.innerHeight;
-const fadeInPoint = 150;
+const fadeInPoint = 600;
 
 window.addEventListener("scroll", function () {
   // About section
