@@ -231,7 +231,7 @@ Hero
 
 
 .hero-wrapper {
-  padding: 1rem;
+  padding: 1rem 0;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -401,6 +401,7 @@ About
   min-height: 100vh;
   display: grid;
   place-items: center;
+  height: 100vh;
 }
 
 .about-info {
@@ -625,7 +626,7 @@ Projects
   display: flex;
   flex-direction: column;
   height: 100vh;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
 }
 
 .project:first-child {
@@ -641,7 +642,7 @@ Projects
   /* padding-bottom: 5rem; */
   margin: auto;
   gap: 5rem;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   /* min-height: 70vh; */
   position: relative;
 }
@@ -657,7 +658,7 @@ Projects
 }
 
 .project-tools-animation {
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   position: absolute;
   top: 0;
   left: 0;
@@ -1148,9 +1149,8 @@ footer p {
 
 
 @media screen and (min-width: 320px) {
-
   .hero .svg-container {
-    /* width: 20rem; */
+    width: 18.7rem;
   }
 
   .hero h1 {
