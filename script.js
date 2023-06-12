@@ -2,7 +2,38 @@
 // pageYOffset is a read - only window property that returns the number of pixels the document has been scrolled vertically.
 //offsetTop - A Number, representing the top position of the element, in pixels
 
+// Hero 
 
+// TEST
+
+const hero = document.querySelector(".hero-background");
+const heroTop = hero.getBoundingClientRect().top;
+
+
+window.addEventListener("scroll", function () {
+  const scroll = window.pageYOffset;
+  hero.style.margin = "auto";
+  
+  if (scroll < windowHeight - 5) {
+    hero.style.width = "65%";
+    hero.style.height = "60vh";
+    hero.style.left = "17%";
+    hero.style.top = "20%";
+    // hero.style.position = "fixed";
+    // hero.style.borderRadius = "50%";
+  }
+  if (scroll < 5) {
+    hero.style.width = "100%";
+    hero.style.height = "100vh";  
+    hero.style.left = "0";
+    hero.style.top = "0";
+    // hero.style.position = "absolute";
+    // hero.style.borderRadius = "0";
+  }
+
+})
+
+// TEST
 
 
 // ********** Fade In ************
@@ -19,7 +50,7 @@ const mailForm = document.querySelector(".mail-form");
 const googleMap = document.querySelector("#map-api");
 
 const windowHeight = window.innerHeight;
-const fadeInPoint = 600;
+const fadeInPoint = 550;
 
 window.addEventListener("scroll", function () {
   // About section
@@ -43,27 +74,6 @@ window.addEventListener("scroll", function () {
     }
   }
 
-
-
-  // for (let i = 0; i < projectInfos.length; i++) {
-  //   const itemTopInfo = projectInfos[i].getBoundingClientRect().top;
-
-  //   if (itemTopInfo < windowHeight - fadeInPoint) {
-  //     projectInfos[i].classList.add("fade-in");
-  //   } else {
-  //     projectInfos[i].classList.remove("fade-in");
-  //   }
-  // }
-
-  // for (let j = 0; j < projectImgs.length; j++) {
-  //   const itemTopImg = projectImgs[j].getBoundingClientRect().top;
-
-  //   if (itemTopImg < windowHeight - fadeInPoint) {
-  //     projectImgs[j].classList.add("fade-in");
-  //   } else {
-  //     projectImgs[j].classList.remove("fade-in");
-  //   }
-  // }
 
 
   // Contact section
