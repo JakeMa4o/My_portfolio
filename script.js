@@ -5,14 +5,13 @@
 
 
 
-// ********** Fade In ************ 
+// ********** Fade In ************
+
 const aboutText = document.querySelector(".my-text");
 const aboutTextTitle = document.querySelector(".my-text h2");
 const aboutTextParag = document.querySelector(".my-text p");
 const techStack = document.querySelector(".tech-stack");
 
-const projectInfos = document.querySelectorAll(".project-info");
-const projectImgs = document.querySelectorAll(".project-img");
 const projectIconsContainers = document.querySelectorAll(".project-icons-container");
 
 
@@ -26,31 +25,23 @@ window.addEventListener("scroll", function () {
   // About section
   const aboutTextTop = aboutText.getBoundingClientRect().top;
 
-  for (let a = 0; a < projectInfos.length; a++) {
-    if (aboutTextTop < windowHeight - fadeInPoint) {
-      aboutTextTitle.classList.add("fade-in");
-      aboutTextParag.classList.add("fade-in");
-      techStack.classList.add("fade-in");
-    }
+  if (aboutTextTop < windowHeight - fadeInPoint) {
+    aboutTextTitle.classList.add("fade-in");
+    aboutTextParag.classList.add("fade-in");
+    techStack.classList.add("fade-in");
   }
 
   // Project section
 
   for (let i = 0; i < projectIconsContainers.length; i++) {
-      const projectIconsTop = projectIconsContainers[i].getBoundingClientRect().top;
+    const projectIconsTop = projectIconsContainers[i].getBoundingClientRect().top;
 
-      console.log(projectIconsTop);
-  
-      if (projectIconsTop < windowHeight - fadeInPoint) {
-        projectIconsContainers[i].classList.add("project-icons-animation");
-        projectInfos[i].classList.add("fade-in");
-        projectImgs[i].classList.add("fade-in");
-      } else {
-        projectIconsContainers[i].classList.remove("project-icons-animation");
-        projectInfos[i].classList.remove("fade-in");
-        projectImgs[i].classList.add("fade-in");
-      }
+    if (projectIconsTop < windowHeight - fadeInPoint) {
+      projectIconsContainers[i].classList.add("project-icons-animation");
+    } else {
+      projectIconsContainers[i].classList.remove("project-icons-animation");
     }
+  }
 
 
 

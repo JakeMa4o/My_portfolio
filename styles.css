@@ -611,54 +611,49 @@ Projects
 */
 
 #projects {
-  padding: 5rem 0 0;
+  /* padding: 5rem 0 0; */
   margin-top: -8rem;
   border-bottom: 1px solid #e6ecf8;
   margin: auto;
   background: var(--clr-grey-10);
   width: 100%;
   /* overflow: hidden; */
+  gap: 1rem;
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  border: 1px solid #000;
+}
+
+.project:first-child {
+  flex-direction: row-reverse;
 }
 
 
 .project {
+  flex: 1;
   justify-content: space-evenly;
   align-items: center;
   border-radius: 10px;
-  padding-bottom: 5rem;
+  /* padding-bottom: 5rem; */
   margin: auto;
   gap: 5rem;
   border: 1px solid #000;
-  min-height: 70vh;
+  /* min-height: 70vh; */
   position: relative;
 }
 
 /* Test */
 
 
-
-
-.project-info {
-  opacity: 0;
-}
-
-.project-img {
-  opacity: 0;
-}
-
 @keyframes projectLoader {
   to {
     transform: translateX(0px);
     opacity: 1;
   }
-}
-
-.project-info.fade-in {
-  animation: projectLoader 1s 1s linear forwards;
-}
-
-.project-img.fade-in {
-  animation: projectLoader 1s 1s linear forwards;
 }
 
 .project-tools-animation {
@@ -683,34 +678,7 @@ Projects
 .project-icon i{
   font-size: 4rem;
 }
-.project-icon:nth-child(2) i{
-  animation-delay: .3s;
-}
-.project-icon:nth-child(3) i{
-  animation-delay: .5s;
-}
 
-.project-icons-container.project-icons-animation .project-icon i{
-  animation: projectIconsAppear 1s linear forwards;
-}
-
-
-@keyframes projectIconsAppear {
-  0% {
-    opacity: 0;
-    transform: scale(1);
-  }
-
-  25% {
-    transform: scale(1.3);
-    opacity: .25;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
 
 .project-icon {
   position: relative;
@@ -1182,7 +1150,7 @@ footer p {
 @media screen and (min-width: 320px) {
 
   .hero .svg-container {
-    width: 17rem;
+    /* width: 20rem; */
   }
 
   .hero h1 {
