@@ -232,6 +232,7 @@ Hero
   height: 100vh;
   background-color: var(--clr-grey-10);
   transition: all 1s;
+  margin: auto;
 }
 
 .resize-hero {
@@ -324,18 +325,6 @@ Hero
   }
 }
 
-@keyframes drop {
-  10% {
-    opacity: 1;
-  }
-
-  100% {
-    width: 320px;
-    height: 320px;
-    opacity: 0;
-  }
-}
-
 
 
 .hero p {
@@ -376,14 +365,16 @@ Hero
   opacity: 0;
 }
 
+
+
 @keyframes drop {
   10% {
     opacity: 1;
   }
 
   100% {
-    width: 1500px;
-    height: 1500px;
+    width: 320px;
+    height: 320px;
     opacity: 0;
   }
 }
@@ -626,7 +617,7 @@ Projects
   margin-top: -8rem;
   border-bottom: 1px solid #e6ecf8;
   margin: auto;
-  background: var(--clr-grey-10);
+  /* background: var(--clr-grey-10); */
   width: 100%;
   /* overflow: hidden; */
 }
@@ -648,7 +639,49 @@ Projects
   display: grid;
   grid-template-rows: 1fr .3fr;
   grid-template-columns: 1fr 1fr;
+  position: relative;
+}
+
+.project-icons-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background-color: #283149;
+  width: 100%;
+}
+
+.project-tools-icons {
   border: 1px solid #000;
+  display: flex;
+  gap: 3rem;
+}
+.project-tools-icons i{
+  font-size: 4rem;
+}
+.project-tools-icons span{
+  display: block;
+  font-size: 2rem;
+  position: relative;
+  left: .3rem;
+  color: var(--clr-grey-1);
+}
+
+.project-icons-container.project-icons-animate i{ 
+  animation: bounceIcons 1s 1;
+}
+.project-icons-container.project-icons-animate i:nth-child(2){ 
+  animation-delay: 1s;
+}
+
+@keyframes projectIcons {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 

@@ -12,23 +12,44 @@ const heroTop = hero.getBoundingClientRect().top;
 
 window.addEventListener("scroll", function () {
   const scroll = window.pageYOffset;
-  hero.style.margin = "auto";
-  
-  if (scroll < windowHeight - 5) {
-    hero.style.width = "65%";
-    hero.style.height = "60vh";
-    hero.style.left = "17%";
-    hero.style.top = "20%";
-    // hero.style.position = "fixed";
-    // hero.style.borderRadius = "50%";
-  }
+
   if (scroll < 5) {
     hero.style.width = "100%";
     hero.style.height = "100vh";  
     hero.style.left = "0";
     hero.style.top = "0";
-    // hero.style.position = "absolute";
-    // hero.style.borderRadius = "0";
+    hero.style.borderRadius = "0";
+    hero.style.position = "absolute";
+  }
+
+  if (scroll > 5) {
+    hero.style.width = "38%";
+    hero.style.left = "31%";
+    hero.style.borderRadius = "50%";
+    hero.style.height = "70vh";
+    hero.style.top = "15%";
+
+    // hero.style.width = "65%";
+    // hero.style.left = "17%";
+    // hero.style.top = "10%";
+    // hero.style.transform = `rotateY(${scroll/4.7}deg)`;
+  }
+  if (scroll > 150) {
+    hero.style.top = "500px";
+  }
+  if (scroll > 200) {
+    hero.style.top = "700px";
+  }
+  if (scroll > 650) {
+    hero.style.top = "800px";
+  }
+
+  if (scroll > 700) {
+    hero.style.top = "1100px";
+    // hero.style.width = "100%";
+    // hero.style.left = "0";
+    // hero.style.borderRadius = "0%";
+    // hero.style.height = "100%";
   }
 
 })
@@ -44,6 +65,11 @@ const aboutTextParag = document.querySelector(".my-text p");
 const techStack = document.querySelector(".tech-stack");
 
 const projectIconsContainers = document.querySelectorAll(".project-icons-container");
+const projectImage = document.querySelectorAll(".project-img");
+const projectTitle = document.querySelectorAll(".project-title");
+const projectToolsList = document.querySelectorAll(".project-tools");
+const projectDescription = document.querySelectorAll(".description");
+
 
 
 const mailForm = document.querySelector(".mail-form");
@@ -68,9 +94,9 @@ window.addEventListener("scroll", function () {
     const projectIconsTop = projectIconsContainers[i].getBoundingClientRect().top;
 
     if (projectIconsTop < windowHeight - fadeInPoint) {
-      projectIconsContainers[i].classList.add("project-icons-animation");
+      projectIconsContainers[i].classList.add("project-icons-animate");
     } else {
-      projectIconsContainers[i].classList.remove("project-icons-animation");
+      projectIconsContainers[i].classList.remove("project-icons-animate");
     }
   }
 
