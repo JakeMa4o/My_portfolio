@@ -233,6 +233,7 @@ Hero
   background-color: var(--clr-grey-10);
   transition: all 1s;
   margin: auto;
+  z-index: -1;
 }
 
 .resize-hero {
@@ -648,7 +649,7 @@ Projects
   height: 100%;
   display: grid;
   place-items: center;
-  background-color: #283149;
+  /* background-color: #283149; */
   width: 100%;
 }
 

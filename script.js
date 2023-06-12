@@ -15,7 +15,7 @@ window.addEventListener("scroll", function () {
 
   if (scroll < 5) {
     hero.style.width = "100%";
-    hero.style.height = "100vh";  
+    hero.style.height = "100vh";
     hero.style.left = "0";
     hero.style.top = "0";
     hero.style.borderRadius = "0";
@@ -23,12 +23,53 @@ window.addEventListener("scroll", function () {
   }
 
   if (scroll > 5) {
-    hero.style.width = "38%";
-    hero.style.left = "31%";
+    // hero.style.width = "38%";
+    hero.style.width = "1100px";
+    // hero.style.left = "31%";
+    hero.style.left = "26%";
     hero.style.borderRadius = "50%";
-    hero.style.height = "70vh";
+    // hero.style.height = "70vh";
+    hero.style.height = "1100px";
     hero.style.top = "15%";
-    hero.style.top = `${scroll}px`;
+    hero.style.top = `${scroll + 10}px`;
+
+    if (scroll > 100) {
+      hero.style.top = "1000px";
+    }
+
+    // if (scroll > 120) {
+    //   hero.style.top = `${scroll + 10}px`;
+    // }
+
+    if (scroll > 1500) {
+      hero.style.top = "2100px";
+      // hero.style.width = "100%";
+      hero.style.left = "0";
+    }
+    if (scroll > 2400) {
+      hero.style.top = "2900px";
+      // hero.style.width = "100%";
+      hero.style.left = "1000px";
+    }
+    if (scroll > 3000) {
+      hero.style.top = "3600px";
+      // hero.style.width = "100%";
+      hero.style.left = "0";
+    }
+    if (scroll > 3700) {
+      hero.style.top = "4300px";
+      // hero.style.width = "100%";
+      hero.style.left = "1000px";
+    }
+    if (scroll > 4400) {
+      hero.style.top = "5300px";
+      // hero.style.width = "100%";
+      hero.style.left = "26%"
+
+      hero.style.width = "100%";
+      hero.style.left = "0";
+      hero.style.borderRadius = "0";
+    }
 
     // hero.style.width = "65%";
     // hero.style.left = "17%";
