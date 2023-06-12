@@ -6,15 +6,18 @@
 
 
 // ********** Fade In ************ 
-const projectInfos = document.querySelectorAll(".project-info");
-const projectImgs = document.querySelectorAll(".project-img");
-const mailForm = document.querySelector(".mail-form");
-const googleMap = document.querySelector("#map-api");
 const aboutText = document.querySelector(".my-text");
 const aboutTextTitle = document.querySelector(".my-text h2");
 const aboutTextParag = document.querySelector(".my-text p");
 const techStack = document.querySelector(".tech-stack");
-const projects = document.querySelector("#projects");
+
+const projectInfos = document.querySelectorAll(".project-info");
+const projectImgs = document.querySelectorAll(".project-img");
+const projectIconsContainers = document.querySelectorAll(".project-icons-container");
+
+
+const mailForm = document.querySelector(".mail-form");
+const googleMap = document.querySelector("#map-api");
 
 const windowHeight = window.innerHeight;
 const fadeInPoint = 600;
@@ -32,25 +35,44 @@ window.addEventListener("scroll", function () {
   }
 
   // Project section
-  for (let i = 0; i < projectInfos.length; i++) {
-    const itemTopInfo = projectInfos[i].getBoundingClientRect().top;
 
-    if (itemTopInfo < windowHeight - fadeInPoint) {
-      projectInfos[i].classList.add("fade-in");
-    } else {
-      projectInfos[i].classList.remove("fade-in");
+  for (let i = 0; i < projectIconsContainers.length; i++) {
+      const projectIconsTop = projectIconsContainers[i].getBoundingClientRect().top;
+
+      console.log(projectIconsTop);
+  
+      if (projectIconsTop < windowHeight - fadeInPoint) {
+        projectIconsContainers[i].classList.add("project-icons-animation");
+        projectInfos[i].classList.add("fade-in");
+        projectImgs[i].classList.add("fade-in");
+      } else {
+        projectIconsContainers[i].classList.remove("project-icons-animation");
+        projectInfos[i].classList.remove("fade-in");
+        projectImgs[i].classList.add("fade-in");
+      }
     }
-  }
 
-  for (let j = 0; j < projectImgs.length; j++) {
-    const itemTopImg = projectImgs[j].getBoundingClientRect().top;
 
-    if (itemTopImg < windowHeight - fadeInPoint) {
-      projectImgs[j].classList.add("fade-in");
-    } else {
-      projectImgs[j].classList.remove("fade-in");
-    }
-  }
+
+  // for (let i = 0; i < projectInfos.length; i++) {
+  //   const itemTopInfo = projectInfos[i].getBoundingClientRect().top;
+
+  //   if (itemTopInfo < windowHeight - fadeInPoint) {
+  //     projectInfos[i].classList.add("fade-in");
+  //   } else {
+  //     projectInfos[i].classList.remove("fade-in");
+  //   }
+  // }
+
+  // for (let j = 0; j < projectImgs.length; j++) {
+  //   const itemTopImg = projectImgs[j].getBoundingClientRect().top;
+
+  //   if (itemTopImg < windowHeight - fadeInPoint) {
+  //     projectImgs[j].classList.add("fade-in");
+  //   } else {
+  //     projectImgs[j].classList.remove("fade-in");
+  //   }
+  // }
 
 
   // Contact section
