@@ -28,29 +28,40 @@ window.addEventListener("scroll", function () {
     hero.style.borderRadius = "50%";
     hero.style.height = "70vh";
     hero.style.top = "15%";
+    hero.style.top = `${scroll}px`;
 
     // hero.style.width = "65%";
     // hero.style.left = "17%";
     // hero.style.top = "10%";
     // hero.style.transform = `rotateY(${scroll/4.7}deg)`;
   }
-  if (scroll > 150) {
-    hero.style.top = "500px";
-  }
-  if (scroll > 200) {
-    hero.style.top = "700px";
-  }
-  if (scroll > 650) {
-    hero.style.top = "800px";
-  }
+  // if (scroll > 150) {
+  //   hero.style.top = "500px";
+  // }
+  // if (scroll > 200) {
+  //   hero.style.top = "700px";
+  // }
+  // if (scroll > 650) {
+  //   hero.style.top = "800px";
+  // }
 
-  if (scroll > 700) {
-    hero.style.top = "1100px";
-    // hero.style.width = "100%";
-    // hero.style.left = "0";
-    // hero.style.borderRadius = "0%";
-    // hero.style.height = "100%";
-  }
+
+  // if (scroll > 700) {
+  //   hero.style.top = "1100px";
+  //   // hero.style.width = "100%";
+  //   // hero.style.left = "0";
+  //   // hero.style.borderRadius = "0%";
+  //   // hero.style.height = "100%";
+  // }
+  console.log(scroll);
+
+  // if (scroll > 800) {
+  //   hero.style.top = `${scroll}px`;
+  //   // hero.style.width = "100%";
+  //   // hero.style.left = "0";
+  //   // hero.style.borderRadius = "0%";
+  //   // hero.style.height = "100%";
+  // }
 
 })
 
