@@ -3,6 +3,63 @@
 //offsetTop - A Number, representing the top position of the element, in pixels
 
 
+
+// ********** Fade In ************
+
+const aboutText = document.querySelector(".my-text");
+const aboutTextTitle = document.querySelector(".my-text h2");
+const aboutTextParag = document.querySelector(".my-text p");
+const techStack = document.querySelector(".tech-stack");
+
+const projectIconsContainers = document.querySelectorAll(".project-icons-container");
+const projectImage = document.querySelectorAll(".project-img");
+const projectTitle = document.querySelectorAll(".project-title");
+const projectToolsList = document.querySelectorAll(".project-tools");
+const projectDescription = document.querySelectorAll(".description");
+
+
+
+const mailForm = document.querySelector(".mail-form");
+const googleMap = document.querySelector("#map-api");
+
+const windowHeight = window.innerHeight;
+const fadeInPoint = 550;
+
+window.addEventListener("scroll", function () {
+  // About section
+  const aboutTextTop = aboutText.getBoundingClientRect().top;
+
+  if (aboutTextTop < windowHeight - fadeInPoint) {
+    aboutTextTitle.classList.add("fade-in");
+    aboutTextParag.classList.add("fade-in");
+    techStack.classList.add("fade-in");
+  }
+
+  // Project section
+  for (let i = 0; i < projectIconsContainers.length; i++) {
+    const projectIconsTop = projectIconsContainers[i].getBoundingClientRect().top;
+
+    if (projectIconsTop < windowHeight - fadeInPoint) {
+      projectIconsContainers[i].classList.add("project-icons-animate");
+    } else {
+      projectIconsContainers[i].classList.remove("project-icons-animate");
+    }
+  }
+
+
+
+  // Contact section
+  const mailFormTop = mailForm.getBoundingClientRect().top;
+
+  if (mailFormTop < windowHeight - fadeInPoint) {
+    mailForm.classList.add("fade-in");
+  } else {
+    mailForm.classList.remove("fade-in");
+  }
+})
+
+
+
 // TEST
 
 // Hero background 
@@ -10,6 +67,7 @@ window.addEventListener("load", function () {
   this.setTimeout(setBackground, 1500)
   function setBackground() {
     hero.style.backgroundColor = "hsl(210, 36%, 96%)";
+    /* background mihgt be black amd the ui white */
     // hero.style.backgroundColor = "black";
   }
 })
@@ -219,84 +277,21 @@ window.addEventListener("scroll", function () {
 
 
 
-// ********** Fade In ************
-
-const aboutText = document.querySelector(".my-text");
-const aboutTextTitle = document.querySelector(".my-text h2");
-const aboutTextParag = document.querySelector(".my-text p");
-const techStack = document.querySelector(".tech-stack");
-
-const projectIconsContainers = document.querySelectorAll(".project-icons-container");
-const projectImage = document.querySelectorAll(".project-img");
-const projectTitle = document.querySelectorAll(".project-title");
-const projectToolsList = document.querySelectorAll(".project-tools");
-const projectDescription = document.querySelectorAll(".description");
-
-
-
-const mailForm = document.querySelector(".mail-form");
-const googleMap = document.querySelector("#map-api");
-
-const windowHeight = window.innerHeight;
-const fadeInPoint = 550;
-
-window.addEventListener("scroll", function () {
-  // About section
-  const aboutTextTop = aboutText.getBoundingClientRect().top;
-
-  if (aboutTextTop < windowHeight - fadeInPoint) {
-    aboutTextTitle.classList.add("fade-in");
-    aboutTextParag.classList.add("fade-in");
-    techStack.classList.add("fade-in");
-  }
-
-  // Project section
-  for (let i = 0; i < projectIconsContainers.length; i++) {
-    const projectIconsTop = projectIconsContainers[i].getBoundingClientRect().top;
-
-    if (projectIconsTop < windowHeight - fadeInPoint) {
-      projectIconsContainers[i].classList.add("project-icons-animate");
-    } else {
-      projectIconsContainers[i].classList.remove("project-icons-animate");
-    }
-  }
-
-
-
-  // Contact section
-  const mailFormTop = mailForm.getBoundingClientRect().top;
-  const googleMapTop = googleMap.getBoundingClientRect().top;
-
-  if (mailFormTop < windowHeight - fadeInPoint) {
-    mailForm.classList.add("fade-in");
-  } else {
-    mailForm.classList.remove("fade-in");
-  }
-
-  if (googleMapTop < windowHeight - fadeInPoint) {
-    googleMap.classList.add("fade-in");
-  } else {
-    googleMap.classList.remove("fade-in");
-  }
-})
-
-
-
 // ********** Map API ************
-function initMap() {
-  let map;
-  const myLatLng = { lat: 43.6588, lng: 51.1975 };
-  map = new google.maps.Map(document.getElementById("map-api"), {
-    center: myLatLng,
-    zoom: 13,
-  });
+// function initMap() {
+//   let map;
+//   const myLatLng = { lat: 43.6588, lng: 51.1975 };
+//   map = new google.maps.Map(document.getElementById("map-api"), {
+//     center: myLatLng,
+//     zoom: 13,
+//   });
 
-  new google.maps.Marker({
-    position: myLatLng,
-    map,
-    title: "Hello World!",
-  });
-}
+//   new google.maps.Marker({
+//     position: myLatLng,
+//     map,
+//     title: "Hello World!",
+//   });
+// }
 
 
 

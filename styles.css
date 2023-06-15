@@ -876,25 +876,6 @@ Contact Me
   padding-bottom: 5rem;
 }
 
-#map-api {
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  border-radius: 10px;
-  height: 40rem;
-  width: 100%;
-  display: grid;
-  place-items: center;
-  /* position: relative;
-  transform: translateX(30rem);
-  opacity: 0; */
-}
-
-#map-api.fade-in {
-  transform: translateX(0px);
-  opacity: 1;
-  transition: all .7s ease-in;
-}
-
 .mail-form input,
 textarea {
   width: 100%;
@@ -1576,10 +1557,6 @@ footer p {
   .contact-container {
     display: flex;
     gap: 3rem;
-  }
-
-  #map-api {
-    width: 50%;
   }
 
   .hero {
