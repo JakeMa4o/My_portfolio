@@ -88,8 +88,8 @@ window.addEventListener("scroll", function () {
   if (scroll > 1) {
     // hero.style.right = "auto";
     // hero.style.bottom = "auto";
-    hero.style.width = "1100px";
-    hero.style.height = "1100px";
+    hero.style.width = "600px";
+    hero.style.height = "600px";
     hero.style.borderRadius = "50%";
     if (heroRect.width > aboutRect.width) {
       hero.style.left = aboutRect.left - aboutLeftDifference + "px";
