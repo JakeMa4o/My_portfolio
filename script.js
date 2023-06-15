@@ -10,6 +10,7 @@ window.addEventListener("load", function () {
   this.setTimeout(setBackground, 1500)
   function setBackground() {
     hero.style.backgroundColor = "hsl(210, 36%, 96%)";
+    // hero.style.backgroundColor = "black";
   }
 })
 
@@ -83,11 +84,8 @@ window.addEventListener("scroll", function () {
     icons.forEach(icon => icon.classList.remove("colored"))
   }
 
-
   // Scroll to ABOUT section Hero background cricle, icons colored
-  if (scroll > 1) {
-    // hero.style.right = "auto";
-    // hero.style.bottom = "auto";
+  if (scroll > 10) {
     hero.style.width = "600px";
     hero.style.height = "600px";
     hero.style.borderRadius = "50%";
@@ -111,8 +109,8 @@ window.addEventListener("scroll", function () {
 
 
   // Scroll to each PROJECT, about icon colors removed
-  if (scroll > 1500) {
-    icons.forEach(icon => icon.classList.remove("colored"))
+  // 1500px
+  if (scroll > 800) {
 
     if (heroRect.width > project1Rect.width) {
       hero.style.left = project1Rect.left - project1LeftDifference + "px";
@@ -135,7 +133,7 @@ window.addEventListener("scroll", function () {
 
   // 2400px
 
-  if (scroll > 2700) {
+  if (scroll > 1800) {
 
     if (heroRect.width > project2Rect.width) {
       hero.style.left = project2Rect.left - project2LeftDifference + "px";
@@ -159,7 +157,7 @@ window.addEventListener("scroll", function () {
 
   // 3000
 
-  if (scroll > 3300) {
+  if (scroll > 2700) {
 
     if (heroRect.width > project3Rect.width) {
       hero.style.left = project3Rect.left - project3LeftDifference + "px";
@@ -184,7 +182,7 @@ window.addEventListener("scroll", function () {
 
   // 3700
 
-  if (scroll > 4000) {
+  if (scroll > 3500) {
 
     if (heroRect.width > project4Rect.width) {
       hero.style.left = project4Rect.left - project4LeftDifference + "px";
@@ -208,7 +206,7 @@ window.addEventListener("scroll", function () {
 
 
   // 4700
-  if (scroll > 5000) {
+  if (scroll > 4600) {
     hero.style.top = contactTopRelativeDocument + "px";
     hero.style.left = contactRect.left + "px";
     hero.style.width = "100%";
