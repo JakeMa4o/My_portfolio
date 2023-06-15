@@ -2,111 +2,223 @@
 // pageYOffset is a read - only window property that returns the number of pixels the document has been scrolled vertically.
 //offsetTop - A Number, representing the top position of the element, in pixels
 
-// Hero 
 
 // TEST
 
+// Hero background 
+window.addEventListener("load", function () {
+  this.setTimeout(setBackground, 1500)
+  function setBackground() {
+    hero.style.backgroundColor = "hsl(210, 36%, 96%)";
+  }
+})
+
+
+// Navigation Circle
 const hero = document.querySelector(".hero-background");
-const heroTop = hero.getBoundingClientRect().top;
+
+
+const aboutInfo = document.querySelector(".about-info");
+const icons = document.querySelectorAll(".icon");
+
+
+const projectInfos = document.querySelectorAll(".project-info");
+const projectImgs = this.document.querySelectorAll(".project-img");
+
+
+
+const contact = document.querySelector("#contact-me");
+
+
 
 
 window.addEventListener("scroll", function () {
+  // Scroll value updated every scroll
   const scroll = window.pageYOffset;
 
-  if (scroll < 5) {
+  // Hero background position updated every scroll
+  const heroRect = hero.getBoundingClientRect();
+
+  // AboutInfo section Hero position
+  const aboutRect = aboutInfo.getBoundingClientRect();
+  const aboutTopRelativeDocument = scroll + aboutRect.top;
+  const aboutTopDifference = Math.abs(heroRect.height / 2 - aboutRect.height / 2);
+  const aboutLeftDifference = Math.abs(heroRect.width / 2 - aboutRect.width / 2);
+
+  // Project section Hero position 
+  const project1Rect = projectInfos[0].getBoundingClientRect();
+  const project1TopRelativeDocument = scroll + project1Rect.top;
+  const project1TopDifference = Math.abs(heroRect.height / 2 - project1Rect.height / 2);
+  const project1LeftDifference = Math.abs(heroRect.width / 2 - project1Rect.width / 2);
+
+  const project2Rect = projectInfos[1].getBoundingClientRect();
+  const project2TopRelativeDocument = scroll + project2Rect.top;
+  const project2TopDifference = Math.abs(heroRect.height / 2 - project2Rect.height / 2);
+  const project2LeftDifference = Math.abs(heroRect.width / 2 - project2Rect.width / 2);
+
+  const project3Rect = projectInfos[2].getBoundingClientRect();
+  const project3TopRelativeDocument = scroll + project3Rect.top;
+  const project3TopDifference = Math.abs(heroRect.height / 2 - project3Rect.height / 2);
+  const project3LeftDifference = Math.abs(heroRect.width / 2 - project3Rect.width / 2);
+
+  const project4Rect = projectInfos[3].getBoundingClientRect();
+  const project4TopRelativeDocument = scroll + project4Rect.top;
+  const project4TopDifference = Math.abs(heroRect.height / 2 - project4Rect.height / 2);
+  const project4LeftDifference = Math.abs(heroRect.width / 2 - project4Rect.width / 2);
+
+  // Contact section Hero position
+  const contactRect = contact.getBoundingClientRect();
+  const contactTopRelativeDocument = scroll + contactRect.top;
+
+
+  // Scroll back to HERO section background 100% width
+  if (scroll < 1) {
     hero.style.width = "100%";
     hero.style.height = "100vh";
     hero.style.left = "0";
     hero.style.top = "0";
+    // hero.style.inset = "0";
     hero.style.borderRadius = "0";
     hero.style.position = "absolute";
+    icons.forEach(icon => icon.classList.remove("colored"))
   }
 
-  if (scroll > 5) {
-    // hero.style.width = "38%";
+
+  // Scroll to ABOUT section Hero background cricle, icons colored
+  if (scroll > 1) {
+    // hero.style.right = "auto";
+    // hero.style.bottom = "auto";
     hero.style.width = "1100px";
-    // hero.style.left = "31%";
-    hero.style.left = "26%";
-    hero.style.borderRadius = "50%";
-    // hero.style.height = "70vh";
     hero.style.height = "1100px";
-    hero.style.top = "15%";
-    hero.style.top = `${scroll + 10}px`;
-
-    if (scroll > 100) {
-      hero.style.top = "1000px";
+    hero.style.borderRadius = "50%";
+    if (heroRect.width > aboutRect.width) {
+      hero.style.left = aboutRect.left - aboutLeftDifference + "px";
+    } else if (heroRect.width < aboutRect.width) {
+      hero.style.left = aboutRect.left + aboutLeftDifference + "px";
+    } else {
+      hero.style.left = aboutRect.left + "px";
     }
-
-    // if (scroll > 120) {
-    //   hero.style.top = `${scroll + 10}px`;
-    // }
-
-    if (scroll > 1500) {
-      hero.style.top = "2100px";
-      // hero.style.width = "100%";
-      hero.style.left = "0";
+    if (heroRect.height > aboutRect.height) {
+      hero.style.top = aboutTopRelativeDocument - aboutTopDifference + "px";
+    } else if (heroRect.height < aboutRect.height) {
+      hero.style.top = aboutTopRelativeDocument + aboutTopDifference + "px";
+    } else {
+      hero.style.top = aboutTopRelativeDocument + "px";
     }
-    if (scroll > 2400) {
-      hero.style.top = "2900px";
-      // hero.style.width = "100%";
-      hero.style.left = "1000px";
-    }
-    if (scroll > 3000) {
-      hero.style.top = "3600px";
-      // hero.style.width = "100%";
-      hero.style.left = "0";
-    }
-    if (scroll > 3700) {
-      hero.style.top = "4300px";
-      // hero.style.width = "100%";
-      hero.style.left = "1000px";
-    }
-    if (scroll > 4400) {
-      hero.style.top = "5300px";
-      // hero.style.width = "100%";
-      hero.style.left = "26%"
-
-      hero.style.width = "100%";
-      hero.style.left = "0";
-      hero.style.borderRadius = "0";
-    }
-
-    // hero.style.width = "65%";
-    // hero.style.left = "17%";
-    // hero.style.top = "10%";
-    // hero.style.transform = `rotateY(${scroll/4.7}deg)`;
+    icons.forEach(icon => icon.classList.add("colored"))
+    projectImgs[0].style.filter = "grayscale(100%)"
   }
-  // if (scroll > 150) {
-  //   hero.style.top = "500px";
-  // }
-  // if (scroll > 200) {
-  //   hero.style.top = "700px";
-  // }
-  // if (scroll > 650) {
-  //   hero.style.top = "800px";
-  // }
 
 
-  // if (scroll > 700) {
-  //   hero.style.top = "1100px";
-  //   // hero.style.width = "100%";
-  //   // hero.style.left = "0";
-  //   // hero.style.borderRadius = "0%";
-  //   // hero.style.height = "100%";
-  // }
-  console.log(scroll);
+  // Scroll to each PROJECT, about icon colors removed
+  if (scroll > 1500) {
+    icons.forEach(icon => icon.classList.remove("colored"))
 
-  // if (scroll > 800) {
-  //   hero.style.top = `${scroll}px`;
-  //   // hero.style.width = "100%";
-  //   // hero.style.left = "0";
-  //   // hero.style.borderRadius = "0%";
-  //   // hero.style.height = "100%";
-  // }
+    if (heroRect.width > project1Rect.width) {
+      hero.style.left = project1Rect.left - project1LeftDifference + "px";
+    } else if (heroRect.width < project1Rect.width) {
+      hero.style.left = project1Rect.left + project1LeftDifference + "px";
+    } else {
+      hero.style.left = project1Rect.left + "px";
+    }
+    if (heroRect.height > project1Rect.height) {
+      hero.style.top = project1TopRelativeDocument - project1TopDifference + "px";
+    } else if (heroRect.height < project1Rect.height) {
+      hero.style.top = project1TopRelativeDocument + project1TopDifference + "px";
+    } else {
+      hero.style.top = project1TopRelativeDocument + "px";
+    }
 
+    projectImgs[0].style.filter = "grayscale(0%)"
+    projectImgs[1].style.filter = "grayscale(100%)"
+  }
+
+  // 2400px
+
+  if (scroll > 2700) {
+
+    if (heroRect.width > project2Rect.width) {
+      hero.style.left = project2Rect.left - project2LeftDifference + "px";
+    } else if (heroRect.width < project2Rect.width) {
+      hero.style.left = project2Rect.left + project2LeftDifference + "px";
+    } else {
+      hero.style.left = project1Rect.left + "px";
+    }
+    if (heroRect.height > project2Rect.height) {
+      hero.style.top = project2TopRelativeDocument - project2TopDifference + "px";
+    } else if (heroRect.height < project2Rect.height) {
+      hero.style.top = project2TopRelativeDocument + project2TopDifference + "px";
+    } else {
+      hero.style.top = project2TopRelativeDocument + "px";
+    }
+
+    projectImgs[0].style.filter = "grayscale(100%)"
+    projectImgs[1].style.filter = "grayscale(0%)"
+    projectImgs[2].style.filter = "grayscale(100%)"
+  }
+
+  // 3000
+
+  if (scroll > 3300) {
+
+    if (heroRect.width > project3Rect.width) {
+      hero.style.left = project3Rect.left - project3LeftDifference + "px";
+    } else if (heroRect.width < project3Rect.width) {
+      hero.style.left = project3Rect.left + project3LeftDifference + "px";
+    } else {
+      hero.style.left = project3Rect.left + "px";
+    }
+    if (heroRect.height > project3Rect.height) {
+      hero.style.top = project3TopRelativeDocument - project3TopDifference + "px";
+    } else if (heroRect.height < project3Rect.height) {
+      hero.style.top = project3TopRelativeDocument + project3TopDifference + "px";
+    } else {
+      hero.style.top = project3TopRelativeDocument + "px";
+    }
+
+    projectImgs[1].style.filter = "grayscale(100%)"
+    projectImgs[2].style.filter = "grayscale(0%)"
+    projectImgs[3].style.filter = "grayscale(100%)"
+  }
+
+
+  // 3700
+
+  if (scroll > 4000) {
+
+    if (heroRect.width > project4Rect.width) {
+      hero.style.left = project4Rect.left - project4LeftDifference + "px";
+    } else if (heroRect.width < project4Rect.width) {
+      hero.style.left = project4Rect.left + project4LeftDifference + "px";
+    } else {
+      hero.style.left = project4Rect.left + "px";
+    }
+    if (heroRect.height > project4Rect.height) {
+      hero.style.top = project4TopRelativeDocument - project4TopDifference + "px";
+    } else if (heroRect.height < project4Rect.height) {
+      hero.style.top = project4TopRelativeDocument + project4TopDifference + "px";
+    } else {
+      hero.style.top = project4TopRelativeDocument + "px";
+    }
+
+    projectImgs[2].style.filter = "grayscale(100%)"
+    projectImgs[3].style.filter = "grayscale(0%)"
+    console.log(contactTopRelativeDocument);
+  }
+
+
+  // 4700
+  if (scroll > 5000) {
+    hero.style.top = contactTopRelativeDocument + "px";
+    hero.style.left = contactRect.left + "px";
+    hero.style.width = "100%";
+    hero.style.height = contactRect.height + "px";
+    hero.style.borderRadius = "0";
+  }
 })
 
 // TEST
+
 
 
 // ********** Fade In ************
@@ -141,7 +253,6 @@ window.addEventListener("scroll", function () {
   }
 
   // Project section
-
   for (let i = 0; i < projectIconsContainers.length; i++) {
     const projectIconsTop = projectIconsContainers[i].getBoundingClientRect().top;
 
