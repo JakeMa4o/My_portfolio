@@ -23,7 +23,8 @@ const mailForm = document.querySelector(".mail-form");
 const googleMap = document.querySelector("#map-api");
 
 const windowHeight = window.innerHeight;
-const fadeInPoint = 550;
+const fadeInPoint = 200;
+// 550px
 
 window.addEventListener("scroll", function () {
   // About section
