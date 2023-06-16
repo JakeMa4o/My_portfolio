@@ -12,10 +12,11 @@ const aboutTextParag = document.querySelector(".my-text p");
 const techStack = document.querySelector(".tech-stack");
 
 const projectIconsContainers = document.querySelectorAll(".project-icons-container");
-const projectImage = document.querySelectorAll(".project-img");
-const projectTitle = document.querySelectorAll(".project-title");
-const projectToolsList = document.querySelectorAll(".project-tools");
-const projectDescription = document.querySelectorAll(".description");
+const projectImages = document.querySelectorAll(".project-img");
+const projectTitles = document.querySelectorAll(".project-title");
+const projectToolsLists = document.querySelectorAll(".project-tools");
+const projectDescriptions = document.querySelectorAll(".description");
+const buttonContainers = document.querySelectorAll(".buttons-container");
 
 
 
@@ -37,13 +38,38 @@ window.addEventListener("scroll", function () {
   }
 
   // Project section
+
   for (let i = 0; i < projectIconsContainers.length; i++) {
     const projectIconsTop = projectIconsContainers[i].getBoundingClientRect().top;
 
     if (projectIconsTop < windowHeight - fadeInPoint) {
       projectIconsContainers[i].classList.add("project-icons-animate");
+
+      this.setTimeout(() => {
+        projectTitles[i].style.opacity = "1";
+        projectTitles[i].style.top = "0";
+        projectImages[i].style.opacity = "1";
+        projectImages[i].style.top = "0";
+        projectDescriptions[i].style.opacity = "1";
+        projectDescriptions[i].style.top = "0";
+        projectToolsLists[i].style.opacity = "1";
+        projectToolsLists[i].style.top = "0";
+        buttonContainers[i].style.opacity = "1";
+        buttonContainers[i].style.top = "0";
+      }, 2000)
+
     } else {
       projectIconsContainers[i].classList.remove("project-icons-animate");
+      projectTitles[i].style.opacity = "0";
+      projectTitles[i].style.top = "1rem";
+      projectImages[i].style.opacity = "0";
+      projectImages[i].style.top = "1rem";
+      projectDescriptions[i].style.opacity = "0";
+      projectDescriptions[i].style.top = "1rem";
+      projectToolsLists[i].style.opacity = "0";
+      projectToolsLists[i].style.top = "1rem";
+      buttonContainers[i].style.opacity = "0";
+      buttonContainers[i].style.top = "1rem";
     }
   }
 
