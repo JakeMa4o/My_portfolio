@@ -2,6 +2,9 @@
 // pageYOffset is a read - only window property that returns the number of pixels the document has been scrolled vertically.
 //offsetTop - A Number, representing the top position of the element, in pixels
 
+const hero = document.querySelector(".hero-background");
+
+const heroRect = hero.getBoundingClientRect();
 
 
 // ********** Fade In ************
@@ -20,12 +23,16 @@ const buttonContainers = document.querySelectorAll(".buttons-container");
 
 
 
+
 const mailForm = document.querySelector(".mail-form");
 const googleMap = document.querySelector("#map-api");
 
 const windowHeight = window.innerHeight;
-const fadeInPoint = 600;
+
+const fadeInPoint = heroRect.height / 2;
+// 538px
 // 550px
+// console.log(windowHeight - fadeInPoint)
 
 window.addEventListener("scroll", function () {
   // About section
@@ -42,22 +49,24 @@ window.addEventListener("scroll", function () {
   for (let i = 0; i < projectIconsContainers.length; i++) {
     const projectIconsTop = projectIconsContainers[i].getBoundingClientRect().top;
 
-    if (projectIconsTop < windowHeight - fadeInPoint) {
+    if (projectIconsTop <= windowHeight - fadeInPoint) {
       projectIconsContainers[i].classList.add("project-icons-animate");
 
-      this.setTimeout(() => {
-        projectTitles[i].style.opacity = "1";
-        projectTitles[i].style.top = "0";
-        projectImages[i].style.opacity = "1";
-        projectImages[i].style.top = "0";
-        projectDescriptions[i].style.opacity = "1";
-        projectDescriptions[i].style.top = "0";
-        projectToolsLists[i].style.opacity = "1";
-        projectToolsLists[i].style.top = "0";
-        buttonContainers[i].style.opacity = "1";
-        buttonContainers[i].style.top = "0";
-      }, 2000)
-    } if (projectIconsTop > windowHeight - fadeInPoint) {
+      if (projectIconsContainers[i].classList.contains("project-icons-animate")) {
+        this.setTimeout(() => {
+          projectTitles[i].style.opacity = "1";
+          projectTitles[i].style.top = "0";
+          projectImages[i].style.opacity = "1";
+          projectImages[i].style.top = "0";
+          projectDescriptions[i].style.opacity = "1";
+          projectDescriptions[i].style.top = "0";
+          projectToolsLists[i].style.opacity = "1";
+          projectToolsLists[i].style.top = "0";
+          buttonContainers[i].style.opacity = "1";
+          buttonContainers[i].style.top = "0";
+        }, 900)
+      }
+    } else if (projectIconsTop > windowHeight - fadeInPoint) {
       projectIconsContainers[i].classList.remove("project-icons-animate");
       projectTitles[i].style.opacity = "0";
       projectTitles[i].style.top = "1rem";
@@ -70,8 +79,10 @@ window.addEventListener("scroll", function () {
       buttonContainers[i].style.opacity = "0";
       buttonContainers[i].style.top = "1rem";
     }
+    // fix this or use css animations
+    console.log(windowHeight - fadeInPoint)
+    console.log(projectIconsTop)
   }
-
 
 
   // Contact section
@@ -100,40 +111,29 @@ window.addEventListener("load", function () {
 
 
 // Navigation Circle
-const hero = document.querySelector(".hero-background");
 
 
 const aboutInfo = document.querySelector(".about-info");
+const aboutRect = aboutInfo.getBoundingClientRect();
 const icons = document.querySelectorAll(".icon");
-
 
 const projectInfos = document.querySelectorAll(".project-info");
 const projectImgs = this.document.querySelectorAll(".project-img");
 
-
-
 const contact = document.querySelector("#contact-me");
 
 
-const heroRect = hero.getBoundingClientRect();
-const aboutRect = aboutInfo.getBoundingClientRect();
-
-// console.log(aboutRect)
-// console.log(heroRect)
 
 window.addEventListener("scroll", function () {
   // Scroll value updated every scroll
   const scroll = window.pageYOffset;
 
   // Hero background position updated every scroll
-  // const heroRect = hero.getBoundingClientRect();
   // get new width and height for calculation in percentage 60% and 50%;
   const heroNewWidth = heroRect.width;
 
   // AboutInfo section Hero position
-  // const aboutRect = aboutInfo.getBoundingClientRect();
   const aboutTopRelativeDocument = aboutRect.top;
-  // const aboutTopRelativeDocument = scroll + aboutRect.top;
   const aboutTopDifference = Math.abs(heroRect.height / 3 - aboutRect.height / 2);
   const aboutLeftDifference = Math.abs(heroRect.width / 4 - aboutRect.width / 2);
 
@@ -175,13 +175,9 @@ window.addEventListener("scroll", function () {
   }
 
   // Scroll to ABOUT section Hero background cricle, icons colored
-  // console.log(scroll);
-  // console.log(hero.style.left);
   if (scroll > 50) {
     hero.style.width = "50%";
     hero.style.height = "60%";
-    // hero.style.top = "1000px";
-    // hero.style.left = "700px"
 
     if (heroRect.width / 2 > aboutRect.width) {
       hero.style.left = aboutRect.left - aboutLeftDifference + "px";
@@ -203,10 +199,12 @@ window.addEventListener("scroll", function () {
 
 
   // Scroll to each PROJECT, about icon colors removed
+
   // 1500px
+
   if (scroll > 1500) {
 
-    if (heroRect.width/ 2 > project1Rect.width) {
+    if (heroRect.width / 2 > project1Rect.width) {
       hero.style.left = project1Rect.left - project1LeftDifference + "px";
     } else if (heroRect.width / 2 < project1Rect.width) {
       hero.style.left = project1Rect.left + project1LeftDifference + "px";
@@ -295,7 +293,7 @@ window.addEventListener("scroll", function () {
 
     projectImgs[2].style.filter = "grayscale(100%)"
     projectImgs[3].style.filter = "grayscale(0%)"
-    console.log(contactTopRelativeDocument);
+    // console.log(contactTopRelativeDocument);
   }
 
 

@@ -533,14 +533,6 @@ About
   animation-delay: .8s;
 }
 
-/* span TEXTSHOWUP*/
-
-.tech-icon span {
-  opacity: 0;
-  position: absolute;
-  top: 5rem;
-}
-
 .tech-stack.fade-in .tech-icon:nth-child(1) span {
   color: #e34c26;
 }
@@ -582,6 +574,14 @@ About
 .tech-stack.fade-in .tech-icon:nth-child(9) span {
   animation-delay: 1.8s;
   color: #764abc;
+}
+
+/* span TEXTSHOWUP*/
+
+.tech-icon span {
+  opacity: 0;
+  position: absolute;
+  top: 5rem;
 }
 
 
@@ -669,6 +669,11 @@ Projects
   width: 100%;
 }
 
+.project-icon {
+  display: grid;
+  place-items: center;
+}
+
 .project-tools-icons {
   /* border: 1px solid #000; */
   display: flex;
@@ -689,20 +694,24 @@ Projects
 }
 
 .project-icons-container.project-icons-animate i{ 
-  animation: bounceIcons 1.3s forwards;
+  animation: bounceIcons .8s forwards;
 }
 .project-icons-container.project-icons-animate{ 
-  animation: fadeOut 1s 1.7s forwards;
+  animation: fadeOut 1s .8s forwards;
 }
+.project-icons-container.project-icons-animate span{ 
+  /* animation: textShowUp .8s forwards; */
+}
+
+
 .project-icons-container.project-icons-animate .project-icon:nth-child(2) i{ 
   animation-delay: .3s;
 }
 .project-icons-container.project-icons-animate .project-icon:nth-child(3) i{ 
   animation-delay: .6s;
 }
-.project-icons-container.project-icons-animate span{ 
-  animation: textShowUp 1s forwards;
-}
+
+
 .project-icons-container.project-icons-animate .project-icon:nth-child(1) span{ 
   animation-delay: .7s;
 }
@@ -712,6 +721,40 @@ Projects
 .project-icons-container.project-icons-animate .project-icon:nth-child(3) span{ 
   animation-delay: 1.3s;
 }
+
+.html span {
+  color: #e34c26;
+}
+
+.css span {
+  color: #49a6e9;
+}
+
+.javascript span {
+  color: #f0db4f;
+}
+
+.react span {
+  color: #88dded;
+}
+
+.redux span {
+  color: #764abc;
+}
+
+.node span {
+  color: #6cc24a;
+}
+
+.express span {
+  color: #000;
+}
+
+.mongodb span {
+  color: #589636;
+}
+
+
 
 @keyframes fadeOut {
   to {
