@@ -24,7 +24,7 @@ const mailForm = document.querySelector(".mail-form");
 const googleMap = document.querySelector("#map-api");
 
 const windowHeight = window.innerHeight;
-const fadeInPoint = 200;
+const fadeInPoint = 300;
 // 550px
 
 window.addEventListener("scroll", function () {
@@ -57,8 +57,7 @@ window.addEventListener("scroll", function () {
         buttonContainers[i].style.opacity = "1";
         buttonContainers[i].style.top = "0";
       }, 2000)
-
-    } else {
+    } if (projectIconsTop > windowHeight - fadeInPoint) {
       projectIconsContainers[i].classList.remove("project-icons-animate");
       projectTitles[i].style.opacity = "0";
       projectTitles[i].style.top = "1rem";
@@ -158,22 +157,23 @@ window.addEventListener("scroll", function () {
 
 
   // Scroll back to HERO section background 100% width
-  if (scroll < 1) {
+  if (scroll < 50) {
     hero.style.width = "100%";
     hero.style.height = "100vh";
-    hero.style.left = "0";
     hero.style.top = "0";
-    // hero.style.inset = "0";
+    hero.style.left = "0";
     hero.style.borderRadius = "0";
     hero.style.position = "absolute";
     icons.forEach(icon => icon.classList.remove("colored"))
   }
 
   // Scroll to ABOUT section Hero background cricle, icons colored
-  if (scroll > 10) {
-    hero.style.width = "600px";
-    hero.style.height = "600px";
-    hero.style.borderRadius = "50%";
+  console.log(scroll);
+  console.log(hero.style.left);
+  if (scroll > 50) {
+    hero.style.width = "50%";
+    hero.style.height = "60%";
+    
     if (heroRect.width > aboutRect.width) {
       hero.style.left = aboutRect.left - aboutLeftDifference + "px";
     } else if (heroRect.width < aboutRect.width) {
@@ -195,7 +195,7 @@ window.addEventListener("scroll", function () {
 
   // Scroll to each PROJECT, about icon colors removed
   // 1500px
-  if (scroll > 800) {
+  if (scroll > 900) {
 
     if (heroRect.width > project1Rect.width) {
       hero.style.left = project1Rect.left - project1LeftDifference + "px";
@@ -218,7 +218,7 @@ window.addEventListener("scroll", function () {
 
   // 2400px
 
-  if (scroll > 1800) {
+  if (scroll > 1900) {
 
     if (heroRect.width > project2Rect.width) {
       hero.style.left = project2Rect.left - project2LeftDifference + "px";
@@ -242,7 +242,7 @@ window.addEventListener("scroll", function () {
 
   // 3000
 
-  if (scroll > 2700) {
+  if (scroll > 2800) {
 
     if (heroRect.width > project3Rect.width) {
       hero.style.left = project3Rect.left - project3LeftDifference + "px";
@@ -267,7 +267,7 @@ window.addEventListener("scroll", function () {
 
   // 3700
 
-  if (scroll > 3500) {
+  if (scroll > 3600) {
 
     if (heroRect.width > project4Rect.width) {
       hero.style.left = project4Rect.left - project4LeftDifference + "px";
@@ -296,7 +296,6 @@ window.addEventListener("scroll", function () {
     hero.style.left = contactRect.left + "px";
     hero.style.width = "100%";
     hero.style.height = contactRect.height + "px";
-    hero.style.borderRadius = "0";
   }
 })
 
