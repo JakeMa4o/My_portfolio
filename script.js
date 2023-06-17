@@ -173,7 +173,7 @@ window.addEventListener("scroll", function () {
   if (scroll > 50) {
     hero.style.width = "50%";
     hero.style.height = "60%";
-    
+
     if (heroRect.width > aboutRect.width) {
       hero.style.left = aboutRect.left - aboutLeftDifference + "px";
     } else if (heroRect.width < aboutRect.width) {
