@@ -24,7 +24,7 @@ const mailForm = document.querySelector(".mail-form");
 const googleMap = document.querySelector("#map-api");
 
 const windowHeight = window.innerHeight;
-const fadeInPoint = 300;
+const fadeInPoint = 600;
 // 550px
 
 window.addEventListener("scroll", function () {
@@ -115,41 +115,48 @@ const projectImgs = this.document.querySelectorAll(".project-img");
 const contact = document.querySelector("#contact-me");
 
 
+const heroRect = hero.getBoundingClientRect();
+const aboutRect = aboutInfo.getBoundingClientRect();
 
+// console.log(aboutRect)
+// console.log(heroRect)
 
 window.addEventListener("scroll", function () {
   // Scroll value updated every scroll
   const scroll = window.pageYOffset;
 
   // Hero background position updated every scroll
-  const heroRect = hero.getBoundingClientRect();
+  // const heroRect = hero.getBoundingClientRect();
+  // get new width and height for calculation in percentage 60% and 50%;
+  const heroNewWidth = heroRect.width;
 
   // AboutInfo section Hero position
-  const aboutRect = aboutInfo.getBoundingClientRect();
-  const aboutTopRelativeDocument = scroll + aboutRect.top;
-  const aboutTopDifference = Math.abs(heroRect.height / 2 - aboutRect.height / 2);
-  const aboutLeftDifference = Math.abs(heroRect.width / 2 - aboutRect.width / 2);
+  // const aboutRect = aboutInfo.getBoundingClientRect();
+  const aboutTopRelativeDocument = aboutRect.top;
+  // const aboutTopRelativeDocument = scroll + aboutRect.top;
+  const aboutTopDifference = Math.abs(heroRect.height / 3 - aboutRect.height / 2);
+  const aboutLeftDifference = Math.abs(heroRect.width / 4 - aboutRect.width / 2);
 
   // Project section Hero position 
   const project1Rect = projectInfos[0].getBoundingClientRect();
   const project1TopRelativeDocument = scroll + project1Rect.top;
-  const project1TopDifference = Math.abs(heroRect.height / 2 - project1Rect.height / 2);
-  const project1LeftDifference = Math.abs(heroRect.width / 2 - project1Rect.width / 2);
+  const project1TopDifference = Math.abs(heroRect.height / 3 - project1Rect.height / 2);
+  const project1LeftDifference = Math.abs(heroRect.width / 4 - project1Rect.width / 2);
 
   const project2Rect = projectInfos[1].getBoundingClientRect();
   const project2TopRelativeDocument = scroll + project2Rect.top;
-  const project2TopDifference = Math.abs(heroRect.height / 2 - project2Rect.height / 2);
-  const project2LeftDifference = Math.abs(heroRect.width / 2 - project2Rect.width / 2);
+  const project2TopDifference = Math.abs(heroRect.height / 3 - project2Rect.height / 2);
+  const project2LeftDifference = Math.abs(heroRect.width / 4 - project2Rect.width / 2);
 
   const project3Rect = projectInfos[2].getBoundingClientRect();
   const project3TopRelativeDocument = scroll + project3Rect.top;
-  const project3TopDifference = Math.abs(heroRect.height / 2 - project3Rect.height / 2);
-  const project3LeftDifference = Math.abs(heroRect.width / 2 - project3Rect.width / 2);
+  const project3TopDifference = Math.abs(heroRect.height / 3 - project3Rect.height / 2);
+  const project3LeftDifference = Math.abs(heroRect.width / 4 - project3Rect.width / 2);
 
   const project4Rect = projectInfos[3].getBoundingClientRect();
   const project4TopRelativeDocument = scroll + project4Rect.top;
-  const project4TopDifference = Math.abs(heroRect.height / 2 - project4Rect.height / 2);
-  const project4LeftDifference = Math.abs(heroRect.width / 2 - project4Rect.width / 2);
+  const project4TopDifference = Math.abs(heroRect.height / 3 - project4Rect.height / 2);
+  const project4LeftDifference = Math.abs(heroRect.width / 4 - project4Rect.width / 2);
 
   // Contact section Hero position
   const contactRect = contact.getBoundingClientRect();
@@ -168,15 +175,17 @@ window.addEventListener("scroll", function () {
   }
 
   // Scroll to ABOUT section Hero background cricle, icons colored
-  console.log(scroll);
-  console.log(hero.style.left);
+  // console.log(scroll);
+  // console.log(hero.style.left);
   if (scroll > 50) {
     hero.style.width = "50%";
     hero.style.height = "60%";
+    // hero.style.top = "1000px";
+    // hero.style.left = "700px"
 
-    if (heroRect.width > aboutRect.width) {
+    if (heroRect.width / 2 > aboutRect.width) {
       hero.style.left = aboutRect.left - aboutLeftDifference + "px";
-    } else if (heroRect.width < aboutRect.width) {
+    } else if (heroRect.width / 2 < aboutRect.width) {
       hero.style.left = aboutRect.left + aboutLeftDifference + "px";
     } else {
       hero.style.left = aboutRect.left + "px";
@@ -195,11 +204,11 @@ window.addEventListener("scroll", function () {
 
   // Scroll to each PROJECT, about icon colors removed
   // 1500px
-  if (scroll > 900) {
+  if (scroll > 1500) {
 
-    if (heroRect.width > project1Rect.width) {
+    if (heroRect.width/ 2 > project1Rect.width) {
       hero.style.left = project1Rect.left - project1LeftDifference + "px";
-    } else if (heroRect.width < project1Rect.width) {
+    } else if (heroRect.width / 2 < project1Rect.width) {
       hero.style.left = project1Rect.left + project1LeftDifference + "px";
     } else {
       hero.style.left = project1Rect.left + "px";
@@ -218,11 +227,11 @@ window.addEventListener("scroll", function () {
 
   // 2400px
 
-  if (scroll > 1900) {
+  if (scroll > 2200) {
 
-    if (heroRect.width > project2Rect.width) {
+    if (heroRect.width / 2 > project2Rect.width) {
       hero.style.left = project2Rect.left - project2LeftDifference + "px";
-    } else if (heroRect.width < project2Rect.width) {
+    } else if (heroRect.width / 2 < project2Rect.width) {
       hero.style.left = project2Rect.left + project2LeftDifference + "px";
     } else {
       hero.style.left = project1Rect.left + "px";
@@ -242,11 +251,11 @@ window.addEventListener("scroll", function () {
 
   // 3000
 
-  if (scroll > 2800) {
+  if (scroll > 3200) {
 
-    if (heroRect.width > project3Rect.width) {
+    if (heroRect.width / 2 > project3Rect.width) {
       hero.style.left = project3Rect.left - project3LeftDifference + "px";
-    } else if (heroRect.width < project3Rect.width) {
+    } else if (heroRect.width / 2 < project3Rect.width) {
       hero.style.left = project3Rect.left + project3LeftDifference + "px";
     } else {
       hero.style.left = project3Rect.left + "px";
@@ -267,11 +276,11 @@ window.addEventListener("scroll", function () {
 
   // 3700
 
-  if (scroll > 3600) {
+  if (scroll > 3900) {
 
-    if (heroRect.width > project4Rect.width) {
+    if (heroRect.width / 2 > project4Rect.width) {
       hero.style.left = project4Rect.left - project4LeftDifference + "px";
-    } else if (heroRect.width < project4Rect.width) {
+    } else if (heroRect.width / 2 < project4Rect.width) {
       hero.style.left = project4Rect.left + project4LeftDifference + "px";
     } else {
       hero.style.left = project4Rect.left + "px";
@@ -291,7 +300,7 @@ window.addEventListener("scroll", function () {
 
 
   // 4700
-  if (scroll > 4600) {
+  if (scroll > 4900) {
     hero.style.top = contactTopRelativeDocument + "px";
     hero.style.left = contactRect.left + "px";
     hero.style.width = "100%";
