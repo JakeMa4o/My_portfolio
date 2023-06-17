@@ -49,35 +49,35 @@ window.addEventListener("scroll", function () {
   for (let i = 0; i < projectIconsContainers.length; i++) {
     const projectIconsTop = projectIconsContainers[i].getBoundingClientRect().top;
 
-    if (projectIconsTop <= windowHeight - fadeInPoint) {
+    if (projectIconsTop < windowHeight - fadeInPoint) {
       projectIconsContainers[i].classList.add("project-icons-animate");
+      hero.style.borderRadius = "50%";
 
-      if (projectIconsContainers[i].classList.contains("project-icons-animate")) {
-        this.setTimeout(() => {
-          projectTitles[i].style.opacity = "1";
-          projectTitles[i].style.top = "0";
-          projectImages[i].style.opacity = "1";
-          projectImages[i].style.top = "0";
-          projectDescriptions[i].style.opacity = "1";
-          projectDescriptions[i].style.top = "0";
-          projectToolsLists[i].style.opacity = "1";
-          projectToolsLists[i].style.top = "0";
-          buttonContainers[i].style.opacity = "1";
-          buttonContainers[i].style.top = "0";
-        }, 900)
-      }
-    } else if (projectIconsTop > windowHeight - fadeInPoint) {
-      projectIconsContainers[i].classList.remove("project-icons-animate");
-      projectTitles[i].style.opacity = "0";
-      projectTitles[i].style.top = "1rem";
-      projectImages[i].style.opacity = "0";
-      projectImages[i].style.top = "1rem";
-      projectDescriptions[i].style.opacity = "0";
-      projectDescriptions[i].style.top = "1rem";
-      projectToolsLists[i].style.opacity = "0";
-      projectToolsLists[i].style.top = "1rem";
-      buttonContainers[i].style.opacity = "0";
-      buttonContainers[i].style.top = "1rem";
+      this.setTimeout(() => {
+        projectTitles[i].style.opacity = "1";
+        projectTitles[i].style.top = "0";
+        projectImages[i].style.opacity = "1";
+        projectImages[i].style.top = "0";
+        projectDescriptions[i].style.opacity = "1";
+        projectDescriptions[i].style.top = "0";
+        projectToolsLists[i].style.opacity = "1";
+        projectToolsLists[i].style.top = "0";
+        buttonContainers[i].style.opacity = "1";
+        buttonContainers[i].style.top = "0";
+        hero.style.borderRadius = "0%";
+      }, 900)
+    // } else if (projectIconsTop > windowHeight - fadeInPoint) {
+    //   projectIconsContainers[i].classList.remove("project-icons-animate");
+    //   projectTitles[i].style.opacity = "0";
+    //   projectTitles[i].style.top = "1rem";
+    //   projectImages[i].style.opacity = "0";
+    //   projectImages[i].style.top = "1rem";
+    //   projectDescriptions[i].style.opacity = "0";
+    //   projectDescriptions[i].style.top = "1rem";
+    //   projectToolsLists[i].style.opacity = "0";
+    //   projectToolsLists[i].style.top = "1rem";
+    //   buttonContainers[i].style.opacity = "0";
+    //   buttonContainers[i].style.top = "1rem";
     }
     // fix this or use css animations
     console.log(windowHeight - fadeInPoint)
@@ -129,8 +129,6 @@ window.addEventListener("scroll", function () {
   const scroll = window.pageYOffset;
 
   // Hero background position updated every scroll
-  // get new width and height for calculation in percentage 60% and 50%;
-  const heroNewWidth = heroRect.width;
 
   // AboutInfo section Hero position
   const aboutTopRelativeDocument = aboutRect.top;

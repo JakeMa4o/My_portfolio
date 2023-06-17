@@ -219,7 +219,6 @@ Hero
   width: 100%;
   display: grid;
   place-items: center;
-  scroll-snap-align: start;
   position: relative;
 }
 
