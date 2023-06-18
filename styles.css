@@ -654,6 +654,14 @@ Projects
 
 .project-info {
   position: relative;
+  /* border: 1px solid #000; */
+  /* padding: 10rem !important; */
+}
+
+@media screen and (min-width: 627px) {
+  .project-info {
+    padding: 10rem !important;
+  }
 }
 
 .project-icons-container {

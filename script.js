@@ -237,7 +237,7 @@ window.addEventListener("scroll", function () {
 
   // 3000
 
-  if (scroll > 3200) {
+  if (scroll > 3500) {
 
     if (heroRect.width / 2 > project3Rect.width) {
       hero.style.left = project3Rect.left - project3LeftDifference + "px";
