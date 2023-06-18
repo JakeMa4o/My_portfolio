@@ -51,7 +51,7 @@ window.addEventListener("scroll", function () {
 
     if (projectIconsTop < windowHeight - fadeInPoint) {
       projectIconsContainers[i].classList.add("project-icons-animate");
-      hero.style.borderRadius = "30%";
+      // hero.style.borderRadius = "30%";
 
       this.setTimeout(() => {
         projectTitles[i].style.opacity = "1";
@@ -64,7 +64,7 @@ window.addEventListener("scroll", function () {
         projectToolsLists[i].style.top = "0";
         buttonContainers[i].style.opacity = "1";
         buttonContainers[i].style.top = "0";
-        hero.style.borderRadius = "0%";
+        // hero.style.borderRadius = "0%";
       }, 900)
     }
   }
@@ -118,28 +118,28 @@ window.addEventListener("scroll", function () {
   // AboutInfo section Hero position
   const aboutTopRelativeDocument = aboutRect.top;
   const aboutTopDifference = Math.abs(heroRect.height / 3 - aboutRect.height / 2);
-  const aboutLeftDifference = Math.abs(heroRect.width / 4 - aboutRect.width / 2);
+  const aboutLeftDifference = Math.abs(heroRect.width / 2.5 - aboutRect.width / 2);
 
   // Project section Hero position 
   const project1Rect = projectInfos[0].getBoundingClientRect();
   const project1TopRelativeDocument = scroll + project1Rect.top;
   const project1TopDifference = Math.abs(heroRect.height / 3 - project1Rect.height / 2);
-  const project1LeftDifference = Math.abs(heroRect.width / 4 - project1Rect.width / 2);
+  const project1LeftDifference = Math.abs(heroRect.width / 2.5 - project1Rect.width / 2);
 
   const project2Rect = projectInfos[1].getBoundingClientRect();
   const project2TopRelativeDocument = scroll + project2Rect.top;
   const project2TopDifference = Math.abs(heroRect.height / 3 - project2Rect.height / 2);
-  const project2LeftDifference = Math.abs(heroRect.width / 4 - project2Rect.width / 2);
+  const project2LeftDifference = Math.abs(heroRect.width / 2.5 - project2Rect.width / 2);
 
   const project3Rect = projectInfos[2].getBoundingClientRect();
   const project3TopRelativeDocument = scroll + project3Rect.top;
   const project3TopDifference = Math.abs(heroRect.height / 3 - project3Rect.height / 2);
-  const project3LeftDifference = Math.abs(heroRect.width / 4 - project3Rect.width / 2);
+  const project3LeftDifference = Math.abs(heroRect.width / 2.5 - project3Rect.width / 2);
 
   const project4Rect = projectInfos[3].getBoundingClientRect();
   const project4TopRelativeDocument = scroll + project4Rect.top;
   const project4TopDifference = Math.abs(heroRect.height / 3 - project4Rect.height / 2);
-  const project4LeftDifference = Math.abs(heroRect.width / 4 - project4Rect.width / 2);
+  const project4LeftDifference = Math.abs(heroRect.width / 2.5 - project4Rect.width / 2);
 
   // Contact section Hero position
   const contactRect = contact.getBoundingClientRect();
@@ -159,10 +159,11 @@ window.addEventListener("scroll", function () {
 
   // Scroll to ABOUT section Hero background cricle, icons colored
   if (scroll > 50) {
-    hero.style.width = "50%";
+    hero.style.width = "80%";
     hero.style.height = "60%";
     // hero.style.width = "50%";
     // hero.style.height = "60%";
+    hero.style.transform = "rotate(0deg)";
 
     if (heroRect.width / 2 > aboutRect.width) {
       hero.style.left = aboutRect.left - aboutLeftDifference + "px";
@@ -203,6 +204,7 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.top = project1TopRelativeDocument + "px";
     }
+    hero.style.transform = "rotate(90deg)";
 
     projectImgs[0].style.filter = "grayscale(0%)"
     projectImgs[1].style.filter = "grayscale(100%)"
@@ -226,6 +228,7 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.top = project2TopRelativeDocument + "px";
     }
+    hero.style.transform = "rotate(270deg)";
 
     projectImgs[0].style.filter = "grayscale(100%)"
     projectImgs[1].style.filter = "grayscale(0%)"
@@ -250,6 +253,7 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.top = project3TopRelativeDocument + "px";
     }
+    hero.style.transform = "rotate(450deg)";
 
     projectImgs[1].style.filter = "grayscale(100%)"
     projectImgs[2].style.filter = "grayscale(0%)"
@@ -275,6 +279,7 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.top = project4TopRelativeDocument + "px";
     }
+    hero.style.transform = "rotate(630deg)";
 
     projectImgs[2].style.filter = "grayscale(100%)"
     projectImgs[3].style.filter = "grayscale(0%)"
@@ -288,6 +293,7 @@ window.addEventListener("scroll", function () {
     hero.style.left = contactRect.left + "px";
     hero.style.width = "100%";
     hero.style.height = contactRect.height + "px";
+    hero.style.transform = "rotate(720deg)";
   }
 })
 
