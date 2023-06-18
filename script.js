@@ -51,7 +51,7 @@ window.addEventListener("scroll", function () {
 
     if (projectIconsTop < windowHeight - fadeInPoint) {
       projectIconsContainers[i].classList.add("project-icons-animate");
-      hero.style.borderRadius = "50%";
+      hero.style.borderRadius = "30%";
 
       this.setTimeout(() => {
         projectTitles[i].style.opacity = "1";
@@ -66,22 +66,7 @@ window.addEventListener("scroll", function () {
         buttonContainers[i].style.top = "0";
         hero.style.borderRadius = "0%";
       }, 900)
-    // } else if (projectIconsTop > windowHeight - fadeInPoint) {
-    //   projectIconsContainers[i].classList.remove("project-icons-animate");
-    //   projectTitles[i].style.opacity = "0";
-    //   projectTitles[i].style.top = "1rem";
-    //   projectImages[i].style.opacity = "0";
-    //   projectImages[i].style.top = "1rem";
-    //   projectDescriptions[i].style.opacity = "0";
-    //   projectDescriptions[i].style.top = "1rem";
-    //   projectToolsLists[i].style.opacity = "0";
-    //   projectToolsLists[i].style.top = "1rem";
-    //   buttonContainers[i].style.opacity = "0";
-    //   buttonContainers[i].style.top = "1rem";
     }
-    // fix this or use css animations
-    console.log(windowHeight - fadeInPoint)
-    console.log(projectIconsTop)
   }
 
 
@@ -176,6 +161,8 @@ window.addEventListener("scroll", function () {
   if (scroll > 50) {
     hero.style.width = "50%";
     hero.style.height = "60%";
+    // hero.style.width = "50%";
+    // hero.style.height = "60%";
 
     if (heroRect.width / 2 > aboutRect.width) {
       hero.style.left = aboutRect.left - aboutLeftDifference + "px";

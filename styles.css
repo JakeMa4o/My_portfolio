@@ -669,8 +669,8 @@ Projects
 }
 
 .project-icon {
-  display: grid;
-  place-items: center;
+  /* display: grid; */
+  /* place-items: center; */
 }
 
 .project-tools-icons {
