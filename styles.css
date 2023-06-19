@@ -360,7 +360,7 @@ Hero
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  animation: drop 2s 1.5s;
+  animation: drop 1.4s 1.5s;
   opacity: 0;
 }
 
@@ -398,10 +398,9 @@ About
   /* padding: 5rem 0; */
   width: 100%;
   position: relative;
-  /* min-height: 100vh; */
-  /* display: grid; */
-  /* place-items: center; */
-  /* height: 100vh; */
+  display: grid;
+  place-items: center;
+  height: 80vh;
 }
 
 .about-info {
@@ -634,6 +633,7 @@ Projects
 .project-cards {
   display: grid;
   gap: 3rem;
+  /* padding-top: 3rem; */
 }
 
 

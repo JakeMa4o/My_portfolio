@@ -155,6 +155,7 @@ window.addEventListener("scroll", function () {
     hero.style.borderRadius = "0";
     hero.style.position = "absolute";
     icons.forEach(icon => icon.classList.remove("colored"))
+    hero.style.transform = "rotate(0deg)";
   }
 
   // Scroll to ABOUT section Hero background cricle, icons colored
@@ -163,7 +164,7 @@ window.addEventListener("scroll", function () {
     hero.style.height = "60%";
     // hero.style.width = "50%";
     // hero.style.height = "60%";
-    hero.style.transform = "rotate(0deg)";
+    hero.style.transform = "rotate(100deg)";
 
     if (heroRect.width / 2 > aboutRect.width) {
       hero.style.left = aboutRect.left - aboutLeftDifference + "px";
@@ -204,7 +205,9 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.top = project1TopRelativeDocument + "px";
     }
-    hero.style.transform = "rotate(90deg)";
+    hero.style.transform = "rotate(270deg)";
+    // hero.style.transform = "rotate(250deg)";
+    // hero.style.transform = "rotate(260deg)";
 
     projectImgs[0].style.filter = "grayscale(0%)"
     projectImgs[1].style.filter = "grayscale(100%)"
@@ -212,7 +215,7 @@ window.addEventListener("scroll", function () {
 
   // 2400px
 
-  if (scroll > 2200) {
+  if (scroll > 2600) {
 
     if (heroRect.width / 2 > project2Rect.width) {
       hero.style.left = project2Rect.left - project2LeftDifference + "px";
@@ -228,7 +231,8 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.top = project2TopRelativeDocument + "px";
     }
-    hero.style.transform = "rotate(270deg)";
+    hero.style.transform = "rotate(450deg)";
+    // hero.style.transform = "rotate(420deg)";
 
     projectImgs[0].style.filter = "grayscale(100%)"
     projectImgs[1].style.filter = "grayscale(0%)"
@@ -237,7 +241,7 @@ window.addEventListener("scroll", function () {
 
   // 3000
 
-  if (scroll > 3500) {
+  if (scroll > 3900) {
 
     if (heroRect.width / 2 > project3Rect.width) {
       hero.style.left = project3Rect.left - project3LeftDifference + "px";
@@ -253,7 +257,9 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.top = project3TopRelativeDocument + "px";
     }
-    hero.style.transform = "rotate(450deg)";
+    hero.style.transform = "rotate(630deg)";
+    // hero.style.transform = "rotate(650deg)";
+    // hero.style.transform = "rotate(450deg)";
 
     projectImgs[1].style.filter = "grayscale(100%)"
     projectImgs[2].style.filter = "grayscale(0%)"
@@ -263,7 +269,7 @@ window.addEventListener("scroll", function () {
 
   // 3700
 
-  if (scroll > 4400) {
+  if (scroll > 4800) {
 
     if (heroRect.width / 2 > project4Rect.width) {
       hero.style.left = project4Rect.left - project4LeftDifference + "px";
@@ -279,7 +285,9 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.top = project4TopRelativeDocument + "px";
     }
-    hero.style.transform = "rotate(630deg)";
+    hero.style.transform = "rotate(810deg)";
+    // hero.style.transform = "rotate(830deg)";
+    // hero.style.transform = "rotate(630deg)";
 
     projectImgs[2].style.filter = "grayscale(100%)"
     projectImgs[3].style.filter = "grayscale(0%)"
@@ -288,7 +296,7 @@ window.addEventListener("scroll", function () {
 
 
   // 4700
-  if (scroll > 5500) {
+  if (scroll > 5900) {
     hero.style.top = contactTopRelativeDocument + "px";
     hero.style.left = contactRect.left + "px";
     hero.style.width = "100%";
