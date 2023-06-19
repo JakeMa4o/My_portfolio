@@ -263,7 +263,7 @@ window.addEventListener("scroll", function () {
 
   // 3700
 
-  if (scroll > 3900) {
+  if (scroll > 4400) {
 
     if (heroRect.width / 2 > project4Rect.width) {
       hero.style.left = project4Rect.left - project4LeftDifference + "px";
@@ -288,7 +288,7 @@ window.addEventListener("scroll", function () {
 
 
   // 4700
-  if (scroll > 4900) {
+  if (scroll > 5500) {
     hero.style.top = contactTopRelativeDocument + "px";
     hero.style.left = contactRect.left + "px";
     hero.style.width = "100%";

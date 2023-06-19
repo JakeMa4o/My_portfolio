@@ -803,6 +803,13 @@ Projects
   position: relative;
   top: 1rem;
   transition: 1s all;
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.project:nth-child(even) .buttons-container {
+  grid-column: 2/3;
+  grid-row: 2/3;
 }
 
 /* .project-img:hover {
@@ -867,7 +874,7 @@ Projects
   gap: 3rem;
   padding: 3rem;
   transition: 1s all;
-  justify-content: space-around;
+  /* justify-content: space-around; */
 }
 
 .button {
