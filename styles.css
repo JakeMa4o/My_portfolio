@@ -414,6 +414,7 @@ About
   padding: 1rem;
   display: grid;
   place-items: center;
+  text-align: center;
 }
 
 .my-text h2 {
@@ -966,8 +967,15 @@ Contact Me
 .mail-form .title>p {
   padding-top: 1rem;
   border-top: 2px solid black;
-  border-left: 2px solid black;
+    border-left: 2px solid black;
   padding-bottom: 5rem;
+}
+
+.mail-form p span {
+  text-transform: lowercase;
+  font-family: initial;
+  font-size: 1.5rem;
+  color:#222;
 }
 
 .mail-form input,

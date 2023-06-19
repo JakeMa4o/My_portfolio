@@ -147,7 +147,7 @@ window.addEventListener("scroll", function () {
 
 
   // Scroll back to HERO section background 100% width
-  if (scroll < 50) {
+  if (scroll < 500) {
     hero.style.width = "100%";
     hero.style.height = "100vh";
     hero.style.top = "0";
@@ -159,7 +159,7 @@ window.addEventListener("scroll", function () {
   }
 
   // Scroll to ABOUT section Hero background cricle, icons colored
-  if (scroll > 50) {
+  if (scroll > 500) {
     hero.style.width = "80%";
     hero.style.height = "60%";
     // hero.style.width = "50%";
