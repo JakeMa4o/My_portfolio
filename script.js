@@ -351,7 +351,7 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
   loader.style.display = "grid";
   loader.style.placeItems = "center";
   // these IDs from the previous steps
-  emailjs.sendForm('service_blmc1ih', 'my_template', this)
+  emailjs.sendForm('service_fz0d1dc', 'my_template', this)
     .then(function () {
       inputs.forEach(input => {
         input.value = "";
