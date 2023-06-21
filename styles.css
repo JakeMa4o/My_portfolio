@@ -1020,29 +1020,35 @@ Contact Me
   opacity: 0; */
 }
 
-.mail-form.fade-in {
-  transform: translateX(0px);
-  opacity: 1;
-  transition: all .7s ease-in;
-}
-
 #contact-me .title {
   padding-bottom: 0 !important;
 }
 
 #contact-me .title h2 {
+  /* test */
+  transform: translateX(5rem);
+  opacity: 0;
+  /* test */
   border-right: 2px solid black;
   margin-bottom: 0;
 }
 
 .mail-form .title>p {
+  /* test */
+  transform: translateX(-5rem);
+  opacity: 0;
+  /* test */
   padding-top: 1rem;
   border-top: 2px solid black;
-    border-left: 2px solid black;
+  border-left: 2px solid black;
   padding-bottom: 5rem;
 }
 
 .mail-form p span {
+  /* test */
+  transform: translateX(10rem);
+  opacity: 0;
+  /* test */
   text-transform: lowercase;
   font-family: initial;
   font-size: 1.5rem;
@@ -1058,12 +1064,28 @@ textarea {
 }
 
 .mail-form input {
+  /* test */
+  transform: translateX(-10rem);
+  opacity: 0;
+  /* test */
   border-left: 2px solid black;
 }
 
 .mail-form textarea {
+  /* test */
+  transform: translateX(-5rem);
+  opacity: 0;
+  /* test */
   border-left: 2px solid black;
   /* transition: all 2s; */
+}
+
+.form-button {
+  /* test */
+  transform: translateX(5rem);
+  opacity: 0;
+  /* test */
+  border: 2px solid black;
 }
 
 .mail-form input:focus {
@@ -1073,6 +1095,14 @@ textarea {
   outline: none;
   font-weight: 600;
 }
+
+.mail-form.fade-in h2, .mail-form.fade-in p, .mail-form.fade-in p span, .mail-form.fade-in input, .mail-form.fade-in textarea, .mail-form.fade-in .form-button{
+  transform: translateX(0px) !important;
+  opacity: 1 !important;
+  transition: all 1s ease-in;
+}
+
+
 
 textarea:focus {
   outline: none;
