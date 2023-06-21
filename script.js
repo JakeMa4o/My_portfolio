@@ -9,55 +9,58 @@ const heroRect = hero.getBoundingClientRect();
 
 // ********** Fade In ************
 
-const aboutText = document.querySelector(".my-text");
+const aboutInfo = document.querySelector(".about-info");
+const aboutRect = aboutInfo.getBoundingClientRect();
 const aboutTextTitle = document.querySelector(".my-text h2");
 const aboutTextParag = document.querySelector(".my-text p");
 const techStack = document.querySelector(".tech-stack");
 
+
+const projectInfos = document.querySelectorAll(".project-info");
 const projectIconsContainers = document.querySelectorAll(".project-icons-container");
-const projectImages = document.querySelectorAll(".project-img");
+const projectImgs = document.querySelectorAll(".project-img");
 const projectTitles = document.querySelectorAll(".project-title");
 const projectToolsLists = document.querySelectorAll(".project-tools");
+const icons = document.querySelectorAll(".icon");
 const projectDescriptions = document.querySelectorAll(".description");
 const buttonContainers = document.querySelectorAll(".buttons-container");
 
 
 
-
+const contact = document.querySelector("#contact-me")
 const mailForm = document.querySelector(".mail-form");
-const googleMap = document.querySelector("#map-api");
+// const googleMap = document.querySelector("#map-api");
+
+
 
 const windowHeight = window.innerHeight;
 
-const fadeInPoint = heroRect.height / 2;
-// 538px
-// 550px
-// console.log(windowHeight - fadeInPoint)
 
 window.addEventListener("scroll", function () {
-  // About section
-  const aboutTextTop = aboutText.getBoundingClientRect().top;
+  const scroll = window.pageYOffset;
 
-  if (aboutTextTop < windowHeight - fadeInPoint) {
+  // About section
+  if (scroll + windowHeight > aboutRect.top + aboutRect.height / 1.5) {
     aboutTextTitle.classList.add("fade-in");
     aboutTextParag.classList.add("fade-in");
     techStack.classList.add("fade-in");
   }
 
+
   // Project section
+  for (let i = 0; i < projectInfos.length; i++) {
+    const projectInfoRect = projectInfos[i].getBoundingClientRect();
+    const projectTopRelativeDocument = scroll + projectInfoRect.top;
 
-  for (let i = 0; i < projectIconsContainers.length; i++) {
-    const projectIconsTop = projectIconsContainers[i].getBoundingClientRect().top;
-
-    if (projectIconsTop < windowHeight - fadeInPoint) {
+    if (scroll + windowHeight > projectTopRelativeDocument + projectInfoRect.height / 2) {
       projectIconsContainers[i].classList.add("project-icons-animate");
       // hero.style.borderRadius = "30%";
 
       this.setTimeout(() => {
         projectTitles[i].style.opacity = "1";
         projectTitles[i].style.top = "0";
-        projectImages[i].style.opacity = "1";
-        projectImages[i].style.top = "0";
+        projectImgs[i].style.opacity = "1";
+        projectImgs[i].style.top = "0";
         projectDescriptions[i].style.opacity = "1";
         projectDescriptions[i].style.top = "0";
         projectToolsLists[i].style.opacity = "1";
@@ -71,9 +74,10 @@ window.addEventListener("scroll", function () {
 
 
   // Contact section
-  const mailFormTop = mailForm.getBoundingClientRect().top;
+  const mailFormRect = mailForm.getBoundingClientRect();
+  const contactTopRelativeDocument = scroll + mailFormRect.top;
 
-  if (mailFormTop < windowHeight - fadeInPoint) {
+  if (scroll + windowHeight > contactTopRelativeDocument + mailFormRect.height / 2) {
     mailForm.classList.add("fade-in");
   } else {
     mailForm.classList.remove("fade-in");
@@ -95,21 +99,10 @@ window.addEventListener("load", function () {
 })
 
 
-// Navigation Circle
-
-
-const aboutInfo = document.querySelector(".about-info");
-const aboutRect = aboutInfo.getBoundingClientRect();
-const icons = document.querySelectorAll(".icon");
-
-const projectInfos = document.querySelectorAll(".project-info");
-const projectImgs = this.document.querySelectorAll(".project-img");
-
-const contact = document.querySelector("#contact-me");
-
-
+// ********** Navigation Background Figure ************
 
 window.addEventListener("scroll", function () {
+
   // Scroll value updated every scroll
   const scroll = window.pageYOffset;
 
@@ -147,7 +140,8 @@ window.addEventListener("scroll", function () {
 
 
   // Scroll back to HERO section background 100% width
-  if (scroll < 500) {
+  // scroll 500
+  if (scroll + windowHeight < aboutTopRelativeDocument + aboutRect.height / 2) {
     hero.style.width = "100%";
     hero.style.height = "100vh";
     hero.style.top = "0";
@@ -159,7 +153,9 @@ window.addEventListener("scroll", function () {
   }
 
   // Scroll to ABOUT section Hero background cricle, icons colored
-  if (scroll > 500) {
+  // scroll 500
+
+  if (scroll + windowHeight > aboutTopRelativeDocument + aboutRect.height / 2) {
     hero.style.width = "80%";
     hero.style.height = "60%";
     // hero.style.width = "50%";
@@ -173,9 +169,9 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.left = aboutRect.left + "px";
     }
-    if (heroRect.height > aboutRect.height) {
+    if (heroRect.height / 2 > aboutRect.height) {
       hero.style.top = aboutTopRelativeDocument - aboutTopDifference + "px";
-    } else if (heroRect.height < aboutRect.height) {
+    } else if (heroRect.height / 2 < aboutRect.height) {
       hero.style.top = aboutTopRelativeDocument + aboutTopDifference + "px";
     } else {
       hero.style.top = aboutTopRelativeDocument + "px";
@@ -189,7 +185,7 @@ window.addEventListener("scroll", function () {
 
   // 1500px
 
-  if (scroll > 1500) {
+  if (scroll + windowHeight > project1TopRelativeDocument + project1Rect.height / 2) {
 
     if (heroRect.width / 2 > project1Rect.width) {
       hero.style.left = project1Rect.left - project1LeftDifference + "px";
@@ -198,9 +194,9 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.left = project1Rect.left + "px";
     }
-    if (heroRect.height > project1Rect.height) {
+    if (heroRect.height / 2 > project1Rect.height) {
       hero.style.top = project1TopRelativeDocument - project1TopDifference + "px";
-    } else if (heroRect.height < project1Rect.height) {
+    } else if (heroRect.height / 2 < project1Rect.height) {
       hero.style.top = project1TopRelativeDocument + project1TopDifference + "px";
     } else {
       hero.style.top = project1TopRelativeDocument + "px";
@@ -213,9 +209,9 @@ window.addEventListener("scroll", function () {
     projectImgs[1].style.filter = "grayscale(100%)"
   }
 
-  // 2400px
+  // 2600px
 
-  if (scroll > 2600) {
+  if (scroll + windowHeight > project2TopRelativeDocument + project2Rect.height / 2) {
 
     if (heroRect.width / 2 > project2Rect.width) {
       hero.style.left = project2Rect.left - project2LeftDifference + "px";
@@ -224,6 +220,10 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.left = project1Rect.left + "px";
     }
+
+    // Check ou this part if there is any problem with it, it was a bit of for mobile bcs of the info height was bigger than others? also /2 is not 60%
+
+
     if (heroRect.height > project2Rect.height) {
       hero.style.top = project2TopRelativeDocument - project2TopDifference + "px";
     } else if (heroRect.height < project2Rect.height) {
@@ -239,9 +239,9 @@ window.addEventListener("scroll", function () {
     projectImgs[2].style.filter = "grayscale(100%)"
   }
 
-  // 3000
+  // 3900
 
-  if (scroll > 3900) {
+  if (scroll + windowHeight > project3TopRelativeDocument + project3Rect.height / 2) {
 
     if (heroRect.width / 2 > project3Rect.width) {
       hero.style.left = project3Rect.left - project3LeftDifference + "px";
@@ -250,9 +250,9 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.left = project3Rect.left + "px";
     }
-    if (heroRect.height > project3Rect.height) {
+    if (heroRect.height / 2> project3Rect.height) {
       hero.style.top = project3TopRelativeDocument - project3TopDifference + "px";
-    } else if (heroRect.height < project3Rect.height) {
+    } else if (heroRect.height / 2 < project3Rect.height) {
       hero.style.top = project3TopRelativeDocument + project3TopDifference + "px";
     } else {
       hero.style.top = project3TopRelativeDocument + "px";
@@ -267,9 +267,9 @@ window.addEventListener("scroll", function () {
   }
 
 
-  // 3700
+  // 4800
 
-  if (scroll > 4800) {
+  if (scroll + windowHeight > project4TopRelativeDocument + project4Rect.height / 2) {
 
     if (heroRect.width / 2 > project4Rect.width) {
       hero.style.left = project4Rect.left - project4LeftDifference + "px";
@@ -278,9 +278,9 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.left = project4Rect.left + "px";
     }
-    if (heroRect.height > project4Rect.height) {
+    if (heroRect.height / 2 > project4Rect.height) {
       hero.style.top = project4TopRelativeDocument - project4TopDifference + "px";
-    } else if (heroRect.height < project4Rect.height) {
+    } else if (heroRect.height / 2 < project4Rect.height) {
       hero.style.top = project4TopRelativeDocument + project4TopDifference + "px";
     } else {
       hero.style.top = project4TopRelativeDocument + "px";
@@ -295,8 +295,8 @@ window.addEventListener("scroll", function () {
   }
 
 
-  // 4700
-  if (scroll > 5900) {
+  // 5900
+  if (scroll + windowHeight > contactTopRelativeDocument + contactRect.height/2) {
     hero.style.top = contactTopRelativeDocument + "px";
     hero.style.left = contactRect.left + "px";
     hero.style.width = "100%";

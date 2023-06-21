@@ -646,7 +646,7 @@ Projects
   padding-bottom: 5rem;
   margin: auto;
   display: grid;
-  grid-template-rows: 1fr .3fr .3fr;
+  grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr;
   position: relative;
   /* test */
@@ -659,7 +659,12 @@ Projects
   /* padding: 10rem !important; */
 }
 
-@media screen and (min-width: 627px) {
+@media screen and (min-width: 1920px) {
+  .project-info {
+    padding: 5rem !important;
+  }
+}
+@media screen and (min-width: 2034px) {
   .project-info {
     padding: 10rem !important;
   }
