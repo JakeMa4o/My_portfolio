@@ -1115,7 +1115,7 @@ textarea:focus {
 .btn-form {
   padding: 1rem 2rem;
   border: none;
-  background-color: var(--clr-primary-5);
+  background-color: var(--clr-grey-1);
   border-radius: 0;
   color: #fff;
   width: 100%;
@@ -1125,11 +1125,11 @@ textarea:focus {
   right: 0.7rem;
   transition: all .2s;
 }
-
+/* 
 .form-button .btn:hover {
   color: var(--clr-white);
   background: var(--clr-primary-5);
-}
+} */
 
 .form-button i {
   font-size: 1.5rem;
@@ -1139,6 +1139,8 @@ textarea:focus {
 .btn-form:hover {
   bottom: 0;
   right: 0;
+  color: var(--clr-grey-1);
+  background: var(--clr-grey-10);
   border-right: 1px solid black;
   border-top: 1px solid black;
 }
@@ -1302,7 +1304,7 @@ footer p {
 /* @media queries */
 /* ============== */
 
-@media screen and (max-width: 318px) {
+@media screen and (max-width: 342px) {
   .buttons-container {
     flex-direction: column;
   }
