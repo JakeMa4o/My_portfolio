@@ -14,14 +14,13 @@ const aboutRect = aboutInfo.getBoundingClientRect();
 const aboutTextTitle = document.querySelector(".my-text h2");
 const aboutTextParag = document.querySelector(".my-text p");
 const techStack = document.querySelector(".tech-stack");
+const icons = document.querySelectorAll(".icon");
 
 
 const projectInfos = document.querySelectorAll(".project-info");
-const projectIconsContainers = document.querySelectorAll(".project-icons-container");
 const projectImgs = document.querySelectorAll(".project-img");
 const projectTitles = document.querySelectorAll(".project-title");
-const projectToolsLists = document.querySelectorAll(".project-tools");
-const icons = document.querySelectorAll(".icon");
+const projectTools = document.querySelectorAll(".project-tools");
 const projectDescriptions = document.querySelectorAll(".description");
 const buttonContainers = document.querySelectorAll(".buttons-container");
 
@@ -36,6 +35,27 @@ const mailForm = document.querySelector(".mail-form");
 const windowHeight = window.innerHeight;
 
 
+// Test
+
+for (let i = 0; i < projectInfos.length; i++) {
+  const projectToolsRect = projectTools[i].getBoundingClientRect();
+  const projectInfoRect = projectInfos[i].getBoundingClientRect();
+  projectTools[i].style.top = projectInfoRect.height / 3 - projectToolsRect.height + "px";
+  projectTools[i].style.left = projectInfoRect.width / 4 + "px";
+  // console.log(`Project${i}rect`)
+  // console.log(projectInfoRect)
+  // console.log(projectInfoRect.height / 2)
+}
+
+// console.log(projectTools[0].children[0].children[0].lastChild)
+
+// console.log(projectTools[0].getBoundingClientRect());
+
+// Test
+
+
+
+
 window.addEventListener("scroll", function () {
   const scroll = window.pageYOffset;
 
@@ -46,29 +66,37 @@ window.addEventListener("scroll", function () {
     techStack.classList.add("fade-in");
   }
 
-
   // Project section
   for (let i = 0; i < projectInfos.length; i++) {
     const projectInfoRect = projectInfos[i].getBoundingClientRect();
     const projectTopRelativeDocument = scroll + projectInfoRect.top;
 
+
     if (scroll + windowHeight > projectTopRelativeDocument + projectInfoRect.height / 2) {
-      projectIconsContainers[i].classList.add("project-icons-animate");
+      projectTools[i].classList.add("project-tools-animate");
       // hero.style.borderRadius = "30%";
 
       this.setTimeout(() => {
+
+        // Test
+        projectTools[i].style.top = "0";
+        projectTools[i].style.left = "0";
+        projectTools[i].children[0].children.forEach(li => li.firstChild.style.fontSize = "2rem")
+        projectTools[i].children[0].children.forEach(li => li.lastChild.style.opacity = "1")
+        // Test
+
         projectTitles[i].style.opacity = "1";
         projectTitles[i].style.top = "0";
         projectImgs[i].style.opacity = "1";
         projectImgs[i].style.top = "0";
         projectDescriptions[i].style.opacity = "1";
         projectDescriptions[i].style.top = "0";
-        projectToolsLists[i].style.opacity = "1";
-        projectToolsLists[i].style.top = "0";
+        // projectTools[i].style.opacity = "1";
+        // projectTools[i].style.top = "0";
         buttonContainers[i].style.opacity = "1";
         buttonContainers[i].style.top = "0";
-        // hero.style.borderRadius = "0%";
-      }, 900)
+        hero.style.borderRadius = "0%";
+      }, 1000)
     }
   }
 
@@ -250,7 +278,7 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.left = project3Rect.left + "px";
     }
-    if (heroRect.height / 2> project3Rect.height) {
+    if (heroRect.height / 2 > project3Rect.height) {
       hero.style.top = project3TopRelativeDocument - project3TopDifference + "px";
     } else if (heroRect.height / 2 < project3Rect.height) {
       hero.style.top = project3TopRelativeDocument + project3TopDifference + "px";
@@ -296,7 +324,7 @@ window.addEventListener("scroll", function () {
 
 
   // 5900
-  if (scroll + windowHeight > contactTopRelativeDocument + contactRect.height/2) {
+  if (scroll + windowHeight > contactTopRelativeDocument + contactRect.height / 2) {
     hero.style.top = contactTopRelativeDocument + "px";
     hero.style.left = contactRect.left + "px";
     hero.style.width = "100%";

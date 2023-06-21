@@ -670,111 +670,6 @@ Projects
   }
 }
 
-.project-icons-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  place-items: center;
-  /* background-color: #283149; */
-  width: 100%;
-}
-
-.project-icon {
-  /* display: grid; */
-  /* place-items: center; */
-}
-
-.project-tools-icons {
-  /* border: 1px solid #000; */
-  display: flex;
-  gap: 3rem;
-}
-.project-tools-icons i{
-  display: block;
-  font-size: 4rem;
-  opacity: 0;
-  transform: scale(1.3);
-}
-.project-tools-icons span{
-  display: block;
-  font-size: 2rem;
-  text-align: center;
-  /* color: #fff; */
-  opacity: 0;
-}
-
-.project-icons-container.project-icons-animate i{ 
-  animation: bounceIcons .8s forwards;
-}
-.project-icons-container.project-icons-animate{ 
-  animation: fadeOut 1s .8s forwards;
-}
-.project-icons-container.project-icons-animate span{ 
-  /* animation: textShowUp .8s forwards; */
-}
-
-
-.project-icons-container.project-icons-animate .project-icon:nth-child(2) i{ 
-  animation-delay: .3s;
-}
-.project-icons-container.project-icons-animate .project-icon:nth-child(3) i{ 
-  animation-delay: .6s;
-}
-
-
-.project-icons-container.project-icons-animate .project-icon:nth-child(1) span{ 
-  animation-delay: .7s;
-}
-.project-icons-container.project-icons-animate .project-icon:nth-child(2) span{ 
-  animation-delay: 1s;
-}
-.project-icons-container.project-icons-animate .project-icon:nth-child(3) span{ 
-  animation-delay: 1.3s;
-}
-
-.html span {
-  color: #e34c26;
-}
-
-.css span {
-  color: #49a6e9;
-}
-
-.javascript span {
-  color: #f0db4f;
-}
-
-.react span {
-  color: #88dded;
-}
-
-.redux span {
-  color: #764abc;
-}
-
-.node span {
-  color: #6cc24a;
-}
-
-.express span {
-  color: #000;
-}
-
-.mongodb span {
-  color: #589636;
-}
-
-
-
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-  }
-}
-
 .project-img {
   width: 100%;
   /* height: 21.3rem; */
@@ -851,7 +746,82 @@ Projects
   top: 1rem;
 }
 
+
+
+
+
+
+
+/* Removed */
+
+
+
 .project-tools {
+  padding: .5rem 0 .9rem;
+  top: 1rem;
+  transition: 1s all;
+  position: relative;
+  /* left: 300px; */
+  /* top: 240px; */
+  top: 370px;
+  /* top: 50%; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  /* border: 1px solid #000; */
+}
+
+.project-tools .tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .2rem;
+}
+
+.tools-list>li {
+  /* background-color: var(--clr-grey-1); */
+  background-color: transparent;
+  /* color: #fff; */
+  font-size: 1.2rem;
+  padding: .3rem .5rem;
+  display: flex;
+  align-items: center;
+}
+
+.tools-list i {
+  font-size: 4rem;
+  transition: all 1s;
+  opacity: 0;
+}
+
+.tools-list span {
+  display: inline-block;
+  /* display: none; */
+  margin: 0 .5rem;
+  opacity: 0;
+  transition: all 1s;
+}
+
+
+.project-tools.project-tools-animate i{ 
+  animation: bounceIcons .8s forwards;
+}
+.project-tools.project-tools-animate li:nth-child(1) i{ 
+  animation-delay: .1s;
+}
+.project-tools.project-tools-animate li:nth-child(2) i{ 
+  animation-delay: .3s;
+}
+.project-tools.project-tools-animate li:nth-child(3) i{ 
+  animation-delay: .6s;
+}
+
+/* .project-tools.project-tools-animate {
+  position: static;
+  transform: translate(0, 0);
+} */
+
+
+
+/* .project-tools {
   padding: .5rem 0 .9rem;
   opacity: 0;
   position: relative;
@@ -867,11 +837,123 @@ Projects
 }
 
 .tools-list>li {
-  background-color: #000;
+  background-color: var(--clr-grey-1);
   color: #fff;
   font-size: 1.2rem;
   padding: .3rem .5rem;
+  display: flex;
+  align-items: center;
 }
+
+.tools-list span {
+  display: inline-block;
+  margin: 0 .5rem;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.project-tools.project-tools-animate{ 
+  /* animation: fadeOut 1s .8s forwards; */
+}
+
+/* @keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+} */
+
+
+
+
+/* .html span {
+  color: #e34c26;
+}
+
+.css span {
+  color: #49a6e9;
+}
+
+.javascript span {
+  color: #f0db4f;
+}
+
+.react span {
+  color: #88dded;
+}
+
+.redux span {
+  color: #764abc;
+}
+
+.node span {
+  color: #6cc24a;
+}
+
+.express span {
+  color: #000;
+}
+
+.mongodb span {
+  color: #589636;
+} */
+
+/* Removed */
+
+
+
+/* .project-tools {
+  padding: .5rem 0 .9rem;
+  opacity: 0;
+  position: relative;
+  top: 1rem;
+  transition: 1s all;
+}
+
+
+.project-tools .tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .2rem;
+}
+
+.tools-list>li {
+  background-color: var(--clr-grey-1);
+  color: #fff;
+  font-size: 1.2rem;
+  padding: .3rem .5rem;
+  display: flex;
+  align-items: center;
+}
+
+.tools-list span {
+  display: inline-block;
+  margin: 0 .5rem;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Button */
 
@@ -901,22 +983,6 @@ Projects
   color: var(--clr-grey-10);
   transition: all .2s
 }
-
-/* .project:nth-child(1) .project-link {
-  background: #ff7d19;
-}
-
-.project:nth-child(2) .project-link {
-  background: var(--clr-secondary);
-}
-
-.project:nth-child(3) .project-link {
-  background: #283149;
-}
-
-.project:nth-child(4) .project-link {
-  background: #0b2434;
-} */
 
 .project-link {
   background-color: var(--clr-grey-1);
