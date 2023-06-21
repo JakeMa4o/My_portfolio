@@ -528,6 +528,7 @@ About
 .tech-stack.fade-in .tech-icon:nth-child(8) i {
   animation-delay: .7s;
 }
+
 .tech-stack.fade-in .tech-icon:nth-child(9) i {
   animation-delay: .8s;
 }
@@ -570,6 +571,7 @@ About
   animation-delay: 1.7s;
   color: #589636;
 }
+
 .tech-stack.fade-in .tech-icon:nth-child(9) span {
   animation-delay: 1.8s;
   color: #764abc;
@@ -664,6 +666,7 @@ Projects
     padding: 5rem !important;
   }
 }
+
 @media screen and (min-width: 2034px) {
   .project-info {
     padding: 10rem !important;
@@ -690,6 +693,12 @@ Projects
   top: 1rem;
   transition: 1s all;
   z-index: 3;
+}
+
+.project-img img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%
 }
 
 .description {
@@ -721,10 +730,10 @@ Projects
   .project:nth-child(odd) .project-img {
     grid-column: 2/3;
   }
-  
+
   .project:nth-child(odd) .project-info {
     grid-column: 1/2;
-  }  
+  }
 }
 
 
@@ -801,16 +810,19 @@ Projects
 }
 
 
-.project-tools.project-tools-animate i{ 
+.project-tools.project-tools-animate i {
   animation: bounceIcons .8s forwards;
 }
-.project-tools.project-tools-animate li:nth-child(1) i{ 
+
+.project-tools.project-tools-animate li:nth-child(1) i {
   animation-delay: .1s;
 }
-.project-tools.project-tools-animate li:nth-child(2) i{ 
+
+.project-tools.project-tools-animate li:nth-child(2) i {
   animation-delay: .3s;
 }
-.project-tools.project-tools-animate li:nth-child(3) i{ 
+
+.project-tools.project-tools-animate li:nth-child(3) i {
   animation-delay: .6s;
 }
 
@@ -863,7 +875,7 @@ Projects
 
 
 
-.project-tools.project-tools-animate{ 
+.project-tools.project-tools-animate {
   /* animation: fadeOut 1s .8s forwards; */
 }
 
@@ -1052,7 +1064,7 @@ Contact Me
   text-transform: lowercase;
   font-family: initial;
   font-size: 1.5rem;
-  color:#222;
+  color: #222;
 }
 
 .mail-form input,
@@ -1096,7 +1108,12 @@ textarea {
   font-weight: 600;
 }
 
-.mail-form.fade-in h2, .mail-form.fade-in p, .mail-form.fade-in p span, .mail-form.fade-in input, .mail-form.fade-in textarea, .mail-form.fade-in .form-button{
+.mail-form.fade-in h2,
+.mail-form.fade-in p,
+.mail-form.fade-in p span,
+.mail-form.fade-in input,
+.mail-form.fade-in textarea,
+.mail-form.fade-in .form-button {
   transform: translateX(0px) !important;
   opacity: 1 !important;
   transition: all 1s ease-in;
@@ -1155,6 +1172,7 @@ textarea:focus {
   right: 0.7rem;
   transition: all .2s;
 }
+
 /* 
 .form-button .btn:hover {
   color: var(--clr-white);
@@ -1179,7 +1197,7 @@ textarea:focus {
 /* LOADER.... */
 
 .loader-wrapper {
-  background-color: var(--clr-primary-5);
+  background-color: var(--clr-grey-1);
   position: absolute;
   top: 0;
   left: 0;
@@ -1863,6 +1881,7 @@ footer p {
     grid-row: 3/4;
   }
 }
+
 /* TEst */
 
 
@@ -2066,7 +2085,7 @@ footer p {
 }
 
 @media screen and (min-width: 1989px) {
-  .my-text h2{
+  .my-text h2 {
     min-width: 115%;
   }
 }
