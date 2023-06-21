@@ -400,7 +400,7 @@ About
   position: relative;
   display: grid;
   place-items: center;
-  height: 80vh;
+  height: 100vh;
 }
 
 .about-info {
@@ -782,7 +782,7 @@ Projects
 
 .project-tools .tools-list {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   gap: .2rem;
 }
 

@@ -35,13 +35,13 @@ const mailForm = document.querySelector(".mail-form");
 const windowHeight = window.innerHeight;
 
 
+
 // Test
 
 for (let i = 0; i < projectInfos.length; i++) {
   const projectToolsRect = projectTools[i].getBoundingClientRect();
   const projectInfoRect = projectInfos[i].getBoundingClientRect();
   projectTools[i].style.top = projectInfoRect.height / 3 - projectToolsRect.height + "px";
-  projectTools[i].style.left = projectInfoRect.width / 4 + "px";
   // console.log(`Project${i}rect`)
   // console.log(projectInfoRect)
   // console.log(projectInfoRect.height / 2)
@@ -188,8 +188,9 @@ window.addEventListener("scroll", function () {
     hero.style.height = "60%";
     // hero.style.width = "50%";
     // hero.style.height = "60%";
-    // hero.style.transform = "rotate(100deg)";
-    hero.style.transform = "rotate(180deg)";
+    // hero.style.transform = "rotate(90deg)";
+    hero.style.transform = "rotate(100deg)";
+    // hero.style.transform = "rotate(280deg)";
 
     if (heroRect.width / 2 > aboutRect.width) {
       hero.style.left = aboutRect.left - aboutLeftDifference + "px";
@@ -230,8 +231,8 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.top = project1TopRelativeDocument + "px";
     }
-    // hero.style.transform = "rotate(-90deg)";
-    hero.style.transform = "rotate(270deg)";
+    hero.style.transform = "rotate(-90deg)";
+    // hero.style.transform = "rotate(270deg)";
     // hero.style.transform = "rotate(250deg)";
     // hero.style.transform = "rotate(260deg)";
 
@@ -261,8 +262,8 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.top = project2TopRelativeDocument + "px";
     }
-    // hero.style.transform = "rotate(90deg)";
-    hero.style.transform = "rotate(450deg)";
+    hero.style.transform = "rotate(90deg)";
+    // hero.style.transform = "rotate(450deg)";
     // hero.style.transform = "rotate(420deg)";
 
     projectImgs[0].style.filter = "grayscale(100%)"
@@ -288,8 +289,8 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.top = project3TopRelativeDocument + "px";
     }
-    hero.style.transform = "rotate(270deg)";
-    // hero.style.transform = "rotate(-90deg)";
+    hero.style.transform = "rotate(-90deg)";
+    // hero.style.transform = "rotate(270deg)";
     // hero.style.transform = "rotate(630deg)";
     // hero.style.transform = "rotate(650deg)";
     // hero.style.transform = "rotate(450deg)";
@@ -321,8 +322,8 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.top = project4TopRelativeDocument + "px";
     }
-    hero.style.transform = "rotate(450deg)";
-    // hero.style.transform = "rotate(90deg)";
+    hero.style.transform = "rotate(90deg)";
+    // hero.style.transform = "rotate(450deg)";
     // hero.style.transform = "rotate(810deg)";
     // hero.style.transform = "rotate(830deg)";
     // hero.style.transform = "rotate(630deg)";
@@ -339,8 +340,8 @@ window.addEventListener("scroll", function () {
     hero.style.left = contactRect.left + "px";
     hero.style.width = "100%";
     hero.style.height = contactRect.height + "px";
-    hero.style.transform = "rotate(360deg)";
-    // hero.style.transform = "rotate(0deg)";
+    hero.style.transform = "rotate(0deg)";
+    // hero.style.transform = "rotate(360deg)";
     // hero.style.transform = "rotate(720deg)";
   }
 })
