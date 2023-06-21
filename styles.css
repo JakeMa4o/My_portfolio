@@ -686,7 +686,8 @@ Projects
   grid-column: 1/2;
   border: 5px solid #000;
   /* border-radius: 10px; */
-  height: 30rem;
+  /* height: 15rem; */
+  height: 15rem;
   filter: grayscale(100%);
   opacity: 0;
   position: relative;
@@ -1497,6 +1498,9 @@ footer p {
 }
 
 @media screen and (min-width: 500px) {
+  .project-img {
+    height: 20rem;
+  }
 
   .front-end,
   .back-end {
@@ -1575,6 +1579,10 @@ footer p {
 
 
 @media screen and (min-width: 767px) {
+
+  .project-img {
+    height: 30rem;
+  }
 
   .contact-container input {
     min-height: 3rem;

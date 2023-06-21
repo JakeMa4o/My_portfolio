@@ -188,7 +188,8 @@ window.addEventListener("scroll", function () {
     hero.style.height = "60%";
     // hero.style.width = "50%";
     // hero.style.height = "60%";
-    hero.style.transform = "rotate(100deg)";
+    // hero.style.transform = "rotate(100deg)";
+    hero.style.transform = "rotate(180deg)";
 
     if (heroRect.width / 2 > aboutRect.width) {
       hero.style.left = aboutRect.left - aboutLeftDifference + "px";
@@ -229,6 +230,7 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.top = project1TopRelativeDocument + "px";
     }
+    // hero.style.transform = "rotate(-90deg)";
     hero.style.transform = "rotate(270deg)";
     // hero.style.transform = "rotate(250deg)";
     // hero.style.transform = "rotate(260deg)";
@@ -259,6 +261,7 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.top = project2TopRelativeDocument + "px";
     }
+    // hero.style.transform = "rotate(90deg)";
     hero.style.transform = "rotate(450deg)";
     // hero.style.transform = "rotate(420deg)";
 
@@ -285,7 +288,9 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.top = project3TopRelativeDocument + "px";
     }
-    hero.style.transform = "rotate(630deg)";
+    hero.style.transform = "rotate(270deg)";
+    // hero.style.transform = "rotate(-90deg)";
+    // hero.style.transform = "rotate(630deg)";
     // hero.style.transform = "rotate(650deg)";
     // hero.style.transform = "rotate(450deg)";
 
@@ -306,14 +311,19 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.left = project4Rect.left + "px";
     }
-    if (heroRect.height / 2 > project4Rect.height) {
+
+    // This part is same as second? in height / 2 is removed for mobile bcs of it was bigger than others? also /2 is not 60%
+
+    if (heroRect.height > project4Rect.height) {
       hero.style.top = project4TopRelativeDocument - project4TopDifference + "px";
-    } else if (heroRect.height / 2 < project4Rect.height) {
+    } else if (heroRect.height < project4Rect.height) {
       hero.style.top = project4TopRelativeDocument + project4TopDifference + "px";
     } else {
       hero.style.top = project4TopRelativeDocument + "px";
     }
-    hero.style.transform = "rotate(810deg)";
+    hero.style.transform = "rotate(450deg)";
+    // hero.style.transform = "rotate(90deg)";
+    // hero.style.transform = "rotate(810deg)";
     // hero.style.transform = "rotate(830deg)";
     // hero.style.transform = "rotate(630deg)";
 
@@ -329,7 +339,9 @@ window.addEventListener("scroll", function () {
     hero.style.left = contactRect.left + "px";
     hero.style.width = "100%";
     hero.style.height = contactRect.height + "px";
-    hero.style.transform = "rotate(720deg)";
+    hero.style.transform = "rotate(360deg)";
+    // hero.style.transform = "rotate(0deg)";
+    // hero.style.transform = "rotate(720deg)";
   }
 })
 
