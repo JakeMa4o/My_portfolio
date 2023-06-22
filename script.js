@@ -64,13 +64,17 @@ window.addEventListener("scroll", function () {
     aboutTextTitle.classList.add("fade-in");
     aboutTextParag.classList.add("fade-in");
     techStack.classList.add("fade-in");
+  } else {
+    aboutTextTitle.classList.remove("fade-in");
+    aboutTextParag.classList.remove("fade-in");
+    techStack.classList.remove("fade-in");
   }
 
   // Project section
   for (let i = 0; i < projectInfos.length; i++) {
     const projectInfoRect = projectInfos[i].getBoundingClientRect();
     const projectTopRelativeDocument = scroll + projectInfoRect.top;
-
+    
 
     if (scroll + windowHeight > projectTopRelativeDocument + projectInfoRect.height / 2) {
       projectTools[i].classList.add("project-tools-animate");
@@ -83,6 +87,7 @@ window.addEventListener("scroll", function () {
         projectTools[i].style.left = "0";
         projectTools[i].children[0].children.forEach(li => li.firstChild.style.fontSize = "2rem")
         projectTools[i].children[0].children.forEach(li => li.lastChild.style.opacity = "1")
+        projectTools[i].children[0].children.forEach(li => li.lastChild.style.margin = "0")
         // Test
 
         projectTitles[i].style.opacity = "1";

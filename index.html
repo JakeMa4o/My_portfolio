@@ -230,9 +230,9 @@
     <!-- projects -->
     <section id="projects" class="section">
       <div class="container">
-        <div class="title">
+        <!-- <div class="title">
           <h2>My <span>Work</span></h2>
-        </div>
+        </div> -->
         <div class="project-cards">
 
           <div class="project">
@@ -372,7 +372,7 @@
           <div class="mail-form">
             <div class="title">
               <h2>Work with <span>me</span></h2>
-              <p>I’m always open to discussing product design work or partnership opportunities. <br> <span>zhlagasmiyatbekov@gmail.com</span></p>
+              <p>I’m always open to discussing product design work or partnership opportunities @zhlagasmiyatbekov@gmail.com.</p>
             </div>
             <form id="contact-form">
               <div class="form-messages">
@@ -381,20 +381,22 @@
                 <p class="show-message"></p>
               </div>
               <input type="hidden" name="contact_number">
-              <input type="text" placeholder="Your Name" name="firstName" required>
-              <!-- <input type="text" placeholder="Имя" name="firstName" required lang="rus"> -->
-              <input type="email" placeholder="Your Mail" name="email" required>
-              <!-- <input type="email" placeholder="Почта" name="email" required lang="rus"> -->
-              <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message..." required></textarea>
-              <!-- <textarea name="message" id="" cols="30" rows="10" placeholder="Ваше сообщение..." required lang="rus"></textarea> -->
+              <div class="name">
+                <input type="text" placeholder="Your Name" name="firstName" required>
+              </div>
+              <div class="email">
+                <input type="email" placeholder="Your Mail" name="email" required>
+              </div>
+              <div class="message">
+                <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message..." required></textarea>
+              </div>
               <div class="form-button">
-                <button class="btn btn-form" type="submit" style="text-transform: capitalize;"><i
-                    class="fa-regular fa-envelope"></i>Send message!</button>
-                <!-- <i class="fa-solid fa-envelope"></i> -->
-                <!-- <i class="fa-regular fa-envelope"></i> -->
+                <button class="btn btn-form" type="submit" style="text-transform: capitalize;">
+                  <i class="fa-regular fa-envelope"></i>Send message!
+                </button>
               </div>
 
-              <!-- <button class="btn btn-form" type="submit" style="text-transform: capitalize;" lang="rus">Отправить!</button> -->
+              
               <!-- Loading square -->
               <div class="loader-wrapper">
                 <span class="loader"><span class="loader-inner"></span></span>
@@ -423,10 +425,10 @@
                 class="fab fa-linkedin"></i></a>
           </li>
           <li>
-            <a href="https://github.com/JakeMa4o" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#contact-me"><i class="fa-solid fa-envelope"></i></a>
           </li>
           <li>
-            <a href="mailto:zhalgasmiyatbekov@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://github.com/JakeMa4o" target="_blank"><i class="fab fa-github"></i></a>
           </li>
         </ul>
       </div>

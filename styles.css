@@ -182,12 +182,12 @@ p {
   text-align: center;
 }
 
-.title>* {
+.title>h2 {
   text-transform: uppercase;
   padding-bottom: .5rem;
 }
 
-.title p,
+
 .title a {
   text-transform: capitalize;
 }
@@ -313,7 +313,7 @@ Hero
   justify-content: space-around;
   width: 10rem;
   opacity: 0;
-  animation: appearSocial .5s linear 1.7s forwards;
+  animation: appearSocial 1s ease 1.7s forwards;
   z-index: 3;
 }
 
@@ -1028,9 +1028,6 @@ Contact Me
   padding-bottom: 3rem;
   position: relative;
   flex: 1;
-  /* position: relative;
-  transform: translateX(-30rem);
-  opacity: 0; */
 }
 
 #contact-me .title {
@@ -1038,30 +1035,21 @@ Contact Me
 }
 
 #contact-me .title h2 {
-  /* test */
   transform: translateX(5rem);
   opacity: 0;
-  /* test */
-  border-right: 2px solid black;
   margin-bottom: 0;
 }
 
 .mail-form .title>p {
-  /* test */
   transform: translateX(-5rem);
   opacity: 0;
-  /* test */
   padding-top: 1rem;
-  border-top: 2px solid black;
-  border-left: 2px solid black;
   padding-bottom: 5rem;
 }
 
 .mail-form p span {
-  /* test */
   transform: translateX(10rem);
   opacity: 0;
-  /* test */
   text-transform: lowercase;
   font-family: initial;
   font-size: 1.5rem;
@@ -1076,35 +1064,58 @@ textarea {
   margin-bottom: 0;
 }
 
-.mail-form input {
-  /* test */
-  transform: translateX(-10rem);
+.mail-form .name input {
+  transform: translateX(-5rem);
   opacity: 0;
-  /* test */
-  border-left: 2px solid black;
+}
+
+.mail-form .email input {
+  transform: translateX(-8rem);
+  opacity: 0;
 }
 
 .mail-form textarea {
-  /* test */
-  transform: translateX(-5rem);
+  transform: translateX(-11rem);
   opacity: 0;
-  /* test */
-  border-left: 2px solid black;
-  /* transition: all 2s; */
+  background-color: transparent;
 }
 
 .form-button {
-  /* test */
   transform: translateX(5rem);
   opacity: 0;
-  /* test */
-  border: 2px solid black;
+  width: 90%;
+  margin: auto;
+}
+
+.name,
+.email,
+.message {
+  position: relative;
+}
+
+.message {
+  margin-bottom: 2rem;
+}
+
+.name::after,
+.email::after,
+.message::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: #000;
+}
+
+@keyframes formAnim {
+  to {
+    width: 100%;
+  }
 }
 
 .mail-form input:focus {
-  /* border-right: 2px solid black; */
-  /* border-top: 2px solid black; */
-  border-bottom: 2px solid black;
   outline: none;
   font-weight: 600;
 }
@@ -1115,9 +1126,20 @@ textarea {
 .mail-form.fade-in input,
 .mail-form.fade-in textarea,
 .mail-form.fade-in .form-button {
-  transform: translateX(0px) !important;
-  opacity: 1 !important;
-  transition: all 1s ease-in;
+  animation: mailFadeIn 1s 1s ease forwards;
+}
+
+.mail-form.fade-in .name::after,
+.mail-form.fade-in .email::after,
+.mail-form.fade-in .message::after {
+  animation: formAnim 1s linear forwards;
+}
+
+@keyframes mailFadeIn {
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
 }
 
 
@@ -1129,6 +1151,7 @@ textarea:focus {
 
 .mail-form input {
   height: 2rem;
+  background-color: transparent;
 }
 
 .form-messages {
@@ -1193,6 +1216,7 @@ textarea:focus {
   border-right: 1px solid black;
   border-top: 1px solid black;
 }
+
 
 
 /* LOADER.... */
