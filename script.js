@@ -34,22 +34,19 @@ const mailForm = document.querySelector(".mail-form");
 
 const windowHeight = window.innerHeight;
 
-
-
 // Test
 
 for (let i = 0; i < projectInfos.length; i++) {
   const projectToolsRect = projectTools[i].getBoundingClientRect();
   const projectInfoRect = projectInfos[i].getBoundingClientRect();
   projectTools[i].style.top = projectInfoRect.height / 3 - projectToolsRect.height + "px";
-  // console.log(`Project${i}rect`)
-  // console.log(projectInfoRect)
-  // console.log(projectInfoRect.height / 2)
+
+
+  const x = window.matchMedia("(min-width: 1100px)")
+  if (x.matches) {
+    projectTools[i].style.left = projectInfoRect.width / 6 + "px";
+  }
 }
-
-// console.log(projectTools[0].children[0].children[0].lastChild)
-
-// console.log(projectTools[0].getBoundingClientRect());
 
 // Test
 
@@ -74,7 +71,7 @@ window.addEventListener("scroll", function () {
   for (let i = 0; i < projectInfos.length; i++) {
     const projectInfoRect = projectInfos[i].getBoundingClientRect();
     const projectTopRelativeDocument = scroll + projectInfoRect.top;
-    
+
 
     if (scroll + windowHeight > projectTopRelativeDocument + projectInfoRect.height / 2) {
       projectTools[i].classList.add("project-tools-animate");
