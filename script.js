@@ -3,7 +3,6 @@
 //offsetTop - A Number, representing the top position of the element, in pixels
 
 const hero = document.querySelector(".hero-background");
-
 const heroRect = hero.getBoundingClientRect();
 
 
@@ -61,10 +60,6 @@ window.addEventListener("scroll", function () {
     aboutTextTitle.classList.add("fade-in");
     aboutTextParag.classList.add("fade-in");
     techStack.classList.add("fade-in");
-  } else {
-    aboutTextTitle.classList.remove("fade-in");
-    aboutTextParag.classList.remove("fade-in");
-    techStack.classList.remove("fade-in");
   }
 
   // Project section
@@ -75,7 +70,6 @@ window.addEventListener("scroll", function () {
 
     if (scroll + windowHeight > projectTopRelativeDocument + projectInfoRect.height / 2) {
       projectTools[i].classList.add("project-tools-animate");
-      // hero.style.borderRadius = "30%";
 
       this.setTimeout(() => {
 
@@ -186,6 +180,7 @@ window.addEventListener("scroll", function () {
   // scroll 500
 
   if (scroll + windowHeight > aboutTopRelativeDocument + aboutRect.height / 2) {
+    hero.style.borderRadius = "0";
     hero.style.width = "80%";
     hero.style.height = "60%";
     // hero.style.width = "50%";
@@ -210,7 +205,7 @@ window.addEventListener("scroll", function () {
     }
     icons.forEach(icon => icon.classList.add("colored"))
     projectImgs[0].style.filter = "grayscale(100%)"
-  }
+  } 
 
 
   // Scroll to each PROJECT, about icon colors removed

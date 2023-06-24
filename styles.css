@@ -390,7 +390,7 @@ Hero
 }
 
 .mail-popup {
-  border: 1px solid #000;
+  border: 1px solid var(--clr-grey-1);
   position: absolute;
   pointer-events: none;
   color: #000;
@@ -401,6 +401,9 @@ Hero
   transition: all .5s;
   left: -6rem;
   top: 2rem;
+  background-color: transparent;
+  color: var(--clr-grey-1);
+  border-radius: 3px;
 }
 
 .mail-list a:hover .mail-popup {
@@ -439,8 +442,7 @@ About
 }
 
 .my-text h2 {
-  /* font-size: 5rem; */
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-family: 'Dancing Script', cursive;
   color: var(--clr-grey-1);
   position: relative;
@@ -1153,7 +1155,7 @@ textarea {
 .mail-form.fade-in .name::after,
 .mail-form.fade-in .email::after,
 .mail-form.fade-in .message::after {
-  animation: formAnim .5s .5s ease forwards;
+  animation: formAnim .5s .7.5s ease forwards;
 }
 
 @keyframes mailFadeIn {
@@ -1324,6 +1326,7 @@ Footer
   padding: 2rem 1rem;
   width: 100%;
   font-size: 1.3rem;
+  position: relative;
 }
 
 .footer {
@@ -1356,29 +1359,24 @@ footer p {
 }
 
 .top-link {
-  font-size: 1.25rem;
-  position: fixed;
+  font-size: 2rem;
+  position: absolute;
   bottom: 3rem;
   right: 3rem;
-  /* background: var(--clr-secondary); */
-  /* background: hsla(182, 63%, 54%); */
-  background: var(--clr-primary-5);
-  width: 2rem;
-  height: 2rem;
   display: grid;
   place-items: center;
-  border-radius: var(--radius);
   color: var(--clr-white);
+  padding: 0 1rem;
   animation: bounce 2s ease-in-out infinite;
 
-  visibility: hidden;
-  z-index: -100;
+  /* visibility: hidden; */
+  /* z-index: -100; */
 }
 
-.show-link {
+/* .show-link {
   visibility: visible;
   z-index: 100;
-}
+} */
 
 @keyframes bounce {
   0% {
@@ -1393,6 +1391,7 @@ footer p {
     transform: scale(1);
   }
 }
+
 
 /* ============== */
 /* @media queries */
