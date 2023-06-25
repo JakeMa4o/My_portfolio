@@ -79,20 +79,25 @@ window.addEventListener("scroll", function () {
         projectTools[i].children[0].children.forEach(li => li.firstChild.style.fontSize = "2rem")
         projectTools[i].children[0].children.forEach(li => li.lastChild.style.opacity = "1")
         projectTools[i].children[0].children.forEach(li => li.lastChild.style.margin = "0")
+        
         // Test
-
-        projectTitles[i].style.opacity = "1";
-        projectTitles[i].style.top = "0";
-        projectImgs[i].style.opacity = "1";
-        projectImgs[i].style.top = "0";
-        projectDescriptions[i].style.opacity = "1";
-        projectDescriptions[i].style.top = "0";
-        // projectTools[i].style.opacity = "1";
-        // projectTools[i].style.top = "0";
-        buttonContainers[i].style.opacity = "1";
-        buttonContainers[i].style.top = "0";
-        hero.style.borderRadius = "0%";
       }, 1000)
+      this.setTimeout (() => {
+        projectImgs[i].style.opacity = "1";
+        projectImgs[i].style.bottom = "0";
+      }, 1200)
+      this.setTimeout (() => {
+        projectDescriptions[i].style.opacity = "1";
+        projectDescriptions[i].style.left = "0";
+      }, 1300)
+      this.setTimeout (() => {
+        projectTitles[i].style.opacity = "1";
+        projectTitles[i].style.left = "0";
+      }, 1600)
+      this.setTimeout (() => {
+        buttonContainers[i].style.opacity = "1";
+        buttonContainers[i].style.left = "0";
+      }, 1800)
     }
   }
 
