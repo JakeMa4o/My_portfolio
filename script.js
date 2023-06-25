@@ -38,7 +38,7 @@ const windowHeight = window.innerHeight;
 for (let i = 0; i < projectInfos.length; i++) {
   const projectToolsRect = projectTools[i].getBoundingClientRect();
   const projectInfoRect = projectInfos[i].getBoundingClientRect();
-  projectTools[i].style.top = projectInfoRect.height / 2 - projectToolsRect.height + "px";
+  projectTools[i].style.top = projectInfoRect.height / 2.5 - projectToolsRect.height + "px";
 
 
   const x = window.matchMedia("(min-width: 1100px)")
@@ -47,10 +47,10 @@ for (let i = 0; i < projectInfos.length; i++) {
   }
 }
 
+
+
+
 // Test
-
-
-
 
 window.addEventListener("scroll", function () {
   const scroll = window.pageYOffset;
@@ -72,14 +72,12 @@ window.addEventListener("scroll", function () {
       projectTools[i].classList.add("project-tools-animate");
 
       this.setTimeout(() => {
-
         // Test
         projectTools[i].style.top = "0";
         projectTools[i].style.left = "0";
-        projectTools[i].children[0].children.forEach(li => li.firstChild.style.fontSize = "2rem")
-        projectTools[i].children[0].children.forEach(li => li.lastChild.style.opacity = "1")
-        projectTools[i].children[0].children.forEach(li => li.lastChild.style.margin = "0")
-        
+        projectTools[i].children[0].children.forEach(li => li.firstChild.style.fontSize = "2rem");
+        projectTools[i].children[0].children.forEach(li => li.lastChild.style.opacity = "1");
+        projectTools[i].children[0].children.forEach(li => li.lastChild.style.margin = "0");
         // Test
       }, 1000)
       this.setTimeout (() => {
@@ -101,7 +99,6 @@ window.addEventListener("scroll", function () {
     }
   }
 
-
   // Contact section
   const mailFormRect = mailForm.getBoundingClientRect();
   const contactTopRelativeDocument = scroll + mailFormRect.top;
@@ -113,9 +110,11 @@ window.addEventListener("scroll", function () {
   }
 })
 
-
-
 // TEST
+
+
+
+
 
 // Hero background 
 window.addEventListener("load", function () {
