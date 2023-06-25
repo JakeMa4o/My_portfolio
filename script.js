@@ -145,7 +145,7 @@ window.addEventListener("scroll", function () {
 
   const project2Rect = projectInfos[1].getBoundingClientRect();
   const project2TopRelativeDocument = scroll + project2Rect.top;
-  const project2TopDifference = Math.abs(heroRect.height / 3 - project2Rect.height / 2);
+  const project2TopDifference = Math.abs(heroRect.height / 2.5 - project2Rect.height / 2);
   const project2LeftDifference = Math.abs(heroRect.width / 2.5 - project2Rect.width / 2);
 
   const project3Rect = projectInfos[2].getBoundingClientRect();
@@ -188,6 +188,7 @@ window.addEventListener("scroll", function () {
     // hero.style.transform = "rotate(90deg)";
     hero.style.transform = "rotate(100deg)";
     // hero.style.transform = "rotate(280deg)";
+    hero.style.backgroundColor = "rgb(232 239 244)";
 
     if (heroRect.width / 2 > aboutRect.width) {
       hero.style.left = aboutRect.left - aboutLeftDifference + "px";
