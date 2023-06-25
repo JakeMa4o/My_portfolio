@@ -145,7 +145,7 @@ window.addEventListener("scroll", function () {
 
   const project2Rect = projectInfos[1].getBoundingClientRect();
   const project2TopRelativeDocument = scroll + project2Rect.top;
-  const project2TopDifference = Math.abs(heroRect.height / 2.5 - project2Rect.height / 2);
+  const project2TopDifference = Math.abs(heroRect.height / 3 - project2Rect.height / 2);
   const project2LeftDifference = Math.abs(heroRect.width / 2.5 - project2Rect.width / 2);
 
   const project3Rect = projectInfos[2].getBoundingClientRect();
@@ -188,7 +188,6 @@ window.addEventListener("scroll", function () {
     // hero.style.transform = "rotate(90deg)";
     hero.style.transform = "rotate(100deg)";
     // hero.style.transform = "rotate(280deg)";
-    hero.style.backgroundColor = "rgb(232 239 244)";
 
     if (heroRect.width / 2 > aboutRect.width) {
       hero.style.left = aboutRect.left - aboutLeftDifference + "px";
@@ -252,9 +251,9 @@ window.addEventListener("scroll", function () {
 
     // Check out this part if there is any problem with it, it was a bit of for mobile bcs of the info height was bigger than others? also /2 is not 60%
 
-    if (heroRect.height > project2Rect.height) {
+    if (heroRect.height /2 > project2Rect.height) {
       hero.style.top = project2TopRelativeDocument - project2TopDifference + "px";
-    } else if (heroRect.height < project2Rect.height) {
+    } else if (heroRect.height / 2 < project2Rect.height) {
       hero.style.top = project2TopRelativeDocument + project2TopDifference + "px";
     } else {
       hero.style.top = project2TopRelativeDocument + "px";
@@ -338,6 +337,7 @@ window.addEventListener("scroll", function () {
     hero.style.width = "100%";
     hero.style.height = contactRect.height + "px";
     hero.style.transform = "rotate(0deg)";
+    hero.style.backgroundColor = "hsl(210, 36%, 96%)";
     // hero.style.transform = "rotate(360deg)";
     // hero.style.transform = "rotate(720deg)";
   }
