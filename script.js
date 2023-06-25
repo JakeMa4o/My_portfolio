@@ -38,7 +38,7 @@ const windowHeight = window.innerHeight;
 for (let i = 0; i < projectInfos.length; i++) {
   const projectToolsRect = projectTools[i].getBoundingClientRect();
   const projectInfoRect = projectInfos[i].getBoundingClientRect();
-  projectTools[i].style.top = projectInfoRect.height / 3 - projectToolsRect.height + "px";
+  projectTools[i].style.top = projectInfoRect.height / 2 - projectToolsRect.height + "px";
 
 
   const x = window.matchMedia("(min-width: 1100px)")
@@ -279,9 +279,9 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.left = project3Rect.left + "px";
     }
-    if (heroRect.height / 2 > project3Rect.height) {
+    if (heroRect.height > project3Rect.height) {
       hero.style.top = project3TopRelativeDocument - project3TopDifference + "px";
-    } else if (heroRect.height / 2 < project3Rect.height) {
+    } else if (heroRect.height < project3Rect.height) {
       hero.style.top = project3TopRelativeDocument + project3TopDifference + "px";
     } else {
       hero.style.top = project3TopRelativeDocument + "px";
@@ -312,9 +312,9 @@ window.addEventListener("scroll", function () {
 
     // This part is same as second? in height / 2 is removed for mobile bcs of it was bigger than others? also /2 is not 60%
 
-    if (heroRect.height > project4Rect.height) {
+    if (heroRect.height / 2 > project4Rect.height) {
       hero.style.top = project4TopRelativeDocument - project4TopDifference + "px";
-    } else if (heroRect.height < project4Rect.height) {
+    } else if (heroRect.height / 2 < project4Rect.height) {
       hero.style.top = project4TopRelativeDocument + project4TopDifference + "px";
     } else {
       hero.style.top = project4TopRelativeDocument + "px";
