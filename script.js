@@ -312,9 +312,9 @@ window.addEventListener("scroll", function () {
 
     // This part is same as second? in height / 2 is removed for mobile bcs of it was bigger than others? also /2 is not 60%
 
-    if (heroRect.height / 2 > project4Rect.height) {
+    if (heroRect.height > project4Rect.height) {
       hero.style.top = project4TopRelativeDocument - project4TopDifference + "px";
-    } else if (heroRect.height / 2 < project4Rect.height) {
+    } else if (heroRect.height < project4Rect.height) {
       hero.style.top = project4TopRelativeDocument + project4TopDifference + "px";
     } else {
       hero.style.top = project4TopRelativeDocument + "px";
