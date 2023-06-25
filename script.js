@@ -173,6 +173,10 @@ window.addEventListener("scroll", function () {
     hero.style.borderRadius = "0";
     hero.style.position = "absolute";
     icons.forEach(icon => icon.classList.remove("colored"))
+    hero.style.msTransform  = "rotate(0deg)";
+    hero.style.webkitTransform  = "rotate(0deg)";
+    hero.style.MozTransform  = "rotate(0deg)";
+    hero.style.OTransform  = "rotate(0deg)";
     hero.style.transform = "rotate(0deg)";
   }
 
@@ -183,11 +187,11 @@ window.addEventListener("scroll", function () {
     hero.style.borderRadius = "0";
     hero.style.width = "80%";
     hero.style.height = "60%";
-    // hero.style.width = "50%";
-    // hero.style.height = "60%";
-    // hero.style.transform = "rotate(90deg)";
+    hero.style.msTransform  = "rotate(100deg)";
+    hero.style.webkitTransform  = "rotate(100deg)";
+    hero.style.MozTransform  = "rotate(100deg)";
+    hero.style.OTransform  = "rotate(100deg)";
     hero.style.transform = "rotate(100deg)";
-    // hero.style.transform = "rotate(280deg)";
 
     if (heroRect.width / 2 > aboutRect.width) {
       hero.style.left = aboutRect.left - aboutLeftDifference + "px";
@@ -213,6 +217,11 @@ window.addEventListener("scroll", function () {
   // 1500px
 
   if (scroll + windowHeight > project1TopRelativeDocument + project1Rect.height / 2) {
+    hero.style.msTransform  = "rotate(-90deg)";
+    hero.style.webkitTransform  = "rotate(-90deg)";
+    hero.style.MozTransform  = "rotate(-90deg)";
+    hero.style.OTransform  = "rotate(-90deg)";
+    hero.style.transform = "rotate(-90deg)";
 
     if (heroRect.width / 2 > project1Rect.width) {
       hero.style.left = project1Rect.left - project1LeftDifference + "px";
@@ -228,10 +237,6 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.top = project1TopRelativeDocument + "px";
     }
-    hero.style.transform = "rotate(-90deg)";
-    // hero.style.transform = "rotate(270deg)";
-    // hero.style.transform = "rotate(250deg)";
-    // hero.style.transform = "rotate(260deg)";
 
     projectImgs[0].style.filter = "grayscale(0%)"
     projectImgs[1].style.filter = "grayscale(100%)"
@@ -240,6 +245,11 @@ window.addEventListener("scroll", function () {
   // 2600px
 
   if (scroll + windowHeight > project2TopRelativeDocument + project2Rect.height / 2) {
+    hero.style.msTransform  = "rotate(90deg)";
+    hero.style.webkitTransform  = "rotate(90deg)";
+    hero.style.MozTransform  = "rotate(90deg)";
+    hero.style.OTransform  = "rotate(90deg)";
+    hero.style.transform = "rotate(90deg)";
 
     if (heroRect.width / 2 > project2Rect.width) {
       hero.style.left = project2Rect.left - project2LeftDifference + "px";
@@ -253,14 +263,11 @@ window.addEventListener("scroll", function () {
 
     if (heroRect.height /2 > project2Rect.height) {
       hero.style.top = project2TopRelativeDocument - project2TopDifference + "px";
-    } else if (heroRect.height / 2 < project2Rect.height) {
+    } else if (heroRect.height /2 < project2Rect.height) {
       hero.style.top = project2TopRelativeDocument + project2TopDifference + "px";
     } else {
       hero.style.top = project2TopRelativeDocument + "px";
     }
-    hero.style.transform = "rotate(90deg)";
-    // hero.style.transform = "rotate(450deg)";
-    // hero.style.transform = "rotate(420deg)";
 
     projectImgs[0].style.filter = "grayscale(100%)"
     projectImgs[1].style.filter = "grayscale(0%)"
@@ -270,6 +277,11 @@ window.addEventListener("scroll", function () {
   // 3900
 
   if (scroll + windowHeight > project3TopRelativeDocument + project3Rect.height / 2) {
+    hero.style.msTransform  = "rotate(-90deg)";
+    hero.style.webkitTransform  = "rotate(-90deg)";
+    hero.style.MozTransform  = "rotate(-90deg)";
+    hero.style.OTransform  = "rotate(-90deg)";
+    hero.style.transform = "rotate(-90deg)";
 
     if (heroRect.width / 2 > project3Rect.width) {
       hero.style.left = project3Rect.left - project3LeftDifference + "px";
@@ -285,11 +297,6 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.top = project3TopRelativeDocument + "px";
     }
-    hero.style.transform = "rotate(-90deg)";
-    // hero.style.transform = "rotate(270deg)";
-    // hero.style.transform = "rotate(630deg)";
-    // hero.style.transform = "rotate(650deg)";
-    // hero.style.transform = "rotate(450deg)";
 
     projectImgs[1].style.filter = "grayscale(100%)"
     projectImgs[2].style.filter = "grayscale(0%)"
@@ -300,6 +307,11 @@ window.addEventListener("scroll", function () {
   // 4800
 
   if (scroll + windowHeight > project4TopRelativeDocument + project4Rect.height / 2) {
+    hero.style.msTransform  = "rotate(90deg)";
+    hero.style.webkitTransform  = "rotate(9deg)";
+    hero.style.MozTransform  = "rotate(90deg)";
+    hero.style.OTransform  = "rotate(90deg)";
+    hero.style.transform = "rotate(90deg)";
 
     if (heroRect.width / 2 > project4Rect.width) {
       hero.style.left = project4Rect.left - project4LeftDifference + "px";
@@ -318,15 +330,9 @@ window.addEventListener("scroll", function () {
     } else {
       hero.style.top = project4TopRelativeDocument + "px";
     }
-    hero.style.transform = "rotate(90deg)";
-    // hero.style.transform = "rotate(450deg)";
-    // hero.style.transform = "rotate(810deg)";
-    // hero.style.transform = "rotate(830deg)";
-    // hero.style.transform = "rotate(630deg)";
 
     projectImgs[2].style.filter = "grayscale(100%)"
     projectImgs[3].style.filter = "grayscale(0%)"
-    // console.log(contactTopRelativeDocument);
   }
 
 
@@ -336,10 +342,12 @@ window.addEventListener("scroll", function () {
     hero.style.left = contactRect.left + "px";
     hero.style.width = "100%";
     hero.style.height = contactRect.height + "px";
+    hero.style.msTransform  = "rotate(0deg)";
+    hero.style.webkitTransform  = "rotate(0deg)";
+    hero.style.MozTransform  = "rotate(0deg)";
+    hero.style.OTransform  = "rotate(0deg)";
     hero.style.transform = "rotate(0deg)";
     hero.style.backgroundColor = "hsl(210, 36%, 96%)";
-    // hero.style.transform = "rotate(360deg)";
-    // hero.style.transform = "rotate(720deg)";
   }
 })
 
