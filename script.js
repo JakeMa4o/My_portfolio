@@ -249,8 +249,7 @@ window.addEventListener("scroll", function () {
       hero.style.left = project1Rect.left + "px";
     }
 
-    // Check ou this part if there is any problem with it, it was a bit of for mobile bcs of the info height was bigger than others? also /2 is not 60%
-
+    // Check out this part if there is any problem with it, it was a bit of for mobile bcs of the info height was bigger than others? also /2 is not 60%
 
     if (heroRect.height > project2Rect.height) {
       hero.style.top = project2TopRelativeDocument - project2TopDifference + "px";
