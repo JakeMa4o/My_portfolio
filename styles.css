@@ -1038,6 +1038,7 @@ Contact Me
   padding-top: 6rem;
   /* width: 80%; */
   /* margin: auto; */
+  position: relative;
 }
 
 #contact-form {
@@ -1362,7 +1363,8 @@ footer p {
   right: 3rem;
   display: grid;
   place-items: center;
-  color: var(--clr-white);
+  /* color: var(--clr-white); */
+  color: var(--clr-grey-1);
   padding: 0 1rem;
   animation: bounce 2s ease-in-out infinite;
 
