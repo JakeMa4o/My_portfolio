@@ -39,6 +39,7 @@ window.addEventListener("load", function () {
   this.setTimeout(setBackground, 1500)
   function setBackground() {
     hero.style.backgroundColor = "hsl(210, 36%, 96%)";
+    // hero.style.backgroundColor = "rgb(235, 236, 237)";
   }
 })
 
@@ -116,11 +117,6 @@ window.addEventListener("scroll", function () {
     hero.style.OTransform = "rotate(100deg)";
     hero.style.transform = "rotate(100deg)";
 
-    console.log(heroRect.width);
-    console.log(heroRect);
-    console.log(aboutRect.width);
-    console.log(aboutRect);
-    console.log(aboutLeftDifference);
 
     if (heroRect.width  > aboutRect.width) {
       hero.style.left = aboutRect.left - aboutLeftDifference + "px";
@@ -158,7 +154,8 @@ window.addEventListener("scroll", function () {
       }, 1000)
       this.setTimeout(() => {
         projectImgs[p].style.opacity = "1";
-        projectImgs[p].style.bottom = "0";
+        // projectImgs[p].style.bottom = "0";
+        projectImgs[p].style.transform = "scale(1)";
       }, 1200)
       this.setTimeout(() => {
         projectDescriptions[p].style.opacity = "1";
@@ -223,7 +220,7 @@ window.addEventListener("scroll", function () {
     hero.style.MozTransform = "rotate(0deg)";
     hero.style.OTransform = "rotate(0deg)";
     hero.style.transform = "rotate(0deg)";
-    hero.style.backgroundColor = "hsl(210, 36%, 96%)";
+    // hero.style.backgroundColor = "hsl(210, 36%, 96%)";
   }
 })
 
