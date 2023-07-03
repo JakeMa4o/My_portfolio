@@ -42,20 +42,20 @@ window.addEventListener("load", function () {
   }
 })
 
-// AboutInfo section Hero position
+// About section position variables
 const aboutTopRelativeDocument = aboutRect.top;
 const aboutTopDifference = Math.abs(heroRect.height / 3 - aboutRect.height / 2);
-const aboutLeftDifference = Math.abs(heroRect.width / 2.5 - aboutRect.width / 2);
+const aboutLeftDifference = Math.abs(heroRect.width / 2 - aboutRect.width / 2);
 
 
-// Projects 
+// Projects section position variables
 
 const projectsDetail = [];
 
 for (let p = 0; p < projectInfos.length; p++) {
   const projectRect = projectInfos[p].getBoundingClientRect();
   const projectTopDifference = Math.abs(heroRect.height / 3 - projectRect.height / 2);
-  const projectLeftDifference = Math.abs(heroRect.width / 2.5 - projectRect.width / 2);
+  const projectLeftDifference = Math.abs(heroRect.width / 2 - projectRect.width / 2);
 
   projectsDetail.push({
     projectRect: projectRect,
@@ -68,12 +68,12 @@ for (let p = 0; p < projectInfos.length; p++) {
   }
 }
 
-
-console.log(projectsDetail);
-
-// Contact 
+// Contact section position variable
 
 const contactRect = contact.getBoundingClientRect();
+
+
+
 
 
 
@@ -108,7 +108,7 @@ window.addEventListener("scroll", function () {
     techStack.classList.add("fade-in");
 
     hero.style.borderRadius = "0";
-    hero.style.width = "80%";
+    // hero.style.width = "80%";
     hero.style.height = "60%";
     hero.style.msTransform = "rotate(100deg)";
     hero.style.webkitTransform = "rotate(100deg)";
@@ -116,9 +116,15 @@ window.addEventListener("scroll", function () {
     hero.style.OTransform = "rotate(100deg)";
     hero.style.transform = "rotate(100deg)";
 
-    if (heroRect.width / 2 > aboutRect.width) {
+    console.log(heroRect.width);
+    console.log(heroRect);
+    console.log(aboutRect.width);
+    console.log(aboutRect);
+    console.log(aboutLeftDifference);
+
+    if (heroRect.width  > aboutRect.width) {
       hero.style.left = aboutRect.left - aboutLeftDifference + "px";
-    } else if (heroRect.width / 2 < aboutRect.width) {
+    } else if (heroRect.width  < aboutRect.width) {
       hero.style.left = aboutRect.left + aboutLeftDifference + "px";
     } else {
       hero.style.left = aboutRect.left + "px";
@@ -175,9 +181,9 @@ window.addEventListener("scroll", function () {
       } else {
         hero.style.left = projectsDetail[p].projectRect.left + "px";
       }
-      if (heroRect.height / 2 > projectsDetail[p].projectRect.height) {
+      if (heroRect.height * .6 > projectsDetail[p].projectRect.height) {
         hero.style.top = projectsDetail[p].projectRect.top - projectsDetail[p].projectTopDifference + "px";
-      } else if (heroRect.height / 2 < projectsDetail[p].projectRect.height) {
+      } else if (heroRect.height * .6 < projectsDetail[p].projectRect.height) {
         hero.style.top = projectsDetail[p].projectRect.top + projectsDetail[p].projectTopDifference + "px";
       } else {
         hero.style.top = projectsDetail[p].projectRect.top + "px";
