@@ -124,9 +124,9 @@ window.addEventListener("scroll", function () {
     hero.style.transform = "rotate(100deg)";
 
 
-    if (heroRect.width  > aboutRect.width) {
+    if (heroRect.width > aboutRect.width) {
       hero.style.left = aboutRect.left - aboutLeftDifference + "px";
-    } else if (heroRect.width  < aboutRect.width) {
+    } else if (heroRect.width < aboutRect.width) {
       hero.style.left = aboutRect.left + aboutLeftDifference + "px";
     } else {
       hero.style.left = aboutRect.left + "px";
@@ -160,19 +160,19 @@ window.addEventListener("scroll", function () {
       }, 1000)
       this.setTimeout(() => {
         if (mobileQuery.matches) {
-          projectImgs[p].children[0].children[0].style.transition = "2s linear";  
+          projectImgs[p].children[0].children[0].style.transition = "2s linear";
         }
         if (desktopQuery.matches) {
-          projectImgs[p].children[0].children[0].style.transition = "2s ease";  
+          projectImgs[p].children[0].children[0].style.transition = "2s ease";
         }
         if (fourKQuery.matches) {
-          projectImgs[p].children[0].children[0].style.transition = "1.3s ease";  
+          projectImgs[p].children[0].children[0].style.transition = "1.3s ease";
         }
         projectImgs[p].children[0].children[0].style.strokeDashoffset = 0;
       }, 1000)
       this.setTimeout(() => {
         projectImgs[p].children[1].style.opacity = 1;
-        projectImgs[p].children[0].children[0].style.transition = "1s ease";  
+        projectImgs[p].children[0].children[0].style.transition = "1s ease";
         projectImgs[p].children[0].children[0].style.opacity = 0;
       }, 2000)
       this.setTimeout(() => {
@@ -232,30 +232,22 @@ window.addEventListener("scroll", function () {
 
   // Scroll to CONTACT section Hero background rectangle
   if (scroll + windowHeight > contactRect.top + contactRect.height / 2) {
-    mailForm.classList.add("fade-in");
-
-    // hero.style.top = contactRect.top + "px";
-    // hero.style.left = contactRect.left + "px";
-    // hero.style.width = "100%";
-    // hero.style.height = contactRect.height + "px"
-
-    
     hero.style.top = emailCardRect.top + "px";
     hero.style.left = emailCardRect.left + "px";
     hero.style.width = emailCardRect.width + "px";
     hero.style.height = emailCardRect.height + "px";
-
-    
-    console.log(hero.style.top);
-    console.log(emailCardRect.top);   
-    console.log(hero.style.height);
-    console.log(emailCardRect.height);   
-
     hero.style.msTransform = "rotate(0deg)";
     hero.style.webkitTransform = "rotate(0deg)";
     hero.style.MozTransform = "rotate(0deg)";
     hero.style.OTransform = "rotate(0deg)";
     hero.style.transform = "rotate(0deg)";
+    this.setTimeout(() => {
+      emailCard.classList.add("fade-in");
+    }, 1000)
+    this.setTimeout(() => {
+      mailForm.classList.add("fade-in");
+    }, 1100)
+
     // hero.style.backgroundColor = "hsl(210, 36%, 96%)";
   }
 })

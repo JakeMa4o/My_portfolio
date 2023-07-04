@@ -715,27 +715,15 @@ Projects
 
 .project-img {
   width: 100%;
-  /* height: 21.3rem; */
-  /* max-width: 40rem; */
-  /* border: 1px solid #000; */
   display: flex;
   justify-content: center;
   align-items: end;
   overflow: hidden;
   grid-row: 1/2;
   grid-column: 1/2;
-  /* border: 5px solid var(--clr-grey-1); */
-  /* border-radius: 10px; */
-  /* height: 15rem; */
   height: 15rem;
-  /* filter: grayscale(100%); */
-  /* opacity: 0; */
   position: relative;
-  /* top: 1rem; */
-  /* bottom: 10rem; */
-  /* transition: 1s all; */
   z-index: 3;
-  /* transform: scale(1.3); */
 }
 
 .project-img img {
@@ -786,10 +774,6 @@ Projects
   grid-row: 2/3;
 }
 
-/* .project-img:hover {
-  filter: grayscale(0%);
-} */
-
 @media screen and (min-width: 1100px) {
   .project:nth-child(odd) .project-img {
     grid-column: 2/3;
@@ -813,16 +797,6 @@ Projects
   top: 5rem;
   transition: 1s all;
   position: relative;
-  /* top: 370px; */
-  /* top: 50%; */
-
-
-
-  /* left: 300px; */
-  /* top: 240px; */
-  /* left: 50%; */
-  /* transform: translate(-50%, -50%); */
-  /* border: 1px solid #000; */
 }
 
 .project-tools .tools-list {
@@ -832,9 +806,7 @@ Projects
 }
 
 .tools-list>li {
-  /* background-color: var(--clr-grey-1); */
   background-color: transparent;
-  /* color: #fff; */
   font-size: 1.2rem;
   padding: .3rem .5rem;
   display: flex;
@@ -956,8 +928,9 @@ Contact Me
   text-align: center;
   padding: 1.5rem 1rem;
   font-size: 1.3rem;
-  width: 100%;
   margin: auto;
+  width: 100%;
+  opacity: 0;
   /* background-color: var(--clr-grey-10); */
   /* background-color: #49a6e9; */
 }
@@ -966,6 +939,11 @@ Contact Me
   padding: 0;
   margin: 0;
   color: var(--clr-grey-1);
+}
+
+.email-card.fade-in {
+  opacity: 1;
+  transition: 1s all;
 }
 
 
