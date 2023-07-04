@@ -724,24 +724,45 @@ Projects
   overflow: hidden;
   grid-row: 1/2;
   grid-column: 1/2;
-  border: 5px solid var(--clr-grey-1);
+  /* border: 5px solid var(--clr-grey-1); */
   /* border-radius: 10px; */
   /* height: 15rem; */
   height: 15rem;
   /* filter: grayscale(100%); */
-  opacity: 0;
+  /* opacity: 0; */
   position: relative;
   /* top: 1rem; */
   /* bottom: 10rem; */
-  transition: 1s all;
+  /* transition: 1s all; */
   z-index: 3;
-  transform: scale(1.3);
+  /* transform: scale(1.3); */
 }
 
 .project-img img {
   flex-shrink: 0;
   min-width: 100%;
   min-height: 100%;
+  opacity: 0;
+  transition: 1.2s all;
+}
+
+.project-img svg,
+.project-img svg rect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+
+}
+
+.project-img svg rect {
+  stroke: #000;
+  stroke-width: 4;
+  transition: 3s linear;
+  stroke-dasharray: 3100;
+  stroke-dashoffset: 3100;
 }
 
 .description {
