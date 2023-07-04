@@ -648,7 +648,7 @@ Projects
 #projects {
   padding: 5rem 0;
   margin-top: -8rem;
-  border-bottom: 1px solid #e6ecf8;
+  /* border-bottom: 1px solid #e6ecf8; */
   margin: auto;
   /* background: var(--clr-grey-10); */
   width: 100%;
@@ -946,16 +946,34 @@ Contact Me
 }
 
 #contact-me .title h2 {
+  font-family: 'Dancing Script', cursive;
   transform: translateX(5rem);
   opacity: 0;
   margin-bottom: 0;
 }
 
+.email-card {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 1.3rem;
+  width: 100%;
+  margin: auto;
+  /* background-color: var(--clr-grey-10); */
+  /* background-color: #49a6e9; */
+}
+
+.email-card > p {
+  padding: 0;
+  margin: 0;
+  color: var(--clr-grey-1);
+}
+
+
 .mail-form .title>p {
   transform: translateX(-5rem);
   opacity: 0;
-  padding-top: 1rem;
-  padding-bottom: 5rem;
+  padding: 1rem 0;
+  /* padding-bottom: 5rem; */
 }
 
 .mail-form p span {
@@ -1081,13 +1099,6 @@ textarea:focus {
   text-align: center;
   color: var(--clr-primary-5);
   font-size: 1.5rem;
-}
-
-.show-message {
-  width: 100%;
-  padding: 1rem;
-  text-align: center;
-  color: #fff;
 }
 
 .form-button {
@@ -1341,7 +1352,7 @@ footer p {
   }
 
   .project-info {
-    padding: 0 1rem;
+    /* padding: 0 1rem; */
     font-size: .7rem;
   }
 

@@ -25,13 +25,18 @@ const buttonContainers = document.querySelectorAll(".buttons-container");
 
 
 
-const contact = document.querySelector("#contact-me")
+const contact = document.querySelector("#contact-me");
 const mailForm = document.querySelector(".mail-form");
+const emailCard = document.querySelector(".email-card");
 // const googleMap = document.querySelector("#map-api");
 
 
 const windowHeight = window.innerHeight;
+
+// Query
 const desktopQuery = window.matchMedia("(min-width: 1100px)");
+const mobileQuery = window.matchMedia("(min-width: 500px)");
+const fourKQuery = window.matchMedia("(min-width: 2560px)");
 
 
 // Hero background 
@@ -72,6 +77,7 @@ for (let p = 0; p < projectInfos.length; p++) {
 // Contact section position variable
 
 const contactRect = contact.getBoundingClientRect();
+const emailCardRect = emailCard.getBoundingClientRect();
 
 
 
@@ -153,7 +159,13 @@ window.addEventListener("scroll", function () {
         // Test
       }, 1000)
       this.setTimeout(() => {
+        if (mobileQuery.matches) {
+          projectImgs[p].children[0].children[0].style.transition = "2s linear";  
+        }
         if (desktopQuery.matches) {
+          projectImgs[p].children[0].children[0].style.transition = "2s ease";  
+        }
+        if (fourKQuery.matches) {
           projectImgs[p].children[0].children[0].style.transition = "1.3s ease";  
         }
         projectImgs[p].children[0].children[0].style.strokeDashoffset = 0;
@@ -177,9 +189,9 @@ window.addEventListener("scroll", function () {
       }, 1800)
 
       // background reactangle
-      if (heroRect.width / 2 > projectsDetail[p].projectRect.width) {
+      if (heroRect.width > projectsDetail[p].projectRect.width) {
         hero.style.left = projectsDetail[p].projectRect.left - projectsDetail[p].projectLeftDifference + "px";
-      } else if (heroRect.width / 2 < projectsDetail[p].projectRect.width) {
+      } else if (heroRect.width < projectsDetail[p].projectRect.width) {
         hero.style.left = projectsDetail[p].projectRect.left + projectsDetail[p].projectLeftDifference + "px";
       } else {
         hero.style.left = projectsDetail[p].projectRect.left + "px";
@@ -206,6 +218,10 @@ window.addEventListener("scroll", function () {
         hero.style.transform = "rotate(90deg)";
       }
 
+      // 
+      hero.style.height = "60%";
+      hero.style.width = "100%";
+
       // projectImgs[1].style.filter = "grayscale(100%)"
       //   projectImgs[2].style.filter = "grayscale(0%)"
       //   projectImgs[3].style.filter = "grayscale(100%)"
@@ -217,10 +233,24 @@ window.addEventListener("scroll", function () {
   // Scroll to CONTACT section Hero background rectangle
   if (scroll + windowHeight > contactRect.top + contactRect.height / 2) {
     mailForm.classList.add("fade-in");
-    hero.style.top = contactRect.top + "px";
-    hero.style.left = contactRect.left + "px";
-    hero.style.width = "100%";
-    hero.style.height = contactRect.height + "px";
+
+    // hero.style.top = contactRect.top + "px";
+    // hero.style.left = contactRect.left + "px";
+    // hero.style.width = "100%";
+    // hero.style.height = contactRect.height + "px"
+
+    
+    hero.style.top = emailCardRect.top + "px";
+    hero.style.left = emailCardRect.left + "px";
+    hero.style.width = emailCardRect.width + "px";
+    hero.style.height = emailCardRect.height + "px";
+
+    
+    console.log(hero.style.top);
+    console.log(emailCardRect.top);   
+    console.log(hero.style.height);
+    console.log(emailCardRect.height);   
+
     hero.style.msTransform = "rotate(0deg)";
     hero.style.webkitTransform = "rotate(0deg)";
     hero.style.MozTransform = "rotate(0deg)";
