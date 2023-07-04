@@ -166,15 +166,22 @@ window.addEventListener("scroll", function () {
           projectImgs[p].children[0].children[0].style.transition = "2s ease";
         }
         if (fourKQuery.matches) {
-          projectImgs[p].children[0].children[0].style.transition = "1.3s ease";
+          projectImgs[p].children[0].children[0].style.transition = "1s linear";
         }
         projectImgs[p].children[0].children[0].style.strokeDashoffset = 0;
       }, 1000)
+      if (fourKQuery.matches) {
+        this.setTimeout(() => {
+          projectImgs[p].children[1].style.opacity = 1;
+          projectImgs[p].children[0].children[0].style.transition = "1s ease";
+          projectImgs[p].children[0].children[0].style.opacity = 0;
+        }, 2500) 
+      }
       this.setTimeout(() => {
         projectImgs[p].children[1].style.opacity = 1;
         projectImgs[p].children[0].children[0].style.transition = "1s ease";
         projectImgs[p].children[0].children[0].style.opacity = 0;
-      }, 2000)
+      }, 2200)
       this.setTimeout(() => {
         projectDescriptions[p].style.opacity = "1";
         projectDescriptions[p].style.left = "0";
