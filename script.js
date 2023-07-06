@@ -145,7 +145,7 @@ window.addEventListener("scroll", function () {
 
   // Scroll to PROJECT sections Hero background rectangle
   for (let p = 0; p < projectsDetail.length; p++) {
-    if (scroll + windowHeight > projectsDetail[p].projectRect.top) {
+    if (scroll + windowHeight > projectsDetail[p].projectRect.top + projectsDetail[p].projectRect.height / 3) {
       // Tools animation
       projectTools[p].classList.add("project-tools-animate");
 
