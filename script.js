@@ -43,7 +43,7 @@ const fourKQuery = window.matchMedia("(min-width: 2560px)");
 window.addEventListener("load", function () {
   this.setTimeout(setBackground, 1500)
   function setBackground() {
-    hero.style.backgroundColor = "hsl(210, 36%, 96%)";
+    hero.style.opacity = 1;
     // hero.style.backgroundColor = "rgb(235, 236, 237)";
   }
 })
@@ -69,6 +69,10 @@ for (let p = 0; p < projectInfos.length; p++) {
     projectLeftDifference: projectLeftDifference
   })
 
+  if (projectTools[p].children[0].children.length == 2) {
+    projectTools[p].style.left = projectsDetail[p].projectRect.width / 6 + "px";
+  }
+
   if (desktopQuery.matches) {
     projectTools[p].style.left = projectsDetail[p].projectRect.width / 6 + "px";
   }
@@ -78,6 +82,7 @@ for (let p = 0; p < projectInfos.length; p++) {
 
 const contactRect = contact.getBoundingClientRect();
 const emailCardRect = emailCard.getBoundingClientRect();
+
 
 
 
@@ -122,7 +127,6 @@ window.addEventListener("scroll", function () {
     hero.style.MozTransform = "rotate(100deg)";
     hero.style.OTransform = "rotate(100deg)";
     hero.style.transform = "rotate(100deg)";
-
 
     if (heroRect.width > aboutRect.width) {
       hero.style.left = aboutRect.left - aboutLeftDifference + "px";
@@ -224,10 +228,9 @@ window.addEventListener("scroll", function () {
         hero.style.OTransform = "rotate(90deg)";
         hero.style.transform = "rotate(90deg)";
       }
-
       // 
-      hero.style.height = "60%";
-      hero.style.width = "100%";
+      // hero.style.height = "60%";
+      // hero.style.width = "100%";
 
       // projectImgs[1].style.filter = "grayscale(100%)"
       //   projectImgs[2].style.filter = "grayscale(0%)"
@@ -243,11 +246,11 @@ window.addEventListener("scroll", function () {
     hero.style.left = emailCardRect.left + "px";
     hero.style.width = emailCardRect.width + "px";
     hero.style.height = emailCardRect.height + "px";
-    hero.style.msTransform = "rotate(0deg)";
-    hero.style.webkitTransform = "rotate(0deg)";
-    hero.style.MozTransform = "rotate(0deg)";
-    hero.style.OTransform = "rotate(0deg)";
-    hero.style.transform = "rotate(0deg)";
+    hero.style.msTransform = "rotate(180deg)";
+    hero.style.webkitTransform = "rotate(180deg)";
+    hero.style.MozTransform = "rotate(180deg)";
+    hero.style.OTransform = "rotate(180deg)";
+    hero.style.transform = "rotate(180deg)";
     this.setTimeout(() => {
       emailCard.classList.add("fade-in");
     }, 1000)
