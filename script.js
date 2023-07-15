@@ -228,9 +228,9 @@ window.addEventListener("scroll", function () {
         hero.style.OTransform = "rotate(90deg)";
         hero.style.transform = "rotate(90deg)";
       }
-      // 
-      // hero.style.height = "60%";
-      // hero.style.width = "100%";
+      
+      hero.style.height = "60%";
+      hero.style.width = "100%";
 
       // projectImgs[1].style.filter = "grayscale(100%)"
       //   projectImgs[2].style.filter = "grayscale(0%)"
