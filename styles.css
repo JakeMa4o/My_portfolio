@@ -338,18 +338,19 @@ Hero
 .social-medias .fa-solid {
   font-size: 1.5rem;
   color: var(--clr-grey-1);
+  transition: .3s;
 }
 
-.social-medias li:hover .fa-linkedin {
+.social-medias li a:hover .fa-linkedin {
   color: rgba(31, 126, 235, 0.698);
 }
 
-.social-medias li:hover .fa-github {
-  color: var(--clr-grey-7);
+.social-medias li a:hover .fa-github {
+  color: var(--clr-grey-5);
 }
 
-.social-medias li:hover .fa-envelope {
-  color: var(--clr-grey-4);
+.social-medias li a:hover .fa-envelope {
+  color: var(--clr-primary-8);
 }
 
 
@@ -390,6 +391,7 @@ Hero
   position: relative;
 }
 
+/* 
 .mail-popup {
   border: 1px solid var(--clr-grey-1);
   position: absolute;
@@ -409,7 +411,7 @@ Hero
 
 .mail-list a:hover .mail-popup {
   opacity: 1;
-}
+} */
 
 
 /*
@@ -520,7 +522,8 @@ About
 /* icons BOUNCES*/
 
 .tech-icon i {
-  font-size: 3rem;
+  font-size: 2rem;
+  /* font-size: 3rem; */
   opacity: 0;
 }
 
@@ -627,7 +630,8 @@ About
   }
 
   25% {
-    transform: scale(1.3);
+    transform: scale(2);
+    /* transform: scale(1.3); */
     opacity: .25;
   }
 
@@ -901,6 +905,10 @@ Contact Me
   padding-top: 6rem;
   /* width: 80%; */
   /* margin: auto; */
+  /* position: relative; */
+}
+
+.contact-container {
   position: relative;
 }
 
@@ -928,7 +936,7 @@ Contact Me
 .email-card {
   text-align: center;
   padding: 1.5rem 1rem;
-  font-size: 1.3rem;
+  /* font-size: 1.3rem; */
   margin: auto;
   width: 100%;
   opacity: 0;
@@ -1241,8 +1249,9 @@ footer p {
 .top-link {
   font-size: 1.25rem;
   position: absolute;
-  bottom: 3rem;
-  right: 3rem;
+  bottom: 10rem;
+  /* bottom: 3rem; */
+  right: 1rem;
   display: grid;
   place-items: center;
   /* color: var(--clr-white); */
@@ -1250,14 +1259,23 @@ footer p {
   padding: 0 1rem;
   animation: bounce 2s ease-in-out infinite;
 
-  /* visibility: hidden; */
-  /* z-index: -100; */
+  opacity: 0;
+  z-index: -100;
+  /* opacity: 0; */
+  transform: translateY(2rem);
 }
 
-/* .show-link {
-  visibility: visible;
-  z-index: 100;
-} */
+.top-link.fade-in {
+  animation: showTopLink 1s 1s forwards;
+}
+
+@keyframes showTopLink {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+    z-index: 100;
+  }
+}
 
 @keyframes bounce {
   0% {
@@ -1514,6 +1532,23 @@ footer p {
     font-size: 1.3rem;
     min-height: 10rem;
   }
+
+  @keyframes bounceIcons {
+    0% {
+      opacity: 0;
+      transform: scale(1);
+    }
+
+    25% {
+      transform: scale(1.3);
+      opacity: .25;
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
 }
 
 @media screen and (min-width: 770px) {
@@ -1702,6 +1737,10 @@ footer p {
   .project-tools {
     padding: 0.8rem 0 1.2rem;
   }
+
+  .email-card {
+    font-size: 1.3rem;
+  }
 }
 
 @media screen and (min-width: 900px) {
@@ -1747,7 +1786,6 @@ footer p {
   .buttons-container .button {
     font-size: 1.35rem;
   }
-
 }
 
 @media screen and (min-width: 1025px) {
@@ -1880,6 +1918,11 @@ footer p {
 
   .mail-form {
     max-width: 30%;
+  }
+
+  .top-link {
+    bottom: 0rem;
+    right: 10rem;
   }
 }
 

@@ -28,6 +28,7 @@ const buttonContainers = document.querySelectorAll(".buttons-container");
 const contact = document.querySelector("#contact-me");
 const mailForm = document.querySelector(".mail-form");
 const emailCard = document.querySelector(".email-card");
+const topLink = document.querySelector(".top-link")
 // const googleMap = document.querySelector("#map-api");
 
 
@@ -82,7 +83,6 @@ for (let p = 0; p < projectInfos.length; p++) {
 
 const contactRect = contact.getBoundingClientRect();
 const emailCardRect = emailCard.getBoundingClientRect();
-
 
 
 
@@ -253,10 +253,11 @@ window.addEventListener("scroll", function () {
     hero.style.transform = "rotate(180deg)";
     this.setTimeout(() => {
       emailCard.classList.add("fade-in");
-    }, 1000)
+    }, 800)
     this.setTimeout(() => {
       mailForm.classList.add("fade-in");
-    }, 1100)
+      topLink.classList.add("fade-in");
+    }, 900)
 
     // hero.style.backgroundColor = "hsl(210, 36%, 96%)";
   }
