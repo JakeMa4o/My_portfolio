@@ -214,6 +214,17 @@ Hero
 ========  
 */
 
+.scroll-tip {
+  /* bottom: 10%; */
+  /* left: 50%; */
+  border: 1px solid #000;
+  text-align: center;
+  /* margin-top: 30rem; */
+}
+.scroll-tip i{
+  font-size: 2rem;
+}
+
 .hero {
   min-height: 100vh;
   width: 100%;
@@ -761,14 +772,14 @@ Projects
 .description {
   opacity: 0;
   position: relative;
-  left: 3rem;
+  transform: translateX(3rem);
   transition: 1s all;
 }
 
 .buttons-container {
   opacity: 0;
   position: relative;
-  left: 7rem;
+  transform: translateX(7rem);
   transition: 1s all;
   grid-column: 1/2;
   grid-row: 2/3;
@@ -789,17 +800,10 @@ Projects
   }
 }
 
-
-
-
-
-/* Removed */
-
-
-
 .project-tools {
   padding: .5rem 0 .9rem;
-  top: 5rem;
+  /* top: 5rem; */
+  /* transform: translate(5rem, 5rem); */
   transition: 1s all;
   position: relative;
 }

@@ -71,11 +71,13 @@ for (let p = 0; p < projectInfos.length; p++) {
   })
 
   if (projectTools[p].children[0].children.length == 2) {
-    projectTools[p].style.left = projectsDetail[p].projectRect.width / 6 + "px";
+    // projectTools[p].style.left = projectsDetail[p].projectRect.width / 6 + "px";
+    projectTools[p].style.transform = `translate(${projectsDetail[p].projectRect.width / 6 /16}rem, 5rem)`;
   }
 
   if (desktopQuery.matches) {
-    projectTools[p].style.left = projectsDetail[p].projectRect.width / 6 + "px";
+    // projectTools[p].style.left = projectsDetail[p].projectRect.width / 6 + "px";
+    projectTools[p].style.transform = `translate(${projectsDetail[p].projectRect.width / 6 /16}rem, 5rem)`;
   }
 }
 
@@ -155,8 +157,7 @@ window.addEventListener("scroll", function () {
 
       this.setTimeout(() => {
         // Test
-        projectTools[p].style.top = "0";
-        projectTools[p].style.left = "0";
+        projectTools[p].style.transform = "translate(0rem, 0rem)";
         projectTools[p].children[0].children.forEach(li => li.firstChild.style.fontSize = "2rem");
         projectTools[p].children[0].children.forEach(li => li.lastChild.style.opacity = "1");
         projectTools[p].children[0].children.forEach(li => li.lastChild.style.margin = "0");
@@ -188,15 +189,17 @@ window.addEventListener("scroll", function () {
       }, 2200)
       this.setTimeout(() => {
         projectDescriptions[p].style.opacity = "1";
-        projectDescriptions[p].style.left = "0";
+        projectDescriptions[p].style.transform = "translateX(0)";
       }, 1300)
       this.setTimeout(() => {
         projectTitles[p].style.opacity = "1";
         projectTitles[p].style.left = "0";
+        projectTitles[p].style.transform = "translateX(0)";
       }, 1600)
       this.setTimeout(() => {
         buttonContainers[p].style.opacity = "1";
         buttonContainers[p].style.left = "0";
+        buttonContainers[p].style.transform = "translateX(0)";
       }, 1800)
 
       // background reactangle
