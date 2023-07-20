@@ -28,6 +28,7 @@ const buttonContainers = document.querySelectorAll(".buttons-container");
 const contact = document.querySelector("#contact-me");
 const mailForm = document.querySelector(".mail-form");
 const emailCard = document.querySelector(".email-card");
+const emailSpan = document.querySelector(".email-card span");
 const topLink = document.querySelector(".top-link")
 // const googleMap = document.querySelector("#map-api");
 
@@ -51,33 +52,23 @@ window.addEventListener("load", function () {
 
 // About section position variables
 const aboutTopRelativeDocument = aboutRect.top;
-const aboutTopDifference = Math.abs(heroRect.height / 3 - aboutRect.height / 2);
-const aboutLeftDifference = Math.abs(heroRect.width / 2 - aboutRect.width / 2);
 
 
 // Projects section position variables
-
 const projectsDetail = [];
 
 for (let p = 0; p < projectInfos.length; p++) {
   const projectRect = projectInfos[p].getBoundingClientRect();
-  const projectTopDifference = Math.abs(heroRect.height / 3 - projectRect.height / 2);
-  const projectLeftDifference = Math.abs(heroRect.width / 2 - projectRect.width / 2);
-
   projectsDetail.push({
-    projectRect: projectRect,
-    projectTopDifference: projectTopDifference,
-    projectLeftDifference: projectLeftDifference
+    projectRect: projectRect
   })
 
-  if (projectTools[p].children[0].children.length == 2) {
-    // projectTools[p].style.left = projectsDetail[p].projectRect.width / 6 + "px";
-    projectTools[p].style.transform = `translate(${projectsDetail[p].projectRect.width / 6 /16}rem, 5rem)`;
-  }
 
+  if (projectTools[p].children[0].children.length == 2) {
+    projectTools[p].style.transform = `translate(${projectsDetail[p].projectRect.width / 6 / 16}rem, 5rem)`;
+  }
   if (desktopQuery.matches) {
-    // projectTools[p].style.left = projectsDetail[p].projectRect.width / 6 + "px";
-    projectTools[p].style.transform = `translate(${projectsDetail[p].projectRect.width / 6 /16}rem, 5rem)`;
+    projectTools[p].style.transform = `translate(${projectsDetail[p].projectRect.width / 6 / 16}rem, 5rem)`;
   }
 }
 
@@ -85,10 +76,7 @@ for (let p = 0; p < projectInfos.length; p++) {
 
 const contactRect = contact.getBoundingClientRect();
 const emailCardRect = emailCard.getBoundingClientRect();
-
-
-
-
+const emailSpanRect = emailSpan.getBoundingClientRect();
 
 
 // ********** Navigation Background Figure ************
@@ -112,6 +100,7 @@ window.addEventListener("scroll", function () {
     hero.style.MozTransform = "rotate(0deg)";
     hero.style.OTransform = "rotate(0deg)";
     hero.style.transform = "rotate(0deg)";
+    hero.classList.remove("hero-animate");
   }
 
 
@@ -121,29 +110,20 @@ window.addEventListener("scroll", function () {
     aboutTextParag.classList.add("fade-in");
     techStack.classList.add("fade-in");
 
-    hero.style.borderRadius = "0";
-    // hero.style.width = "80%";
-    hero.style.height = "60%";
-    hero.style.msTransform = "rotate(100deg)";
-    hero.style.webkitTransform = "rotate(100deg)";
-    hero.style.MozTransform = "rotate(100deg)";
-    hero.style.OTransform = "rotate(100deg)";
-    hero.style.transform = "rotate(100deg)";
+    hero.classList.add("hero-animate");
+    hero.style.width = aboutRect.width + "px";
+    hero.style.height = aboutRect.height + "px";
 
-    if (heroRect.width > aboutRect.width) {
-      hero.style.left = aboutRect.left - aboutLeftDifference + "px";
-    } else if (heroRect.width < aboutRect.width) {
-      hero.style.left = aboutRect.left + aboutLeftDifference + "px";
-    } else {
-      hero.style.left = aboutRect.left + "px";
-    }
-    if (heroRect.height / 2 > aboutRect.height) {
-      hero.style.top = aboutTopRelativeDocument - aboutTopDifference + "px";
-    } else if (heroRect.height / 2 < aboutRect.height) {
-      hero.style.top = aboutTopRelativeDocument + aboutTopDifference + "px";
-    } else {
-      hero.style.top = aboutTopRelativeDocument + "px";
-    }
+
+    hero.style.msTransform = "rotate(180deg)";
+    hero.style.webkitTransform = "rotate(180deg)";
+    hero.style.MozTransform = "rotate(180deg)";
+    hero.style.OTransform = "rotate(180deg)";
+    hero.style.transform = "rotate(180deg)";
+    // hero.style.borderRadius = "30%";
+
+    hero.style.left = aboutRect.left + "px";
+    hero.style.top = aboutTopRelativeDocument + "px";
 
     icons.forEach(icon => icon.classList.add("colored"))
   }
@@ -152,6 +132,9 @@ window.addEventListener("scroll", function () {
   // Scroll to PROJECT sections Hero background rectangle
   for (let p = 0; p < projectsDetail.length; p++) {
     if (scroll + windowHeight > projectsDetail[p].projectRect.top + projectsDetail[p].projectRect.height / 3) {
+
+      hero.style.height = projectsDetail[p].projectRect.height + "px";
+      hero.style.width = projectsDetail[p].projectRect.width + "px";
       // Tools animation
       projectTools[p].classList.add("project-tools-animate");
 
@@ -180,7 +163,7 @@ window.addEventListener("scroll", function () {
           projectImgs[p].children[1].style.opacity = 1;
           projectImgs[p].children[0].children[0].style.transition = "1s ease";
           projectImgs[p].children[0].children[0].style.opacity = 0;
-        }, 2500) 
+        }, 2500)
       }
       this.setTimeout(() => {
         projectImgs[p].children[1].style.opacity = 1;
@@ -203,37 +186,25 @@ window.addEventListener("scroll", function () {
       }, 1800)
 
       // background reactangle
-      if (heroRect.width > projectsDetail[p].projectRect.width) {
-        hero.style.left = projectsDetail[p].projectRect.left - projectsDetail[p].projectLeftDifference + "px";
-      } else if (heroRect.width < projectsDetail[p].projectRect.width) {
-        hero.style.left = projectsDetail[p].projectRect.left + projectsDetail[p].projectLeftDifference + "px";
-      } else {
-        hero.style.left = projectsDetail[p].projectRect.left + "px";
-      }
-      if (heroRect.height * .6 > projectsDetail[p].projectRect.height) {
-        hero.style.top = projectsDetail[p].projectRect.top - projectsDetail[p].projectTopDifference + "px";
-      } else if (heroRect.height * .6 < projectsDetail[p].projectRect.height) {
-        hero.style.top = projectsDetail[p].projectRect.top + projectsDetail[p].projectTopDifference + "px";
-      } else {
-        hero.style.top = projectsDetail[p].projectRect.top + "px";
-      }
+
+      hero.style.left = projectsDetail[p].projectRect.left + "px";
+      hero.style.top = projectsDetail[p].projectRect.top + "px";
+
 
       if (p == 0 || p == 2) {
-        hero.style.msTransform = "rotate(-90deg)";
-        hero.style.webkitTransform = "rotate(-90deg)";
-        hero.style.MozTransform = "rotate(-90deg)";
-        hero.style.OTransform = "rotate(-90deg)";
-        hero.style.transform = "rotate(-90deg)";
+        hero.style.msTransform = "rotate(360deg)";
+        hero.style.webkitTransform = "rotate(360deg)";
+        hero.style.MozTransform = "rotate(360deg)";
+        hero.style.OTransform = "rotate(360deg)";
+        hero.style.transform = "rotate(360deg)";
       } else {
-        hero.style.msTransform = "rotate(90deg)";
-        hero.style.webkitTransform = "rotate(90deg)";
-        hero.style.MozTransform = "rotate(90deg)";
-        hero.style.OTransform = "rotate(90deg)";
-        hero.style.transform = "rotate(90deg)";
+        hero.style.msTransform = "rotate(540deg)";
+        hero.style.webkitTransform = "rotate(540deg)";
+        hero.style.MozTransform = "rotate(540deg)";
+        hero.style.OTransform = "rotate(540deg)";
+        hero.style.transform = "rotate(540deg)";
       }
-      
-      hero.style.height = "60%";
-      hero.style.width = "100%";
+
 
       // projectImgs[1].style.filter = "grayscale(100%)"
       //   projectImgs[2].style.filter = "grayscale(0%)"
@@ -245,15 +216,21 @@ window.addEventListener("scroll", function () {
 
   // Scroll to CONTACT section Hero background rectangle
   if (scroll + windowHeight > contactRect.top + contactRect.height / 2) {
+    hero.classList.remove("hero-animate");
+    hero.style.borderRadius = "10px";
+    // hero.style.top = emailSpanRect.top + "px";
+    // hero.style.left = emailSpanRect.left + "px";
+    // hero.style.width = emailSpanRect.width + "px";
+    // hero.style.height = emailSpanRect.height + "px";
     hero.style.top = emailCardRect.top + "px";
     hero.style.left = emailCardRect.left + "px";
     hero.style.width = emailCardRect.width + "px";
     hero.style.height = emailCardRect.height + "px";
-    hero.style.msTransform = "rotate(180deg)";
-    hero.style.webkitTransform = "rotate(180deg)";
-    hero.style.MozTransform = "rotate(180deg)";
-    hero.style.OTransform = "rotate(180deg)";
-    hero.style.transform = "rotate(180deg)";
+    hero.style.msTransform = "rotate(720deg)";
+    hero.style.webkitTransform = "rotate(720deg)";
+    hero.style.MozTransform = "rotate(720deg)";
+    hero.style.OTransform = "rotate(720deg)";
+    hero.style.transform = "rotate(720deg)";
     this.setTimeout(() => {
       emailCard.classList.add("fade-in");
     }, 800)

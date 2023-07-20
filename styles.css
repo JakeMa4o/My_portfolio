@@ -221,7 +221,8 @@ Hero
   text-align: center;
   /* margin-top: 30rem; */
 }
-.scroll-tip i{
+
+.scroll-tip i {
   font-size: 2rem;
 }
 
@@ -244,6 +245,28 @@ Hero
   transition: all 1s;
   margin: auto;
   z-index: -1;
+}
+
+.hero-background.hero-animate {
+  animation: borderAnim 3s linear infinite;
+}
+
+@keyframes borderAnim {
+  0% {
+    border-radius: 64% 36% 70% 30% / 44% 62% 38% 56%;
+  }
+  25% {
+    border-radius: 64% 36% 70% 30% / 55% 59% 41% 45%;
+  }
+  50% {
+    border-radius: 64% 36% 70% 30% / 43% 67% 33% 57%;
+  }
+  75% {
+    border-radius: 71% 29% 70% 30% / 32% 72% 28% 68%;
+  }
+  100% {
+    border-radius: 64% 36% 70% 30% / 44% 62% 38% 56%;
+  }
 }
 
 .resize-hero {
@@ -444,6 +467,7 @@ About
 .about-info {
   margin: auto;
   /* text-align: center; */
+  /* border: 1px solid #000; */
 }
 
 .my-text {
@@ -693,6 +717,7 @@ Projects
   /* test */
   /* opacity: 0; */
   height: 100vh;
+  gap: 2rem;
 }
 
 
