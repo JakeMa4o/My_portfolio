@@ -230,17 +230,21 @@ Hero
   /* margin-top: 30rem; */
   opacity: 0;
   left: 50%;
-  bottom: 10%;
+  bottom: 10rem;
   transform: translateX(-50%) scale(1);
   animation: scrollTip 4s 3s ease-in-out infinite;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .scroll-tip i {
   position: relative;
   left: .5rem;
-  bottom: .2rem;
-  font-size: .9rem !important;
+  /* bottom: .1rem; */
+  font-size: .7rem;
+}
+
+.scroll-tip i {
+  /* font-size: 2rem; */
 }
 
 @keyframes scrollTip {
@@ -263,10 +267,6 @@ Hero
     transform: translateX(-50%) scale(1);
     opacity: 0;
   }
-}
-
-.scroll-tip i {
-  font-size: 2rem;
 }
 
 .hero-background {
@@ -1941,6 +1941,16 @@ footer p {
 
   .project:nth-child(odd) .project-info {
     grid-column: 1/2;
+  }
+
+  .scroll-tip {
+    left: 50%;
+    bottom: 10rem;
+    font-size: 1.5rem;
+  }
+  
+  .scroll-tip i {
+    font-size: .9rem;
   }
 }
 

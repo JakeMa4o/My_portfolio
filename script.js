@@ -120,9 +120,11 @@ window.addEventListener("scroll", function () {
 
   // Scroll to ABOUT section Hero background rectangle, icons colored
   if (scroll + windowHeight > aboutTopRelativeDocument + aboutRect.height / 2) {
-    aboutTextTitle.classList.add("fade-in");
-    aboutTextParag.classList.add("fade-in");
-    techStack.classList.add("fade-in");
+    this.setTimeout(() => {
+      aboutTextTitle.classList.add("fade-in");
+      aboutTextParag.classList.add("fade-in");
+      techStack.classList.add("fade-in");
+    }, 600)
 
     hero.classList.add("hero-animate");
 
@@ -170,7 +172,9 @@ window.addEventListener("scroll", function () {
 
 
       // Tools animation
-      projectTools[p].classList.add("project-tools-animate");
+      this.setTimeout(() => {
+        projectTools[p].classList.add("project-tools-animate");
+      }, 600)
 
       this.setTimeout(() => {
         // Test
@@ -179,7 +183,7 @@ window.addEventListener("scroll", function () {
         projectTools[p].children[0].children.forEach(li => li.lastChild.style.opacity = "1");
         projectTools[p].children[0].children.forEach(li => li.lastChild.style.margin = "0");
         // Test
-      }, 1000)
+      }, 1600) 
       this.setTimeout(() => {
         if (mobileQuery.matches) {
           projectImgs[p].children[0].children[0].style.transition = "2s linear";
@@ -191,33 +195,33 @@ window.addEventListener("scroll", function () {
           projectImgs[p].children[0].children[0].style.transition = "1s linear";
         }
         projectImgs[p].children[0].children[0].style.strokeDashoffset = 0;
-      }, 1000)
+      }, 1600) 
       if (fourKQuery.matches) {
         this.setTimeout(() => {
           projectImgs[p].children[1].style.opacity = 1;
           projectImgs[p].children[0].children[0].style.transition = "1s ease";
           projectImgs[p].children[0].children[0].style.opacity = 0;
-        }, 2500)
+        }, 3100) 
       }
       this.setTimeout(() => {
         projectImgs[p].children[1].style.opacity = 1;
         projectImgs[p].children[0].children[0].style.transition = "1s ease";
         projectImgs[p].children[0].children[0].style.opacity = 0;
-      }, 2200)
+      }, 2800) 
       this.setTimeout(() => {
         projectDescriptions[p].style.opacity = "1";
         projectDescriptions[p].style.transform = "translateX(0)";
-      }, 1300)
+      }, 1900) 
       this.setTimeout(() => {
         projectTitles[p].style.opacity = "1";
         projectTitles[p].style.left = "0";
         projectTitles[p].style.transform = "translateX(0)";
-      }, 1600)
+      }, 2200) 
       this.setTimeout(() => {
         buttonContainers[p].style.opacity = "1";
         buttonContainers[p].style.left = "0";
         buttonContainers[p].style.transform = "translateX(0)";
-      }, 1800)
+      }, 2400) 
 
 
       if (p == 0 || p == 2) {
