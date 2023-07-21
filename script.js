@@ -63,19 +63,26 @@ for (let p = 0; p < projectInfos.length; p++) {
   const projectRect = projectInfos[p].getBoundingClientRect();
   const projectTopDifference = Math.abs(heroRect.height / 2 - projectRect.height / 2);
   const projectLeftDifference = Math.abs(heroRect.width / 2 - projectRect.width / 2);
+  const projectToolsRect = projectTools[p].getBoundingClientRect();
 
   projectsDetail.push({
     projectTopDifference: projectTopDifference,
     projectLeftDifference: projectLeftDifference,
-    projectRect: projectRect
+    projectRect: projectRect,
+    projectToolsRect: projectToolsRect
   })
 
+  projectTools[p].style.transform = `translate(0rem, ${projectsDetail[p].projectToolsRect.height * 1.5 /16}rem)`;
+
+
+  console.log(projectsDetail[p].projectToolsRect);
+  console.log(projectsDetail[p].projectRect);
 
   if (projectTools[p].children[0].children.length == 2) {
-    projectTools[p].style.transform = `translate(${projectsDetail[p].projectRect.width / 6 / 16}rem, 5rem)`;
+    projectTools[p].style.transform = `translate(${projectsDetail[p].projectRect.width / 6 / 16}rem, ${projectsDetail[p].projectToolsRect.height * 1.5 / 16 }rem)`;
   }
   if (desktopQuery.matches) {
-    projectTools[p].style.transform = `translate(${projectsDetail[p].projectRect.width / 6 / 16}rem, 5rem)`;
+    projectTools[p].style.transform = `translate(${projectsDetail[p].projectRect.width / 6 / 16}rem, ${projectsDetail[p].projectToolsRect.height * 1.5 / 16 }rem)`;
   }
 }
 

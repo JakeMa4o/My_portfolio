@@ -833,6 +833,10 @@ Projects
   .project:nth-child(odd) .project-info {
     grid-column: 1/2;
   }
+  
+  .tools-list i {
+    font-size: 4rem;
+  }
 }
 
 .project-tools {
@@ -858,7 +862,7 @@ Projects
 }
 
 .tools-list i {
-  font-size: 4rem;
+  font-size: 3rem;
   transition: all 1s;
   opacity: 0;
   /* Test subject */
