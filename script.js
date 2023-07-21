@@ -52,6 +52,8 @@ window.addEventListener("load", function () {
 
 // About section position variables
 const aboutTopRelativeDocument = aboutRect.top;
+// const aboutTopDifference = Math.abs(heroRect.height / 2 - aboutRect.height / 2);
+// const aboutLeftDifference = Math.abs(heroRect.width / 2 - aboutRect.width / 2);
 
 
 // Projects section position variables
@@ -59,7 +61,12 @@ const projectsDetail = [];
 
 for (let p = 0; p < projectInfos.length; p++) {
   const projectRect = projectInfos[p].getBoundingClientRect();
+  const projectTopDifference = Math.abs(heroRect.height / 2 - projectRect.height / 2);
+  const projectLeftDifference = Math.abs(heroRect.width / 2 - projectRect.width / 2);
+
   projectsDetail.push({
+    projectTopDifference: projectTopDifference,
+    projectLeftDifference: projectLeftDifference,
     projectRect: projectRect
   })
 
@@ -110,9 +117,21 @@ window.addEventListener("scroll", function () {
     aboutTextParag.classList.add("fade-in");
     techStack.classList.add("fade-in");
 
+
+    // hero.style.borderRadius = "64% 36% 70% 30% / 44% 62% 38% 56%";
+
     hero.classList.add("hero-animate");
+
     hero.style.width = aboutRect.width + "px";
     hero.style.height = aboutRect.height + "px";
+
+    hero.style.top = aboutTopRelativeDocument + "px";
+    hero.style.left = aboutRect.left + "px";
+
+    if (mobileQuery.matches) {
+      hero.style.height = aboutRect.height * 2 + "px";
+      hero.style.top = aboutTopRelativeDocument - aboutRect.height / 2 + "px";
+    }
 
 
     hero.style.msTransform = "rotate(180deg)";
@@ -120,10 +139,9 @@ window.addEventListener("scroll", function () {
     hero.style.MozTransform = "rotate(180deg)";
     hero.style.OTransform = "rotate(180deg)";
     hero.style.transform = "rotate(180deg)";
-    // hero.style.borderRadius = "30%";
 
-    hero.style.left = aboutRect.left + "px";
-    hero.style.top = aboutTopRelativeDocument + "px";
+    // hero.style.left = aboutRect.left + "px";
+    // hero.style.top = aboutTopRelativeDocument + "px";
 
     icons.forEach(icon => icon.classList.add("colored"))
   }
@@ -133,8 +151,20 @@ window.addEventListener("scroll", function () {
   for (let p = 0; p < projectsDetail.length; p++) {
     if (scroll + windowHeight > projectsDetail[p].projectRect.top + projectsDetail[p].projectRect.height / 3) {
 
-      hero.style.height = projectsDetail[p].projectRect.height + "px";
+      // background shape
       hero.style.width = projectsDetail[p].projectRect.width + "px";
+      hero.style.height = projectsDetail[p].projectRect.height + "px";
+      hero.style.left = projectsDetail[p].projectRect.left + "px";
+      hero.style.top = projectsDetail[p].projectRect.top + "px";
+
+      hero.classList.remove("hero-animate");
+      hero.style.borderRadius = "10px";
+
+      if (desktopQuery.matches) {
+        hero.classList.add("hero-animate");
+      }
+
+
       // Tools animation
       projectTools[p].classList.add("project-tools-animate");
 
@@ -184,11 +214,6 @@ window.addEventListener("scroll", function () {
         buttonContainers[p].style.left = "0";
         buttonContainers[p].style.transform = "translateX(0)";
       }, 1800)
-
-      // background reactangle
-
-      hero.style.left = projectsDetail[p].projectRect.left + "px";
-      hero.style.top = projectsDetail[p].projectRect.top + "px";
 
 
       if (p == 0 || p == 2) {
