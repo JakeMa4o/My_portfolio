@@ -214,24 +214,59 @@ Hero
 ========  
 */
 
-.scroll-tip {
-  /* bottom: 10%; */
-  /* left: 50%; */
-  border: 1px solid #000;
-  text-align: center;
-  /* margin-top: 30rem; */
-}
-
-.scroll-tip i {
-  font-size: 2rem;
-}
-
 .hero {
   min-height: 100vh;
   width: 100%;
   display: grid;
   place-items: center;
   position: relative;
+}
+
+.scroll-tip {
+  position: absolute;
+  /* bottom: 10%; */
+  /* left: 50%; */
+  text-align: center;
+  /* margin-top: 30rem; */
+  opacity: 0;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%) scale(1);
+  animation: scrollTip 4s 3s ease-in-out infinite;
+  font-size: 1.5rem;
+}
+
+.scroll-tip i {
+  position: relative;
+  left: .5rem;
+  bottom: .2rem;
+  font-size: .9rem !important;
+}
+
+@keyframes scrollTip {
+  0% {
+    transform: translateX(-50%) scale(1);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateX(-50%) scale(1.2);
+    opacity: 1;
+  }
+
+  75% {
+    transform: translateX(-50%) scale(1);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 0;
+  }
+}
+
+.scroll-tip i {
+  font-size: 2rem;
 }
 
 .hero-background {
@@ -1425,7 +1460,7 @@ footer p {
 
   @keyframes appearSocial {
     to {
-      left: 7rem;
+      left: 6rem;
       opacity: 1;
     }
   }
