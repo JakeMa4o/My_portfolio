@@ -124,9 +124,6 @@ window.addEventListener("scroll", function () {
     aboutTextParag.classList.add("fade-in");
     techStack.classList.add("fade-in");
 
-
-    // hero.style.borderRadius = "64% 36% 70% 30% / 44% 62% 38% 56%";
-
     hero.classList.add("hero-animate");
 
     hero.style.width = aboutRect.width + "px";
