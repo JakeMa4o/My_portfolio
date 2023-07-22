@@ -13,7 +13,6 @@ const aboutRect = aboutInfo.getBoundingClientRect();
 const aboutTextTitle = document.querySelector(".my-text h2");
 const aboutTextParag = document.querySelector(".my-text p");
 const techStack = document.querySelector(".tech-stack");
-const icons = document.querySelectorAll(".icon");
 
 
 const projectInfos = document.querySelectorAll(".project-info");
@@ -22,6 +21,7 @@ const projectTitles = document.querySelectorAll(".project-title");
 const projectTools = document.querySelectorAll(".project-tools");
 const projectDescriptions = document.querySelectorAll(".description");
 const buttonContainers = document.querySelectorAll(".buttons-container");
+const projectMarkers = document.querySelectorAll(".project-marker");
 
 
 
@@ -101,14 +101,13 @@ window.addEventListener("scroll", function () {
 
 
   // Scroll to HERO section background 100% width
-  if (scroll + windowHeight < aboutTopRelativeDocument + aboutRect.height / 2) {
+  if (scroll + windowHeight < aboutTopRelativeDocument + aboutRect.height) {
     hero.style.width = "100%";
     hero.style.height = "100vh";
     hero.style.top = "0";
     hero.style.left = "0";
     hero.style.borderRadius = "0";
     hero.style.position = "absolute";
-    icons.forEach(icon => icon.classList.remove("colored"))
     hero.style.msTransform = "rotate(0deg)";
     hero.style.webkitTransform = "rotate(0deg)";
     hero.style.MozTransform = "rotate(0deg)";
@@ -118,8 +117,8 @@ window.addEventListener("scroll", function () {
   }
 
 
-  // Scroll to ABOUT section Hero background rectangle, icons colored
-  if (scroll + windowHeight > aboutTopRelativeDocument + aboutRect.height / 2) {
+  // Scroll to ABOUT section Hero background rectangle
+  if (scroll + windowHeight > aboutTopRelativeDocument + aboutRect.height) {
     this.setTimeout(() => {
       aboutTextTitle.classList.add("fade-in");
       aboutTextParag.classList.add("fade-in");
@@ -148,14 +147,15 @@ window.addEventListener("scroll", function () {
 
     // hero.style.left = aboutRect.left + "px";
     // hero.style.top = aboutTopRelativeDocument + "px";
-
-    icons.forEach(icon => icon.classList.add("colored"))
   }
 
 
   // Scroll to PROJECT sections Hero background rectangle
   for (let p = 0; p < projectsDetail.length; p++) {
-    if (scroll + windowHeight > projectsDetail[p].projectRect.top + projectsDetail[p].projectRect.height / 3) {
+    if (scroll + windowHeight > projectsDetail[p].projectRect.top + projectsDetail[p].projectRect.height) {
+
+      // Remove project marker
+      projectMarkers[p].style.opacity = 0;
 
       // background shape
       hero.style.width = projectsDetail[p].projectRect.width + "px";
@@ -248,7 +248,7 @@ window.addEventListener("scroll", function () {
 
 
   // Scroll to CONTACT section Hero background rectangle
-  if (scroll + windowHeight > contactRect.top + contactRect.height / 2) {
+  if (scroll + windowHeight > contactRect.top + contactRect.height / 1.5) {
     hero.classList.remove("hero-animate");
     hero.style.borderRadius = "10px";
     // hero.style.top = emailSpanRect.top + "px";
