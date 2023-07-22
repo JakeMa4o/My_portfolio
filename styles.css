@@ -965,9 +965,11 @@ Projects
 }
 
 .project-marker {
-  width: 1.5rem;
-  height: 1.5rem;
-  /* border: 1px solid #000; */
+  width: .75rem;
+  height: .75rem;
+  border: 1px solid var(--clr-grey-1);
+  border-radius: 50%;
+  /* background-color: var(--clr-grey-1); */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -975,13 +977,51 @@ Projects
   display: grid;
   place-items: center;
   transition: 0.3s;
-  color: var(--clr-grey-1)
+  color: var(--clr-grey-1);
+  /* transform: scale(.5); */
 }
 
-.project-marker span {
-  transform: scale(2);
+.project-marker.marker-idle {
+  animation: projectMarker 3s linear infinite;
 }
 
+@keyframes projectMarker {
+  0% {
+    /* opacity: 0; */
+    transform: scale(1);
+  }
+
+  50% {
+    /* opacity: 1; */
+    transform: scale(1.5);
+  }
+
+  100% {
+    /* opacity: 0; */
+    transform: scale(1);
+  }
+}
+
+.project-marker.markerPop {
+  animation: markerPop .5s linear forwards;
+}
+
+@keyframes markerPop {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(2);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(3);
+  }
+}
 
 
 /*

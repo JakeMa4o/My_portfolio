@@ -155,7 +155,8 @@ window.addEventListener("scroll", function () {
 
       // scroll + windowHeight > projectsDetail[p].projectRect.top + projectsDetail[p].projectRect.height / 1.5
       // Remove project marker
-      projectMarkers[p].style.opacity = 0;
+      projectMarkers[p].classList.remove("marker-idle");
+      projectMarkers[p].classList.add("markerPop");
 
       // background shape
       hero.style.width = projectsDetail[p].projectInfoRect.width + "px";
