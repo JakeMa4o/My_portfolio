@@ -151,10 +151,10 @@ window.addEventListener("scroll", function () {
 
   // Scroll to PROJECT sections Hero background rectangle
   for (let p = 0; p < projectsDetail.length; p++) {
-    if (scroll + windowHeight > projectsDetail[p].projectRect.top + projectsDetail[p].projectRect.height) {
+    if (scroll + windowHeight > projectsDetail[p].projectInfoRect.top + projectsDetail[p].projectInfoRect.height / 2) {
 
+      // scroll + windowHeight > projectsDetail[p].projectRect.top + projectsDetail[p].projectRect.height / 1.5
       // Remove project marker
-      // Old code scroll + windowHeight > projectsDetail[p].projectInfoRect.top + projectsDetail[p].projectInfoRect.height / 3
       projectMarkers[p].style.opacity = 0;
 
       // background shape
