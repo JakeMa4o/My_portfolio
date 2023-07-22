@@ -975,6 +975,7 @@ Projects
   display: grid;
   place-items: center;
   transition: 0.3s;
+  color: var(--clr-grey-1)
 }
 
 .project-marker span {
@@ -1301,6 +1302,10 @@ Footer
 .footer {
   width: 70%;
   margin: auto;
+}
+
+.footer p {
+  margin-bottom: .6rem;
 }
 
 .footer-medias {
