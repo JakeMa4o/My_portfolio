@@ -15,6 +15,7 @@ const aboutTextParag = document.querySelector(".my-text p");
 const techStack = document.querySelector(".tech-stack");
 
 
+const projects = document.querySelectorAll(".project");
 const projectInfos = document.querySelectorAll(".project-info");
 const projectImgs = document.querySelectorAll(".project-img");
 const projectTitles = document.querySelectorAll(".project-title");
@@ -60,29 +61,27 @@ const aboutTopRelativeDocument = aboutRect.top;
 const projectsDetail = [];
 
 for (let p = 0; p < projectInfos.length; p++) {
-  const projectRect = projectInfos[p].getBoundingClientRect();
-  const projectTopDifference = Math.abs(heroRect.height / 2 - projectRect.height / 2);
-  const projectLeftDifference = Math.abs(heroRect.width / 2 - projectRect.width / 2);
+  const projectRect = projects[p].getBoundingClientRect();
+  const projectInfoRect = projectInfos[p].getBoundingClientRect();
+  const projectTopDifference = Math.abs(heroRect.height / 2 - projectInfoRect.height / 2);
+  const projectLeftDifference = Math.abs(heroRect.width / 2 - projectInfoRect.width / 2);
   const projectToolsRect = projectTools[p].getBoundingClientRect();
 
   projectsDetail.push({
+    projectRect: projectRect,
     projectTopDifference: projectTopDifference,
     projectLeftDifference: projectLeftDifference,
-    projectRect: projectRect,
+    projectInfoRect: projectInfoRect,
     projectToolsRect: projectToolsRect
   })
 
-  projectTools[p].style.transform = `translate(0rem, ${projectsDetail[p].projectToolsRect.height * 1.5 /16}rem)`;
-
-
-  console.log(projectsDetail[p].projectToolsRect);
-  console.log(projectsDetail[p].projectRect);
+  projectTools[p].style.transform = `translate(0rem, ${projectsDetail[p].projectToolsRect.height * 1.5 / 16}rem)`;
 
   if (projectTools[p].children[0].children.length == 2) {
-    projectTools[p].style.transform = `translate(${projectsDetail[p].projectRect.width / 6 / 16}rem, ${projectsDetail[p].projectToolsRect.height * 1.5 / 16 }rem)`;
+    projectTools[p].style.transform = `translate(${projectsDetail[p].projectInfoRect.width / 6 / 16}rem, ${projectsDetail[p].projectToolsRect.height * 1.5 / 16}rem)`;
   }
   if (desktopQuery.matches) {
-    projectTools[p].style.transform = `translate(${projectsDetail[p].projectRect.width / 6 / 16}rem, ${projectsDetail[p].projectToolsRect.height * 1.5 / 16 }rem)`;
+    projectTools[p].style.transform = `translate(${projectsDetail[p].projectInfoRect.width / 6 / 16}rem, ${projectsDetail[p].projectToolsRect.height * 1.5 / 16}rem)`;
   }
 }
 
@@ -101,7 +100,7 @@ window.addEventListener("scroll", function () {
 
 
   // Scroll to HERO section background 100% width
-  if (scroll + windowHeight < aboutTopRelativeDocument + aboutRect.height) {
+  if (scroll + windowHeight < aboutTopRelativeDocument + aboutRect.height / 2) {
     hero.style.width = "100%";
     hero.style.height = "100vh";
     hero.style.top = "0";
@@ -118,7 +117,7 @@ window.addEventListener("scroll", function () {
 
 
   // Scroll to ABOUT section Hero background rectangle
-  if (scroll + windowHeight > aboutTopRelativeDocument + aboutRect.height) {
+  if (scroll + windowHeight > aboutTopRelativeDocument + aboutRect.height / 2) {
     this.setTimeout(() => {
       aboutTextTitle.classList.add("fade-in");
       aboutTextParag.classList.add("fade-in");
@@ -155,13 +154,14 @@ window.addEventListener("scroll", function () {
     if (scroll + windowHeight > projectsDetail[p].projectRect.top + projectsDetail[p].projectRect.height) {
 
       // Remove project marker
+      // Old code scroll + windowHeight > projectsDetail[p].projectInfoRect.top + projectsDetail[p].projectInfoRect.height / 3
       projectMarkers[p].style.opacity = 0;
 
       // background shape
-      hero.style.width = projectsDetail[p].projectRect.width + "px";
-      hero.style.height = projectsDetail[p].projectRect.height + "px";
-      hero.style.left = projectsDetail[p].projectRect.left + "px";
-      hero.style.top = projectsDetail[p].projectRect.top + "px";
+      hero.style.width = projectsDetail[p].projectInfoRect.width + "px";
+      hero.style.height = projectsDetail[p].projectInfoRect.height + "px";
+      hero.style.left = projectsDetail[p].projectInfoRect.left + "px";
+      hero.style.top = projectsDetail[p].projectInfoRect.top + "px";
 
       hero.classList.remove("hero-animate");
       hero.style.borderRadius = "10px";
@@ -183,7 +183,7 @@ window.addEventListener("scroll", function () {
         projectTools[p].children[0].children.forEach(li => li.lastChild.style.opacity = "1");
         projectTools[p].children[0].children.forEach(li => li.lastChild.style.margin = "0");
         // Test
-      }, 1600) 
+      }, 1600)
       this.setTimeout(() => {
         if (mobileQuery.matches) {
           projectImgs[p].children[0].children[0].style.transition = "2s linear";
@@ -195,33 +195,33 @@ window.addEventListener("scroll", function () {
           projectImgs[p].children[0].children[0].style.transition = "1s linear";
         }
         projectImgs[p].children[0].children[0].style.strokeDashoffset = 0;
-      }, 1600) 
+      }, 1600)
       if (fourKQuery.matches) {
         this.setTimeout(() => {
           projectImgs[p].children[1].style.opacity = 1;
           projectImgs[p].children[0].children[0].style.transition = "1s ease";
           projectImgs[p].children[0].children[0].style.opacity = 0;
-        }, 3100) 
+        }, 3100)
       }
       this.setTimeout(() => {
         projectImgs[p].children[1].style.opacity = 1;
         projectImgs[p].children[0].children[0].style.transition = "1s ease";
         projectImgs[p].children[0].children[0].style.opacity = 0;
-      }, 2800) 
+      }, 2800)
       this.setTimeout(() => {
         projectDescriptions[p].style.opacity = "1";
         projectDescriptions[p].style.transform = "translateX(0)";
-      }, 1900) 
+      }, 1900)
       this.setTimeout(() => {
         projectTitles[p].style.opacity = "1";
         projectTitles[p].style.left = "0";
         projectTitles[p].style.transform = "translateX(0)";
-      }, 2200) 
+      }, 2200)
       this.setTimeout(() => {
         buttonContainers[p].style.opacity = "1";
         buttonContainers[p].style.left = "0";
         buttonContainers[p].style.transform = "translateX(0)";
-      }, 2400) 
+      }, 2400)
 
 
       if (p == 0 || p == 2) {
