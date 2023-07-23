@@ -982,23 +982,29 @@ Projects
 }
 
 .project-marker.marker-idle {
-  animation: projectMarker 3s linear infinite;
+  animation: projectMarker 2.3s linear infinite;
 }
 
 @keyframes projectMarker {
   0% {
     opacity: 0;
-    transform: scale(1);
+    /* transform: scale(1); */
+    width: .75rem;
+    height: .75rem;
   }
 
   50% {
     opacity: 1;
-    transform: scale(3);
+    /* transform: scale(3); */
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   100% {
     opacity: 0;
-    transform: scale(1);
+    /* transform: scale(1); */
+    width: .75rem;
+    height: .75rem;
   }
 }
 
@@ -2000,6 +2006,9 @@ footer p {
   .project-height:nth-child(odd) .project-info {
     grid-column: 1/2;
   }
+  .project-marker {
+    display: none;
+  }
 
   .scroll-tip {
     left: 50%;
@@ -2078,7 +2087,7 @@ footer p {
   }
 
   .top-link {
-    bottom: 0rem;
+    bottom: 3rem;
     right: 10rem;
   }
 }
