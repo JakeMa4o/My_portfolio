@@ -973,7 +973,7 @@ Projects
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -90%);
+  transform: translate(-50%, -100%);
   display: grid;
   place-items: center;
   transition: 0.3s;
@@ -987,39 +987,45 @@ Projects
 
 @keyframes projectMarker {
   0% {
-    /* opacity: 0; */
+    opacity: 0;
     transform: scale(1);
   }
 
   50% {
-    /* opacity: 1; */
-    transform: scale(1.5);
+    opacity: 1;
+    transform: scale(3);
   }
 
   100% {
-    /* opacity: 0; */
+    opacity: 0;
     transform: scale(1);
   }
 }
 
 .project-marker.markerPop {
-  animation: markerPop .5s linear forwards;
+  animation: markerPop .6s linear forwards;
 }
 
-@keyframes markerPop {
-  0% {
+/* @keyframes drop {
+  10% {
     opacity: 1;
-    transform: scale(1);
-  }
-
-  50% {
-    opacity: 1;
-    transform: scale(2);
   }
 
   100% {
+    width: 320px;
+    height: 320px;
     opacity: 0;
-    transform: scale(3);
+  }
+} */
+
+@keyframes markerPop {
+  10% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    width: 20rem;
+    height: 20rem;
   }
 }
 
