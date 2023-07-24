@@ -334,7 +334,17 @@ Hero
 }
 
 .hero .svg-container {
-  width: 17rem;
+  width: 18rem;
+  position: relative;
+}
+
+.hero h1 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 100%;
+  opacity: 0;
 }
 
 .hero svg path {
@@ -1027,6 +1037,7 @@ Projects
 @keyframes markerPop {
   10% {
     opacity: 1;
+    border-radius: 0%;
   }
   to {
     opacity: 0;
@@ -1458,7 +1469,7 @@ footer p {
   }
 
   .social-medias {
-    top: 8rem;
+    top: 6.5rem;
     left: 10rem;
     flex-direction: row;
   }
@@ -1514,17 +1525,17 @@ footer p {
 
 @media screen and (min-width: 390px) {
   .hero .svg-container {
-    width: 22rem;
+    width: 24rem;
   }
 
   .social-medias {
-    top: 8rem;
+    top: 7rem;
     left: 15rem;
   }
 
   @keyframes appearSocial {
     to {
-      left: 6rem;
+      left: 7rem;
       opacity: 1;
     }
   }

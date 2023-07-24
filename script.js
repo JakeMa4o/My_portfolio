@@ -92,6 +92,8 @@ const emailCardRect = emailCard.getBoundingClientRect();
 const emailSpanRect = emailSpan.getBoundingClientRect();
 
 
+console.log(aboutRect);
+
 // ********** Navigation Background Figure ************
 
 window.addEventListener("scroll", function () {
@@ -106,7 +108,7 @@ window.addEventListener("scroll", function () {
     hero.style.top = "0";
     hero.style.left = "0";
     hero.style.borderRadius = "0";
-    hero.style.position = "absolute";
+    // hero.style.position = "absolute";
     hero.style.msTransform = "rotate(0deg)";
     hero.style.webkitTransform = "rotate(0deg)";
     hero.style.MozTransform = "rotate(0deg)";
@@ -137,15 +139,11 @@ window.addEventListener("scroll", function () {
       hero.style.top = aboutTopRelativeDocument - aboutRect.height / 2 + "px";
     }
 
-
     hero.style.msTransform = "rotate(180deg)";
     hero.style.webkitTransform = "rotate(180deg)";
     hero.style.MozTransform = "rotate(180deg)";
     hero.style.OTransform = "rotate(180deg)";
     hero.style.transform = "rotate(180deg)";
-
-    // hero.style.left = aboutRect.left + "px";
-    // hero.style.top = aboutTopRelativeDocument + "px";
   }
 
 
