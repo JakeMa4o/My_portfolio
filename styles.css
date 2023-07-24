@@ -1043,6 +1043,7 @@ Projects
     opacity: 0;
     width: 20rem;
     height: 20rem;
+    border-radius: 0%;
   }
 }
 
