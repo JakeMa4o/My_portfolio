@@ -8,6 +8,10 @@ const heroRect = hero.getBoundingClientRect();
 
 // ********** Fade In ************
 
+const heroSection = document.querySelector("#hero .container");
+
+
+
 const aboutInfo = document.querySelector(".about-info");
 const aboutRect = aboutInfo.getBoundingClientRect();
 const aboutTextTitle = document.querySelector(".my-text h2");
@@ -103,6 +107,7 @@ window.addEventListener("scroll", function () {
 
   // Scroll to HERO section background 100% width
   if (scroll + windowHeight < aboutTopRelativeDocument + aboutRect.height / 2) {
+    heroSection.style.opacity = "1";
     hero.style.width = "100%";
     hero.style.height = "100vh";
     hero.style.top = "0";
@@ -120,6 +125,7 @@ window.addEventListener("scroll", function () {
 
   // Scroll to ABOUT section Hero background rectangle
   if (scroll + windowHeight > aboutTopRelativeDocument + aboutRect.height / 2) {
+    heroSection.style.opacity = "0";
     this.setTimeout(() => {
       aboutTextTitle.classList.add("fade-in");
       aboutTextParag.classList.add("fade-in");
