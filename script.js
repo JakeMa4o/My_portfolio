@@ -126,6 +126,7 @@ window.addEventListener("scroll", function () {
   // Scroll to ABOUT section Hero background rectangle
   if (scroll + windowHeight > aboutTopRelativeDocument + aboutRect.height / 2) {
     heroSection.style.opacity = "0";
+    hero.style.borderRadius = "64% 36% 70% 30% / 44% 62% 38% 56%";
     this.setTimeout(() => {
       aboutTextTitle.classList.add("fade-in");
       aboutTextParag.classList.add("fade-in");
@@ -171,7 +172,8 @@ window.addEventListener("scroll", function () {
       hero.classList.remove("hero-animate");
       hero.style.borderRadius = "10px";
 
-      if (desktopQuery.matches) {
+      if (mobileQuery.matches) {
+        hero.style.borderRadius = "64% 36% 70% 30% / 44% 62% 38% 56%";
         hero.classList.add("hero-animate");
       }
 

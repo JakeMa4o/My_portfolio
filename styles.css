@@ -284,7 +284,7 @@ Hero
 
 
 .hero-background.hero-animate {
-  animation: borderAnim 3.5s ease-in-out infinite;
+  animation: borderAnim 3.5s 1s ease-in-out infinite;
 }
 
 @keyframes borderAnim {
