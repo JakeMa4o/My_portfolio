@@ -33,7 +33,7 @@ const projectMarkers = document.querySelectorAll(".project-marker");
 const contact = document.querySelector("#contact-me");
 const mailForm = document.querySelector(".mail-form");
 const emailCard = document.querySelector(".email-card");
-const emailSpan = document.querySelector(".email-card span");
+const emailSpan = document.querySelector(".email-tip");
 const topLink = document.querySelector(".top-link")
 // const googleMap = document.querySelector("#map-api");
 
@@ -305,6 +305,19 @@ window.addEventListener("scroll", function () {
 
 
 
+
+emailCard.onclick = function() {
+  document.execCommand("copy");
+}
+
+emailCard.addEventListener("copy", function(event) {
+  event.preventDefault();
+  if (event.clipboardData) {
+    event.clipboardData.setData("text/plain", emailSpan.textContent);
+    console.log(event.clipboardData.getData("text"));
+    emailSpan.classList.add("copied");
+  }
+});
 
 
 // ********** Mail Form ************

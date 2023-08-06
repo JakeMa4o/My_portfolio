@@ -288,6 +288,7 @@ Hero
 }
 
 @keyframes borderAnim {
+
   /* 0% {
     border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
   }
@@ -302,15 +303,19 @@ Hero
   0% {
     border-radius: 64% 36% 70% 30% / 44% 62% 38% 56%;
   }
+
   25% {
     border-radius: 64% 36% 70% 30% / 55% 59% 41% 45%;
   }
+
   50% {
     border-radius: 64% 36% 70% 30% / 43% 67% 33% 57%;
   }
+
   75% {
     border-radius: 71% 29% 70% 30% / 32% 72% 28% 68%;
   }
+
   100% {
     border-radius: 64% 36% 70% 30% / 44% 62% 38% 56%;
   }
@@ -984,15 +989,14 @@ Projects
 .project-marker {
   width: 1rem;
   height: 1rem;
-  /* width: .75rem;
-  height: .75rem; */
   border: 2px solid var(--clr-grey-1);
   border-radius: 50%;
   /* background-color: var(--clr-grey-1); */
   position: absolute;
+  inset: 0;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -100%);
+  transform: translate(-50%, -70%);
   display: grid;
   place-items: center;
   transition: 0.3s;
@@ -1053,6 +1057,7 @@ Projects
   10% {
     opacity: 1;
   }
+
   to {
     opacity: 0;
     width: 20rem;
@@ -1117,6 +1122,45 @@ Contact Me
   transition: 1s all;
 }
 
+.email-tip {
+  position: relative;
+}
+
+.email-tip::before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  content: "Copied to clipboard!";
+  width: 100%;
+  height: 2rem;
+  position: absolute;
+  top: -1.7rem;
+  left: -1rem;
+  background-color: var(--clr-grey-1);
+  color: #fff;
+  border-radius: 10px;
+  z-index: -1000;
+  opacity: 0;
+}
+
+.email-tip.copied::before {
+  animation: emailPopup 1s linear forwards;
+}
+
+@keyframes emailPopup {
+  0% {
+    z-index: -1000;
+    opacity: 0;
+  }
+  50% {
+    z-index: 1000;
+    opacity: 1;
+  }
+  100% {
+    z-index: -1000;
+    opacity: 0;
+  }
+}
 
 .mail-form .title>p {
   transform: translateX(-5rem);
@@ -2025,6 +2069,7 @@ footer p {
   .project {
     grid-template-rows: 1fr;
   }
+
   .project-height:nth-child(odd) .project-img {
     grid-column: 2/3;
   }
@@ -2032,6 +2077,7 @@ footer p {
   .project-height:nth-child(odd) .project-info {
     grid-column: 1/2;
   }
+
   .project-marker {
     display: none;
   }
@@ -2041,12 +2087,12 @@ footer p {
     bottom: 10rem;
     font-size: 1.5rem;
   }
-  
+
   .scroll-tip i {
     font-size: .9rem;
   }
 
-  #contact-me  {
+  #contact-me {
     padding: 10rem 0;
   }
 }
