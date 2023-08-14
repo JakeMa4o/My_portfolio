@@ -1111,6 +1111,7 @@ Contact Me
   /* background-color: var(--clr-grey-10); */
   /* background-color: #49a6e9; */
   color: var(--clr-grey-1);
+  cursor: pointer;
 }
 
 .email-card i {
@@ -1139,7 +1140,7 @@ Contact Me
   background-color: var(--clr-grey-1);
   color: #fff;
   border-radius: 10px;
-  z-index: -1000;
+  z-index: 1000;
   opacity: 0;
 }
 
@@ -1149,15 +1150,12 @@ Contact Me
 
 @keyframes emailPopup {
   0% {
-    z-index: -1000;
     opacity: 0;
   }
   50% {
-    z-index: 1000;
     opacity: 1;
   }
   100% {
-    z-index: -1000;
     opacity: 0;
   }
 }

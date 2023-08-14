@@ -306,11 +306,11 @@ window.addEventListener("scroll", function () {
 
 
 
-emailCard.onclick = function() {
+emailCard.onclick = function () {
   document.execCommand("copy");
 }
 
-emailCard.addEventListener("copy", function(event) {
+emailCard.addEventListener("copy", function (event) {
   event.preventDefault();
   if (event.clipboardData) {
     event.clipboardData.setData("text/plain", emailSpan.textContent);
@@ -377,4 +377,3 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
 // ********** Set Date ************
 const date = document.getElementById('date');
 date.innerHTML = new Date().getFullYear();
-
