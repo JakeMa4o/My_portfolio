@@ -1112,6 +1112,7 @@ Contact Me
   /* background-color: #49a6e9; */
   color: var(--clr-grey-1);
   cursor: pointer;
+  pointer-events: none;
 }
 
 .email-card i {
@@ -1121,6 +1122,7 @@ Contact Me
 .email-card.fade-in {
   opacity: 1;
   transition: 1s all;
+  pointer-events: initial;
 }
 
 .email-tip {
