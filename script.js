@@ -181,7 +181,7 @@ window.addEventListener("scroll", function () {
       // Tools animation
       this.setTimeout(() => {
         projectTools[p].classList.add("project-tools-animate");
-      }, 600)
+      }, 500)
 
       this.setTimeout(() => {
         // Test
@@ -190,7 +190,7 @@ window.addEventListener("scroll", function () {
         projectTools[p].children[0].children.forEach(li => li.lastChild.style.opacity = "1");
         projectTools[p].children[0].children.forEach(li => li.lastChild.style.margin = "0");
         // Test
-      }, 1600)
+      }, 1400)
       this.setTimeout(() => {
         if (mobileQuery.matches) {
           projectImgs[p].children[0].children[0].style.transition = "2s linear";
@@ -218,17 +218,17 @@ window.addEventListener("scroll", function () {
       this.setTimeout(() => {
         projectDescriptions[p].style.opacity = "1";
         projectDescriptions[p].style.transform = "translateX(0)";
-      }, 1900)
+      }, 1550)
       this.setTimeout(() => {
         projectTitles[p].style.opacity = "1";
         projectTitles[p].style.left = "0";
         projectTitles[p].style.transform = "translateX(0)";
-      }, 2200)
+      }, 1800)
       this.setTimeout(() => {
         buttonContainers[p].style.opacity = "1";
         buttonContainers[p].style.left = "0";
         buttonContainers[p].style.transform = "translateX(0)";
-      }, 2400)
+      }, 2000)
 
 
       if (p == 0 || p == 2) {

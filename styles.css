@@ -1038,20 +1038,8 @@ Projects
 }
 
 .project-marker.markerPop {
-  animation: markerPop .6s linear forwards;
+  animation: markerPop .4s linear forwards;
 }
-
-/* @keyframes drop {
-  10% {
-    opacity: 1;
-  }
-
-  100% {
-    width: 320px;
-    height: 320px;
-    opacity: 0;
-  }
-} */
 
 @keyframes markerPop {
   10% {
@@ -1062,7 +1050,7 @@ Projects
     opacity: 0;
     width: 20rem;
     height: 20rem;
-    border-radius: 0%;
+    /* border-radius: 0%; */
   }
 }
 
