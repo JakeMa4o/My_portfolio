@@ -133,7 +133,9 @@ window.addEventListener("scroll", function () {
       techStack.classList.add("fade-in");
     }, 600)
 
-    hero.classList.add("hero-animate");
+    this.setTimeout(() => {
+      hero.classList.add("hero-animate");
+    }, 1000)
 
     hero.style.width = aboutRect.width + "px";
     hero.style.height = aboutRect.height + "px";
@@ -170,6 +172,9 @@ window.addEventListener("scroll", function () {
       hero.style.top = projectsDetail[p].projectInfoRect.top + "px";
 
       hero.classList.remove("hero-animate");
+      this.setTimeout(() => {
+        hero.classList.remove("hero-animate");
+      }, 1000)
       hero.style.borderRadius = "10px";
 
       if (mobileQuery.matches) {
@@ -193,28 +198,31 @@ window.addEventListener("scroll", function () {
       }, 1400)
       this.setTimeout(() => {
         if (mobileQuery.matches) {
-          projectImgs[p].children[0].children[0].style.transition = "2s linear";
+          projectImgs[p].children[0].children[0].style.transition = "2s ease";
         }
         if (desktopQuery.matches) {
-          projectImgs[p].children[0].children[0].style.transition = "2s ease";
+          projectImgs[p].children[0].children[0].style.transition = "1s linear";
         }
         if (fourKQuery.matches) {
           projectImgs[p].children[0].children[0].style.transition = "1s linear";
         }
         projectImgs[p].children[0].children[0].style.strokeDashoffset = 0;
       }, 1600)
-      if (fourKQuery.matches) {
+      if (mobileQuery.matches) {
         this.setTimeout(() => {
           projectImgs[p].children[1].style.opacity = 1;
-          projectImgs[p].children[0].children[0].style.transition = "1s ease";
+          projectImgs[p].children[1].style.transform = "translate(0, 0)";
+          projectImgs[p].children[0].children[0].style.transition = ".5s ease";
           projectImgs[p].children[0].children[0].style.opacity = 0;
-        }, 3100)
+        }, 2800)
+      } else {
+        this.setTimeout(() => {
+          projectImgs[p].children[1].style.opacity = 1;
+          projectImgs[p].children[1].style.transform = "translate(0, 0)";
+          projectImgs[p].children[0].children[0].style.transition = ".5s ease";
+          projectImgs[p].children[0].children[0].style.opacity = 0;
+        }, 2600)        
       }
-      this.setTimeout(() => {
-        projectImgs[p].children[1].style.opacity = 1;
-        projectImgs[p].children[0].children[0].style.transition = "1s ease";
-        projectImgs[p].children[0].children[0].style.opacity = 0;
-      }, 2800)
       this.setTimeout(() => {
         projectDescriptions[p].style.opacity = "1";
         projectDescriptions[p].style.transform = "translateX(0)";
