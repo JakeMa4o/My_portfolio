@@ -120,6 +120,10 @@ window.addEventListener("scroll", function () {
     hero.style.OTransform = "rotate(0deg)";
     hero.style.transform = "rotate(0deg)";
     hero.classList.remove("hero-animate");
+
+    this.setTimeout(() => {
+      hero.classList.remove("hero-animate");
+    }, 1000)
   }
 
 
@@ -177,9 +181,12 @@ window.addEventListener("scroll", function () {
       }, 1000)
       hero.style.borderRadius = "10px";
 
-      if (mobileQuery.matches) {
+      if (desktopQuery.matches) {
         hero.style.borderRadius = "64% 36% 70% 30% / 44% 62% 38% 56%";
         hero.classList.add("hero-animate");
+        this.setTimeout(() => {
+          hero.classList.add("hero-animate");
+        }, 1000)
       }
 
 
@@ -211,17 +218,17 @@ window.addEventListener("scroll", function () {
       if (mobileQuery.matches) {
         this.setTimeout(() => {
           projectImgs[p].children[1].style.opacity = 1;
-          projectImgs[p].children[1].style.transform = "translate(0, 0)";
+          projectImgs[p].children[1].style.transform = "scale(1)";
           projectImgs[p].children[0].children[0].style.transition = ".5s ease";
           projectImgs[p].children[0].children[0].style.opacity = 0;
-        }, 2800)
+        }, 2400)
       } else {
         this.setTimeout(() => {
           projectImgs[p].children[1].style.opacity = 1;
-          projectImgs[p].children[1].style.transform = "translate(0, 0)";
+          projectImgs[p].children[1].style.transform = "scale(1)";
           projectImgs[p].children[0].children[0].style.transition = ".5s ease";
           projectImgs[p].children[0].children[0].style.opacity = 0;
-        }, 2600)        
+        }, 2400)
       }
       this.setTimeout(() => {
         projectDescriptions[p].style.opacity = "1";
@@ -265,6 +272,9 @@ window.addEventListener("scroll", function () {
   // Scroll to CONTACT section Hero background rectangle
   if (scroll + windowHeight > contactRect.top + contactRect.height / 1.5) {
     hero.classList.remove("hero-animate");
+    this.setTimeout(() => {
+      hero.classList.remove("hero-animate");
+    }, 1000)
     hero.style.borderRadius = "10px";
     // hero.style.top = emailSpanRect.top + "px";
     // hero.style.left = emailSpanRect.left + "px";
