@@ -217,15 +217,13 @@ window.addEventListener("scroll", function () {
       }, 1600)
       if (mobileQuery.matches) {
         this.setTimeout(() => {
-          projectImgs[p].children[1].style.opacity = 1;
-          projectImgs[p].children[1].style.transform = "scale(1)";
+          projectImgs[p].children[1].classList.add("animate-img");
           projectImgs[p].children[0].children[0].style.transition = ".5s ease";
           projectImgs[p].children[0].children[0].style.opacity = 0;
         }, 2400)
       } else {
         this.setTimeout(() => {
-          projectImgs[p].children[1].style.opacity = 1;
-          projectImgs[p].children[1].style.transform = "scale(1)";
+          projectImgs[p].children[1].classList.add("animate-img");
           projectImgs[p].children[0].children[0].style.transition = ".5s ease";
           projectImgs[p].children[0].children[0].style.opacity = 0;
         }, 2400)
