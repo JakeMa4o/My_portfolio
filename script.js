@@ -289,11 +289,11 @@ window.addEventListener("scroll", function () {
     hero.style.transform = "rotate(720deg)";
     this.setTimeout(() => {
       emailCard.classList.add("fade-in");
-    }, 800)
+    }, 700)
     this.setTimeout(() => {
       mailForm.classList.add("fade-in");
       topLink.classList.add("fade-in");
-    }, 900)
+    }, 750)
 
     // hero.style.backgroundColor = "hsl(210, 36%, 96%)";
   }

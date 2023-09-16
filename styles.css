@@ -844,12 +844,12 @@ Projects
 }
 
 .project-img img.animate-img {
-  animation: imgFadeIn .6s forwards;
+  animation: imgFadeIn .6s ease-out forwards;
 }
 
 @keyframes imgFadeIn {
   0% {
-    transform: scale(2);
+    transform: scale(1.6);
     opacity: 0;
   }
 
