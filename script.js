@@ -234,12 +234,10 @@ window.addEventListener("scroll", function () {
       }, 1550)
       this.setTimeout(() => {
         projectTitles[p].style.opacity = "1";
-        projectTitles[p].style.left = "0";
         projectTitles[p].style.transform = "translateX(0)";
       }, 1800)
       this.setTimeout(() => {
         buttonContainers[p].style.opacity = "1";
-        buttonContainers[p].style.left = "0";
         buttonContainers[p].style.transform = "translateX(0)";
       }, 2000)
 
