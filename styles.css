@@ -673,12 +673,14 @@ About
 }
 
 .tech-stack.fade-in .tech-icon:nth-child(1) span {
-  color: #e34c26;
+  /* color: #e34c26; */
+  color: #000000;
 }
 
 .tech-stack.fade-in .tech-icon:nth-child(2) span {
   animation-delay: 1.1s;
-  color: #49a6e9;
+  /* color: #49a6e9; */
+  color: #cc6699;
 }
 
 .tech-stack.fade-in .tech-icon:nth-child(3) span {
