@@ -343,6 +343,7 @@ const formResult = document.querySelector(".form-result");
 const showEmail = document.querySelector(".show-email");
 // loader
 const loader = document.querySelector(".loader-wrapper");
+const loaderRect = document.querySelector(".loader");
 
 
 (function () {
@@ -355,35 +356,41 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
   // generate a five digit number for the contact_number variable
   this.contact_number.value = Math.random() * 100000 | 0;
   // Here goes the loader
-  loader.style.display = "grid";
-  loader.style.placeItems = "center";
+  loaderRect.style.display = "block";
+  loader.style.opacity = 1;
+  loader.style.transform = "translateY(0)";
+  loader.style.zIndex = 100;
   // these IDs from the previous steps
   emailjs.sendForm('service_fz0d1dc', 'my_template', this)
     .then(function () {
       inputs.forEach(input => {
         input.value = "";
         textArea.value = "";
-        formResult.style.display = "block";
-        formResult.style.backgroundColor = "hsla(182, 63%, 54%)";
-        formResult.style.padding = "1rem";
-        formResult.innerHTML = "Thank You!";
-        setTimeout(() => {
-          formResult.style.display = "none";
-        }, 3000)
-        // console.log('SUCCESS!');
-        loader.style.display = "none";
       })
+      loaderRect.style.display = "none";
+      formResult.style.color = "hsla(182, 63%, 54%)";
+      formResult.innerHTML = "Thank You!";
+      setTimeout(() => {
+        loader.style.transform = "translateY(-10rem)";
+        loader.style.zIndex = -100;
+        formResult.innerHTML = "";
+      }, 2500)
+      setTimeout(() => {
+        loader.style.opacity = 0;
+      }, 2600)
     }, function (error) {
       console.log('FAILED...', error);
-      formResult.style.display = "block";
-      formResult.style.backgroundColor = "red";
-      formResult.innerHTML = "Oops! Something went wrong";
-      showEmail.innerHTML = "Please email: zhalgasmiyatbekov@gmail.com!";
+      loaderRect.style.display = "none";
+      formResult.style.color = "red";
+      formResult.innerHTML = "Oops! Something went wrong. Please email: zhalgasmiyatbekov@gmail.com!";
       setTimeout(() => {
-        formResult.style.display = "none";
-        // showEmail.style.display = "none";
-      }, 3000)
-      loader.style.display = "none";
+        loader.style.transform = "translateY(-10rem)";
+        loader.style.zIndex = -100;
+        formResult.innerHTML = "";
+      }, 2500)
+      setTimeout(() => {
+        loader.style.opacity = 0;
+      }, 2600)
     });
 });
 
