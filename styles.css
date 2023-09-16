@@ -209,6 +209,11 @@ Hero
 ========  
 */
 
+#hero {
+  height: 100vh;
+  height: 100dvh;
+}
+
 .hero {
   min-height: 100vh;
   width: 100%;
