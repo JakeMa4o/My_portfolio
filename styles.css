@@ -1377,21 +1377,34 @@ textarea {
   0% {
     opacity: 0;
     font-size: 1rem;
-    /* pointer-events: initial; */
   }
   50% {
     opacity: 1;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     pointer-events: initial;
   }
   100% {
     opacity: 1;
     pointer-events: initial;
   }
-  /* to {
-    opacity: 1;
-    pointer-events: initial;
-  } */
+}
+
+@media screen and (min-width: 576px) {
+  @keyframes mailCardAppear {
+    0% {
+      opacity: 0;
+      font-size: 1rem;
+    }
+    50% {
+      opacity: 1;
+      font-size: 1.5rem;
+      pointer-events: initial;
+    }
+    100% {
+      opacity: 1;
+      pointer-events: initial;
+    }
+  }
 }
 
 
