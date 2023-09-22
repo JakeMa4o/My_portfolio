@@ -2,43 +2,8 @@
 // pageYOffset is a read - only window property that returns the number of pixels the document has been scrolled vertically.
 //offsetTop - A Number, representing the top position of the element, in pixels
 
-const hero = document.querySelector(".hero-background");
-const heroRect = hero.getBoundingClientRect();
-
-
-// ********** Fade In ************
-
-const heroSection = document.querySelector("#hero .container");
-
-
-
-const aboutInfo = document.querySelector(".about-info");
-const aboutRect = aboutInfo.getBoundingClientRect();
-const aboutTextTitle = document.querySelector(".my-text h2");
-const aboutTextParag = document.querySelector(".my-text p");
-const techStack = document.querySelector(".tech-stack");
-
-
-const projects = document.querySelectorAll(".project");
-const projectInfos = document.querySelectorAll(".project-info");
-const projectImgs = document.querySelectorAll(".project-img");
-const projectTitles = document.querySelectorAll(".project-title");
-const projectTools = document.querySelectorAll(".project-tools");
-const projectDescriptions = document.querySelectorAll(".description");
-const buttonContainers = document.querySelectorAll(".buttons-container");
-const projectMarkers = document.querySelectorAll(".project-marker");
-
-
-
-const contact = document.querySelector("#contact-me");
-const mailForm = document.querySelector(".mail-form");
-const emailCard = document.querySelector(".email-card");
-const emailSpan = document.querySelector(".email-tip");
-const topLink = document.querySelector(".top-link")
-// const googleMap = document.querySelector("#map-api");
-
-
 const windowHeight = window.innerHeight;
+
 
 // Query
 const desktopQuery = window.matchMedia("(min-width: 1100px)");
@@ -46,22 +11,36 @@ const mobileQuery = window.matchMedia("(min-width: 500px)");
 const fourKQuery = window.matchMedia("(min-width: 2560px)");
 
 
-// Hero background 
+
+// Hero Background blob
+const hero = document.querySelector(".hero-background");
+const heroSection = document.querySelector("#hero .container");
+
+const heroRect = hero.getBoundingClientRect();
+
 window.addEventListener("load", function () {
   this.setTimeout(setBackground, 1500)
   function setBackground() {
     hero.style.opacity = 1;
-    // hero.style.backgroundColor = "rgb(235, 236, 237)";
   }
 })
 
+
+
 // About section position variables
+const aboutInfo = document.querySelector(".about-info");
+
+const aboutRect = aboutInfo.getBoundingClientRect();
 const aboutTopRelativeDocument = aboutRect.top;
-// const aboutTopDifference = Math.abs(heroRect.height / 2 - aboutRect.height / 2);
-// const aboutLeftDifference = Math.abs(heroRect.width / 2 - aboutRect.width / 2);
 
 
-// Projects section position variables
+
+// Projects section position variables & Tools pos:rel centered in parent parent;
+const projects = document.querySelectorAll(".project");
+const projectInfos = document.querySelectorAll(".project-info");
+const projectTools = document.querySelectorAll(".project-tools");
+const projectMarkers = document.querySelectorAll(".project-marker");
+
 const projectsDetail = [];
 
 for (let p = 0; p < projectInfos.length; p++) {
@@ -79,8 +58,6 @@ for (let p = 0; p < projectInfos.length; p++) {
     projectToolsRect: projectToolsRect
   })
 
-  // projectTools[p].style.transform = `translate(0rem, ${projectsDetail[p].projectToolsRect.height * 1.5 / 16}rem)`;
-
   projectTools[p].style.transform = `translate(${projectsDetail[p].projectInfoRect.width / 9 / 16}rem, ${projectsDetail[p].projectToolsRect.height * 1.5 / 16}rem)`;
 
   if (desktopQuery.matches) {
@@ -88,16 +65,20 @@ for (let p = 0; p < projectInfos.length; p++) {
   }
 }
 
-// Contact section position variable
 
+// Contact section position variable 
+const contact = document.querySelector("#contact-me");
 const contactRect = contact.getBoundingClientRect();
+
+const mailForm = document.querySelector(".mail-form");
+const emailCard = document.querySelector(".email-card");
 const emailCardRect = emailCard.getBoundingClientRect();
-const emailSpanRect = emailSpan.getBoundingClientRect();
+
+const emailSpan = document.querySelector(".email-tip");
 
 
-console.log(aboutRect);
 
-// ********** Navigation Background Figure ************
+// ********** Navigation Background Blob ************
 
 window.addEventListener("scroll", function () {
   // Scroll value updated every scroll
@@ -112,7 +93,6 @@ window.addEventListener("scroll", function () {
     hero.style.top = "0";
     hero.style.left = "0";
     hero.style.borderRadius = "0";
-    // hero.style.position = "absolute";
     hero.style.msTransform = "rotate(0deg)";
     hero.style.webkitTransform = "rotate(0deg)";
     hero.style.MozTransform = "rotate(0deg)";
@@ -129,110 +109,53 @@ window.addEventListener("scroll", function () {
   // Scroll to ABOUT section Hero background rectangle
   if (scroll + windowHeight > aboutTopRelativeDocument + aboutRect.height / 2) {
     heroSection.style.opacity = "0";
-    hero.style.borderRadius = "64% 36% 70% 30% / 44% 62% 38% 56%";
-    this.setTimeout(() => {
-      aboutTextTitle.classList.add("fade-in");
-      aboutTextParag.classList.add("fade-in");
-      techStack.classList.add("fade-in");
-    }, 600)
-
-    this.setTimeout(() => {
-      hero.classList.add("hero-animate");
-    }, 1000)
-
+    
     hero.style.width = aboutRect.width + "px";
     hero.style.height = aboutRect.height + "px";
-
     hero.style.top = aboutTopRelativeDocument + "px";
     hero.style.left = aboutRect.left + "px";
-
-    if (mobileQuery.matches) {
-      hero.style.height = aboutRect.height * 2 + "px";
-      hero.style.top = aboutTopRelativeDocument - aboutRect.height / 2 + "px";
-    }
-
+    hero.style.borderRadius = "64% 36% 70% 30% / 44% 62% 38% 56%";
     hero.style.msTransform = "rotate(180deg)";
     hero.style.webkitTransform = "rotate(180deg)";
     hero.style.MozTransform = "rotate(180deg)";
     hero.style.OTransform = "rotate(180deg)";
     hero.style.transform = "rotate(180deg)";
+    
+    if (mobileQuery.matches) {
+      hero.style.height = aboutRect.height * 2 + "px";
+      hero.style.top = aboutTopRelativeDocument - aboutRect.height / 2 + "px";
+    }
+
+    hero.classList.add("hero-animate");
+
+    aboutInfo.classList.add("fade-in");
   }
 
 
   // Scroll to PROJECT sections Hero background rectangle
   for (let p = 0; p < projectsDetail.length; p++) {
     if (scroll + windowHeight > projectsDetail[p].projectInfoRect.top + projectsDetail[p].projectInfoRect.height / 2) {
-
-      // scroll + windowHeight > projectsDetail[p].projectRect.top + projectsDetail[p].projectRect.height / 1.5
-      // Remove project marker
-      projectMarkers[p].classList.remove("marker-idle");
-      projectMarkers[p].classList.add("markerPop");
-
-      // background shape
       hero.style.width = projectsDetail[p].projectInfoRect.width + "px";
       hero.style.height = projectsDetail[p].projectInfoRect.height + "px";
       hero.style.left = projectsDetail[p].projectInfoRect.left + "px";
       hero.style.top = projectsDetail[p].projectInfoRect.top + "px";
 
       hero.classList.remove("hero-animate");
-      this.setTimeout(() => {
-        hero.classList.remove("hero-animate");
-      }, 1000)
       hero.style.borderRadius = "10px";
 
-      if (desktopQuery.matches) {
+      if (mobileQuery.matches) {
         hero.style.borderRadius = "64% 36% 70% 30% / 44% 62% 38% 56%";
         hero.classList.add("hero-animate");
-        this.setTimeout(() => {
-          hero.classList.add("hero-animate");
-        }, 1000)
       }
 
+      projectMarkers[p].classList.remove("marker-idle");
 
-      // Tools animation
-      this.setTimeout(() => {
-        projectTools[p].classList.add("project-tools-animate");
-      }, 500)
+      projects[p].classList.add("fade-in");
 
+      // Tools animation font size cant be done with css 2 animations conflict;
       this.setTimeout(() => {
-        // Test
-        projectTools[p].style.transform = "translate(0rem, 0rem)";
         projectTools[p].children[0].children.forEach(li => li.firstChild.style.fontSize = "2rem");
-        projectTools[p].children[0].children.forEach(li => li.lastChild.style.opacity = "1");
-        projectTools[p].children[0].children.forEach(li => li.lastChild.style.margin = "0");
-        // Test
       }, 1400)
-      this.setTimeout(() => {
-        projectImgs[p].children[0].children[0].style.strokeDashoffset = 700;
-      }, 1000)
-      // 1600
-      this.setTimeout(() => {
-        projectImgs[p].children[1].classList.add("animate-img");
-        // Transition faster for image opacity
-        projectImgs[p].children[0].children[0].style.transition = ".5s ease";
-        projectImgs[p].children[0].children[0].style.opacity = 0;
-      }, 2000)
-      if (mobileQuery) {
-        this.setTimeout(() => {
-          projectImgs[p].children[1].classList.add("animate-img");
-          // Transition faster for image opacity
-          projectImgs[p].children[0].children[0].style.transition = ".5s ease";
-          projectImgs[p].children[0].children[0].style.opacity = 0;
-        }, 1700)
-      }
-      // 2400
-      this.setTimeout(() => {
-        projectDescriptions[p].style.opacity = "1";
-        projectDescriptions[p].style.transform = "translateX(0)";
-      }, 1550)
-      this.setTimeout(() => {
-        projectTitles[p].style.opacity = "1";
-        projectTitles[p].style.transform = "translateX(0)";
-      }, 1800)
-      this.setTimeout(() => {
-        buttonContainers[p].style.opacity = "1";
-        buttonContainers[p].style.transform = "translateX(0)";
-      }, 2000)
 
 
       if (p == 0 || p == 2) {
@@ -248,11 +171,6 @@ window.addEventListener("scroll", function () {
         hero.style.OTransform = "rotate(540deg)";
         hero.style.transform = "rotate(540deg)";
       }
-
-
-      // projectImgs[1].style.filter = "grayscale(100%)"
-      //   projectImgs[2].style.filter = "grayscale(0%)"
-      //   projectImgs[3].style.filter = "grayscale(100%)"
     }
 
   }
@@ -261,14 +179,7 @@ window.addEventListener("scroll", function () {
   // Scroll to CONTACT section Hero background rectangle
   if (scroll + windowHeight > contactRect.top + contactRect.height / 1.5) {
     hero.classList.remove("hero-animate");
-    this.setTimeout(() => {
-      hero.classList.remove("hero-animate");
-    }, 1000)
     hero.style.borderRadius = "10px";
-    // hero.style.top = emailSpanRect.top + "px";
-    // hero.style.left = emailSpanRect.left + "px";
-    // hero.style.width = emailSpanRect.width + "px";
-    // hero.style.height = emailSpanRect.height + "px";
     hero.style.top = emailCardRect.top + "px";
     hero.style.left = emailCardRect.left + "px";
     hero.style.width = emailCardRect.width + "px";
@@ -278,37 +189,10 @@ window.addEventListener("scroll", function () {
     hero.style.MozTransform = "rotate(720deg)";
     hero.style.OTransform = "rotate(720deg)";
     hero.style.transform = "rotate(720deg)";
-    this.setTimeout(() => {
-      emailCard.classList.add("fade-in");
-    }, 700)
-    this.setTimeout(() => {
-      mailForm.classList.add("fade-in");
-      topLink.classList.add("fade-in");
-    }, 750)
 
-    // hero.style.backgroundColor = "hsl(210, 36%, 96%)";
+    mailForm.classList.add("fade-in");
   }
 })
-
-
-
-// ********** Map API ************
-// function initMap() {
-//   let map;
-//   const myLatLng = { lat: 43.6588, lng: 51.1975 };
-//   map = new google.maps.Map(document.getElementById("map-api"), {
-//     center: myLatLng,
-//     zoom: 13,
-//   });
-
-//   new google.maps.Marker({
-//     position: myLatLng,
-//     map,
-//     title: "Hello World!",
-//   });
-// }
-
-
 
 
 
@@ -382,7 +266,26 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
 
 
 
-
 // ********** Set Date ************
 const date = document.getElementById('date');
 date.innerHTML = new Date().getFullYear();
+
+
+
+// const googleMap = document.querySelector("#map-api");
+
+// ********** Map API ************
+// function initMap() {
+//   let map;
+//   const myLatLng = { lat: 43.6588, lng: 51.1975 };
+//   map = new google.maps.Map(document.getElementById("map-api"), {
+//     center: myLatLng,
+//     zoom: 13,
+//   });
+
+//   new google.maps.Marker({
+//     position: myLatLng,
+//     map,
+//     title: "Hello World!",
+//   });
+// }
