@@ -229,7 +229,7 @@ Hero
   left: 50%;
   bottom: 10rem;
   transform: translateX(-50%) scale(1);
-  animation: scrollTip 4s 3s ease-in-out infinite;
+  animation: scrollTip 2s 2s ease infinite;
   font-size: 1rem;
 }
 
@@ -255,15 +255,20 @@ Hero
     opacity: 1;
   }
 
-  75% {
+  /* 75% {
     transform: translateX(-50%) scale(1);
     opacity: 0;
-  }
+  } */
 
   100% {
     transform: translateX(-50%) scale(1);
     opacity: 0;
   }
+
+  /* 100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 0;
+  } */
 }
 
 .hero-background {
@@ -1543,7 +1548,7 @@ footer p {
 
 @media screen and (min-width: 320px) {
   .hero .svg-container {
-    width: 18.7rem;
+    width: 20.7rem;
   }
 
   .hero h1 {
