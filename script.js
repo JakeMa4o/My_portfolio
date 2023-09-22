@@ -98,8 +98,10 @@ window.addEventListener("scroll", function () {
     hero.style.MozTransform = "rotate(0deg)";
     hero.style.OTransform = "rotate(0deg)";
     hero.style.transform = "rotate(0deg)";
+    
+    aboutInfo.classList.remove("fade-in");
+    
     hero.classList.remove("hero-animate");
-
     this.setTimeout(() => {
       hero.classList.remove("hero-animate");
     }, 1000)
@@ -129,6 +131,7 @@ window.addEventListener("scroll", function () {
     hero.classList.add("hero-animate");
 
     aboutInfo.classList.add("fade-in");
+  } else {
   }
 
 
@@ -194,10 +197,6 @@ window.addEventListener("scroll", function () {
         projectMarkers[p].classList.add("marker-idle");
       }
     }
-
-    // if (scroll + windowHeight > projectsDetail[p].projectInfoRect.top + projectsDetail[p].projectInfoRect.height / 2) {
-    // }
-
   }
 
 
@@ -216,6 +215,8 @@ window.addEventListener("scroll", function () {
     hero.style.transform = "rotate(720deg)";
 
     mailForm.classList.add("fade-in");
+  } else {
+    mailForm.classList.remove("fade-in");
   }
 })
 
@@ -266,13 +267,13 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
       formResult.style.color = "hsla(182, 63%, 54%)";
       formResult.innerHTML = "Thank You!";
       setTimeout(() => {
-        loader.style.transform = "translateY(-10rem)";
-        loader.style.zIndex = -100;
+        loader.style.transform = "translateY(-50rem)";
         formResult.innerHTML = "";
       }, 2500)
       setTimeout(() => {
+        loader.style.zIndex = -100;
         loader.style.opacity = 0;
-      }, 2600)
+      }, 2800)
     }, function (error) {
       console.log('FAILED...', error);
       loaderRect.style.display = "none";
