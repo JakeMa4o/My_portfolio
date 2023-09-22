@@ -881,9 +881,15 @@ Projects
 .project-img svg rect {
   stroke: #000;
   stroke-width: 4;
-  transition: 3s ease;
+  transition: 1s ease;
   stroke-dasharray: 3300;
   stroke-dashoffset: 3300;
+}
+
+@media screen and (max-width: 740px) {
+  .project-img svg rect {
+    transition: 1.3s linear;
+  }  
 }
 
 .project-title {
@@ -900,20 +906,6 @@ Projects
   position: relative;
   transform: translateY(3rem);
   transition: .5s ease all;
-}
-
-.buttons-container {
-  opacity: 0;
-  position: relative;
-  transform: translateX(7rem);
-  transition: .5s ease all;
-  grid-column: 1/2;
-  grid-row: 2/3;
-}
-
-.project:nth-child(even) .buttons-container {
-  grid-column: 2/3;
-  grid-row: 2/3;
 }
 
 .project-tools {
@@ -959,30 +951,91 @@ Projects
   /* Test subject */
   display: block;
   /* Test subject */
-  animation: bounceIcons .8s forwards;
+  animation: bounceIcons ease .5s forwards;
 }
 
-.project-tools.project-tools-animate li:nth-child(1) i {
-  animation-delay: .1s;
+@keyframes bounceProjectIcons {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+
+  15% {
+    /* opacity: .25; */
+    opacity: 1;
+    transform: scale(2);
+  }
+
+  30% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(.7);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+
+  90% {
+    opacity: 1;
+    transform: scale(.85);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
+
+/* .project-tools.project-tools-animate li:nth-child(1) i {
+  animation-delay: .1s;
+} */
 
 .project-tools.project-tools-animate li:nth-child(2) i {
   animation-delay: .3s;
 }
 
 .project-tools.project-tools-animate li:nth-child(3) i {
-  animation-delay: .6s;
+  animation-delay: .5s;
 }
 
 
 /* Button */
 
 .buttons-container {
+  opacity: 0;
+  position: relative;
+  transform: translateX(7rem);
+  transition: .5s ease all;
+  grid-column: 1/2;
+  grid-row: 2/3;
   display: flex;
   gap: 3rem;
   padding: 3rem;
   transition: 1s all;
   /* justify-content: space-around; */
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.disabled a {
+  background-color: gray;
+}
+
+.disabled.button {
+  border-color: gray;
+}
+
+.project:nth-child(even) .buttons-container {
+  grid-column: 2/3;
+  grid-row: 2/3;
 }
 
 .button {
@@ -1498,35 +1551,42 @@ footer p {
   /* color: var(--clr-white); */
   color: var(--clr-grey-1);
   padding: 0 1rem;
-  opacity: 0;
-  z-index: -100;
   /* opacity: 0; */
-  transform: translateY(2rem);
+  /* z-index: -100; */
+  /* transform: translateY(0); */
+  opacity: 1;
+  /* z-index: 100; */
+  /* transform: translateY(2rem); */
 }
 
 .top-link.fade-in {
-  animation: showTopLink 1s 1s forwards, bounce 3s 2s linear infinite;
+  animation: bounce 1s 2s ease infinite;
 }
 
-@keyframes showTopLink {
+/* showTopLink 1s 1s forwards, */
+
+/* @keyframes showTopLink {
   to {
     transform: translateY(0);
     opacity: 1;
     z-index: 100;
   }
-}
+} */
 
 @keyframes bounce {
   0% {
     transform: scale(1);
+    opacity: 1;
   }
 
   50% {
     transform: scale(1.3);
+    opacity: 0;
   }
 
   100% {
     transform: scale(1);
+    opacity: 1;
   }
 }
 
@@ -1787,23 +1847,6 @@ footer p {
     font-size: 1.3rem;
     min-height: 10rem;
   }
-
-  @keyframes bounceIcons {
-    0% {
-      opacity: 0;
-      transform: scale(1);
-    }
-
-    25% {
-      transform: scale(1.3);
-      opacity: .25;
-    }
-
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
 }
 
 @media screen and (min-width: 770px) {
@@ -1991,6 +2034,10 @@ footer p {
 
   .project-tools {
     padding: 0.8rem 0 1.2rem;
+  }
+
+  .tools-list i {
+    font-size: 5.5rem;
   }
 
   .email-card {

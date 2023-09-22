@@ -79,11 +79,10 @@ for (let p = 0; p < projectInfos.length; p++) {
     projectToolsRect: projectToolsRect
   })
 
-  projectTools[p].style.transform = `translate(0rem, ${projectsDetail[p].projectToolsRect.height * 1.5 / 16}rem)`;
+  // projectTools[p].style.transform = `translate(0rem, ${projectsDetail[p].projectToolsRect.height * 1.5 / 16}rem)`;
 
-  if (projectTools[p].children[0].children.length == 2) {
-    projectTools[p].style.transform = `translate(${projectsDetail[p].projectInfoRect.width / 6 / 16}rem, ${projectsDetail[p].projectToolsRect.height * 1.5 / 16}rem)`;
-  }
+  projectTools[p].style.transform = `translate(${projectsDetail[p].projectInfoRect.width / 9 / 16}rem, ${projectsDetail[p].projectToolsRect.height * 1.5 / 16}rem)`;
+
   if (desktopQuery.matches) {
     projectTools[p].style.transform = `translate(${projectsDetail[p].projectInfoRect.width / 6 / 16}rem, ${projectsDetail[p].projectToolsRect.height * 1.5 / 16}rem)`;
   }
@@ -204,30 +203,24 @@ window.addEventListener("scroll", function () {
         // Test
       }, 1400)
       this.setTimeout(() => {
-        if (mobileQuery.matches) {
-          projectImgs[p].children[0].children[0].style.transition = "2s ease";
-        }
-        if (desktopQuery.matches) {
-          projectImgs[p].children[0].children[0].style.transition = "1s linear";
-        }
-        if (fourKQuery.matches) {
-          projectImgs[p].children[0].children[0].style.transition = "1s linear";
-        }
-        projectImgs[p].children[0].children[0].style.strokeDashoffset = 0;
-      }, 1600)
-      if (mobileQuery.matches) {
+        projectImgs[p].children[0].children[0].style.strokeDashoffset = 700;
+      }, 1000)
+      // 1600
+      this.setTimeout(() => {
+        projectImgs[p].children[1].classList.add("animate-img");
+        // Transition faster for image opacity
+        projectImgs[p].children[0].children[0].style.transition = ".5s ease";
+        projectImgs[p].children[0].children[0].style.opacity = 0;
+      }, 2000)
+      if (mobileQuery) {
         this.setTimeout(() => {
           projectImgs[p].children[1].classList.add("animate-img");
+          // Transition faster for image opacity
           projectImgs[p].children[0].children[0].style.transition = ".5s ease";
           projectImgs[p].children[0].children[0].style.opacity = 0;
-        }, 2400)
-      } else {
-        this.setTimeout(() => {
-          projectImgs[p].children[1].classList.add("animate-img");
-          projectImgs[p].children[0].children[0].style.transition = ".5s ease";
-          projectImgs[p].children[0].children[0].style.opacity = 0;
-        }, 2400)
+        }, 1700)
       }
+      // 2400
       this.setTimeout(() => {
         projectDescriptions[p].style.opacity = "1";
         projectDescriptions[p].style.transform = "translateX(0)";
