@@ -811,7 +811,7 @@ Projects
 
 .project-img {
   width: 100%;
-  max-width: 47rem;
+  max-width: 60rem;
   display: flex;
   justify-content: center;
   /* align-items: end; */
@@ -930,11 +930,11 @@ Projects
 .description {
   opacity: 0;
   position: relative;
-  transform: translateY(3rem);
+  transform: translateX(4rem);
 }
 
 .project.fade-in .description {
-  animation: descriptionFadeIn .5s 1.8s ease forwards;
+  animation: descriptionFadeIn .5s 2s ease forwards;
 }
 
 @keyframes descriptionFadeIn {

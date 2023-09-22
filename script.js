@@ -171,7 +171,22 @@ window.addEventListener("scroll", function () {
         hero.style.OTransform = "rotate(540deg)";
         hero.style.transform = "rotate(540deg)";
       }
+    } else if (scroll < projectsDetail[p].projectInfoRect.top - projectsDetail[p].projectInfoRect.height * 2) {
+      projects[p].classList.remove("fade-in");
+
+      this.setTimeout(() => {
+        projectTools[p].children[0].children.forEach(li => li.firstChild.style.fontSize = "3rem");
+      }, 1400)
+      if (desktopQuery.matches) {
+        this.setTimeout(() => {
+          projectTools[p].children[0].children.forEach(li => li.firstChild.style.fontSize = "5rem");
+        }, 1400)
+      }
+      projectMarkers[p].classList.add("marker-idle");
     }
+
+    // if (scroll + windowHeight > projectsDetail[p].projectInfoRect.top + projectsDetail[p].projectInfoRect.height / 2) {
+    // }
 
   }
 
