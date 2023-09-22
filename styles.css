@@ -229,7 +229,7 @@ Hero
   left: 50%;
   bottom: 5rem;
   transform: translateX(-50%) scale(1);
-  animation: scrollTip 2s 2s ease infinite;
+  animation: scrollTip 2s 1.3s ease infinite;
   font-size: 1rem;
 }
 
@@ -326,7 +326,7 @@ Hero
   /* stroke-dasharray: 800;
   stroke-dashoffset: 800; */
   fill: none;
-  animation: dash 2s ease-in-out forwards, fill 1s 1.6s ease forwards;
+  animation: dash 1.6s ease-in-out forwards, fill 1s 1.2s ease forwards;
 }
 
 @keyframes dash {
@@ -355,7 +355,7 @@ Hero
   font-family: 'Lato', sans-serif;
   position: relative;
   opacity: 0;
-  animation: appearH2 1s 1.8s forwards;
+  animation: appearH2 1s ease 1.2s forwards;
 }
 
 @keyframes appearH2 {
@@ -376,7 +376,7 @@ Hero
   justify-content: space-around;
   width: 10rem;
   opacity: 0;
-  animation: appearSocial 1s ease 1.7s forwards;
+  animation: appearSocial .9s ease 1.3s forwards;
   z-index: 3;
 }
 
@@ -424,7 +424,7 @@ Hero
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  animation: drop 1.4s 1.5s;
+  animation: drop 1.4s 1.2s;
   opacity: 0;
 }
 
@@ -552,7 +552,7 @@ About
 
 .about-info.fade-in .my-text h2,
 .about-info.fade-in .my-text p {
-  animation: myTextFadeIn .5s 2.1s linear forwards;
+  animation: myTextFadeIn .5s 2s ease forwards;
 }
 
 @keyframes myTextFadeIn {
@@ -581,7 +581,7 @@ About
 }
 
 .about-info.fade-in .tech-stack {
-  animation: techLanding .4s 2.1s linear 1 forwards;
+  animation: techLanding .4s 1.8s ease 1 forwards;
 }
 
 .about-info.fade-in .tech-stack .tech-icon i {
@@ -916,7 +916,7 @@ Projects
 }
 
 .project.fade-in .project-title {
-  animation: titleFadeIn .5s 1.8s ease forwards;
+  animation: titleFadeIn .5s 1.5s ease forwards;
 }
 
 @keyframes titleFadeIn {
@@ -934,7 +934,7 @@ Projects
 }
 
 .project.fade-in .description {
-  animation: descriptionFadeIn .5s 2s ease forwards;
+  animation: descriptionFadeIn .5s 1.8s ease forwards;
 }
 
 @keyframes descriptionFadeIn {
@@ -951,7 +951,7 @@ Projects
 }
 
 .project.fade-in .project-tools {
-  animation: moveBack 1s 1.4s forwards;
+  animation: moveBack .5s 1.4s forwards;
 }
 
 @keyframes moveBack {
@@ -989,7 +989,7 @@ Projects
 
 .project.fade-in .project-tools li i {
   /* display: block; */
-  animation: bounceIcons ease .5s .5s forwards;
+  animation: bounceIcons ease .3s .5s forwards;
 }
 
 .project.fade-in .project-tools li:nth-child(2) i {
@@ -1037,7 +1037,7 @@ Projects
 }
 
 .project.fade-in .buttons-container {
-  animation: buttonsFadeIn 1s 2s ease forwards;
+  animation: buttonsFadeIn 1s 1.8s ease forwards;
 }
 
 @keyframes buttonsFadeIn {
@@ -1370,12 +1370,14 @@ textarea {
 }
 
 .mail-form.fade-in .email-card {
-  animation: mailCardAppear 1s 1s ease forwards;
+  animation: mailCardAppear .6s 1s linear forwards;
 }
 
 @keyframes mailCardAppear {
   0% {
     opacity: 0;
+  }
+  25% {
     font-size: 1rem;
   }
   50% {
@@ -1383,8 +1385,14 @@ textarea {
     font-size: 1.2rem;
     pointer-events: initial;
   }
+  75% {
+    opacity: 1;
+    font-size: .85rem;
+    pointer-events: initial;
+  }
   100% {
     opacity: 1;
+    font-size: 1rem;
     pointer-events: initial;
   }
 }

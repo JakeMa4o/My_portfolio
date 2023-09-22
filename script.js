@@ -19,7 +19,7 @@ const heroSection = document.querySelector("#hero .container");
 const heroRect = hero.getBoundingClientRect();
 
 window.addEventListener("load", function () {
-  this.setTimeout(setBackground, 1500)
+  this.setTimeout(setBackground, 1200)
   function setBackground() {
     hero.style.opacity = 1;
   }
@@ -179,8 +179,9 @@ window.addEventListener("scroll", function () {
     if (scroll < projectsDetail[p].projectInfoRect.top - projectsDetail[p].projectInfoRect.height * 2.5) {
       projects[p].classList.remove("fade-in");
 
+      projectTools[p].children[0].children.forEach(li => li.firstChild.style.fontSize = "3.3rem");
       this.setTimeout(() => {
-        projectTools[p].children[0].children.forEach(li => li.firstChild.style.fontSize = "3rem");
+        projectTools[p].children[0].children.forEach(li => li.firstChild.style.fontSize = "3.3rem");
       }, 1400)
 
       projectMarkers[p].classList.add("marker-idle");
@@ -190,6 +191,7 @@ window.addEventListener("scroll", function () {
       if (scroll < projectsDetail[p].projectInfoRect.top - projectsDetail[p].projectInfoRect.height * 2) {
         projects[p].classList.remove("fade-in");
 
+        projectTools[p].children[0].children.forEach(li => li.firstChild.style.fontSize = "5rem");
         this.setTimeout(() => {
           projectTools[p].children[0].children.forEach(li => li.firstChild.style.fontSize = "5rem");
         }, 1400)
