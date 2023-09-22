@@ -227,7 +227,7 @@ Hero
   /* margin-top: 30rem; */
   opacity: 0;
   left: 50%;
-  bottom: 5rem;
+  bottom: 7rem;
   transform: translateX(-50%) scale(1);
   animation: scrollTip 2s 1.3s ease infinite;
   font-size: 1rem;
