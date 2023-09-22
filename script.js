@@ -58,10 +58,10 @@ for (let p = 0; p < projectInfos.length; p++) {
     projectToolsRect: projectToolsRect
   })
 
-  projectTools[p].style.transform = `translate(${projectsDetail[p].projectInfoRect.width / 9 / 16}rem, ${projectsDetail[p].projectToolsRect.height * 1.5 / 16}rem)`;
+  projectTools[p].style.transform = `translate(${projectsDetail[p].projectInfoRect.width / 9 / 16}rem, ${projectsDetail[p].projectToolsRect.height / 16}rem)`;
 
   if (desktopQuery.matches) {
-    projectTools[p].style.transform = `translate(${projectsDetail[p].projectInfoRect.width / 6 / 16}rem, ${projectsDetail[p].projectToolsRect.height * 1.5 / 16}rem)`;
+    projectTools[p].style.transform = `translate(${projectsDetail[p].projectInfoRect.width / 6 / 16}rem, ${projectsDetail[p].projectToolsRect.height / 16}rem)`;
   }
 }
 
