@@ -1158,7 +1158,7 @@ Contact Me
   width: 100%;
   height: 2rem;
   position: absolute;
-  top: -1.7rem;
+  top: -2.2rem;
   left: -1rem;
   background-color: var(--clr-grey-1);
   color: #fff;
@@ -1168,7 +1168,7 @@ Contact Me
 }
 
 .email-tip.copied::before {
-  animation: emailPopup 1s linear forwards;
+  animation: emailPopup 2s linear;
 }
 
 @keyframes emailPopup {
@@ -1176,7 +1176,11 @@ Contact Me
     opacity: 0;
   }
 
-  50% {
+  25% {
+    opacity: 1;
+  }
+
+  70% {
     opacity: 1;
   }
 

@@ -297,8 +297,6 @@ window.addEventListener("scroll", function () {
   }
 })
 
-// TEST
-
 
 
 // ********** Map API ************
@@ -320,17 +318,14 @@ window.addEventListener("scroll", function () {
 
 
 
-emailCard.onclick = function () {
-  document.execCommand("copy");
-}
 
-emailCard.addEventListener("copy", function (event) {
-  event.preventDefault();
-  if (event.clipboardData) {
-    event.clipboardData.setData("text/plain", emailSpan.textContent);
-    console.log(event.clipboardData.getData("text"));
-    emailSpan.classList.add("copied");
-  }
+// ********** Copied to Clipboard Pop up **********
+emailCard.addEventListener("click", function () {
+  navigator.clipboard.writeText('zhalgasmiyatbekov@gmail.com');
+  emailSpan.classList.add("copied");
+  setTimeout(() => {
+    emailSpan.classList.remove("copied");
+  }, 2000);
 });
 
 
