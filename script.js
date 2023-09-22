@@ -109,7 +109,7 @@ window.addEventListener("scroll", function () {
   // Scroll to ABOUT section Hero background rectangle
   if (scroll + windowHeight > aboutTopRelativeDocument + aboutRect.height / 2) {
     heroSection.style.opacity = "0";
-    
+
     hero.style.width = aboutRect.width + "px";
     hero.style.height = aboutRect.height + "px";
     hero.style.top = aboutTopRelativeDocument + "px";
@@ -120,7 +120,7 @@ window.addEventListener("scroll", function () {
     hero.style.MozTransform = "rotate(180deg)";
     hero.style.OTransform = "rotate(180deg)";
     hero.style.transform = "rotate(180deg)";
-    
+
     if (mobileQuery.matches) {
       hero.style.height = aboutRect.height * 2 + "px";
       hero.style.top = aboutTopRelativeDocument - aboutRect.height / 2 + "px";
@@ -171,18 +171,28 @@ window.addEventListener("scroll", function () {
         hero.style.OTransform = "rotate(540deg)";
         hero.style.transform = "rotate(540deg)";
       }
-    } else if (scroll < projectsDetail[p].projectInfoRect.top - projectsDetail[p].projectInfoRect.height * 2) {
+    }
+
+    if (scroll < projectsDetail[p].projectInfoRect.top - projectsDetail[p].projectInfoRect.height * 2.5) {
       projects[p].classList.remove("fade-in");
 
       this.setTimeout(() => {
         projectTools[p].children[0].children.forEach(li => li.firstChild.style.fontSize = "3rem");
       }, 1400)
-      if (desktopQuery.matches) {
+
+      projectMarkers[p].classList.add("marker-idle");
+    }
+
+    if (desktopQuery.matches) {
+      if (scroll < projectsDetail[p].projectInfoRect.top - projectsDetail[p].projectInfoRect.height * 2) {
+        projects[p].classList.remove("fade-in");
+
         this.setTimeout(() => {
           projectTools[p].children[0].children.forEach(li => li.firstChild.style.fontSize = "5rem");
         }, 1400)
+
+        projectMarkers[p].classList.add("marker-idle");
       }
-      projectMarkers[p].classList.add("marker-idle");
     }
 
     // if (scroll + windowHeight > projectsDetail[p].projectInfoRect.top + projectsDetail[p].projectInfoRect.height / 2) {
