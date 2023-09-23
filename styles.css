@@ -585,11 +585,11 @@ About
 }
 
 .about-info.fade-in .tech-stack .tech-icon i {
-  animation: bounceIcons 1s .6s forwards;
+  animation: bounceIcons .7s .6s forwards;
 }
 
 .about-info.fade-in .tech-stack .tech-icon span {
-  animation: textShowUp 1s 1.6s forwards;
+  animation: textShowUp .5s 1.4s forwards;
 }
 
 @keyframes techLanding {
@@ -695,36 +695,36 @@ About
   color: #000000;
 }
 
-.tech-stack.fade-in .tech-icon:nth-child(1) span {
-  animation-delay: .7s;
-}
-
-.tech-stack.fade-in .tech-icon:nth-child(2) span {
-  animation-delay: .8s;
-}
-
-.tech-stack.fade-in .tech-icon:nth-child(3) span {
-  animation-delay: .9s;
-}
-
-.tech-stack.fade-in .tech-icon:nth-child(4) span {
-  animation-delay: 1s;
-}
-
-.tech-stack.fade-in .tech-icon:nth-child(5) span {
-  animation-delay: 1.1s;
-}
-
-.tech-stack.fade-in .tech-icon:nth-child(6) span {
-  animation-delay: 1.2s;
-}
-
-.tech-stack.fade-in .tech-icon:nth-child(7) span {
+.about-info.fade-in .tech-stack .tech-icon:nth-child(1) span {
   animation-delay: 1.3s;
 }
 
-.tech-stack.fade-in .tech-icon:nth-child(8) span {
+.about-info.fade-in .tech-stack .tech-icon:nth-child(2) span {
   animation-delay: 1.4s;
+}
+
+.about-info.fade-in .tech-stack .tech-icon:nth-child(3) span {
+  animation-delay: 1.5s;
+}
+
+.about-info.fade-in .tech-stack .tech-icon:nth-child(4) span {
+  animation-delay: 1.6s;
+}
+
+.about-info.fade-in .tech-stack .tech-icon:nth-child(5) span {
+  animation-delay: 1.7s;
+}
+
+.about-info.fade-in .tech-stack .tech-icon:nth-child(6) span {
+  animation-delay: 1.8s;
+}
+
+.about-info.fade-in .tech-stack .tech-icon:nth-child(7) span {
+  animation-delay: 1.9s;
+}
+
+.about-info.fade-in .tech-stack .tech-icon:nth-child(8) span {
+  animation-delay: 2s;
 }
 
 
@@ -989,7 +989,33 @@ Projects
 
 .project.fade-in .project-tools li i {
   /* display: block; */
-  animation: bounceIcons ease .3s .5s forwards;
+  animation: bounceProjectIcons linear .6s .5s forwards;
+}
+
+@keyframes bounceProjectIcons {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(2);
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+    transform: scale(.85);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .project.fade-in .project-tools li:nth-child(2) i {
@@ -1398,18 +1424,31 @@ textarea {
 }
 
 @media screen and (min-width: 576px) {
+  .mail-form.fade-in .email-card {
+    animation: mailCardAppear .8s 1s linear forwards;
+  }
+
   @keyframes mailCardAppear {
     0% {
       opacity: 0;
+    }
+    25% {
       font-size: 1rem;
+      opacity: 1;
     }
     50% {
       opacity: 1;
       font-size: 1.5rem;
       pointer-events: initial;
     }
+    75% {
+      opacity: 1;
+      font-size: 1.2rem;
+      pointer-events: initial;
+    }
     100% {
       opacity: 1;
+      font-size: 1.3rem;
       pointer-events: initial;
     }
   }
