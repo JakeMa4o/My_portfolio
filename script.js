@@ -137,7 +137,7 @@ window.addEventListener("scroll", function () {
 
   // Scroll to PROJECT sections Hero background rectangle
   for (let p = 0; p < projectsDetail.length; p++) {
-    if (scroll + windowHeight > projectsDetail[p].projectInfoRect.top + projectsDetail[p].projectInfoRect.height / 1.4) {
+    if (scroll + windowHeight > projectsDetail[p].projectInfoRect.top + projectsDetail[p].projectInfoRect.height / 1.3) {
       hero.style.width = projectsDetail[p].projectInfoRect.width + "px";
       hero.style.height = projectsDetail[p].projectInfoRect.height + "px";
       hero.style.left = projectsDetail[p].projectInfoRect.left + "px";

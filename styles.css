@@ -1145,18 +1145,9 @@ Projects
   height: 100%;
 }
 
-.project-height:nth-child(1) .project-marker {
-  width: 2rem;
-  height: 2rem;
-}
-
 .project-height:nth-child(4) .project-marker {
   width: 6rem;
   height: 6rem;
-}
-
-.project-height:nth-child(1) .project-marker {
-  border: 2px solid var(--clr-grey-1);
 }
 
 .project.fade-in .project-marker {
@@ -1723,7 +1714,7 @@ footer p {
   }
 
   .buttons-container {
-    padding: 2rem 0;
+    padding: 2rem 0 0;
   }
 
   .project-title {
