@@ -951,7 +951,7 @@ Projects
 }
 
 .project.fade-in .project-tools {
-  animation: moveBack .5s 1.4s forwards;
+  animation: moveBack .5s 1s forwards;
 }
 
 @keyframes moveBack {
@@ -998,53 +998,43 @@ Projects
     transform: scale(1);
   }
 
-  12.5% {
-    transform: scale(1.5);
-    opacity: 1;
-  }
-
   25% {
     transform: scale(2);
     opacity: 1;
   }
 
-  50% {
-    transform: scale(1.3);
-    opacity: 1;
-  }
-
   75% {
     opacity: 1;
-    transform: scale(.6);
+    transform: scale(1);
   }
 
   85% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(.6);
   }
 
   95% {
-    transform: scale(1.1);
+    transform: scale(.6);
     opacity: 1;
   }
 
   100% {
-    transform: scale(1);
+    transform: scale(.6);
     opacity: 1;
   }
 }
 
 .project.fade-in .project-tools li:nth-child(2) i {
-  animation-delay: .7s;
+  animation-delay: .6s;
 }
 
 .project.fade-in .project-tools li:nth-child(3) i {
-  animation-delay: .9s
+  animation-delay: .7s
 }
 
 .tools-list span {
   display: inline-block;
-  margin: 0 .5rem !important;
+  /* margin: 0 .5rem !important; */
   opacity: 0;
   display: none;
 }
@@ -1152,7 +1142,6 @@ Projects
   transform: translate(-50%, -50%);
   display: grid;
   place-items: center;
-  transition: 0.3s;
 }
 
 .project-marker svg {
@@ -1166,7 +1155,7 @@ Projects
 }
 
 .project.fade-in .project-marker {
-  animation: markerPop .4s ease-in forwards;
+  animation: markerPop .4s ease-in-out forwards;
 }
 
 @keyframes markerPop {
@@ -1381,7 +1370,7 @@ textarea {
 }
 
 .mail-form.fade-in .email-card {
-  animation: mailCardAppear .6s .65s linear forwards;
+  animation: mailCardAppear .5s .65s linear forwards;
 }
 
 @keyframes mailCardAppear {

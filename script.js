@@ -156,9 +156,9 @@ window.addEventListener("scroll", function () {
       projects[p].classList.add("fade-in");
 
       // Tools animation font size cant be done with css 2 animations conflict;
-      this.setTimeout(() => {
-        projectTools[p].children[0].children.forEach(li => li.firstChild.style.fontSize = "2rem");
-      }, 1400)
+      // this.setTimeout(() => {
+      //   projectTools[p].children[0].children.forEach(li => li.firstChild.style.fontSize = "2rem");
+      // }, 1000)
 
 
       if (p == 0 || p == 2) {
