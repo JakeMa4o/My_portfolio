@@ -581,7 +581,7 @@ About
 }
 
 .about-info.fade-in .tech-stack {
-  animation: techLanding .4s 1.8s ease 1 forwards;
+  animation: techLanding .4s 1.9s ease 1 forwards;
 }
 
 .about-info.fade-in .tech-stack .tech-icon i {
@@ -589,7 +589,7 @@ About
 }
 
 .about-info.fade-in .tech-stack .tech-icon span {
-  animation: textShowUp .5s 1.4s forwards;
+  animation: textShowUp .4s 1.4s forwards;
 }
 
 @keyframes techLanding {
@@ -989,7 +989,7 @@ Projects
 
 .project.fade-in .project-tools li i {
   /* display: block; */
-  animation: bounceProjectIcons linear .6s .5s forwards;
+  animation: bounceProjectIcons linear .5s .5s forwards;
 }
 
 @keyframes bounceProjectIcons {
@@ -998,19 +998,34 @@ Projects
     transform: scale(1);
   }
 
-  25% {
+  12.5% {
     transform: scale(1.5);
     opacity: 1;
   }
 
-  50% {
+  25% {
     transform: scale(2);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.3);
     opacity: 1;
   }
 
   75% {
     opacity: 1;
-    transform: scale(.85);
+    transform: scale(.6);
+  }
+
+  85% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  95% {
+    transform: scale(1.1);
+    opacity: 1;
   }
 
   100% {
@@ -1020,11 +1035,11 @@ Projects
 }
 
 .project.fade-in .project-tools li:nth-child(2) i {
-  animation-delay: .8s;
+  animation-delay: .7s;
 }
 
 .project.fade-in .project-tools li:nth-child(3) i {
-  animation-delay: 1.1s
+  animation-delay: .9s
 }
 
 .tools-list span {
@@ -1366,7 +1381,7 @@ textarea {
 }
 
 .mail-form.fade-in .email-card {
-  animation: mailCardAppear .6s .7s linear forwards;
+  animation: mailCardAppear .6s .65s linear forwards;
 }
 
 @keyframes mailCardAppear {
@@ -1399,7 +1414,7 @@ textarea {
 
 @media screen and (min-width: 576px) {
   .mail-form.fade-in .email-card {
-    animation: mailCardAppear .8s 1s linear forwards;
+    animation: mailCardAppear .6s .75s linear forwards;
   }
 
   @keyframes mailCardAppear {
