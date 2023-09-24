@@ -997,6 +997,7 @@ Projects
     opacity: 0;
     transform: scale(1);
   }
+
   25% {
     transform: scale(1.5);
     opacity: 1;
@@ -1124,54 +1125,38 @@ Projects
 }
 
 .project-marker {
-  width: 1rem;
-  height: 1rem;
-  border: 2px solid var(--clr-grey-1);
+  width: 4rem;
+  height: 4rem;
+  /* opacity: .5; */
+  /* border: 2px solid var(--clr-grey-1); */
   border-radius: 50%;
-  /* background-color: var(--clr-grey-1); */
   position: absolute;
   inset: 0;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -70%);
+  transform: translate(-50%, -50%);
   display: grid;
   place-items: center;
   transition: 0.3s;
-  color: var(--clr-grey-1);
-  /* transform: scale(.5); */
 }
 
-.project-marker.marker-idle {
-  animation: projectMarker 2s linear infinite;
+.project-marker svg {
+  width: 100%;
+  height: 100%;
 }
 
-@keyframes projectMarker {
-  0% {
-    opacity: 0;
-    /* transform: scale(1); */
-    width: 1rem;
-    height: 1rem;
-    /* width: .75rem;
-    height: .75rem; */
-  }
+.project-height:nth-child(1) .project-marker {
+  width: 2rem;
+  height: 2rem;
+}
 
-  50% {
-    opacity: 1;
-    /* transform: scale(3); */
-    width: 3rem;
-    height: 3rem;
-    /* width: 1.5rem;
-    height: 1.5rem; */
-  }
+.project-height:nth-child(4) .project-marker {
+  width: 6rem;
+  height: 6rem;
+}
 
-  100% {
-    opacity: 0;
-    width: 1rem;
-    height: 1rem;
-    /* transform: scale(1); */
-    /* width: .75rem;
-    height: .75rem; */
-  }
+.project-height:nth-child(1) .project-marker {
+  border: 2px solid var(--clr-grey-1);
 }
 
 .project.fade-in .project-marker {
@@ -1179,15 +1164,9 @@ Projects
 }
 
 @keyframes markerPop {
-  10% {
-    opacity: 1;
-  }
-
   to {
     opacity: 0;
-    width: 20rem;
-    height: 20rem;
-    /* border-radius: 0%; */
+    transform: translate(100%, -50%);
   }
 }
 
@@ -1403,19 +1382,23 @@ textarea {
   0% {
     opacity: 0;
   }
+
   25% {
     font-size: 1rem;
   }
+
   50% {
     opacity: 1;
     font-size: 1.2rem;
     pointer-events: initial;
   }
+
   75% {
     opacity: 1;
     font-size: .85rem;
     pointer-events: initial;
   }
+
   100% {
     opacity: 1;
     font-size: 1rem;
@@ -1432,20 +1415,24 @@ textarea {
     0% {
       opacity: 0;
     }
+
     25% {
       font-size: 1rem;
       opacity: 1;
     }
+
     50% {
       opacity: 1;
       font-size: 1.5rem;
       pointer-events: initial;
     }
+
     75% {
       opacity: 1;
       font-size: 1.2rem;
       pointer-events: initial;
     }
+
     100% {
       opacity: 1;
       font-size: 1.3rem;
