@@ -280,7 +280,7 @@ Hero
   height: 100vh;
   background-color: var(--clr-grey-10);
   opacity: 0;
-  transition: all 1s;
+  transition: all .8s ease;
   margin: auto;
   z-index: -1;
 }
@@ -1151,7 +1151,7 @@ Projects
 }
 
 .project.fade-in .project-marker {
-  animation: markerPop .4s linear forwards;
+  animation: markerPop .4s ease-in forwards;
 }
 
 @keyframes markerPop {
@@ -1366,7 +1366,7 @@ textarea {
 }
 
 .mail-form.fade-in .email-card {
-  animation: mailCardAppear .6s 1s linear forwards;
+  animation: mailCardAppear .6s .7s linear forwards;
 }
 
 @keyframes mailCardAppear {
