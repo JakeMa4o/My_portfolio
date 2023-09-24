@@ -1741,6 +1741,7 @@ footer p {
 
   .project-title {
     font-size: 2rem;
+    /* font-size: 1rem; */
     padding: 0;
   }
 
@@ -1752,6 +1753,7 @@ footer p {
 
   .description {
     font-size: 1.2rem;
+    /* font-size: .8rem; */
   }
 
 }
@@ -2357,7 +2359,7 @@ footer p {
   }
 
   .mail-form {
-    max-width: 30%;
+    max-width: 50%;
   }
 
   .top-link {
@@ -2503,6 +2505,10 @@ footer p {
   .buttons-container .button {
     font-size: 1.7rem;
   }
+
+  .mail-form {
+    max-width: 45%;
+  }
 }
 
 @media screen and (min-width: 1989px) {
@@ -2510,6 +2516,13 @@ footer p {
     min-width: 115%;
   }
 }
+
+@media screen and (min-width: 2000px) {
+  .mail-form {
+    max-width: 30%;
+  }
+}
+
 
 @media screen and (min-width: 2560px) {
 
