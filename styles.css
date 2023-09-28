@@ -1176,13 +1176,13 @@ Projects
 .project.fade-in .space-marker {
   opacity: 0;
   transition: .5s ease-out;
-  transform: translate(-200%, -500%);
+  transform: translate(-50%, -500%);
 }
 
 .project.fade-in .multi-form-marker {
   opacity: 0;
   transition: .5s ease-out;
-  transform: translate(-50%, -50%) rotateZ(360deg);
+  transform: translate(-50%, -50%) rotateZ(720deg);
 }
 
 .project.fade-in .netflix-marker {
@@ -1387,6 +1387,7 @@ textarea {
   left: 50%;
   transform: translate(-50%, -60%);
   opacity: 0;
+  display: none;
   z-index: 2;
 }
 
@@ -1408,6 +1409,7 @@ textarea {
 }
 
 .mail-form.fade-in .mail-marker {
+  display: block;
   animation: openEnvelope .8s ease forwards;
 }
 
