@@ -1162,11 +1162,6 @@ Projects
   height: 100%;
 }
 
-.project-height:nth-child(4) .project-marker {
-  /* width: 6rem; */
-  /* height: 6rem; */
-}
-
 .project.fade-in .ecommerce-marker {
   opacity: 0;
   transform: translate(100%, -50%);
@@ -1383,7 +1378,7 @@ textarea {
 
 .mail-marker {
   position: absolute;
-  top: 35%;
+  top: 43%;
   left: 50%;
   transform: translate(-50%, -60%);
   opacity: 0;
@@ -1393,7 +1388,7 @@ textarea {
 
 .mail-marker-closed {
   position: absolute;
-  top: 35%;
+  top: 43%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
