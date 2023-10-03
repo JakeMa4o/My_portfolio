@@ -1163,8 +1163,8 @@ Projects
 }
 
 .project-height:nth-child(4) .project-marker {
-  width: 6rem;
-  height: 6rem;
+  /* width: 6rem; */
+  /* height: 6rem; */
 }
 
 .project.fade-in .ecommerce-marker {
