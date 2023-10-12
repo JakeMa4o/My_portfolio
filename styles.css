@@ -1394,15 +1394,6 @@ textarea {
   z-index: 1;
 }
 
-@media screen and (min-width: 748px) {
-  .mail-marker,
-  .mail-marker-closed  {
-    /* width: 4rem !important;
-    height: 4rem !important; */
-    display: none;
-  }
-}
-
 .mail-form.fade-in .mail-marker {
   display: block;
   animation: openEnvelope .8s ease forwards;
@@ -1432,6 +1423,16 @@ textarea {
     opacity: 0;
     display: none;
   }
+}
+
+@media screen and (min-width: 748px) {
+  .mail-marker,
+  .mail-marker-closed,
+  .mail-form.fade-in .mail-marker  {
+    /* width: 4rem !important;
+    height: 4rem !important; */
+    display: none;
+  } 
 }
 
 .mail-form.fade-in .name::after,
