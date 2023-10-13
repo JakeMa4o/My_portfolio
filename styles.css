@@ -279,7 +279,7 @@ Hero
   left: 50%;
   transform: translate(-50%, -50%); */
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--clr-grey-10);
   opacity: 0;
   transition: all .8s ease;
@@ -999,6 +999,11 @@ Projects
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+.project-reminder {
+  font-size: 1rem;
+  color: pink;
 }
 
 

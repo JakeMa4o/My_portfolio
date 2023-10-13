@@ -32,7 +32,6 @@ const bgObserver = new IntersectionObserver(entries => {
     if (entry.isIntersecting) {
       hero.style.transform = `translateY(${window.scrollY + entry.target.getBoundingClientRect().top}px)`
       hero.style.height = entry.target.getBoundingClientRect().height + "px";
-      console.log(entry.target.children[0])
     }
   })
 }, {
