@@ -484,32 +484,6 @@ About
 ========  
 */
 
-.hero-background.hero-animate {
-  animation: borderAnim 3.5s 1s ease-in-out infinite;
-}
-
-@keyframes borderAnim {
-  0% {
-    border-radius: 64% 36% 70% 30% / 44% 62% 38% 56%;
-  }
-
-  25% {
-    border-radius: 64% 36% 70% 30% / 55% 59% 41% 45%;
-  }
-
-  50% {
-    border-radius: 64% 36% 70% 30% / 43% 67% 33% 57%;
-  }
-
-  75% {
-    border-radius: 71% 29% 70% 30% / 32% 72% 28% 68%;
-  }
-
-  100% {
-    border-radius: 64% 36% 70% 30% / 44% 62% 38% 56%;
-  }
-}
-
 
 #about {
   /* padding: 5rem 0; */
@@ -525,6 +499,7 @@ About
   /* text-align: center; */
   /* border: 1px solid #000; */
   width: fit-content;
+  position: relative;
 }
 
 .my-text {
@@ -550,6 +525,52 @@ About
   position: relative;
   transform: translateX(20rem);
   opacity: 0;
+}
+
+.about-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -300%);
+  width: 100%;
+  height: 100%;
+  background-color: hsl(210, 36%, 96%);
+  opacity: 0;
+  transition: all .5s ease;
+}
+
+.about-info.fade-out .about-background {
+  transform: translate(-50%, 100%);
+  opacity: 0;
+}
+
+.about-info.fade-in .about-background {
+  border-radius: 64% 36% 70% 30% / 44% 62% 38% 56%;
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  animation: borderAnim 3.5s ease-in-out infinite;
+}
+
+@keyframes borderAnim {
+  0% {
+    border-radius: 64% 36% 70% 30% / 44% 62% 38% 56%;
+  }
+
+  25% {
+    border-radius: 64% 36% 70% 30% / 55% 59% 41% 45%;
+  }
+
+  50% {
+    border-radius: 64% 36% 70% 30% / 43% 67% 33% 57%;
+  }
+
+  75% {
+    border-radius: 71% 29% 70% 30% / 32% 72% 28% 68%;
+  }
+
+  100% {
+    border-radius: 64% 36% 70% 30% / 44% 62% 38% 56%;
+  }
 }
 
 .about-info.fade-in .my-text h2,
@@ -915,8 +936,26 @@ Projects
   /* height: 100%; */
 }
 
-.project-info.setBackground {
+.project-height .project.fade-in .background-div {
+  transform: translateX(0);
+}
+
+.background-div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
   background-color: hsl(210, 36%, 96%);
+  transition: transform .5s ease;
+}
+
+.project-height:nth-child(odd) .background-div {
+  transform: translateX(-100%);
+}
+
+.project-height:nth-child(even) .background-div {
+  transform: translateX(100%);
 }
 
 .project-title {
@@ -1232,6 +1271,7 @@ Contact Me
 .email-card {
   text-align: center;
   padding: 1.5rem 1rem;
+  position: relative;
   /* font-size: 1.3rem; */
   margin: auto;
   width: 100%;
@@ -1380,6 +1420,31 @@ textarea {
 .mail-form.fade-in textarea,
 .mail-form.fade-in .form-button {
   animation: mailFadeIn .5s 1s ease forwards;
+}
+
+.mail-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* opacity: 0; */
+  transform: scale(0.1);
+  background-color: hsl(210, 36%, 96%);
+}
+
+.mail-form.fade-in .mail-background {
+  animation: mailBackAppear .5s ease .7s forwards;
+  /* opacity: 1; */
+  /* transform: scale(1); */
+  /* transition: transform .5s ease; */
+}
+
+@keyframes mailBackAppear {
+  to {
+    opacity: 1;
+  transform: scale(1);
+  }
 }
 
 .mail-marker {
@@ -1979,6 +2044,12 @@ footer p {
     font-size: 1rem;
   }
 
+}
+
+@media screen and (min-width: 742px) {
+  .about-background {
+    height: 300%;
+  }
 }
 
 

@@ -11,17 +11,38 @@ window.addEventListener("load", function () {
 
 // ********** Intersection observer Sections FadeIn Animation **********
 const sections = document.querySelectorAll(".entry");
+const bgSections = document.querySelectorAll(".bg-entry");
 
+// Sections Fade in
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     entry.target.classList.toggle("fade-in", entry.isIntersecting);
-    // console.log(entry.target.children[1])
   })
+}, {
+  threshold: .5
 })
 
 sections.forEach(section => {
   observer.observe(section);
 })
+
+// Background translate
+const bgObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      hero.style.transform = `translateY(${window.scrollY + entry.target.getBoundingClientRect().top}px)`
+      hero.style.height = entry.target.getBoundingClientRect().height + "px";
+      console.log(entry.target.children[0])
+    }
+  })
+}, {
+  threshold: .5
+})
+
+bgSections.forEach(bgSection => {
+  bgObserver.observe(bgSection);
+})
+
 
 
 
