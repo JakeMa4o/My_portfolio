@@ -1247,11 +1247,19 @@ Contact Me
 */
 
 #contact-me {
-  padding: 3rem 0;
+  /* padding: 3rem 0; */
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+#contact-me .container {
+  width: 100%;
 }
 
 .contact-container {
   position: relative;
+  width: 100%;
 }
 
 #contact-form {
@@ -2435,7 +2443,7 @@ footer p {
   }
 
   #contact-me {
-    padding-bottom: 10rem;
+    /* padding-bottom: 10rem; */
   }
 }
 
