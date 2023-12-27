@@ -59,6 +59,7 @@ emailCard.addEventListener("click", function () {
 
 
 // ********** Mail Form ************
+const form = document.querySelector("#contact-form");
 const inputs = document.querySelectorAll("input:not(input[type=hidden])");
 const textArea = document.querySelector("textarea");
 const formResult = document.querySelector(".form-result");
@@ -77,50 +78,53 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
   event.preventDefault();
   // generate a five digit number for the contact_number variable
   // this.contact_number.value = Math.random() * 100000 | 0;
-  // Here goes the loader
-  loaderRect.style.display = "block";
-  loader.style.opacity = 1;
-  loader.style.transform = "translateY(0)";
-  loader.style.zIndex = 100;
+
+  loader.classList.add("animate-loader");
+
   // these IDs from the previous steps
   // emailjs.sendForm('service_fz0d1dc', 'my_template', this)
-    // .then(function () {
+  // .then(function () {
 
-      inputs.forEach(input => {
-        input.value = "";
-        textArea.value = "";
-      })
-      setTimeout(() => {
-        loaderRect.style.display = "none";
-        formResult.style.color = "hsla(182, 63%, 54%)";
-        formResult.innerHTML = "Thank You!";
-      }, 1500)
+  inputs.forEach(input => {
+    input.value = "";
+    textArea.value = "";
+  })
+  setTimeout(() => {
+    loaderRect.style.display = "none";
+    formResult.style.color = "hsla(182, 63%, 54%)";
+    formResult.innerHTML = "Thank You!";
+  }, 2500)
 
-      setTimeout(() => {
-        loader.style.transform = "translateY(-50rem)";
-        formResult.innerHTML = "";
-      }, 2500)
-      setTimeout(() => {
-        loader.style.zIndex = -100;
-        loader.style.opacity = 0;
-      }, 2800)
-      
-    // }, 
-    // function (error) {
-    //   console.log('FAILED...', error);
-    //   loaderRect.style.display = "none";
-    //   formResult.style.color = "red";
-    //   formResult.innerHTML = "Oops! Something went wrong. Please email: zhalgasmiyatbekov@gmail.com!";
-    //   setTimeout(() => {
-    //     loader.style.transform = "translateY(-10rem)";
-    //     loader.style.zIndex = -100;
-    //     formResult.innerHTML = "";
-    //   }, 2500)
-    //   setTimeout(() => {
-    //     loader.style.opacity = 0;
-    //   }, 2600)
-    // }
-    // );
+  setTimeout(() => {
+    formResult.classList.add("fadeOut");
+  }, 3000)
+  setTimeout(() => {
+    loader.classList.add("pullUpLoader");
+    // loader.style.zIndex = -100;
+    form.style.opacity = "0";
+    // form.style.display = "none";
+  }, 3500)
+
+  setTimeout(() => {
+    form.style.display = "none";
+  }, 4000)
+
+  // }, 
+  // function (error) {
+  //   console.log('FAILED...', error);
+  //   loaderRect.style.display = "none";
+  //   formResult.style.color = "red";
+  //   formResult.innerHTML = "Oops! Something went wrong. Please email: zhalgasmiyatbekov@gmail.com!";
+  //   setTimeout(() => {
+  //     loader.style.transform = "translateY(-10rem)";
+  //     loader.style.zIndex = -100;
+  //     formResult.innerHTML = "";
+  //   }, 2500)
+  //   setTimeout(() => {
+  //     loader.style.opacity = 0;
+  //   }, 2600)
+  // }
+  // );
 });
 
 
