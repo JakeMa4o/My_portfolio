@@ -96,6 +96,7 @@ img {
 
 img {
   display: block;
+  user-select: none;
 }
 
 h1,
@@ -121,7 +122,8 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
+  /* font-size: 2rem; */
+  font-size: 1.5rem;
 }
 
 h3 {
@@ -200,6 +202,31 @@ p {
   padding: 0 1rem;
 }
 
+.box {
+  padding: 10px;
+  margin-left: -10px;
+  margin-top: -10px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  position: absolute;
+  transform: scale(2);
+}
+
+.box.animateIt {
+  animation: animBox .3s ease;
+}
+
+@keyframes animBox {
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}
 
 /*
 ========
@@ -213,6 +240,7 @@ Hero
   display: grid;
   place-items: center;
   position: relative;
+  user-select: none;
 }
 
 .hero .container {
@@ -239,7 +267,7 @@ Hero
 @keyframes scrollTip {
   0% {
     transform: translate(-50%, 700%) scale(1);
-    opacity: 0.5;
+    opacity: 0;
   }
 
   50% {
@@ -249,7 +277,7 @@ Hero
 
   100% {
     transform: translate(-50%, 700%) scale(1);
-    opacity: 0.5;
+    opacity: 0;
   }
 }
 
@@ -961,7 +989,7 @@ Projects
 
 .project.fade-in .project-tools li i {
   /* display: block; */
-  animation: bounceProjectIcons .3s .5s ease forwards;
+  animation: bounceProjectIcons .3s .5s linear forwards;
 }
 
 @keyframes bounceProjectIcons {
@@ -1130,6 +1158,11 @@ Projects
   height: 100%;
 }
 
+.multi-form-marker {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
 .project.fade-in .ecommerce-marker {
   opacity: 0;
   transform: translate(100%, -50%);
@@ -1139,7 +1172,7 @@ Projects
 .project.fade-in .space-marker {
   opacity: 0;
   transition: .5s ease-out;
-  transform: translate(-50%, -500%);
+  transform: translate(-200%, -50%);
 }
 
 .project.fade-in .multi-form-marker {
@@ -1174,6 +1207,7 @@ Contact Me
 .contact-container {
   position: relative;
   width: 100%;
+  padding: 1rem 0;
 }
 
 #contact-form {
@@ -1201,7 +1235,7 @@ Contact Me
 
 .email-card {
   text-align: center;
-  padding: 1.5rem 1rem;
+  padding: 1rem;
   position: relative;
   /* font-size: 1.3rem; */
   margin: auto;
@@ -1354,63 +1388,24 @@ textarea {
   animation: mailFadeIn .3s .9s ease forwards;
 }
 
-
 .mail-marker {
-  position: absolute;
-  top: 43%;
-  left: 50%;
-  transform: translate(-50%, -60%);
-  opacity: 0;
-  display: none;
-  z-index: 2;
-}
-
-.mail-marker-closed {
   position: absolute;
   top: 43%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  transition: .3s ease;
 }
 
 .mail-form.fade-in .mail-marker {
-  display: block;
-  animation: openEnvelope .8s ease forwards;
+  opacity: 0;
 }
 
-.mail-form.fade-in .mail-marker-closed {
-  animation: envelope .3s ease forwards;
-}
-
-@keyframes envelope {
-  to {
-    opacity: 0;
-    display: none;
-  }
-}
-
-@keyframes openEnvelope {
-  0% {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-    display: none;
-  }
-}
 
 @media screen and (min-width: 748px) {
 
   .mail-marker,
-  .mail-marker-closed,
   .mail-form.fade-in .mail-marker {
-    /* width: 4rem !important;
-    height: 4rem !important; */
     display: none;
   }
 }
@@ -1678,13 +1673,17 @@ footer p {
   color: var(--clr-grey-1);
   padding: 0 1rem 1rem;
   /* margin-bottom: 1.5rem; */
+  opacity: 0;
+}
+
+.mail-form.fade-in .top-link {
   animation: scrollUp 2s 1.3s ease-in-out infinite;
 }
 
 @keyframes scrollUp {
   0% {
     transform: translateY(0) scale(1);
-    opacity: 0.5;
+    opacity: 0;
   }
 
   50% {
@@ -1694,7 +1693,7 @@ footer p {
 
   100% {
     transform: translateY(0) scale(1);
-    opacity: 0.5;
+    opacity: 0;
   }
 }
 

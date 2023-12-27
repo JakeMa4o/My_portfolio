@@ -1,3 +1,19 @@
+// Click
+addEventListener('click', createBox);
+
+function createBox(event) {
+  var box = document.createElement('div');
+  box.className = 'box';
+  box.style.left = event.pageX + 'px';
+  box.style.top = event.pageY + 'px';
+  document.body.appendChild(box);
+  box.classList.add("animateIt");
+  setTimeout(() => {
+    document.body.removeChild(box);
+  }, 300);
+}
+
+
 // Hero Background
 const hero = document.querySelector(".hero-background");
 
