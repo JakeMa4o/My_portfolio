@@ -28,14 +28,16 @@ window.addEventListener("load", function () {
 // ********** Intersection observer Sections FadeIn Animation **********
 const sections = document.querySelectorAll(".entry");
 const bgSections = document.querySelectorAll(".bg-entry");
+// const 
 
 // Sections Fade in
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     entry.target.classList.toggle("fade-in", entry.isIntersecting);
+    if((entry.target.classList.contains("mail-form") && entry.isIntersecting) || (entry.target.classList.contains("about-info") && entry.isIntersecting)) observer.unobserve(entry.target);
   })
 }, {
-  threshold: .5
+  threshold: .8
 })
 
 sections.forEach(section => {
