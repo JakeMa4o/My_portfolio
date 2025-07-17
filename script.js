@@ -168,3 +168,35 @@ date.innerHTML = new Date().getFullYear();
 //     title: "Hello World!",
 //   });
 // }
+
+
+
+
+//  Scroll carousel
+const scrollSections = document.querySelectorAll('#hero, #about, .project-height, #contact-me, footer')
+let currentIndex = 0;
+let isScrolling = false;
+
+
+function scrollToSection(index) {
+  if (index < 0 || index >= scrollSections.length) return;
+
+  isScrolling = true;
+  scrollSections[index].scrollIntoView({ behavior:'smooth'});
+
+  setTimeout(() => {
+    isScrolling = false;
+    currentIndex = index;
+  }, 1000)
+}
+
+window.addEventListener('wheel', (e) => {
+  e.preventDefault();
+  if (isScrolling) return;
+
+  if (e.deltaY > 0) {
+    scrollToSection(currentIndex + 1);
+  } else {
+    scrollToSection(currentIndex - 1);
+  }
+}, {passive: false});
