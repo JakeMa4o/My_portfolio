@@ -125,6 +125,7 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
 
   setTimeout(() => {
     form.style.display = "none";
+    topLink.classList.add('moved');
   }, 4000)
 
   // }, 
@@ -178,7 +179,7 @@ const contactMeBtn = document.querySelector('a#contact-me-btn');
 const topLink = document.querySelector('.top-link');
 
 topLink.addEventListener('click', (e) => {
-  e.preventDefault();
+  console.log('hi')
   scrollToSection(0)
 })
 
@@ -217,21 +218,7 @@ window.addEventListener('wheel', (e) => {
   }
 }, {passive: false});
 
-
-
-// Scroll on keydown
-window.addEventListener('keydown', (e) => {
-  e.preventDefault();
-  if (isScrolling) return;
-
-  if (e.key === 'ArrowDown') {
-    e.preventDefault();
-    scrollToSection(currentIndex + 1);
-  } else if (e.key === 'ArrowUp') {
-    e.preventDefault();
-    scrollToSection(currentIndex - 1);
-  }
-})
+scrollToSection(0);
 
 
 // Scroll Mobile
@@ -240,7 +227,6 @@ let isTouchLocked = false;
 
 window.addEventListener('touchstart', (e) => {
   touchStartY = e.touches[0].clientY;
-  console.log(touchStartY)
   isTouchLocked = false;
 }, { passive: true });
 
@@ -250,7 +236,6 @@ window.addEventListener('touchmove', (e) => {
 
   const currentY = e.touches[0].clientY;
   const delta = touchStartY - currentY;
-  console.log('delta', delta);
 
   if (Math.abs(delta) > 30) {
     isTouchLocked = true;
