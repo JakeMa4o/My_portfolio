@@ -1,7 +1,7 @@
 // Click
-addEventListener('click', createBox);
+addEventListener('click', createCircle);
 
-function createBox(event) {
+function createCircle(event) {
   var box = document.createElement('div');
   box.className = 'box';
   box.style.left = event.pageX + 'px';
@@ -172,6 +172,22 @@ date.innerHTML = new Date().getFullYear();
 
 
 
+
+
+const contactMeBtn = document.querySelector('a#contact-me-btn');
+const topLink = document.querySelector('.top-link');
+
+topLink.addEventListener('click', (e) => {
+  e.preventDefault();
+  scrollToSection(0)
+})
+
+contactMeBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  scrollToSection(scrollSections.length - 2)
+  // console.log(scrollSections.length - 2)
+})
+
 //  Scroll carousel
 const scrollSections = document.querySelectorAll('#hero, #about, .project-height, #contact-me, footer')
 let currentIndex = 0;
@@ -200,3 +216,49 @@ window.addEventListener('wheel', (e) => {
     scrollToSection(currentIndex - 1);
   }
 }, {passive: false});
+
+
+
+// Scroll on keydown
+window.addEventListener('keydown', (e) => {
+  e.preventDefault();
+  if (isScrolling) return;
+
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    scrollToSection(currentIndex + 1);
+  } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    scrollToSection(currentIndex - 1);
+  }
+})
+
+
+// Scroll Mobile
+let touchStartY = 0;
+let isTouchLocked = false;
+
+window.addEventListener('touchstart', (e) => {
+  touchStartY = e.touches[0].clientY;
+  console.log(touchStartY)
+  isTouchLocked = false;
+}, { passive: true });
+
+window.addEventListener('touchmove', (e) => {
+  e.preventDefault();
+  if (isScrolling || isTouchLocked) return;
+
+  const currentY = e.touches[0].clientY;
+  const delta = touchStartY - currentY;
+  console.log('delta', delta);
+
+  if (Math.abs(delta) > 30) {
+    isTouchLocked = true;
+
+    if (delta > 0) {
+      scrollToSection(currentIndex + 1); // свайп вверх → вниз
+    } else {
+      scrollToSection(currentIndex - 1); // свайп вниз → вверх
+    }
+  }
+}, { passive: false });
