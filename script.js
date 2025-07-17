@@ -219,7 +219,7 @@ window.addEventListener('wheel', (e) => {
 
 
 
-// TODO Scroll on keydown
+// Scroll on keydown
 window.addEventListener('keydown', (e) => {
   e.preventDefault();
   if (isScrolling) return;
@@ -233,35 +233,32 @@ window.addEventListener('keydown', (e) => {
   }
 })
 
-// TODO Scroll Mobile
 
-// let touchStartY = 0;
-// // let touchEndY = 0;
-// let isTouchLocked = false;
+// Scroll Mobile
+let touchStartY = 0;
+let isTouchLocked = false;
 
-// window.addEventListener('touchstart', (e) => {
-//   e.preventDefault();
-//   touchStartY = e.changedTouches[0].clientY;
-// }, { passive: false });
+window.addEventListener('touchstart', (e) => {
+  touchStartY = e.touches[0].clientY;
+  console.log(touchStartY)
+  isTouchLocked = false;
+}, { passive: true });
 
-// window.addEventListener('touchend', (e) => {
-//   e.preventDefault();
-//   if (isScrolling) return;
+window.addEventListener('touchmove', (e) => {
+  e.preventDefault();
+  if (isScrolling || isTouchLocked) return;
 
-//   touchEndY = e.changedTouches[0].clientY;
-//   handleSwipeGesture();
-// }, { passive: false });
+  const currentY = e.touches[0].clientY;
+  const delta = touchStartY - currentY;
+  console.log('delta', delta);
 
-// function handleSwipeGesture() {
-//   const delta = touchStartY - touchEndY;
+  if (Math.abs(delta) > 30) {
+    isTouchLocked = true;
 
-//   if (Math.abs(delta) < 10) return; // минимальный порог свайпа
-
-//   if (delta > 0) {
-//     // свайп вверх
-//     scrollToSection(currentIndex + 1);
-//   } else {
-//     // свайп вниз
-//     scrollToSection(currentIndex - 1);
-//   }
-// }
+    if (delta > 0) {
+      scrollToSection(currentIndex + 1); // свайп вверх → вниз
+    } else {
+      scrollToSection(currentIndex - 1); // свайп вниз → вверх
+    }
+  }
+}, { passive: false });
