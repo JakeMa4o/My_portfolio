@@ -1714,11 +1714,11 @@ Footer
   /* background: rgb(18, 30, 39); */
   /* background: rgb(23, 50, 69); */
   /* padding: 2rem 1rem; */
-  padding-top: 2rem;
+  /* padding-top: 2rem; */
   width: 100%;
   font-size: 1.3rem;
   position: relative;
-  background-color: var(--clr-grey-10);
+  /* background-color: var(--clr-grey-10); */
 }
 
 .footer {

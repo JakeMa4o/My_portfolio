@@ -33,8 +33,12 @@ const bgSections = document.querySelectorAll(".bg-entry");
 // Sections Fade in
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    entry.target.classList.toggle("fade-in", entry.isIntersecting);
-    if((entry.target.classList.contains("mail-form") && entry.isIntersecting) || (entry.target.classList.contains("about-info") && entry.isIntersecting)) observer.unobserve(entry.target);
+    // entry.target.classList.toggle("fade-in", entry.isIntersecting);
+    // if((entry.target.classList.contains("mail-form") && entry.isIntersecting) || (entry.target.classList.contains("about-info") && entry.isIntersecting)) observer.unobserve(entry.target);
+    if (entry.isIntersecting) {
+      entry.target.classList.add("fade-in");
+      observer.unobserve(entry.target);
+    }
   })
 }, {
   threshold: .8
