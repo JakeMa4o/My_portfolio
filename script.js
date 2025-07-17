@@ -1,7 +1,7 @@
 // Click
-addEventListener('click', createBox);
+addEventListener('click', createCircle);
 
-function createBox(event) {
+function createCircle(event) {
   var box = document.createElement('div');
   box.className = 'box';
   box.style.left = event.pageX + 'px';
@@ -172,6 +172,22 @@ date.innerHTML = new Date().getFullYear();
 
 
 
+
+
+const contactMeBtn = document.querySelector('a#contact-me-btn');
+const topLink = document.querySelector('.top-link');
+
+topLink.addEventListener('click', (e) => {
+  e.preventDefault();
+  scrollToSection(0)
+})
+
+contactMeBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  scrollToSection(scrollSections.length - 2)
+  // console.log(scrollSections.length - 2)
+})
+
 //  Scroll carousel
 const scrollSections = document.querySelectorAll('#hero, #about, .project-height, #contact-me, footer')
 let currentIndex = 0;
@@ -200,3 +216,52 @@ window.addEventListener('wheel', (e) => {
     scrollToSection(currentIndex - 1);
   }
 }, {passive: false});
+
+
+
+// TODO Scroll on keydown
+window.addEventListener('keydown', (e) => {
+  e.preventDefault();
+  if (isScrolling) return;
+
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    scrollToSection(currentIndex + 1);
+  } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    scrollToSection(currentIndex - 1);
+  }
+})
+
+// TODO Scroll Mobile
+
+// let touchStartY = 0;
+// // let touchEndY = 0;
+// let isTouchLocked = false;
+
+// window.addEventListener('touchstart', (e) => {
+//   e.preventDefault();
+//   touchStartY = e.changedTouches[0].clientY;
+// }, { passive: false });
+
+// window.addEventListener('touchend', (e) => {
+//   e.preventDefault();
+//   if (isScrolling) return;
+
+//   touchEndY = e.changedTouches[0].clientY;
+//   handleSwipeGesture();
+// }, { passive: false });
+
+// function handleSwipeGesture() {
+//   const delta = touchStartY - touchEndY;
+
+//   if (Math.abs(delta) < 10) return; // минимальный порог свайпа
+
+//   if (delta > 0) {
+//     // свайп вверх
+//     scrollToSection(currentIndex + 1);
+//   } else {
+//     // свайп вниз
+//     scrollToSection(currentIndex - 1);
+//   }
+// }

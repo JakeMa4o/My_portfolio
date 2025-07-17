@@ -1195,7 +1195,7 @@ Contact Me
 
 #contact-me {
   /* padding: 3rem 0; */
-  min-height: 100vh;
+  height: 100vh;
   display: grid;
   place-items: center;
 }
@@ -1217,7 +1217,7 @@ Contact Me
 }
 
 .mail-form {
-  padding: 3rem 0;
+  /* padding: 3rem 0; */
   position: relative;
   flex: 1;
 }
@@ -1623,20 +1623,20 @@ Footer
 
 #footer {
   /* background: rgb(18, 30, 39); */
-  background: rgb(23, 50, 69);
-  padding: 2rem 1rem;
+  /* background: rgb(23, 50, 69); */
+  /* padding: 2rem 1rem; */
+  padding-top: 2rem;
   width: 100%;
   font-size: 1.3rem;
   position: relative;
 }
 
 .footer {
-  width: 70%;
-  margin: auto;
-}
+  padding: 2rem 1rem;
 
-.footer p {
-  margin-bottom: .6rem;
+  background: rgb(23, 50, 69);
+  /* width: 70%; */
+  margin: auto;
 }
 
 .footer-medias {
@@ -2213,6 +2213,10 @@ footer p {
 
   .project-info {
     font-size: 1.2rem;
+  }
+
+  .footer p {
+    margin-bottom: .6rem;
   }
 }
 
