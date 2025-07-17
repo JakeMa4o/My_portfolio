@@ -27,6 +27,20 @@ window.addEventListener("load", function () {
 
 // ********** Intersection observer Sections FadeIn Animation **********
 const sections = document.querySelectorAll(".entry");
+
+
+function setVhUnit () {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+setVhUnit();
+window.addEventListener('resize', setVhUnit);
+
+
+
+
+
 const bgSections = document.querySelectorAll(".bg-entry");
 // const 
 

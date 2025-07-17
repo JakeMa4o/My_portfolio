@@ -46,6 +46,7 @@ Variables
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --max-width: 1170px;
   --fixed-width: 620px;
+  --vh: 100%;
 }
 
 /*
@@ -53,6 +54,10 @@ Variables
 Global Styles
 ===============
 */
+.section {
+  height: calc(var(--vh, 1vh) * 100);
+}
+
 html {
   scroll-behavior: smooth;
 }
