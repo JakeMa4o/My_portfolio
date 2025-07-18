@@ -208,29 +208,33 @@ p {
 }
 
 .box {
-  padding: 10px;
-  margin-left: -10px;
-  margin-top: -10px;
+  width: 1.7rem;
+  height: 1.7rem;
   border-radius: 50%;
-  border: 1px solid #000;
+  border: 1px solid var(--clr-grey-5);
   position: absolute;
   z-index: 99;
-  transform: scale(2);
+  transform: translate(-0.8rem, -0.8rem) scale(3);
 }
 
 .box.animateIt {
-  animation: animBox .3s ease;
+  animation: animBox 0.4s ease;
 }
 
 @keyframes animBox {
+  0% {
+    transform: translate(-0.8rem, -0.8rem) scale(3);
+    opacity: 0;
+  }
+
   50% {
     opacity: 1;
-    transform: scale(1);
+    transform: translate(-0.8rem, -0.8rem) scale(1);
   }
 
   100% {
     opacity: 0;
-    transform: scale(2.5);
+    transform: translate(-0.8rem, -0.8rem) scale(2.5);
   }
 }
 
@@ -1274,7 +1278,7 @@ Contact Me
   overflow: hidden;
   display: grid;
   gap: 1rem;
-  width: 80%;
+  width: 85%;
   margin: 2rem auto;
 }
 
@@ -1307,7 +1311,7 @@ Contact Me
   position: relative;
   /* font-size: 1.3rem; */
   margin: auto;
-  width: 75%;
+  width: 85%;
   opacity: 0;
   display: flex;
   justify-content: center;
@@ -1370,7 +1374,7 @@ Contact Me
 
 @media screen and (max-width: 800px) {
  .mail-form .title h2{
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   } 
 }
 
@@ -1829,7 +1833,7 @@ footer p {
   top: 50%;
   transform: translateY(-50%);
   z-index: 999;
-  height: 100%;
+  height: 50%;
   display: grid;
   place-items: center;
   width: 3rem;
@@ -1871,17 +1875,38 @@ footer p {
   background-color: rgba(43, 41, 41, 0.4);
   cursor: pointer;
   transition: transform 0.3s ease;
+  display: grid;
+  place-items: center;
+}
+
+.page-dot span {
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 0.5rem;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.page-dot:hover {
+  transform: scale(1.5);
+}
+.page-dot:hover span{
+  opacity: 1;
 }
 
 .page-dot.active {
   background-color: var(--clr-grey-1);
   transform: scale(1.5);
 }
+.page-dot.active span {
+  opacity: 1;
+}
 
 @media screen and (min-width: 800px) {
-.pagination-container {
-  width: 5rem;
-}
+  .pagination-container {
+    width: 5rem;
+  }
 
   #pagination {
     gap:1rem;
@@ -1890,6 +1915,10 @@ footer p {
   .page-dot {
     width: 1.3rem;
     height: 1.3rem;
+  }
+
+  .page-dot span {
+    font-size: 0.8rem;
   }
 }
 
@@ -2402,6 +2431,10 @@ footer p {
 
 @media screen and (min-width: 1025px) {
 
+  .pagination-container {
+    height: 100%;
+  }
+
   .buttons-container {
     width: 100%;
   }
@@ -2828,7 +2861,20 @@ footer p {
 
 @media screen and (min-width: 2000px) {
   .mail-form {
-    max-width: 45%;
+    max-width: 60%;
+  }
+
+  .mail-form h2 {
+    font-size: 4rem;
+  }
+  .mail-form p {
+    font-size: 1.8rem;
+  }
+  .email-card {
+    font-size: 1.8rem;
+  }
+  #contact-form button{
+    font-size: 1.5rem;
   }
 }
 

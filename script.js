@@ -1,5 +1,9 @@
 // Click
 addEventListener('click', createCircle);
+addEventListener('dbclick', () => {
+  createCircle();
+  createCircle();
+});
 
 function createCircle(event) {
   var box = document.createElement('div');
@@ -10,7 +14,7 @@ function createCircle(event) {
   box.classList.add("animateIt");
   setTimeout(() => {
     document.body.removeChild(box);
-  }, 300);
+  }, 350);
 }
 
 
@@ -52,7 +56,7 @@ const observer = new IntersectionObserver(entries => {
     }
   })
 }, {
-  threshold: .8
+  threshold: .7
 })
 
 sections.forEach(section => {
@@ -273,6 +277,7 @@ window.addEventListener('touchend', () => {
 
 const pagination = document.getElementById('pagination');
 const paginationArea = document.querySelector('.pagination-container');
+const sectionLabels = ['H', 'A', 'P1', 'P2', 'P3', 'C', 'F'];
 
 paginationArea.addEventListener("click", (e) => {
   e.stopPropagation();
@@ -289,6 +294,10 @@ scrollSections.forEach((_, index) => {
   const dot = document.createElement('div');
   dot.classList.add('page-dot');
   if (index === 0) dot.classList.add('active');
+
+  const span = document.createElement('span');
+  span.textContent=sectionLabels[index] || ''
+  dot.appendChild(span);
 
   dot.addEventListener('click', () => {
     scrollToSection(index);
