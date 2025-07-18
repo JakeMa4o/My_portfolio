@@ -1867,9 +1867,9 @@ footer p {
   width: 0.8rem;
   height: 0.8rem;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(43, 41, 41, 0.4);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .page-dot.active {

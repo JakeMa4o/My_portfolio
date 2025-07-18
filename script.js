@@ -168,7 +168,7 @@ function scrollToSection(index) {
   setTimeout(() => {
     isScrolling = false;
     currentIndex = index;
-  }, 1000)
+  }, 800)
 }
 
 window.addEventListener('wheel', (e) => {
@@ -256,7 +256,7 @@ window.addEventListener('touchmove', (e) => {
       } else if (activeDirection === 'up') {
         scrollToSection(currentIndex - 1);
       }
-    }, 700); // повтор каждые 700 мс (можешь подогнать)
+    }, 100); // повтор каждые x мс (можешь подогнать)
   }
 }, { passive: false });
 
@@ -308,11 +308,13 @@ function scrollToSection(index) {
   if (index < 0 || index >= scrollSections.length) return;
 
   isScrolling = true;
+
+  updatePagination(index);
+
   scrollSections[index].scrollIntoView({ behavior: 'smooth' });
 
   setTimeout(() => {
     isScrolling = false;
     currentIndex = index;
-    updatePagination(index); // 👈 обновляем активную точку
-  }, 1000);
+  }, 700);
 }
