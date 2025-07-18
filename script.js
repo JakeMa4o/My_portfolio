@@ -102,11 +102,6 @@ const loader = document.querySelector(".loader-wrapper");
 const loaderRect = document.querySelector(".loader");
 
 
-(function () {
-  emailjs.init("user_Y9JvB1xXlcYgAhrtbT7Wj");
-})();
-
-
 document.getElementById('contact-form').addEventListener('submit', function (event) {
   event.preventDefault();
 

@@ -425,15 +425,15 @@ Hero
 }
 
 .social-medias li a:hover .fa-linkedin {
-  color: rgba(31, 126, 235, 0.698);
+  transform: scale(1.2);
 }
 
 .social-medias li a:hover .fa-github {
-  color: var(--clr-grey-5);
+  transform: scale(1.2);
 }
 
 .social-medias li a:hover .fa-envelope {
-  color: var(--clr-primary-8);
+  transform: scale(1.2);
 }
 
 
@@ -1159,7 +1159,10 @@ Projects
 }
 
 .button:nth-child(2) .project-link {
-  background-color: var(--clr-black);
+  /* background-color: #98617D; */
+  background-color: white;
+  color: var(--clr-grey-1);
+  border: 1px solid var(--clr-grey-1);
 }
 
 .project-link {
@@ -1277,6 +1280,13 @@ Contact Me
 .mail-form {
   position: relative;
   flex: 1;
+}
+
+.map-img {
+  display: none;
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.5s 0.5s ease;
 }
 
 #contact-me .title {
@@ -1465,6 +1475,11 @@ textarea {
 
 .mail-form.fade-in .mail-marker {
   opacity: 0;
+}
+
+.mail-form.fade-in .map-img {
+  opacity: 1;
+  transform: scale(1);
 }
 
 
@@ -2532,7 +2547,48 @@ footer p {
   }
 
   .mail-form {
-    max-width: 50%;
+    /* max-width: 50%; */
+    /* border: 1px solid #000; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 5rem auto;
+    align-items: start;
+  }
+
+  .mail-form .title {
+    padding: 1rem 0 0 1rem;
+  }
+
+  .mail-form h2 {
+    font-size: 3rem;
+    text-align: left;
+  }
+
+  .mail-form p {
+    font-size: 1.8rem;
+    text-align: left;
+  }
+
+  .email-card {
+    grid-column: 1 / 2;
+    margin: 0 auto 0 0;
+  }
+
+  #contact-form {
+    grid-column: 1 / 2;
+    margin: 2rem auto 0 0;
+  }
+
+  .map-img {
+    display: block;
+    grid-column: 2 / 3;
+    grid-row: 1 / 4;
+    padding: 1rem 3rem 0 5rem;
+  }
+
+  .map-img img {
+    max-width: 100%;
+    max-height: 100%;
   }
 
   .top-link {
@@ -2684,7 +2740,7 @@ footer p {
   }
 
   .mail-form {
-    max-width: 60%;
+    max-width: 80%;
   }
 }
 
