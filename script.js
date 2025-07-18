@@ -145,7 +145,6 @@ const contactMeBtn = document.querySelector('a#contact-me-btn');
 const topLink = document.querySelector('.top-link');
 
 topLink.addEventListener('click', (e) => {
-  console.log('hi')
   scrollToSection(0)
 })
 
@@ -187,12 +186,45 @@ scrollToSection(0);
 
 
 // Scroll Mobile
+// let touchStartY = 0;
+// let isTouchLocked = false;
+
+// window.addEventListener('touchstart', (e) => {
+//   touchStartY = e.touches[0].clientY;
+//   isTouchLocked = false;
+// }, { passive: true });
+
+// window.addEventListener('touchmove', (e) => {
+//   e.preventDefault();
+//   if (isScrolling || isTouchLocked) return;
+
+//   const currentY = e.touches[0].clientY;
+//   const delta = touchStartY - currentY;
+
+//   if (Math.abs(delta) > 30) {
+//     isTouchLocked = true;
+
+//     if (delta > 0) {
+//       scrollToSection(currentIndex + 1);
+//     } else {
+//       scrollToSection(currentIndex - 1);
+//     }
+//   }
+// }, { passive: false });
+
+
 let touchStartY = 0;
 let isTouchLocked = false;
+let autoScrollInterval = null;
+let activeDirection = null;
 
 window.addEventListener('touchstart', (e) => {
   touchStartY = e.touches[0].clientY;
   isTouchLocked = false;
+  activeDirection = null;
+
+  // очищаем на всякий случай
+  clearInterval(autoScrollInterval);
 }, { passive: true });
 
 window.addEventListener('touchmove', (e) => {
@@ -203,12 +235,33 @@ window.addEventListener('touchmove', (e) => {
   const delta = touchStartY - currentY;
 
   if (Math.abs(delta) > 30) {
+    // только при первом скролле при касании
+    if (e.cancelable) e.preventDefault();
+
     isTouchLocked = true;
 
     if (delta > 0) {
+      activeDirection = 'down';
       scrollToSection(currentIndex + 1);
     } else {
+      activeDirection = 'up';
       scrollToSection(currentIndex - 1);
     }
+
+    // начинаем авто-скролл в том же направлении
+    autoScrollInterval = setInterval(() => {
+      if (isScrolling) return;
+      if (activeDirection === 'down') {
+        scrollToSection(currentIndex + 1);
+      } else if (activeDirection === 'up') {
+        scrollToSection(currentIndex - 1);
+      }
+    }, 700); // повтор каждые 700 мс (можешь подогнать)
   }
 }, { passive: false });
+
+window.addEventListener('touchend', () => {
+  clearInterval(autoScrollInterval);
+  isTouchLocked = false;
+  activeDirection = null;
+});
