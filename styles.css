@@ -214,6 +214,7 @@ p {
   border-radius: 50%;
   border: 1px solid #000;
   position: absolute;
+  z-index: 99;
   transform: scale(2);
 }
 
