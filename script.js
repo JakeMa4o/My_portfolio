@@ -265,3 +265,54 @@ window.addEventListener('touchend', () => {
   isTouchLocked = false;
   activeDirection = null;
 });
+
+
+
+
+// Pagination
+
+const pagination = document.getElementById('pagination');
+const paginationArea = document.querySelector('.pagination-container');
+
+paginationArea.addEventListener("click", (e) => {
+  e.stopPropagation();
+  e.stopImmediatePropagation();
+  pagination.classList.add('show-pagination');
+})
+
+window.addEventListener('click', () => {
+  pagination.classList.remove('show-pagination');
+})
+
+// Создаём точки
+scrollSections.forEach((_, index) => {
+  const dot = document.createElement('div');
+  dot.classList.add('page-dot');
+  if (index === 0) dot.classList.add('active');
+
+  dot.addEventListener('click', () => {
+    scrollToSection(index);
+  });
+
+  pagination.appendChild(dot);
+});
+
+function updatePagination(index) {
+  const dots = document.querySelectorAll('.page-dot');
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+}
+
+function scrollToSection(index) {
+  if (index < 0 || index >= scrollSections.length) return;
+
+  isScrolling = true;
+  scrollSections[index].scrollIntoView({ behavior: 'smooth' });
+
+  setTimeout(() => {
+    isScrolling = false;
+    currentIndex = index;
+    updatePagination(index); // 👈 обновляем активную точку
+  }, 1000);
+}
