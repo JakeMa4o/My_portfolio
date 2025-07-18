@@ -42,13 +42,10 @@ window.addEventListener('resize', setVhUnit);
 
 
 const bgSections = document.querySelectorAll(".bg-entry");
-// const 
 
 // Sections Fade in
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    // entry.target.classList.toggle("fade-in", entry.isIntersecting);
-    // if((entry.target.classList.contains("mail-form") && entry.isIntersecting) || (entry.target.classList.contains("about-info") && entry.isIntersecting)) observer.unobserve(entry.target);
     if (entry.isIntersecting) {
       entry.target.classList.add("fade-in");
       observer.unobserve(entry.target);
@@ -112,14 +109,8 @@ const loaderRect = document.querySelector(".loader");
 
 document.getElementById('contact-form').addEventListener('submit', function (event) {
   event.preventDefault();
-  // generate a five digit number for the contact_number variable
-  // this.contact_number.value = Math.random() * 100000 | 0;
 
   loader.classList.add("animate-loader");
-
-  // these IDs from the previous steps
-  // emailjs.sendForm('service_fz0d1dc', 'my_template', this)
-  // .then(function () {
 
   inputs.forEach(input => {
     input.value = "";
@@ -136,57 +127,19 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
   }, 3000)
   setTimeout(() => {
     loader.classList.add("pullUpLoader");
-    // loader.style.zIndex = -100;
     form.style.opacity = "0";
-    // form.style.display = "none";
   }, 3500)
 
   setTimeout(() => {
     form.style.display = "none";
     topLink.classList.add('moved');
   }, 4000)
-
-  // }, 
-  // function (error) {
-  //   console.log('FAILED...', error);
-  //   loaderRect.style.display = "none";
-  //   formResult.style.color = "red";
-  //   formResult.innerHTML = "Oops! Something went wrong. Please email: zhalgasmiyatbekov@gmail.com!";
-  //   setTimeout(() => {
-  //     loader.style.transform = "translateY(-10rem)";
-  //     loader.style.zIndex = -100;
-  //     formResult.innerHTML = "";
-  //   }, 2500)
-  //   setTimeout(() => {
-  //     loader.style.opacity = 0;
-  //   }, 2600)
-  // }
-  // );
 });
 
 
 // ********** Set Date ************
 const date = document.getElementById('date');
 date.innerHTML = new Date().getFullYear();
-
-
-// ********** Map API ************
-// const googleMap = document.querySelector("#map-api");
-
-// function initMap() {
-//   let map;
-//   const myLatLng = { lat: 43.6588, lng: 51.1975 };
-//   map = new google.maps.Map(document.getElementById("map-api"), {
-//     center: myLatLng,
-//     zoom: 13,
-//   });
-
-//   new google.maps.Marker({
-//     position: myLatLng,
-//     map,
-//     title: "Hello World!",
-//   });
-// }
 
 
 
@@ -204,7 +157,6 @@ topLink.addEventListener('click', (e) => {
 contactMeBtn.addEventListener('click', (e) => {
   e.preventDefault();
   scrollToSection(scrollSections.length - 2)
-  // console.log(scrollSections.length - 2)
 })
 
 //  Scroll carousel
@@ -259,9 +211,9 @@ window.addEventListener('touchmove', (e) => {
     isTouchLocked = true;
 
     if (delta > 0) {
-      scrollToSection(currentIndex + 1); // свайп вверх → вниз
+      scrollToSection(currentIndex + 1);
     } else {
-      scrollToSection(currentIndex - 1); // свайп вниз → вверх
+      scrollToSection(currentIndex - 1);
     }
   }
 }, { passive: false });
